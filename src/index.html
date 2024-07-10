@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Blog</title>
   </head>
   <body>
     <!-- Main navigation container -->
     <nav
-      class="relative flex w-full flex-nowrap items-center justify-between bg-zinc-50 py-2 text-neutral-500 shadow-dark-mild hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4"
+      class="relative flex w-full flex-nowrap items-center justify-between bg-white py-2 shadow-dark-mild lg:flex-wrap lg:justify-center lg:py-4"
       data-twe-navbar-ref
     >
       <div class="flex w-full flex-wrap items-center justify-between px-3">
-        <div class="ms-2">
-          <a class="text-xl text-black dark:text-white" href="#">Navbar</a>
+        <div class="mx-auto">
+          <a class="text-xl text-black" href="#"
+            ><img class="w-[100px]" src="assets/T3CO.png" alt="T3CO logo"
+          /></a>
         </div>
         <!-- Hamburger button for mobile view -->
         <button
@@ -46,48 +48,64 @@
 
         <!-- Collapsible navbar container -->
         <div
-          class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+          class="!visible mt-0 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
           id="navbarSupportedContent2"
           data-twe-collapse-item
         >
           <!-- Left links -->
           <ul
-            class="list-style-none me-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
+            class="list-style-none mx-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
             data-twe-navbar-nav-ref
           >
-            <!-- Home link -->
+            <!-- Home-->
             <li class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
               <a
-                class="text-black dark:text-white lg:px-2"
+                class="text-black lg:px-2 hover:text-primary-color"
                 aria-current="page"
                 href="#"
                 data-twe-nav-link-ref
                 >Home</a
               >
             </li>
-            <!-- Features link -->
-            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
+            <!-- Space -->
+            <li class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
               <a
-                class="p-0 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+                class="text-black lg:px-2 hover:text-primary-color"
+                aria-current="page"
                 href="#"
                 data-twe-nav-link-ref
-                >Features</a
+                >Space</a
               >
             </li>
-            <!-- Pricing link -->
-            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
+            <!-- Membership -->
+            <li class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
               <a
-                class="p-0 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+                class="text-black lg:px-2 hover:text-primary-color"
+                aria-current="page"
                 href="#"
                 data-twe-nav-link-ref
-                >Pricing</a
+                >Membership</a
               >
             </li>
-            <!-- Disabled link -->
-            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-link-ref>
+            <!-- Join -->
+            <li class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
               <a
-                class="pointer-events-none text-black/30 dark:text-white/30 lg:px-2"
-                >Disabled</a
+                class="text-black lg:px-2 hover:text-primary-color"
+                aria-current="page"
+                href="#"
+                data-twe-nav-link-ref
+                >Join</a
+              >
+            </li>
+
+            <!-- Blog -->
+            <li class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
+              <a
+                class="text-black lg:px-2 hover:text-primary-color"
+                aria-current="page"
+                href="#"
+                data-twe-nav-link-ref
+                >Blog</a
               >
             </li>
           </ul>
