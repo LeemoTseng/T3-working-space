@@ -1,11 +1,12 @@
 {
   "devDependencies": {
-    "tailwindcss": "^3.4.4"
-  },
-  "scripts": {
-    "build-css": "tailwindcss build -i src/input.css -o dist/style.css"
+    "tailwindcss": "^3.4.7"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.417.0",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7"
   }
 }
