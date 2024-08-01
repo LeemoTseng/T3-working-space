@@ -22,9 +22,11 @@
 
   --primary: 42 99% 48%; /* #F5AB01 */
   --primary-foreground: 0 0% 100%; /* white */
+  --primary-hover: 42 98% 43%; /* #D79702 */
 
   --secondary: 24 3% 29%; /* #4D4A48 */
   --secondary-foreground: 0 0% 100%; /* white */
+  --secondary-hover: 24 3% 23%; /* #3D3B3A */
 
   --accent: 210 40% 96.1%;
   --accent-foreground: 222.2 47.4% 11.2%;
@@ -37,14 +39,35 @@
   --radius: 0.5rem;
 }
 
-/* Components */
+/* Settings */
+@layer base {
+  h1 {
+    @apply mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900;
+  }
+  h5 {
+    @apply mb-1 text-lg font-bold;
+  }
+}
 
-/* btn */
 @layer components {
   .btn-default {
-    @apply px-4 py-2 rounded-md text-sm font-medium;
-    background-color: hsl(var(--background) / 0.1);
-    color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--border));
+    @apply inline-flex items-center py-2 px-5 font-medium text-center text-primary-foreground rounded-lg bg-primary focus:ring-4 focus:ring-primary/50;
+  }
+  .btn-default:hover {
+    background-color: hsl(var(--primary-hover));
+  }
+  .subtitle {
+    @apply mb-6 text-gray-200 font-light lg:mb-8 md:text-lg lg:text-xl;
+  }
+  .feature {
+    p {
+      @apply mb-1 text-sm text-gray-200;
+    }
+    a {
+      @apply cursor-pointer inline-flex drop-shadow items-center text-sm font-semibold text-primary hover:underline;
+    }
   }
 }

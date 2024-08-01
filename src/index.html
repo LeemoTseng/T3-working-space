@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Premier Coworking Space in Taipei's Xinyi District | T3CO</title>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js" defer></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body>
@@ -66,32 +68,67 @@
       <div
         class="introduction text-white relative py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 z-1"
       >
-        <h2
-          class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl"
-        >
+        <h1>
           Welcome to Taipei's Premiere New <br />
           Coworking Space.
-        </h2>
-        <p
-          class="subtitle mb-6 text-gray-200 font-light lg:mb-8 md:text-lg lg:text-xl"
-        >
+        </h1>
+        <p class="subtitle">
           Join us in the best coworking space in Taipei, right next to City Hall
           station with state of the art facilities and a stunning view.
         </p>
-        <button
-          class="inline-flex items-center py-3 px-5 font-medium text-center text-primary-foreground rounded-lg bg-primary hover:bg-primary-800 focus:ring-4 focus:ring-primary/50"
-        >
+        <!-- btn - join us -->
+        <button class="btn-default">
           Join us
+          <svg
+            class="primary-foreground"
+            class="w-[24px] h-[24px] text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.1"
+              d="M19 12H5m14 0-4 4m4-4-4-4"
+            />
+          </svg>
         </button>
-        <div class="line"></div>
-        <div class="feature-focus flex">
+        <div
+          class="flex grid gap-8 pt-8 lg:pt-12 mt-8 lg:mt-12 border-t border-gray-600 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <!-- feature-focus -->
           <div class="feature">
-            <h5 class="">Our space</h5>
+            <h5>Our space</h5>
             <p>
               Brand new office space with all the luxuries, located right in
               downtown Taipei next to City Hall MRT
             </p>
-            <p>View more</p>
+            <a
+              >View More
+              <svg
+                class="primary-foreground"
+                class="w-[24px] h-[24px] text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.1"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
+            </a>
           </div>
           <div class="feature">
             <h5>Membership options</h5>
@@ -100,14 +137,125 @@
               office, we offer the perfect place and the flexibility you need to
               build your business.
             </p>
-            <p>See Options</p>
+            <a
+              >See Options
+              <svg
+                class="primary-foreground"
+                class="w-[24px] h-[24px] text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.1"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
+            </a>
           </div>
           <div class="feature">
             <h5>See it for yourself</h5>
             <p>Book a tour to see T3CO for yourself.</p>
-            <p>Tour now</p>
+            <a
+              >Tour Now
+              <svg
+                class="primary-foreground"
+                class="w-[24px] h-[24px] text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.1"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
+            </a>
           </div>
         </div>
+      </div>
+    </div>
+    <!-- Intro section -->
+    <div
+      class="section py-8 px-4 mx-auto space-y-12 max-w-screen-xl lg:space-y-20 sm:py-16 lg:px-6"
+    >
+      <div class="intro gap-8 items-center md:grid md:grid-cols-2 xl:gap-16">
+        <div class="side">
+          <h2>Best Location and Facilities</h2>
+          <div class="subtitle text-slate-500 font-light">
+            Premium facilities, state of the art technology and a stunning view
+            of Taipei 101
+          </div>
+          <div id="feature1"></div>
+        </div>
+        <div class="side">
+          <img
+            class="flex mb-4 w-full lg:mb-0 rounded-lg"
+            src="https://picsum.photos/600/400"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="intro gap-8 items-center md:grid md:grid-cols-2 xl:gap-16">
+        <div class="side order-2">
+          <h2>Diverse Membership Options</h2>
+          <div class="subtitle text-slate-500 font-light">
+            Working on your own, or in a team? Growing your business rapidly?
+            T3CO has a range of flexible space options and membership plans
+          </div>
+          <div id="feature2"></div>
+        </div>
+        <div class="side order-1">
+          <img
+            class="flex mb-4 w-full lg:mb-0 rounded-lg"
+            src="https://picsum.photos/600/400"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="intro gap-8 items-center md:grid md:grid-cols-2 xl:gap-16">
+        <div class="side">
+          <h2>Global Community</h2>
+          <div class="subtitle text-slate-500 font-light">
+            Our members are a diverse group of professionals from all over the
+            world. This diversity of thought fosters creativity and leads to
+            innovative solutions.
+          </div>
+          <div id="feature3"></div>
+        </div>
+        <div class="side">
+          <img
+            class="flex mb-4 w-full lg:mb-0 rounded-lg"
+            src="https://picsum.photos/600/400"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Membership section -->
+    <div class="memberships py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <h2>Designed for business teams like yours</h2>
+      <div class="subtitle text-slate-500 font-light">
+        All of our membership options are designed to help you and your team be
+        more comfortable and productive
+      </div>
+      <!-- Plan -->
+      <div
+        class="allPlan mb-4 lg:mb-8 space-y-8 lg:grid lg:grid-cols-3 md:gap-12 xl:gap-16 lg:space-y-0"
+      >
+        <div class="plan"></div>
       </div>
     </div>
   </body>
