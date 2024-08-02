@@ -53,11 +53,20 @@
   h6 {
     @apply mb-4 text-sm font-bold text-gray-500 dark:text-gray-400;
   }
+  label {
+    @apply block mb-2 text-sm font-medium text-gray-900;
+  }
+  input {
+    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary focus:border-primary;
+  }
+  input:focus {
+    @apply ring-primary ring-2 ring-primary/50 border-primary;
+  }
 }
 
 @layer components {
   .btn-default {
-    @apply inline-flex items-center py-2 px-5 font-medium text-center text-primary-foreground rounded-lg bg-primary focus:ring-4 focus:ring-primary/50;
+    @apply inline-flex items-center py-2 px-5 font-medium text-center text-primary-foreground rounded-lg bg-primary focus:ring-4 focus:ring-primary/50 transition-all duration-200;
   }
   .btn-default:hover {
     background-color: hsl(var(--primary-hover));
@@ -72,5 +81,11 @@
     a {
       @apply cursor-pointer inline-flex drop-shadow items-center text-sm font-semibold text-primary hover:underline;
     }
+  }
+  .select-default {
+    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300  focus:ring-primary focus:border-primary;
+  }
+  .select-default:focus {
+    @apply ring-primary ring-2 ring-primary/50;
   }
 }
