@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premier Coworking Space in Taipei's Xinyi District | T3CO</title>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js" defer></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navBar"></div>
+    <!-- Book a Tour -->
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <div
+        class="title px-4 mx-auto max-w-screen-sm text-center lg:px-6 mb-8 lg:mb-16"
+      >
+        <h2>Book a tour</h2>
+        <p class="subtitle font-light text-gray-500 sm:text-xl">
+          Let us know your membership and tour date preferences below, and we'll
+          get in touch to arrange a tour with you!
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 grid-row-5 gap-5 mx-auto">
+        <form action="" class="">
+          <!-- Name -->
+          <div class="grid grid-cols-1 gap-3 lg:grid-cols-2">
+            <div class="">
+              <label for="name">Name(required)</label>
+              <input
+                class="border"
+                type="text"
+                id="name"
+                placeholder="Your Name"
+              />
+            </div>
+            <!-- Email -->
+            <div class="">
+              <label for="email">Your email (required)</label>
+              <input
+                class="border"
+                type="email"
+                id="email"
+                placeholder="name@email.com"
+              />
+            </div>
+            <!-- Phone -->
+            <div class="">
+              <label for="phone">Phone Number (required)</label>
+              <input
+                class="border"
+                type="tel"
+                id="phone"
+                placeholder="Your Phone Number"
+              />
+            </div>
+            <!-- Membership -->
+            <div class="">
+              <label for="membership">Membership type(required)</label>
+              <select class="border select-default" id="membership">
+                <option value="hotdesk">Hot Desk</option>
+                <option value="dedicated">Dedicated Desk</option>
+                <option value="private">Private Office</option>
+              </select>
+            </div>
+            <!-- Date -->
+            <div class="">
+              <label for="date">Tour Date</label>
+              <input class="border" type="date" id="date" />
+            </div>
+            <!-- How did you hear about us? -->
+            <div class="">
+              <label for="how">How did you hear about us?</label>
+              <select class="border select-default" id="how">
+                <option value="google">Google</option>
+                <option value="facebook">Facebook</option>
+                <option value="friend">Friend</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <!-- Message -->
+            <div class="flex flex-col lg:col-span-2">
+              <label for="">Your message (optional)</label>
+              <textarea
+                name=""
+                id=""
+                rows="6"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary"
+                placeholder="leave a comment..."
+              ></textarea>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn-default mt-10 px-10 justify-center w-full text-center md:w-[120px] mx-auto"
+          >
+            Submit
+          </button>
+        </form>
+        <div class="googleMap mx-auto w-full">
+          <iframe
+            class="rounded-lg border overflow-hidden w-[320px] sm:w-[600px] sm:h-[500px] md:w-[700px] md:h-[500px] lg:w-[530px] lg:h-[500px]"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7229.55416800116!2d121.564138!3d25.041638!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab0090a25cb5%3A0x382576b256880311!2zVDMgQ293b3JraW5nIFNwYWNlIOmfu-mpiuWFseS6q-i-puWFrOWupA!5e0!3m2!1sen!2stw!4v1722567171155!5m2!1sen!2stw"
+            style="border: 1; padding: 8px; border-radius: 10px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div id="footer"></div>
+  </body>
+</html>
