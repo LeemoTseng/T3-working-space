@@ -393,6 +393,7 @@ if (document.querySelector('#feature3')) {
 const plans = [
     {
         title: 'HOT DESK',
+        description:'Ideal for freelancers, remote professionals & digital nomads',
         currency: 'NT$',
         price: '6,500',
         priod: '/month',
@@ -410,6 +411,7 @@ const plans = [
     },
     {
         title: 'DEDICATED DESK',
+        description:'Ideal for solopreneurs, creative professionals & remote teams',
         currency: 'NT$',
         price: '10,000',
         priod: '/month',
@@ -426,6 +428,7 @@ const plans = [
         ]
     }, {
         title: 'PRIVATE OFFICE',
+        description:'Ideal for startup entrepreneurs, small & medium businesses',
         currency: '',
         price: 'Enquire now',
         priod: '',
@@ -471,6 +474,10 @@ if (document.querySelector('#allPlan')) {
         const planPeriod = document.createElement('span');
         planPeriod.className = 'ms-1 text-xl font-normal text-gray-500'
         planPeriod.textContent = plan.priod;
+
+        const planDescription = document.createElement('p');
+        planDescription.className = 'font-light text-gray-500 sm:text-lg mt-3';
+        planDescription.textContent = plan.description;
 
         const fromSpan = document.createElement('span');
         fromSpan.className = 'mr-2 text-gray-500';
@@ -535,7 +542,7 @@ if (document.querySelector('#allPlan')) {
         chooseButton.className = 'btn-default text-sm px-5 py-2.5 inline-flex justify-center w-full text-center';
         chooseButton.textContent = 'Choose plan';
 
-        planContainer.append(planTitle, itemsDiv, featureList, chooseButton);
+        planContainer.append(planTitle, itemsDiv,planDescription, featureList, chooseButton);
         planDiv.append(planContainer);
 
         document.querySelector('#allPlan').append(planDiv);
@@ -643,51 +650,51 @@ const feature4 = [
     {
         title: 'Kitchen & Dining',
         description: 'Equipped with a lounge/kitchen with complementary coffee and a cozy dining area, T3CO allows you to prepare and savor your meals without ever having to step out. Whether you’re fueling up for the day or winding down, our facilities make it easy and convenient.',
-        src: 'assets/space/icon.png',
+        src: 'assets/features/Kitchen-Cabinets.svg',
         alt: 'mock',
     }, {
         title: 'Showers and Storage',
         description: 'Start your day fresh or switch gears effortlessly with our on-site showers and personal lockers—perfect for those who bike to work, hit the gym during lunch, or simply need to freshen up after a long day.',
-        src: 'assets/space/icon.png',
+        src: 'assets/features/Home Assistant Shower.svg',
         alt: 'mock',
     }, {
         title: 'Electric Height Adjustable Desks',
         description: 'Adjust your workspace to fit your comfort with our electric height adjustable desks. Whether you prefer standing or sitting while you work, these desks adapt to your preferred style, promoting better posture and well-being.',
-        src: 'assets/space/icon.png',
+        src: 'assets/features/Home Assistant Outlined Icon.svg',
         alt: 'mock',
     }, {
         title: '24/7 Access',
         description: 'Night owl or early riser, T3CO supports your unique workflow by being accessible 24/7. Work on your schedule without the constraints of traditional office hours in a secure and welcoming environment.',
-        src: 'assets/space/icon.png',
+        src: 'assets/features/Home Assistant Outlined Icon 4.svg',
         alt: 'mock',
     }, {
         title: 'Global Community',
         description: 'Join an inspiring community of professionals from around the globe. At T3CO, networking happens naturally. Expand your professional network, share ideas, and collaborate with like-minded individuals from diverse industries.',
-        src: 'assets/space/icon.png',
+        src: 'assets/features/International Community People.svg',
         alt: 'mock',
     },
     {
         title: 'Events & Workshops',
         description: 'Stay ahead of the curve with our regular events and workshops designed to enhance your skills and knowledge. From tech talks to creative workshops, there’s always an opportunity to learn something new and connect with other professionals.',
-        src: 'assets/space/icon.png',
+        src: 'assets/features/Workshop icon.svg',
         alt: 'mock',
     }
 ]
 if (document.querySelector('#feature4')) {
     feature4.forEach(item => {
         const features4Div = document.createElement('div');
-        features4Div.classList.add('feature', 'flex','justify-start','items-start');
+        features4Div.classList.add('feature' ,'flex','flex-col','md:flex-row','items-center','md:justify-start','md:items-start');
 
         const imgBoxDiv = document.createElement('div');
-        imgBoxDiv.classList.add('imgBox','border-2','w-[250px]','rounded-full','overflow-hidden','mr-3','mt-2');
+        imgBoxDiv.classList.add('imgBox','w-[100px]','md:w-[350px]','p-5','bg-white','rounded-full','overflow-hidden','mr-3','mt-2');
 
         const featureImg = document.createElement('img');
         featureImg.setAttribute('src', item.src);
         featureImg.setAttribute('alt', item.alt);
         featureImg.classList.add('object-fit', 'w-full','h-full');
-        // 'w-full', 'h-full',
+
         const descriptionH3 = document.createElement('h3');
-        descriptionH3.classList.add('text-xl', 'font-bold', 'text-secondary', 'sm:text-2xl');
+        descriptionH3.classList.add('text-xl','font-bold', 'text-secondary', 'sm:text-2xl','text-center','md:text-start');
         descriptionH3.textContent = item.title;
 
         const descriptionDiv = document.createElement('div');
