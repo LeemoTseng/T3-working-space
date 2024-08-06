@@ -8,6 +8,7 @@
 // $1. Features
 // $2. Plans
 // $3. Partners' logos
+// $4. Elevate Your Work at T3CO
 //
 // *---------------* //
 
@@ -42,28 +43,28 @@ const navbarTemplate = `
               </li>
               <li class="mx-2">
                 <a
-                  href="Space.html"
+                  href="space.html"
                   class="text-gray-600 hover:text-primary transition-all duration-200"
                   >Space</a
                 >
               </li>
               <li class="mx-2">
                 <a
-                  href="#"
+                  href="memberships.html"
                   class="text-gray-600 hover:text-primary transition-all duration-200"
                   >Memberships</a
                 >
               </li>
               <li class="mx-2">
                 <a
-                  href="#"
+                  href="join.html"
                   class="text-gray-600 hover:text-primary transition-all duration-200"
                   >Join</a
                 >
               </li>
               <li class="mx-2">
                 <a
-                  href="#"
+                  href="blog.html"
                   class="text-gray-600 hover:text-primary transition-all duration-200"
                   >Blog</a
                 >
@@ -221,7 +222,6 @@ document.querySelector('#footer').innerHTML += footerTemplate;
 const ul = document.createElement('ul');
 ul.className = 'pt-8 my-7 space-y-3 border-t border-gray-200';
 
-
 const features1 = [
     'Conveniently located next to City Hall MRT Station',
     'High-speed internet',
@@ -237,41 +237,50 @@ const features1 = [
     'External event rental',
     'Open kitchen, aquariums and wonderful views from 17F'
 ]
-features1.forEach(text => {
 
-    //list item
-    const li = document.createElement('li');
-    li.className = 'flex space-x-3 items-center';
+if (document.querySelector('#feature1')) {
+    features1.forEach(text => {
 
-    //icon
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
-    svg.setAttribute('aria-hidden', 'true');
-    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    svg.setAttribute('width', '24');
-    svg.setAttribute('height', '24');
-    svg.setAttribute('fill', 'currentColor');
-    svg.setAttribute('viewBox', '0 0 24 24');
+        //list item
+        const li = document.createElement('li');
+        li.className = 'flex space-x-3 items-center';
 
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('fill-rule', 'evenodd');
-    path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
-    path.setAttribute('clip-rule', 'evenodd');
-    svg.append(path);
+        //icon
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
+        svg.setAttribute('aria-hidden', 'true');
+        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        svg.setAttribute('width', '24');
+        svg.setAttribute('height', '24');
+        svg.setAttribute('fill', 'currentColor');
+        svg.setAttribute('viewBox', '0 0 24 24');
 
-    //span
-    const span = document.createElement('span');
-    span.className = 'text-base font-medium leading-tight text-gray-900';
-    span.textContent = text;
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('fill-rule', 'evenodd');
+        path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
+        path.setAttribute('clip-rule', 'evenodd');
+        svg.append(path);
 
-    //append
-    li.append(svg, span);
-    ul.append(li);
-    document.querySelector('#feature1').append(ul);
+        //span
+        const span = document.createElement('span');
+        span.className = 'text-base font-medium leading-tight text-gray-900';
+        span.textContent = text;
 
-})
+        //append
+        li.append(svg, span);
+        ul.append(li);
+        document.querySelector('#feature1').append(ul);
+
+
+
+
+    })
+} else {
+    console.log('#feature1 not found');
+}
 
 // Diverse Membership Options
+
 const ul2 = document.createElement('ul');
 ul2.className = 'pt-8 my-7 space-y-3 border-t border-gray-200';
 
@@ -283,40 +292,44 @@ const features2 = [
     'Large external event rental'
 ]
 
-features2.forEach(text => {
+if (document.querySelector('#feature2')) {
+    features2.forEach(text => {
 
-    //list item
-    const li = document.createElement('li');
-    li.className = 'flex space-x-3 items-center';
+        //list item
+        const li = document.createElement('li');
+        li.className = 'flex space-x-3 items-center';
 
-    //icon
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
-    svg.setAttribute('aria-hidden', 'true');
-    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    svg.setAttribute('width', '24');
-    svg.setAttribute('height', '24');
-    svg.setAttribute('fill', 'currentColor');
-    svg.setAttribute('viewBox', '0 0 24 24');
+        //icon
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
+        svg.setAttribute('aria-hidden', 'true');
+        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        svg.setAttribute('width', '24');
+        svg.setAttribute('height', '24');
+        svg.setAttribute('fill', 'currentColor');
+        svg.setAttribute('viewBox', '0 0 24 24');
 
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('fill-rule', 'evenodd');
-    path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
-    path.setAttribute('clip-rule', 'evenodd');
-    svg.append(path);
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('fill-rule', 'evenodd');
+        path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
+        path.setAttribute('clip-rule', 'evenodd');
+        svg.append(path);
 
-    //span
-    const span = document.createElement('span');
-    span.className = 'text-base font-medium leading-tight text-gray-900';
-    span.textContent = text;
+        //span
+        const span = document.createElement('span');
+        span.className = 'text-base font-medium leading-tight text-gray-900';
+        span.textContent = text;
 
-    //append
-    li.append(svg, span);
-    li.append(span);
-    ul2.append(li);
-    document.querySelector('#feature2').append(ul2);
+        //append
+        li.append(svg, span);
+        li.append(span);
+        ul2.append(li);
+        document.querySelector('#feature2').append(ul2);
 
-})
+    })
+} else {
+    console.log('#feature2 not found');
+}
 
 
 // Global Community
@@ -333,39 +346,43 @@ const feature3 = [
     'The best networking opportunities'
 ]
 
-feature3.forEach(item => {
-    const li = document.createElement('li');
-    li.className = 'flex space-x-3 items-center';
+if (document.querySelector('#feature3')) {
+    feature3.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'flex space-x-3 items-center';
 
-    //icon
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
-    svg.setAttribute('aria-hidden', 'true');
-    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    svg.setAttribute('width', '24');
-    svg.setAttribute('height', '24');
-    svg.setAttribute('fill', 'currentColor');
-    svg.setAttribute('viewBox', '0 0 24 24');
+        //icon
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
+        svg.setAttribute('aria-hidden', 'true');
+        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        svg.setAttribute('width', '24');
+        svg.setAttribute('height', '24');
+        svg.setAttribute('fill', 'currentColor');
+        svg.setAttribute('viewBox', '0 0 24 24');
 
 
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('fill-rule', 'evenodd');
-    path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
-    path.setAttribute('clip-rule', 'evenodd');
-    svg.append(path);
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('fill-rule', 'evenodd');
+        path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
+        path.setAttribute('clip-rule', 'evenodd');
+        svg.append(path);
 
-    //span
-    const span = document.createElement('span');
-    span.className = 'text-base font-medium leading-tight text-gray-900'
-    span.textContent = item;
+        //span
+        const span = document.createElement('span');
+        span.className = 'text-base font-medium leading-tight text-gray-900'
+        span.textContent = item;
 
-    //append
-    li.append(svg, span);
-    ul3.append(li);
-    document.querySelector('#feature3').append(ul3);
+        //append
+        li.append(svg, span);
+        ul3.append(li);
+        document.querySelector('#feature3').append(ul3);
 
-})
 
+    })
+} else {
+    console.log('#feature3 not found');
+}
 
 // *---------------* //
 // $2. Plans
@@ -426,103 +443,108 @@ const plans = [
     }
 ]
 
+if (document.querySelector('#allPlan')) {
 
-plans.forEach(plan => {
+    plans.forEach(plan => {
 
-    // forEach plan card
-    const planDiv = document.createElement('div');
-    planDiv.className = 'plan flex flex-col max-w-lg';
+        // forEach plan card
+        const planDiv = document.createElement('div');
+        planDiv.className = 'plan flex flex-col max-w-lg';
 
-    const planContainer = document.createElement('div');
-    planContainer.className = 'container w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
+        const planContainer = document.createElement('div');
+        planContainer.className = 'container w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
 
-    const planTitle = document.createElement('h6');
-    planTitle.textContent = plan.title;
+        const planTitle = document.createElement('h6');
+        planTitle.textContent = plan.title;
 
-    const itemsDiv = document.createElement('div');
-    itemsDiv.className = 'items flex  items-baseline text-gray-900'
+        const itemsDiv = document.createElement('div');
+        itemsDiv.className = 'items flex  items-baseline text-gray-900'
 
-    const planCurrency = document.createElement('span');
-    planCurrency.className = 'text-3xl font-semibold';
-    planCurrency.textContent = plan.currency;
+        const planCurrency = document.createElement('span');
+        planCurrency.className = 'text-3xl font-semibold';
+        planCurrency.textContent = plan.currency;
 
-    const planPrice = document.createElement('span');
-    planPrice.className = 'text-5xl font-extrabold tracking-tight'
-    planPrice.textContent = plan.price;
+        const planPrice = document.createElement('span');
+        planPrice.className = 'text-5xl font-extrabold tracking-tight'
+        planPrice.textContent = plan.price;
 
-    const planPeriod = document.createElement('span');
-    planPeriod.className = 'ms-1 text-xl font-normal text-gray-500'
-    planPeriod.textContent = plan.priod;
+        const planPeriod = document.createElement('span');
+        planPeriod.className = 'ms-1 text-xl font-normal text-gray-500'
+        planPeriod.textContent = plan.priod;
 
-    const fromSpan = document.createElement('span');
-    fromSpan.className = 'mr-2 text-gray-500';
-    fromSpan.textContent = plan.from;
+        const fromSpan = document.createElement('span');
+        fromSpan.className = 'mr-2 text-gray-500';
+        fromSpan.textContent = plan.from;
 
-    itemsDiv.append(fromSpan, planCurrency, planPrice, planPeriod);
-
-
-    const featureList = document.createElement('ul');
-    featureList.className = 'space-y-5 my-7';
-    featureList.setAttribute('role', 'list');
-
-    // Feature focus
-    plan.features.forEach(feature => {
-        const featureItem = document.createElement('li');
-        featureItem.className = 'flex items-center';
-
-        const featureIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        featureIcon.setAttribute('class', 'flex-shrink-0 w-4 h-4');
-        featureIcon.setAttribute('aria-hidden', 'true');
-        featureIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        featureIcon.setAttribute('fill', 'none');
-        featureIcon.setAttribute('viewBox', '0 0 24 24');
-
-        const featurePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        featurePath.setAttribute('stroke', 'currentColor');
-        featurePath.setAttribute('stroke-linecap', 'round');
-        featurePath.setAttribute('stroke-linejoin', 'round');
-        featurePath.setAttribute('stroke-width', '3');
+        itemsDiv.append(fromSpan, planCurrency, planPrice, planPeriod);
 
 
-        if (feature.available) {
-            featureIcon.classList.add('text-primary');
-            featurePath.setAttribute('d', 'M5 11.917 9.724 16.5 19 7.5');
+        const featureList = document.createElement('ul');
+        featureList.className = 'space-y-5 my-7';
+        featureList.setAttribute('role', 'list');
 
-        } else {
-            featureIcon.classList.add('text-gray-300');
-            featurePath.setAttribute('d', 'M6 18 17.94 6M18 18 6.06 6');
-        }
+        // Feature focus
+        plan.features.forEach(feature => {
+            const featureItem = document.createElement('li');
+            featureItem.className = 'flex items-center';
 
-        featureIcon.append(featurePath);
+            const featureIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            featureIcon.setAttribute('class', 'flex-shrink-0 w-4 h-4');
+            featureIcon.setAttribute('aria-hidden', 'true');
+            featureIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+            featureIcon.setAttribute('fill', 'none');
+            featureIcon.setAttribute('viewBox', '0 0 24 24');
 
-        const featureText = document.createElement('span');
-        featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'ms-3');
-
-        if (!feature.available) {
-            featureText.classList.add('text-gray-300');
-        } else {
-            featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'text-gray-600', 'ms-3')
-        }
-
-        featureText.textContent = feature.text;
+            const featurePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            featurePath.setAttribute('stroke', 'currentColor');
+            featurePath.setAttribute('stroke-linecap', 'round');
+            featurePath.setAttribute('stroke-linejoin', 'round');
+            featurePath.setAttribute('stroke-width', '3');
 
 
-        featureItem.append(featureIcon, featureText)
-        featureList.append(featureItem);
-    });
+            if (feature.available) {
+                featureIcon.classList.add('text-primary');
+                featurePath.setAttribute('d', 'M5 11.917 9.724 16.5 19 7.5');
 
-    //Btn - Choose plan
-    const chooseButton = document.createElement('button');
-    chooseButton.type = 'button';
-    chooseButton.className = 'btn-default text-sm px-5 py-2.5 inline-flex justify-center w-full text-center';
-    chooseButton.textContent = 'Choose plan';
+            } else {
+                featureIcon.classList.add('text-gray-300');
+                featurePath.setAttribute('d', 'M6 18 17.94 6M18 18 6.06 6');
+            }
 
-    planContainer.append(planTitle, itemsDiv, featureList, chooseButton);
-    planDiv.append(planContainer);
+            featureIcon.append(featurePath);
 
-    document.querySelector('#allPlan').append(planDiv);
+            const featureText = document.createElement('span');
+            featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'ms-3');
 
-})
+            if (!feature.available) {
+                featureText.classList.add('text-gray-300');
+            } else {
+                featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'text-gray-600', 'ms-3')
+            }
+
+            featureText.textContent = feature.text;
+
+
+            featureItem.append(featureIcon, featureText)
+            featureList.append(featureItem);
+        });
+
+        //Btn - Choose plan
+        const chooseButton = document.createElement('button');
+        chooseButton.type = 'button';
+        chooseButton.className = 'btn-default text-sm px-5 py-2.5 inline-flex justify-center w-full text-center';
+        chooseButton.textContent = 'Choose plan';
+
+        planContainer.append(planTitle, itemsDiv, featureList, chooseButton);
+        planDiv.append(planContainer);
+
+        document.querySelector('#allPlan').append(planDiv);
+
+    })
+} else {
+    console.log('#allPlan not found');
+}
+
 
 // *---------------* //
 // $3. Partners' logos
@@ -574,41 +596,119 @@ const partners = [
     }
 ]
 
-partners.forEach(partner => {
-    const partnerDiv = document.createElement('div');
-    partnerDiv.classList.add('partner', 'flex', 'flex-col', 'items-center', 'p-2', 'hover:text-primary', 'cursor-pointer');
+if (document.querySelector('#partnersAll')) {
+    partners.forEach(partner => {
+        const partnerDiv = document.createElement('div');
+        partnerDiv.classList.add('partner', 'flex', 'flex-col', 'items-center', 'p-2', 'hover:text-primary', 'cursor-pointer');
 
-    const imgBoxDiv = document.createElement('div');
-    imgBoxDiv.classList.add('imgBox', 'p-2', 'h-[120px]', 'max-w-[200px]')
+        const imgBoxDiv = document.createElement('div');
+        imgBoxDiv.classList.add('imgBox', 'p-2', 'h-[120px]', 'max-w-[200px]')
 
-    const img = document.createElement('img');
-    img.classList.add('object-contain', 'w-full', 'h-full')
-    img.setAttribute('src', partner.imgUrl);
-    img.setAttribute('alt', partner.alt);
+        const img = document.createElement('img');
+        img.classList.add('object-contain', 'w-full', 'h-full')
+        img.setAttribute('src', partner.imgUrl);
+        img.setAttribute('alt', partner.alt);
 
-    // console.log(img);
+        // console.log(img);
 
-    const titleP = document.createElement('p');
-    titleP.classList.add('font-bold', 'text-xl', 'mt-3');
-    titleP.textContent = partner.title;
+        const titleP = document.createElement('p');
+        titleP.classList.add('font-bold', 'text-xl', 'mt-3');
+        titleP.textContent = partner.title;
 
-    const descriptionP = document.createElement('p');
-    descriptionP.classList.add('w-full', 'text-center', 'mt-2');
+        const descriptionP = document.createElement('p');
+        descriptionP.classList.add('w-full', 'text-center', 'mt-2');
 
-    const descriptionSpan = document.createElement('span');
-    descriptionSpan.classList.add('text-slate-500');
-    descriptionSpan.textContent = partner.description;
+        const descriptionSpan = document.createElement('span');
+        descriptionSpan.classList.add('text-slate-500');
+        descriptionSpan.textContent = partner.description;
 
 
-    imgBoxDiv.append(img);
-    descriptionP.append(descriptionSpan);
-    partnerDiv.append(imgBoxDiv, titleP, descriptionP);
+        imgBoxDiv.append(img);
+        descriptionP.append(descriptionSpan);
+        partnerDiv.append(imgBoxDiv, titleP, descriptionP);
 
-    document.querySelector('#partnersAll').append(partnerDiv);
+        document.querySelector('#partnersAll').append(partnerDiv);
 
-    // console.log(partnerDiv);
+        // console.log(partnerDiv);
+    })
+} else {
+    console.log('#partnersAll not found');
+}
 
-})
+// *---------------* //
+// $4. Elevate Your Work at T3CO
+// *---------------* //
+
+const feature4 = [
+    {
+        title: 'Kitchen & Dining',
+        description: 'Equipped with a lounge/kitchen with complementary coffee and a cozy dining area, T3CO allows you to prepare and savor your meals without ever having to step out. Whether you’re fueling up for the day or winding down, our facilities make it easy and convenient.',
+        src: 'assets/space/icon.png',
+        alt: 'mock',
+    }, {
+        title: 'Showers and Storage',
+        description: 'Start your day fresh or switch gears effortlessly with our on-site showers and personal lockers—perfect for those who bike to work, hit the gym during lunch, or simply need to freshen up after a long day.',
+        src: 'assets/space/icon.png',
+        alt: 'mock',
+    }, {
+        title: 'Electric Height Adjustable Desks',
+        description: 'Adjust your workspace to fit your comfort with our electric height adjustable desks. Whether you prefer standing or sitting while you work, these desks adapt to your preferred style, promoting better posture and well-being.',
+        src: 'assets/space/icon.png',
+        alt: 'mock',
+    }, {
+        title: '24/7 Access',
+        description: 'Night owl or early riser, T3CO supports your unique workflow by being accessible 24/7. Work on your schedule without the constraints of traditional office hours in a secure and welcoming environment.',
+        src: 'assets/space/icon.png',
+        alt: 'mock',
+    }, {
+        title: 'Global Community',
+        description: 'Join an inspiring community of professionals from around the globe. At T3CO, networking happens naturally. Expand your professional network, share ideas, and collaborate with like-minded individuals from diverse industries.',
+        src: 'assets/space/icon.png',
+        alt: 'mock',
+    },
+    {
+        title: 'Events & Workshops',
+        description: 'Stay ahead of the curve with our regular events and workshops designed to enhance your skills and knowledge. From tech talks to creative workshops, there’s always an opportunity to learn something new and connect with other professionals.',
+        src: 'assets/space/icon.png',
+        alt: 'mock',
+    }
+]
+if (document.querySelector('#feature4')) {
+    feature4.forEach(item => {
+        const features4Div = document.createElement('div');
+        features4Div.classList.add('feature', 'flex','justify-start','items-start');
+
+        const imgBoxDiv = document.createElement('div');
+        imgBoxDiv.classList.add('imgBox','border-2','w-[250px]','rounded-full','overflow-hidden','mr-3','mt-2');
+
+        const featureImg = document.createElement('img');
+        featureImg.setAttribute('src', item.src);
+        featureImg.setAttribute('alt', item.alt);
+        featureImg.classList.add('object-fit', 'w-full','h-full');
+        // 'w-full', 'h-full',
+        const descriptionH3 = document.createElement('h3');
+        descriptionH3.classList.add('text-xl', 'font-bold', 'text-secondary', 'sm:text-2xl');
+        descriptionH3.textContent = item.title;
+
+        const descriptionDiv = document.createElement('div');
+
+        const descriptionSpan = document.createElement('span');
+        descriptionSpan.classList.add('mt-2', 'text-base', 'font-normal', 'text-gray-400', 'sm:text-lg');
+        descriptionSpan.textContent = item.description;
+
+
+        imgBoxDiv.append(featureImg);
+        descriptionDiv.append(descriptionH3,descriptionSpan);
+        features4Div.append(imgBoxDiv,descriptionDiv);
+
+        document.querySelector('#feature4').append(features4Div);
+        // console.log(features4Div);
+    })
+} else {
+    console.log('#feature4 not found');
+}
+
+
 
 
 
