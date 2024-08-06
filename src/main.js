@@ -20,8 +20,8 @@
 // $0.1. Navbar
 
 const navbarTemplate = `
-      <nav class="bg-white">
-        <div class="mx-auto p-4 flex item-center justify-between items-center">
+      <nav class="bg-white w-full fixed top-0 left-0 z-50">
+        <div class="mx-auto px-4 py-2 flex item-center justify-between items-center ">
           <!-- logo -->
           <div class="logo w-32 mx-auto md:mx-0 md:ml-0 md:flex-shrink-0">
             <a href=""
