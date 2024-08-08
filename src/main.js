@@ -8,11 +8,11 @@
 // $1. Features
 // $2. Plans
 // $3. Partners' logos
-// $4. Elevate Your Work at T3CO
+// $4. Advantages
 // $5. plugin - swaper
 // $5.1. swaper content
 // $6. Articles 
-//
+// $6.1. Pagination
 //
 // *---------------* //
 
@@ -1059,8 +1059,10 @@ if (articleList) {
 } else {
   console.log("#articleList not found");
 }
+// *---------------* //
+// $6.1. Pagination 
+// *---------------* //
 
-// Pagination
 
 let currentPage = 1;
 const totalPages = document.querySelectorAll('[data-page]').length;
@@ -1098,6 +1100,6 @@ if (totalPages) {
   });
 
   updatePagination();
-}else{
+} else {
   console.log('#Pagination not found');
 }
