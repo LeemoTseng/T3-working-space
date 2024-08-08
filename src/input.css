@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Importing Swiper CSS */
+@import "../../node_modules/swiper/swiper.min.css";
+@import "../../node_modules/swiper/modules/pagination.min.css";
+
 /* Setting default color */
 
 :root {

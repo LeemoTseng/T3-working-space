@@ -9,6 +9,10 @@
 // $2. Plans
 // $3. Partners' logos
 // $4. Elevate Your Work at T3CO
+// $5. plugin - swaper
+// $5.1. swaper content
+// $6. Articles 
+//
 //
 // *---------------* //
 
@@ -17,7 +21,11 @@
 // $0. HTML Template
 // *---------------* //
 
+// *---------------* //
 // $0.1. Navbar
+// *---------------* //
+
+
 
 const navbarTemplate = `
       <nav class="bg-white w-full fixed top-0 left-0 z-50">
@@ -223,60 +231,60 @@ const ul = document.createElement('ul');
 ul.className = 'pt-8 my-7 space-y-3 border-t border-gray-200';
 
 const features1 = [
-    'Conveniently located next to City Hall MRT Station',
-    'High-speed internet',
-    'Adjustable electronic tables',
-    'Ergonomic office equipment',
-    'Phone booths, meeting rooms & podcast rooms',
-    'Business support',
-    'Lockers & storage',
-    'Printing & Fax',
-    'Showers',
-    'Parkings',
-    'Networking events',
-    'External event rental',
-    'Open kitchen, aquariums and wonderful views from 17F'
+  'Conveniently located next to City Hall MRT Station',
+  'High-speed internet',
+  'Adjustable electronic tables',
+  'Ergonomic office equipment',
+  'Phone booths, meeting rooms & podcast rooms',
+  'Business support',
+  'Lockers & storage',
+  'Printing & Fax',
+  'Showers',
+  'Parkings',
+  'Networking events',
+  'External event rental',
+  'Open kitchen, aquariums and wonderful views from 17F'
 ]
 
 if (document.querySelector('#feature1')) {
-    features1.forEach(text => {
+  features1.forEach(text => {
 
-        //list item
-        const li = document.createElement('li');
-        li.className = 'flex space-x-3 items-center';
+    //list item
+    const li = document.createElement('li');
+    li.className = 'flex space-x-3 items-center';
 
-        //icon
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
-        svg.setAttribute('aria-hidden', 'true');
-        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        svg.setAttribute('width', '24');
-        svg.setAttribute('height', '24');
-        svg.setAttribute('fill', 'currentColor');
-        svg.setAttribute('viewBox', '0 0 24 24');
+    //icon
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.setAttribute('width', '24');
+    svg.setAttribute('height', '24');
+    svg.setAttribute('fill', 'currentColor');
+    svg.setAttribute('viewBox', '0 0 24 24');
 
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('fill-rule', 'evenodd');
-        path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
-        path.setAttribute('clip-rule', 'evenodd');
-        svg.append(path);
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('fill-rule', 'evenodd');
+    path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
+    path.setAttribute('clip-rule', 'evenodd');
+    svg.append(path);
 
-        //span
-        const span = document.createElement('span');
-        span.className = 'text-base font-medium leading-tight text-gray-900';
-        span.textContent = text;
+    //span
+    const span = document.createElement('span');
+    span.className = 'text-base font-medium leading-tight text-gray-900';
+    span.textContent = text;
 
-        //append
-        li.append(svg, span);
-        ul.append(li);
-        document.querySelector('#feature1').append(ul);
-
-
+    //append
+    li.append(svg, span);
+    ul.append(li);
+    document.querySelector('#feature1').append(ul);
 
 
-    })
+
+
+  })
 } else {
-    console.log('#feature1 not found');
+  console.log('#feature1 not found');
 }
 
 // Diverse Membership Options
@@ -285,50 +293,50 @@ const ul2 = document.createElement('ul');
 ul2.className = 'pt-8 my-7 space-y-3 border-t border-gray-200';
 
 const features2 = [
-    'Flexible hot desks',
-    'Comfortable dedicated desks',
-    'Affordable private offices',
-    'Small to medium sized meeting rooms',
-    'Large external event rental'
+  'Flexible hot desks',
+  'Comfortable dedicated desks',
+  'Affordable private offices',
+  'Small to medium sized meeting rooms',
+  'Large external event rental'
 ]
 
 if (document.querySelector('#feature2')) {
-    features2.forEach(text => {
+  features2.forEach(text => {
 
-        //list item
-        const li = document.createElement('li');
-        li.className = 'flex space-x-3 items-center';
+    //list item
+    const li = document.createElement('li');
+    li.className = 'flex space-x-3 items-center';
 
-        //icon
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
-        svg.setAttribute('aria-hidden', 'true');
-        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        svg.setAttribute('width', '24');
-        svg.setAttribute('height', '24');
-        svg.setAttribute('fill', 'currentColor');
-        svg.setAttribute('viewBox', '0 0 24 24');
+    //icon
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.setAttribute('width', '24');
+    svg.setAttribute('height', '24');
+    svg.setAttribute('fill', 'currentColor');
+    svg.setAttribute('viewBox', '0 0 24 24');
 
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('fill-rule', 'evenodd');
-        path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
-        path.setAttribute('clip-rule', 'evenodd');
-        svg.append(path);
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('fill-rule', 'evenodd');
+    path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
+    path.setAttribute('clip-rule', 'evenodd');
+    svg.append(path);
 
-        //span
-        const span = document.createElement('span');
-        span.className = 'text-base font-medium leading-tight text-gray-900';
-        span.textContent = text;
+    //span
+    const span = document.createElement('span');
+    span.className = 'text-base font-medium leading-tight text-gray-900';
+    span.textContent = text;
 
-        //append
-        li.append(svg, span);
-        li.append(span);
-        ul2.append(li);
-        document.querySelector('#feature2').append(ul2);
+    //append
+    li.append(svg, span);
+    li.append(span);
+    ul2.append(li);
+    document.querySelector('#feature2').append(ul2);
 
-    })
+  })
 } else {
-    console.log('#feature2 not found');
+  console.log('#feature2 not found');
 }
 
 
@@ -338,50 +346,50 @@ const ul3 = document.createElement('ul');
 ul3.className = 'pt-8 my-7 space-y-3 border-t border-gray-200';
 
 const feature3 = [
-    'Multilingual on-site staff',
-    'Diverse community',
-    'In-house community events',
-    'Various external events',
-    'Happy hours to unwind after a hard week of work',
-    'The best networking opportunities'
+  'Multilingual on-site staff',
+  'Diverse community',
+  'In-house community events',
+  'Various external events',
+  'Happy hours to unwind after a hard week of work',
+  'The best networking opportunities'
 ]
 
 if (document.querySelector('#feature3')) {
-    feature3.forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'flex space-x-3 items-center';
+  feature3.forEach(item => {
+    const li = document.createElement('li');
+    li.className = 'flex space-x-3 items-center';
 
-        //icon
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
-        svg.setAttribute('aria-hidden', 'true');
-        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        svg.setAttribute('width', '24');
-        svg.setAttribute('height', '24');
-        svg.setAttribute('fill', 'currentColor');
-        svg.setAttribute('viewBox', '0 0 24 24');
-
-
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('fill-rule', 'evenodd');
-        path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
-        path.setAttribute('clip-rule', 'evenodd');
-        svg.append(path);
-
-        //span
-        const span = document.createElement('span');
-        span.className = 'text-base font-medium leading-tight text-gray-900'
-        span.textContent = item;
-
-        //append
-        li.append(svg, span);
-        ul3.append(li);
-        document.querySelector('#feature3').append(ul3);
+    //icon
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'w-[24px] h-[24px] text-primary');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.setAttribute('width', '24');
+    svg.setAttribute('height', '24');
+    svg.setAttribute('fill', 'currentColor');
+    svg.setAttribute('viewBox', '0 0 24 24');
 
 
-    })
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('fill-rule', 'evenodd');
+    path.setAttribute('d', 'M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z');
+    path.setAttribute('clip-rule', 'evenodd');
+    svg.append(path);
+
+    //span
+    const span = document.createElement('span');
+    span.className = 'text-base font-medium leading-tight text-gray-900'
+    span.textContent = item;
+
+    //append
+    li.append(svg, span);
+    ul3.append(li);
+    document.querySelector('#feature3').append(ul3);
+
+
+  })
 } else {
-    console.log('#feature3 not found');
+  console.log('#feature3 not found');
 }
 
 // *---------------* //
@@ -391,165 +399,165 @@ if (document.querySelector('#feature3')) {
 
 //plans
 const plans = [
-    {
-        title: 'HOT DESK',
-        description:'Ideal for freelancers, remote professionals & digital nomads',
-        currency: 'NT$',
-        price: '6,500',
-        priod: '/month',
-        from: '',
-        features: [
-            { text: 'Shared seating', available: true },
-            { text: '24/7 access', available: true },
-            { text: 'Complimentary coffee, beverages & snacks', available: true },
-            { text: 'Full event access', available: true },
-            { text: 'Fully-equipped meeting rooms and high speed internet', availible: false },
-            { text: 'Electric height adjustable desks', available: false },
-            { text: 'Ergonomic chairs', available: false },
-            { text: 'Secure and private rooms', available: false },
-        ]
-    },
-    {
-        title: 'DEDICATED DESK',
-        description:'Ideal for solopreneurs, creative professionals & remote teams',
-        currency: 'NT$',
-        price: '10,000',
-        priod: '/month',
-        from: 'from',
-        features: [
-            { text: 'Designated seating', available: true },
-            { text: '24/7 access', available: true },
-            { text: 'Electric height adjustable desks', available: true },
-            { text: 'Ergonomic chairs', available: true },
-            { text: 'Complimentary coffee, beverages & snacks', available: true },
-            { text: 'Fully-equipped meeting rooms and high speed internet', available: true },
-            { text: 'Full event access', available: true },
-            { text: 'Secure and private rooms', available: false },
-        ]
-    }, {
-        title: 'PRIVATE OFFICE',
-        description:'Ideal for startup entrepreneurs, small & medium businesses',
-        currency: '',
-        price: 'Enquire now',
-        priod: '',
-        from: '',
-        features: [
-            { text: 'Designated seating', available: true },
-            { text: '24/7 access', available: true },
-            { text: 'Electric height adjustable desks', available: true },
-            { text: 'Ergonomic chairs', available: true },
-            { text: 'Complimentary coffee, beverages & snacks', available: true },
-            { text: 'Fully-equipped meeting rooms and high speed internet', available: true },
-            { text: 'Full event access', available: true },
-            { text: 'Secure and private rooms', available: true }
-        ]
-    }
+  {
+    title: 'HOT DESK',
+    description: 'Ideal for freelancers, remote professionals & digital nomads',
+    currency: 'NT$',
+    price: '6,500',
+    priod: '/month',
+    from: '',
+    features: [
+      { text: 'Shared seating', available: true },
+      { text: '24/7 access', available: true },
+      { text: 'Complimentary coffee, beverages & snacks', available: true },
+      { text: 'Full event access', available: true },
+      { text: 'Fully-equipped meeting rooms and high speed internet', availible: false },
+      { text: 'Electric height adjustable desks', available: false },
+      { text: 'Ergonomic chairs', available: false },
+      { text: 'Secure and private rooms', available: false },
+    ]
+  },
+  {
+    title: 'DEDICATED DESK',
+    description: 'Ideal for solopreneurs, creative professionals & remote teams',
+    currency: 'NT$',
+    price: '10,000',
+    priod: '/month',
+    from: 'from',
+    features: [
+      { text: 'Designated seating', available: true },
+      { text: '24/7 access', available: true },
+      { text: 'Electric height adjustable desks', available: true },
+      { text: 'Ergonomic chairs', available: true },
+      { text: 'Complimentary coffee, beverages & snacks', available: true },
+      { text: 'Fully-equipped meeting rooms and high speed internet', available: true },
+      { text: 'Full event access', available: true },
+      { text: 'Secure and private rooms', available: false },
+    ]
+  }, {
+    title: 'PRIVATE OFFICE',
+    description: 'Ideal for startup entrepreneurs, small & medium businesses',
+    currency: '',
+    price: 'Enquire now',
+    priod: '',
+    from: '',
+    features: [
+      { text: 'Designated seating', available: true },
+      { text: '24/7 access', available: true },
+      { text: 'Electric height adjustable desks', available: true },
+      { text: 'Ergonomic chairs', available: true },
+      { text: 'Complimentary coffee, beverages & snacks', available: true },
+      { text: 'Fully-equipped meeting rooms and high speed internet', available: true },
+      { text: 'Full event access', available: true },
+      { text: 'Secure and private rooms', available: true }
+    ]
+  }
 ]
 
 if (document.querySelector('#allPlan')) {
 
-    plans.forEach(plan => {
+  plans.forEach(plan => {
 
-        // forEach plan card
-        const planDiv = document.createElement('div');
-        planDiv.className = 'plan flex flex-col max-w-lg';
+    // forEach plan card
+    const planDiv = document.createElement('div');
+    planDiv.className = 'plan flex flex-col max-w-lg';
 
-        const planContainer = document.createElement('div');
-        planContainer.className = 'container w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
+    const planContainer = document.createElement('div');
+    planContainer.className = 'container w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
 
-        const planTitle = document.createElement('h6');
-        planTitle.textContent = plan.title;
+    const planTitle = document.createElement('h6');
+    planTitle.textContent = plan.title;
 
-        const itemsDiv = document.createElement('div');
-        itemsDiv.className = 'items flex  items-baseline text-gray-900'
+    const itemsDiv = document.createElement('div');
+    itemsDiv.className = 'items flex  items-baseline text-gray-900'
 
-        const planCurrency = document.createElement('span');
-        planCurrency.className = 'text-3xl font-semibold';
-        planCurrency.textContent = plan.currency;
+    const planCurrency = document.createElement('span');
+    planCurrency.className = 'text-3xl font-semibold';
+    planCurrency.textContent = plan.currency;
 
-        const planPrice = document.createElement('span');
-        planPrice.className = 'text-5xl font-extrabold tracking-tight'
-        planPrice.textContent = plan.price;
+    const planPrice = document.createElement('span');
+    planPrice.className = 'text-5xl font-extrabold tracking-tight'
+    planPrice.textContent = plan.price;
 
-        const planPeriod = document.createElement('span');
-        planPeriod.className = 'ms-1 text-xl font-normal text-gray-500'
-        planPeriod.textContent = plan.priod;
+    const planPeriod = document.createElement('span');
+    planPeriod.className = 'ms-1 text-xl font-normal text-gray-500'
+    planPeriod.textContent = plan.priod;
 
-        const planDescription = document.createElement('p');
-        planDescription.className = 'font-light text-gray-500 sm:text-lg mt-3';
-        planDescription.textContent = plan.description;
+    const planDescription = document.createElement('p');
+    planDescription.className = 'font-light text-gray-500 sm:text-lg mt-3';
+    planDescription.textContent = plan.description;
 
-        const fromSpan = document.createElement('span');
-        fromSpan.className = 'mr-2 text-gray-500';
-        fromSpan.textContent = plan.from;
+    const fromSpan = document.createElement('span');
+    fromSpan.className = 'mr-2 text-gray-500';
+    fromSpan.textContent = plan.from;
 
-        itemsDiv.append(fromSpan, planCurrency, planPrice, planPeriod);
-
-
-        const featureList = document.createElement('ul');
-        featureList.className = 'space-y-5 my-7';
-        featureList.setAttribute('role', 'list');
-
-        // Feature focus
-        plan.features.forEach(feature => {
-            const featureItem = document.createElement('li');
-            featureItem.className = 'flex items-center';
-
-            const featureIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            featureIcon.setAttribute('class', 'flex-shrink-0 w-4 h-4');
-            featureIcon.setAttribute('aria-hidden', 'true');
-            featureIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-            featureIcon.setAttribute('fill', 'none');
-            featureIcon.setAttribute('viewBox', '0 0 24 24');
-
-            const featurePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            featurePath.setAttribute('stroke', 'currentColor');
-            featurePath.setAttribute('stroke-linecap', 'round');
-            featurePath.setAttribute('stroke-linejoin', 'round');
-            featurePath.setAttribute('stroke-width', '3');
+    itemsDiv.append(fromSpan, planCurrency, planPrice, planPeriod);
 
 
-            if (feature.available) {
-                featureIcon.classList.add('text-primary');
-                featurePath.setAttribute('d', 'M5 11.917 9.724 16.5 19 7.5');
+    const featureList = document.createElement('ul');
+    featureList.className = 'space-y-5 my-7';
+    featureList.setAttribute('role', 'list');
 
-            } else {
-                featureIcon.classList.add('text-gray-300');
-                featurePath.setAttribute('d', 'M6 18 17.94 6M18 18 6.06 6');
-            }
+    // Feature focus
+    plan.features.forEach(feature => {
+      const featureItem = document.createElement('li');
+      featureItem.className = 'flex items-center';
 
-            featureIcon.append(featurePath);
+      const featureIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      featureIcon.setAttribute('class', 'flex-shrink-0 w-4 h-4');
+      featureIcon.setAttribute('aria-hidden', 'true');
+      featureIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      featureIcon.setAttribute('fill', 'none');
+      featureIcon.setAttribute('viewBox', '0 0 24 24');
 
-            const featureText = document.createElement('span');
-            featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'ms-3');
-
-            if (!feature.available) {
-                featureText.classList.add('text-gray-300');
-            } else {
-                featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'text-gray-600', 'ms-3')
-            }
-
-            featureText.textContent = feature.text;
+      const featurePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      featurePath.setAttribute('stroke', 'currentColor');
+      featurePath.setAttribute('stroke-linecap', 'round');
+      featurePath.setAttribute('stroke-linejoin', 'round');
+      featurePath.setAttribute('stroke-width', '3');
 
 
-            featureItem.append(featureIcon, featureText)
-            featureList.append(featureItem);
-        });
+      if (feature.available) {
+        featureIcon.classList.add('text-primary');
+        featurePath.setAttribute('d', 'M5 11.917 9.724 16.5 19 7.5');
 
-        //Btn - Choose plan
-        const chooseButton = document.createElement('button');
-        chooseButton.type = 'button';
-        chooseButton.className = 'btn-default text-sm px-5 py-2.5 inline-flex justify-center w-full text-center';
-        chooseButton.textContent = 'Choose plan';
+      } else {
+        featureIcon.classList.add('text-gray-300');
+        featurePath.setAttribute('d', 'M6 18 17.94 6M18 18 6.06 6');
+      }
 
-        planContainer.append(planTitle, itemsDiv,planDescription, featureList, chooseButton);
-        planDiv.append(planContainer);
+      featureIcon.append(featurePath);
 
-        document.querySelector('#allPlan').append(planDiv);
+      const featureText = document.createElement('span');
+      featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'ms-3');
 
-    })
+      if (!feature.available) {
+        featureText.classList.add('text-gray-300');
+      } else {
+        featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'text-gray-600', 'ms-3')
+      }
+
+      featureText.textContent = feature.text;
+
+
+      featureItem.append(featureIcon, featureText)
+      featureList.append(featureItem);
+    });
+
+    //Btn - Choose plan
+    const chooseButton = document.createElement('button');
+    chooseButton.type = 'button';
+    chooseButton.className = 'btn-default text-sm px-5 py-2.5 inline-flex justify-center w-full text-center';
+    chooseButton.textContent = 'Choose plan';
+
+    planContainer.append(planTitle, itemsDiv, planDescription, featureList, chooseButton);
+    planDiv.append(planContainer);
+
+    document.querySelector('#allPlan').append(planDiv);
+
+  })
 } else {
-    console.log('#allPlan not found');
+  console.log('#allPlan not found');
 }
 
 
@@ -560,163 +568,536 @@ if (document.querySelector('#allPlan')) {
 // ** Recommended type: png, horizaontal, 200x100(px) **
 //
 const partners = [
-    {
-        imgUrl: 'assets/mock/mock-vertical.png',
-        alt: 'mock',
-        title: 'Logo1',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }, {
-        imgUrl: 'assets/mock/mock-horizontal.png',
-        alt: 'mock',
-        title: 'Logo2',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }, {
-        imgUrl: 'assets/mock/mock-01.png',
-        alt: 'mock',
-        title: 'Logo3',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }, {
-        imgUrl: 'assets/mock/mock-02.png',
-        alt: 'mock',
-        title: 'Logo4',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }, {
-        imgUrl: 'assets/mock/mock-03.png',
-        alt: 'mock-vertical',
-        title: 'Logo5',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }, {
-        imgUrl: 'assets/mock/mock-04.png',
-        alt: 'mock',
-        title: 'Logo6',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }, {
-        imgUrl: 'assets/mock/mock-05.png',
-        alt: 'mock',
-        title: 'Logo7',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }, {
-        imgUrl: 'assets/mock/mock-06.png',
-        alt: 'mock',
-        title: 'Logo8',
-        description: 'lorem ipsum dolor sit amet, consectetur.',
-    }
+  {
+    imgUrl: 'assets/mock/mock-vertical.png',
+    alt: 'mock',
+    title: 'Logo1',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+    link: '#'
+  }, {
+    imgUrl: 'assets/mock/mock-horizontal.png',
+    alt: 'mock',
+    title: 'Logo2',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+    link: '#'
+
+  }, {
+    imgUrl: 'assets/mock/mock-01.png',
+    alt: 'mock',
+    title: 'Logo3',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+    link: '#'
+
+  }, {
+    imgUrl: 'assets/mock/mock-02.png',
+    alt: 'mock',
+    title: 'Logo4',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+  }, {
+    imgUrl: 'assets/mock/mock-03.png',
+    alt: 'mock-vertical',
+    title: 'Logo5',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+    link: '#'
+
+  }, {
+    imgUrl: 'assets/mock/mock-04.png',
+    alt: 'mock',
+    title: 'Logo6',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+    link: '#'
+
+  }, {
+    imgUrl: 'assets/mock/mock-05.png',
+    alt: 'mock',
+    title: 'Logo7',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+  }, {
+    imgUrl: 'assets/mock/mock-06.png',
+    alt: 'mock',
+    title: 'Logo8',
+    description: 'lorem ipsum dolor sit amet, consectetur.',
+    link: '#'
+
+  }
 ]
 
 if (document.querySelector('#partnersAll')) {
-    partners.forEach(partner => {
-        const partnerDiv = document.createElement('div');
-        partnerDiv.classList.add('partner', 'flex', 'flex-col', 'items-center', 'p-2', 'hover:text-primary', 'cursor-pointer');
+  partners.forEach(partner => {
 
-        const imgBoxDiv = document.createElement('div');
-        imgBoxDiv.classList.add('imgBox', 'p-2', 'h-[120px]', 'max-w-[200px]')
-
-        const img = document.createElement('img');
-        img.classList.add('object-contain', 'w-full', 'h-full')
-        img.setAttribute('src', partner.imgUrl);
-        img.setAttribute('alt', partner.alt);
-
-        // console.log(img);
-
-        const titleP = document.createElement('p');
-        titleP.classList.add('font-bold', 'text-xl', 'mt-3');
-        titleP.textContent = partner.title;
-
-        const descriptionP = document.createElement('p');
-        descriptionP.classList.add('w-full', 'text-center', 'mt-2');
-
-        const descriptionSpan = document.createElement('span');
-        descriptionSpan.classList.add('text-slate-500');
-        descriptionSpan.textContent = partner.description;
+    const link = document.createElement('a');
+    link.href = partner.link;
+    link.target = '_blank';
 
 
-        imgBoxDiv.append(img);
-        descriptionP.append(descriptionSpan);
-        partnerDiv.append(imgBoxDiv, titleP, descriptionP);
+    const partnerDiv = document.createElement('div');
+    partnerDiv.classList.add('partner', 'flex', 'flex-col', 'items-center', 'p-2', 'hover:text-primary', 'cursor-pointer');
 
-        document.querySelector('#partnersAll').append(partnerDiv);
+    const imgBoxDiv = document.createElement('div');
+    imgBoxDiv.classList.add('imgBox', 'p-2', 'h-[120px]', 'max-w-[200px]')
 
-        // console.log(partnerDiv);
-    })
+    const img = document.createElement('img');
+    img.classList.add('object-contain', 'w-full', 'h-full')
+    img.setAttribute('src', partner.imgUrl);
+    img.setAttribute('alt', partner.alt);
+
+    // console.log(img);
+
+    const titleP = document.createElement('p');
+    titleP.classList.add('font-bold', 'text-xl', 'mt-3');
+    titleP.textContent = partner.title;
+
+    const descriptionP = document.createElement('p');
+    descriptionP.classList.add('w-full', 'text-center', 'mt-2');
+
+    const descriptionSpan = document.createElement('span');
+    descriptionSpan.classList.add('text-slate-500');
+    descriptionSpan.textContent = partner.description;
+
+
+    imgBoxDiv.append(img);
+    descriptionP.append(descriptionSpan);
+    partnerDiv.append(imgBoxDiv, titleP, descriptionP);
+    link.append(partnerDiv);
+
+    document.querySelector('#partnersAll').append(link);
+  })
 } else {
-    console.log('#partnersAll not found');
+  console.log('#partnersAll not found');
 }
 
 // *---------------* //
-// $4. Elevate Your Work at T3CO
+// $4. Advantages
 // *---------------* //
 
-const feature4 = [
-    {
-        title: 'Kitchen & Dining',
-        description: 'Equipped with a lounge/kitchen with complementary coffee and a cozy dining area, T3CO allows you to prepare and savor your meals without ever having to step out. Whether you’re fueling up for the day or winding down, our facilities make it easy and convenient.',
-        src: 'assets/features/Kitchen-Cabinets.svg',
-        alt: 'mock',
-    }, {
-        title: 'Showers and Storage',
-        description: 'Start your day fresh or switch gears effortlessly with our on-site showers and personal lockers—perfect for those who bike to work, hit the gym during lunch, or simply need to freshen up after a long day.',
-        src: 'assets/features/Home Assistant Shower.svg',
-        alt: 'mock',
-    }, {
-        title: 'Electric Height Adjustable Desks',
-        description: 'Adjust your workspace to fit your comfort with our electric height adjustable desks. Whether you prefer standing or sitting while you work, these desks adapt to your preferred style, promoting better posture and well-being.',
-        src: 'assets/features/Home Assistant Outlined Icon.svg',
-        alt: 'mock',
-    }, {
-        title: '24/7 Access',
-        description: 'Night owl or early riser, T3CO supports your unique workflow by being accessible 24/7. Work on your schedule without the constraints of traditional office hours in a secure and welcoming environment.',
-        src: 'assets/features/Home Assistant Outlined Icon 4.svg',
-        alt: 'mock',
-    }, {
-        title: 'Global Community',
-        description: 'Join an inspiring community of professionals from around the globe. At T3CO, networking happens naturally. Expand your professional network, share ideas, and collaborate with like-minded individuals from diverse industries.',
-        src: 'assets/features/International Community People.svg',
-        alt: 'mock',
-    },
-    {
-        title: 'Events & Workshops',
-        description: 'Stay ahead of the curve with our regular events and workshops designed to enhance your skills and knowledge. From tech talks to creative workshops, there’s always an opportunity to learn something new and connect with other professionals.',
-        src: 'assets/features/Workshop icon.svg',
-        alt: 'mock',
-    }
+const advantages = [
+  {
+    title: 'Kitchen & Dining',
+    description: 'Equipped with a lounge/kitchen with complementary coffee and a cozy dining area, T3CO allows you to prepare and savor your meals without ever having to step out. Whether you’re fueling up for the day or winding down, our facilities make it easy and convenient.',
+    src: 'assets/features/Kitchen-Cabinets.svg',
+    alt: 'mock',
+  }, {
+    title: 'Showers and Storage',
+    description: 'Start your day fresh or switch gears effortlessly with our on-site showers and personal lockers—perfect for those who bike to work, hit the gym during lunch, or simply need to freshen up after a long day.',
+    src: 'assets/features/Home Assistant Shower.svg',
+    alt: 'mock',
+  }, {
+    title: 'Electric Height Adjustable Desks',
+    description: 'Adjust your workspace to fit your comfort with our electric height adjustable desks. Whether you prefer standing or sitting while you work, these desks adapt to your preferred style, promoting better posture and well-being.',
+    src: 'assets/features/Home Assistant Outlined Icon.svg',
+    alt: 'mock',
+  }, {
+    title: '24/7 Access',
+    description: 'Night owl or early riser, T3CO supports your unique workflow by being accessible 24/7. Work on your schedule without the constraints of traditional office hours in a secure and welcoming environment.',
+    src: 'assets/features/Home Assistant Outlined Icon 4.svg',
+    alt: 'mock',
+  }, {
+    title: 'Global Community',
+    description: 'Join an inspiring community of professionals from around the globe. At T3CO, networking happens naturally. Expand your professional network, share ideas, and collaborate with like-minded individuals from diverse industries.',
+    src: 'assets/features/International Community People.svg',
+    alt: 'mock',
+  },
+  {
+    title: 'Events & Workshops',
+    description: 'Stay ahead of the curve with our regular events and workshops designed to enhance your skills and knowledge. From tech talks to creative workshops, there’s always an opportunity to learn something new and connect with other professionals.',
+    src: 'assets/features/Workshop icon.svg',
+    alt: 'mock',
+  }
 ]
-if (document.querySelector('#feature4')) {
-    feature4.forEach(item => {
-        const features4Div = document.createElement('div');
-        features4Div.classList.add('feature' ,'flex','flex-col','md:flex-row','items-center','md:justify-start','md:items-start');
+if (document.querySelector('#advantages')) {
+  advantages.forEach(item => {
+    const features4Div = document.createElement('div');
+    features4Div.classList.add('feature', 'flex', 'flex-col', 'md:flex-row', 'items-center', 'md:justify-start', 'md:items-start');
 
-        const imgBoxDiv = document.createElement('div');
-        imgBoxDiv.classList.add('imgBox','w-[100px]','md:w-[350px]','p-5','bg-white','rounded-full','overflow-hidden','mr-3','mt-2');
+    const imgBoxDiv = document.createElement('div');
+    imgBoxDiv.classList.add('imgBox', 'w-[150px]', 'md:w-[100px]', 'p-5', 'bg-white', 'rounded-full', 'overflow-hidden', 'mr-3', 'mt-2', 'shrink-0');
 
-        const featureImg = document.createElement('img');
-        featureImg.setAttribute('src', item.src);
-        featureImg.setAttribute('alt', item.alt);
-        featureImg.classList.add('object-fit', 'w-full','h-full');
+    const featureImg = document.createElement('img');
+    featureImg.setAttribute('src', item.src);
+    featureImg.setAttribute('alt', item.alt);
+    featureImg.classList.add('object-fit', 'w-full', 'h-full');
 
-        const descriptionH3 = document.createElement('h3');
-        descriptionH3.classList.add('text-xl','font-bold', 'text-secondary', 'sm:text-2xl','text-center','md:text-start');
-        descriptionH3.textContent = item.title;
+    const descriptionH3 = document.createElement('h3');
+    descriptionH3.classList.add('text-xl', 'font-bold', 'text-secondary', 'sm:text-2xl', 'text-center', 'md:text-start');
+    descriptionH3.textContent = item.title;
 
-        const descriptionDiv = document.createElement('div');
+    const descriptionDiv = document.createElement('div');
 
-        const descriptionSpan = document.createElement('span');
-        descriptionSpan.classList.add('mt-2', 'text-base', 'font-normal', 'text-gray-400', 'sm:text-lg');
-        descriptionSpan.textContent = item.description;
+    const descriptionSpan = document.createElement('span');
+    descriptionSpan.classList.add('mt-2', 'text-base', 'font-normal', 'text-gray-400', 'sm:text-lg');
+    descriptionSpan.textContent = item.description;
 
 
-        imgBoxDiv.append(featureImg);
-        descriptionDiv.append(descriptionH3,descriptionSpan);
-        features4Div.append(imgBoxDiv,descriptionDiv);
+    imgBoxDiv.append(featureImg);
+    descriptionDiv.append(descriptionH3, descriptionSpan);
+    features4Div.append(imgBoxDiv, descriptionDiv);
 
-        document.querySelector('#feature4').append(features4Div);
-        // console.log(features4Div);
-    })
+    document.querySelector('#advantages').append(features4Div);
+    // console.log(features4Div);
+  })
 } else {
-    console.log('#feature4 not found');
+  console.log('#advantages not found');
+}
+
+// *---------------* //
+// $5. plugin - swaper 
+// *---------------* //
+// ./assets/swiper.js
+// *---------------* //
+// $5.1. swaper content
+// *---------------* //
+
+const swaperContent = [
+  {
+    title: 'Welcome to Taipei\'s Premiere New Coworking Space.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamuset lorem eget tellus tempus vulputate. Suspendisse nec lobortisipsum, ut dictum neque. Nulla mi velit,',
+    src: 'assets/blog/P1103383.jpg',
+    alt: '',
+    link: '#'
+  }, {
+    title: 'Welcome to Taipei\'s Premiere New Coworking Space.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamuset lorem eget tellus tempus vulputate. Suspendisse nec lobortisipsum, ut dictum neque. Nulla mi velit,',
+    src: 'assets/blog/P1103389.jpg',
+    alt: '',
+    link: 'blog-post.html'
+  }, {
+    title: 'Welcome to Taipei\'s Premiere New Coworking Space.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamuset lorem eget tellus tempus vulputate. Suspendisse nec lobortisipsum, ut dictum neque. Nulla mi velit,',
+    src: 'assets/blog/P1103391.jpg',
+    alt: '',
+    link: 'blog-post.html'
+  }, {
+    title: 'Welcome to Taipei\'s Premiere New Coworking Space.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamuset lorem eget tellus tempus vulputate. Suspendisse nec lobortisipsum, ut dictum neque. Nulla mi velit,',
+    src: 'assets/blog/P1103393.jpg',
+    alt: '',
+    link: 'blog-post.html'
+  }, {
+    title: 'Welcome to Taipei\'s Premiere New Coworking Space.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamuset lorem eget tellus tempus vulputate. Suspendisse nec lobortisipsum, ut dictum neque. Nulla mi velit,',
+    src: 'assets/blog/P1103399.jpg',
+    alt: '',
+    link: 'blog-post.html'
+  },
+]
+
+const swiperWrapper = document.getElementById("swiper-wrapper");
+
+if (swiperWrapper) {
+  swaperContent.forEach((item) => {
+    const swiperSlide = document.createElement("div");
+    swiperSlide.classList.add("swiper-slide",
+      "relative",
+    );
+
+    const link = document.createElement("a");
+    link.setAttribute("href", item.link);
+    link.classList.add("block", "h-full", "w-full");
+
+    const imgBoxDiv = document.createElement("div");
+    imgBoxDiv.classList.add("imgBox", "md:h-[600px]", "h-[500px]", "relative");
+
+    const img = document.createElement("img");
+    img.classList.add("object-cover", "w-full", "h-full", "absolute");
+    img.setAttribute("src", item.src);
+    img.setAttribute("alt", item.alt);
+
+    const overlayDiv = document.createElement("div");
+    overlayDiv.classList.add(
+      "absolute",
+      "inset-0",
+      "bg-black/[.2]",
+      "transition-all",
+      "duration-200"
+    );
+
+    const textDiv = document.createElement("div");
+    textDiv.classList.add(
+      "text",
+      "absolute",
+      "inset-0",
+      "top-1/3",
+      "z-50",
+      "px-4",
+    );
+
+    const innerTextDiv = document.createElement("div");
+    innerTextDiv.classList.add(
+      "max-w-screen-xl",
+      "mx-auto",
+      "text-white",
+    );
+
+    const h2 = document.createElement("h2");
+    h2.classList.add("gap-8", "max-w-2xl", "text-white", "text-3xl", "md:text-5xl", "font-bold");
+    h2.textContent = item.title;
+    const borderDiv = document.createElement("div");
+    borderDiv.classList.add("border-4", "border-primary", "w-24", "my-4");
+
+    const subtitleDiv = document.createElement("div");
+    subtitleDiv.classList.add("subtitle", "max-w-2xl");
+    subtitleDiv.textContent = item.subtitle;
+
+    innerTextDiv.append(h2, borderDiv, subtitleDiv);
+    textDiv.append(innerTextDiv);
+    imgBoxDiv.append(img, overlayDiv);
+    link.append(imgBoxDiv, textDiv);
+    swiperSlide.append(link);
+    swiperWrapper.append(swiperSlide);
+
+    console.log(swiperWrapper)
+  });
+} else {
+  console.log("#swiper-wrapper not found");
+}
+
+
+// *---------------* //
+// $6. Articles 
+// *---------------* //
+
+const articlesContainer = document.getElementById("articles");
+
+const articleData = [{
+  link: "blog-post.html",
+  imgUrl: "./assets/blog/P1103394.jpg",
+  imgAlt: "Example Image",
+  date: "July 12, 2023",
+  views: "2,934",
+  title: "Transform Your Home: The Power of Interior Design Lorem ipsum dolor sit amet.",
+  description: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back"
+}, {
+  link: "blog-post.html",
+  imgUrl: "./assets/blog/P1103389.jpg",
+  imgAlt: "Example Image",
+  date: "July 12, 2023",
+  views: "2,934",
+  title: "Transform Your Home: The Power of Interior Design Lorem ipsum dolor sit amet.",
+  description: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back"
+}, {
+  link: "blog-post.html",
+  imgUrl: "./assets/blog/P1103399.jpg",
+  imgAlt: "Example Image",
+  date: "July 12, 2023",
+  views: "2,934",
+  title: "Transform Your Home: The Power of Interior Design Lorem ipsum dolor sit amet.",
+  description: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back"
+}, {
+  link: "blog-post.html",
+  imgUrl: "./assets/blog/P1103393.jpg",
+  imgAlt: "Example Image",
+  date: "July 12, 2023",
+  views: "2,934",
+  title: "Transform Your Home: The Power of Interior Design Lorem ipsum dolor sit amet.",
+  description: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back"
+}];
+
+
+if (articlesContainer) {
+
+  articleData.forEach(item => {
+
+    const linkElement = document.createElement('a');
+    linkElement.href = item.link;
+
+    const articleDiv = document.createElement('div');
+    articleDiv.classList.add('article', 'rounded-xl', 'p-5', 'pb-20', 'hover:text-primary');
+
+    const imgBoxDiv = document.createElement('div');
+    imgBoxDiv.classList.add('imgBox', 'overflow-hidden', 'rounded-xl', 'm-2', 'h-[300px]');
+
+    const imgElement = document.createElement('img');
+    imgElement.classList.add('w-full', 'h-full', 'object-cover');
+    imgElement.setAttribute('src', item.imgUrl);
+    imgElement.setAttribute('alt', item.imgAlt);
+
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('text', 'px-3', 'leading-normal');
+
+    const dateDiv = document.createElement('div');
+    dateDiv.classList.add('date', 'flex', 'justify-between', 'pt-3');
+
+    const dateSpan = document.createElement('span');
+    dateSpan.classList.add('text-gray-400', 'font-medium');
+    dateSpan.textContent = item.date;
+
+    const readDiv = document.createElement('div');
+    readDiv.classList.add('read', 'flex', 'text-gray-400');
+
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svgElement.setAttribute('viewBox', '0 0 24 24');
+    svgElement.setAttribute('fill', 'currentColor');
+    svgElement.classList.add('size-6', 'pe-2');
+
+    const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path1.setAttribute('d', 'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z');
+
+    const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path2.setAttribute('fill-rule', 'evenodd');
+    path2.setAttribute('d', 'M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z');
+    path2.setAttribute('clip-rule', 'evenodd');
+
+    svgElement.append(path1, path2);
+
+    const viewsDiv = document.createElement('div');
+    viewsDiv.textContent = item.views;
+
+    readDiv.append(svgElement, viewsDiv);
+    dateDiv.append(dateSpan, readDiv);
+
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('title', 'pt-3');
+
+    const h4 = document.createElement('h4');
+    h4.classList.add('text-2xl', 'font-bold');
+    h4.textContent = item.title;
+
+    const borderDiv = document.createElement('div');
+    borderDiv.classList.add('border-t', 'my-3');
+
+    titleDiv.append(h4, borderDiv);
+
+    const descriptionP = document.createElement('p');
+    descriptionP.classList.add('text-gray-500', 'text-justify');
+    descriptionP.textContent = item.description;
+
+    imgBoxDiv.append(imgElement);
+    textDiv.append(dateDiv, titleDiv, descriptionP);
+    articleDiv.append(imgBoxDiv, textDiv);
+    linkElement.append(articleDiv);
+
+    articlesContainer.append(linkElement);
+
+  })
+
+} else {
+  console.log("#articles not found");
 }
 
 
 
 
+// *---------------* //
+// $7. Articles - List
+// *---------------* //
+
+const articles = [
+  {
+    date: "July 12, 2024",
+    title: "Welcome to Our Space",
+    content: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back",
+    link: "#"
+  },
+  {
+    date: "July 12, 2024",
+    title: "Welcome to Our Space",
+    content: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back",
+    link: "#"
+  },
+  {
+    date: "July 12, 2024",
+    title: "Welcome to Our Space",
+    content: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back",
+    link: "#"
+  },
+  {
+    date: "July 12, 2024",
+    title: "Welcome to Our Space",
+    content: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back",
+    link: "#"
+  },
+  {
+    date: "July 12, 2024",
+    title: "Welcome to Our Space",
+    content: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back",
+    link: "#"
+  },
+  {
+    date: "July 12, 2024",
+    title: "Welcome to Our Space",
+    content: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back",
+    link: "#"
+  },
+  {
+    date: "July 12, 2024",
+    title: "Welcome to Our Space",
+    content: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view, for what the. Let's put a pin in that we need to build it so that it scales, are there any leftovers in the kitchen?, if you're not hurting you're not winning loop back",
+    link: "#"
+  }
+];
+
+const articleList = document.querySelector('#articleList')
+
+if (articleList) {
+  articles.forEach(article => {
+    const liElement = document.createElement('li');
+    liElement.classList.add('flex', 'flex-col', 'justify-start', 'border-b', 'py-5', 'leading-loose');
+
+    const aElement = document.createElement('a');
+    aElement.setAttribute('href', article.link);
+
+    const dateDiv = document.createElement('div');
+    dateDiv.classList.add('date', 'text-gray-400', 'font-medium');
+    dateDiv.textContent = article.date;
+
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('title', 'text-2xl', 'font-bold', 'py-2', 'hover:text-primary');
+    titleDiv.textContent = article.title;
+
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('content', 'text-lg', 'text-gray-500', 'text-justify');
+    contentDiv.textContent = article.content;
+
+    aElement.append(dateDiv, titleDiv, contentDiv);
+    liElement.append(aElement);
+    articleList.append(liElement);
+
+  });
 
 
+} else {
+  console.log("#articleList not found");
+}
+
+// Pagination
+
+let currentPage = 1;
+const totalPages = document.querySelectorAll('[data-page]').length;
+
+if (totalPages) {
+  const updatePagination = () => {
+    document.querySelectorAll('[data-page]').forEach(button => {
+      button.classList.remove('bg-primary', 'text-white');
+      button.classList.add('text-gray-900');
+    });
+    const activeBtn = document.querySelector(`[data-page="${currentPage}"]`);
+    activeBtn.classList.remove('text-gray-900');
+    activeBtn.classList.add('bg-primary', 'text-white');
+
+    document.querySelectorAll('[data-page]').forEach(button => {
+      button.addEventListener('click', function () {
+        currentPage = parseInt(this.getAttribute('data-page'));
+        updatePagination();
+      });
+    })
+
+  };
+  document.querySelector('#prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      updatePagination();
+    }
+  });
+
+  document.querySelector('#nextBtn').addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage += 1;
+      updatePagination();
+    }
+  });
+
+  updatePagination();
+}else{
+  console.log('#Pagination not found');
+}

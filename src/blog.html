@@ -5,15 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Premier Coworking Space in Taipei's Xinyi District | T3CO</title>
     <script src="../node_modules/flowbite/dist/flowbite.min.js" defer></script>
+    <!-- plugins - swiper -->
+    <script type="module" defer>
+      import swiper from "https://cdn.jsdelivr.net/npm/swiper@11.1.9/+esm";
+    </script>
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.css
+"
+      rel="stylesheet"
+    />
+    <!-- customize css -->
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body>
     <!-- Navbar -->
     <div id="navBar" class="pt-20"></div>
-    <!-- Main section -->
+
+    <!-- plugin - swiper -->
+    <div class="swiper w-full">
+      <div class="swiper-wrapper" id="swiper-wrapper">
+        <!-- $5.1. swaper content -->
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- Blog -->
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <div
+        class="title px-4 mx-auto max-w-screen-sm text-center lg:px-6 mb-8 lg:mb-16"
+      >
+        <h2 class="text-3xl md:text-4xl">Welcome to Our Space</h2>
+        <p class="subtitle font-light text-gray-500 sm:text-xl">
+          Let us know your membership and tour date preferences below, and we'll
+          get in touch to arrange a tour with you!
+        </p>
+      </div>
+      <!-- Articles -->
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-x-0"
+        id="articles"
+      ></div>
+      <div class="border-t mt-48"></div>
+      <div
+        class="title px-4 mx-auto max-w-screen-sm text-center lg:px-6 mb-8 lg:mb-16"
+      >
+        <!-- List -->
+        <h2 class="pt-28">Design Corner</h2>
+        <p class="subtitle font-light text-gray-500 sm:text-xl">
+          Let us know your membership and tour date preferences below, and we'll
+          get in touch to arrange a tour with you!
+        </p>
+      </div>
+      <ul role="list" id="articleList">
+        <!-- $7. Articles - List -->
+      </ul>
+      <!-- pagination -->
+      <div class="flex justify-center pt-24 items-center gap-4">
+        <button
+          id="prevBtn"
+          class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-primary uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-primary disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            ></path>
+          </svg>
+        </button>
+        <div class="flex items-center gap-2">
+          <button
+            data-page="1"
+            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg bg-primary text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            <span
+              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            >
+              1
+            </span>
+          </button>
+          <button
+            data-page="2"
+            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg bg-primary text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            <span
+              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            >
+              2
+            </span>
+          </button>
+          <button
+            data-page="3"
+            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg bg-primary text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            <span
+              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            >
+              3
+            </span>
+          </button>
+          <button
+            data-page="4"
+            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg bg-primary text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            <span
+              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            >
+              4
+            </span>
+          </button>
+          <button
+            data-page="5"
+            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg bg-primary text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            <span
+              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            >
+              5
+            </span>
+          </button>
+        </div>
+        <button
+          id="nextBtn"
+          class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-primary uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
 
     <!-- footer -->
     <div id="footer"></div>
+    <script type="module" src="./assets/swiper.js" defer></script>
   </body>
 </html>
