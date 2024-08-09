@@ -23,7 +23,7 @@
         </p>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 grid-row-5 gap-5 mx-auto">
-        <form action="" class="">
+        <form id="contactForm" action="" class="">
           <!-- Name -->
           <div class="grid grid-cols-1 gap-3 lg:grid-cols-2">
             <div class="">
@@ -34,6 +34,7 @@
                 id="name"
                 placeholder="Your Name"
               />
+              <p id="errorName"></p>
             </div>
             <!-- Email -->
             <div class="">
@@ -59,20 +60,27 @@
             <div class="">
               <label for="membership">Membership type(required)</label>
               <select class="border select-default" id="membership">
+                <option value="default" selected disabled>
+                  Please select an option
+                </option>
                 <option value="hotdesk">Hot Desk</option>
                 <option value="dedicated">Dedicated Desk</option>
                 <option value="private">Private Office</option>
               </select>
             </div>
+
             <!-- Date -->
             <div class="">
               <label for="date">Tour Date</label>
-              <input class="border" type="date" id="date" />
+              <input class="border" type="date" id="tourDate" />
             </div>
             <!-- How did you hear about us? -->
             <div class="">
-              <label for="how">How did you hear about us?</label>
+              <label for="how">How did you hear about us? (required)</label>
               <select class="border select-default" id="how">
+                <option value="default" selected disabled>
+                  Please select an option
+                </option>
                 <option value="google">Google</option>
                 <option value="facebook">Facebook</option>
                 <option value="friend">Friend</option>
@@ -102,7 +110,8 @@
             </div>
           </div>
           <button
-            type="button"
+            type="submit"
+            id="submitBtn"
             class="btn-default mt-10 px-10 justify-center w-full text-center md:w-[120px] mx-auto"
           >
             Submit

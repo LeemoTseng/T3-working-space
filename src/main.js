@@ -13,6 +13,7 @@
 // $5.1. swaper content
 // $6. Articles 
 // $6.1. Pagination
+// $7. Form validation
 //
 // *---------------* //
 
@@ -1122,6 +1123,10 @@ if (articleList) {
 // $6.1. Pagination 
 // *---------------* //
 
+// *---------------* //
+// $6.1. Pagination 
+// *---------------* //
+
 
 let currentPage = 1;
 const totalPages = document.querySelectorAll('[data-page]').length;
@@ -1162,3 +1167,82 @@ if (totalPages) {
 } else {
   console.log('#Pagination not found');
 }
+
+
+// *---------------* //
+// $7. Form validation
+// *---------------* //
+
+const form = document.querySelector('#contactForm');
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  document.querySelectorAll('.errorMessages').forEach(item => item.remove());
+
+  const nameInput = document.querySelector('#name');
+
+  const emailInput = document.querySelector('#email');
+  const phoneInput = document.querySelector('#phone');
+  const membershipInput = document.querySelector('#membership');
+  const howInput = document.querySelector('#how');
+
+
+
+  // name validation
+  if (nameInput.value.trim() === '') {
+    document.querySelector('#name').classList.add('border-red-600');
+    document.querySelector('#name').insertAdjacentHTML('afterend', '<div class="errorMessages text-sm text-red-700 opacity-80 p-1">Name is required</div>');
+  } else {
+    document.querySelector('#name').classList.remove('border-red-600');
+  }
+
+  // email validation
+  if (emailInput.value.trim() === '') {
+    document.querySelector('#email').classList.add('border-red-600');
+    document.querySelector('#email').insertAdjacentHTML('afterend', '<div class="errorMessages text-sm text-red-700 opacity-80 p-1">Email is invalid.</div>');
+  } else if (!emailInput.value.trim().includes('@')) {
+    document.querySelector('#email').insertAdjacentHTML('afterend', '<div class="errorMessages text-sm text-red-700 opacity-80 p-1">Email is invalid.</div>');
+  } else {
+    document.querySelector('#email').classList.remove('border-red-600');
+
+  }
+
+  // phone validation
+  if (phoneInput.value.trim() === '' || phoneInput.value.trim().length < 9){
+    document.querySelector('#phone').classList.add('border-red-600');
+    document.querySelector('#phone').insertAdjacentHTML('afterend', '<div class="errorMessages text-sm text-red-700 opacity-80 p-1">Phone is invalid.</div>');
+  } else {
+    document.querySelector('#phone').classList.remove('border-red-600');
+
+  }
+
+  // membership validation
+
+  if (membershipInput.value === 'default'){
+    document.querySelector('#membership').classList.add('border-red-600');
+    document.querySelector('#membership').insertAdjacentHTML('afterend', '<div class="errorMessages text-sm text-red-700 opacity-80 p-1">Option must be selected.</div>');
+  } else {
+    document.querySelector('#membership').classList.remove('border-red-600');
+
+  }
+
+  // Tour date validation
+  if (document.querySelector('#tourDate').value === ''){
+    document.querySelector('#tourDate').classList.add('border-red-600');
+    document.querySelector('#tourDate').insertAdjacentHTML('afterend', '<div class="errorMessages text-sm text-red-700 opacity-80 p-1">Tour date is required.</div>');
+  } else {
+    document.querySelector('#tourDate').classList.remove('border-red-600');
+  }
+
+  // how did you hear about us validation
+
+  if ( howInput.value === 'default'){
+    document.querySelector('#how').classList.add('border-red-600');
+    document.querySelector('#how').insertAdjacentHTML('afterend', '<div class="errorMessages text-sm text-red-700 opacity-80 p-1">Option must be selected.</div>');
+  } else {
+    document.querySelector('#how').classList.remove('border-red-600');
+  }
+
+
+
+})
