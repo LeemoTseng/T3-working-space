@@ -79,6 +79,16 @@
                 <option value="other">Other</option>
               </select>
             </div>
+            <!-- Company (optional) -->
+            <div class="">
+              <label for="company">Company (optional)</label>
+              <input
+                class="border"
+                type="text"
+                id="company"
+                placeholder="Your Company"
+              />
+            </div>
             <!-- Message -->
             <div class="flex flex-col lg:col-span-2">
               <label for="">Your message (optional)</label>
@@ -100,7 +110,7 @@
         </form>
         <div class="googleMap mx-auto w-full">
           <iframe
-            class="rounded-lg border overflow-hidden w-[320px] sm:w-[600px] sm:h-[500px] md:w-[700px] md:h-[500px] lg:w-[530px] lg:h-[500px]"
+            class="rounded-none border overflow-hidden w-full h-[450px] sm:h-[600px]"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7229.55416800116!2d121.564138!3d25.041638!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab0090a25cb5%3A0x382576b256880311!2zVDMgQ293b3JraW5nIFNwYWNlIOmfu-mpiuWFseS6q-i-puWFrOWupA!5e0!3m2!1sen!2stw!4v1722567171155!5m2!1sen!2stw"
             style="border: 1; padding: 8px; border-radius: 10px"
             allowfullscreen=""
@@ -112,10 +122,10 @@
     </div>
     <!-- Contact Us -->
     <section>
-      <div class="max-w-screen-xl mx-auto sm:py-16 lg:px-6">
+      <div class="max-w-screen-xl mx-auto sm:py-16 lg:px-10">
         <div class="grid p-4 grid-cols-1 md:grid-cols-3 gap-3">
           <!-- company -->
-          <div class="flex flex-col items-center border p-5 rounded-3xl">
+          <div class="flex flex-col items-center border p-8 rounded-3xl">
             <div class="icon">
               <svg
                 class="inline w-18 h-18 text-white bg-primary rounded-full p-2 mb-2"
