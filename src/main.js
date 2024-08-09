@@ -5,6 +5,8 @@
 //
 // $0. HTML Template
 // $0.1. Navbar
+// $0.2. Footer
+// $0.3. Loading
 // $1. Features
 // $2. Plans
 // $3. Partners' logos
@@ -28,9 +30,35 @@
 
 
 
-const navbarTemplate = `
-      <nav class="bg-white w-full fixed top-0 left-0 z-50">
-        <div class="mx-auto px-4 py-2 flex item-center justify-between items-center ">
+
+const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-50">
+        <div
+          class="mx-auto px-4 py-2 flex item-center justify-between items-center"
+        >
+          <!-- mobile-menu - btn -->
+          <div class="md:hidden flex flex-none justify-between items-center">
+            <div class="flex items-center">
+              <button
+                type="button"
+                id="mobile-menu-btn"
+                class="flex md:hidden items-center p-2 ml-1 text-sm text-secondary rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
           <!-- logo -->
           <div class="logo w-32 mx-auto md:mx-0 md:ml-0 md:flex-shrink-0">
             <a href=""
@@ -89,15 +117,65 @@ const navbarTemplate = `
           </div>
         </div>
       </nav>
-    `
+      <!-- mobile-menu -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <ul class="flex flex-col space-y-4 px-4 py-4">
+          <li>
+            <a
+              href="index.html"
+              class="border-b pb-3 block text-gray-600 hover:text-primary transition-all duration-200"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="space.html"
+              class="border-b pb-3 block text-gray-600 hover:text-primary transition-all duration-200"
+              >Space</a
+            >
+          </li>
+          <li>
+            <a
+              href="memberships.html"
+              class="border-b pb-3 block text-gray-600 hover:text-primary transition-all duration-200"
+              >Memberships</a
+            >
+          </li>
+          <li>
+            <a
+              href="join.html"
+              class="border-b pb-3 block text-gray-600 hover:text-primary transition-all duration-200"
+              >Join</a
+            >
+          </li>
+          <li>
+            <a
+              href="blog.html"
+              class="pb-3 block text-gray-600 hover:text-primary transition-all duration-200"
+              >Blog</a
+            >
+          </li>
+        </ul>
+      </div>`
 document.querySelector('#navBar').innerHTML += navbarTemplate;
+
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburgerButton = document.querySelector('#mobile-menu-btn');
+  const mobileMenu = document.querySelector('#mobile-menu');
+
+  hamburgerButton.addEventListener('click', function () {
+    mobileMenu.classList.toggle('hidden');
+  });
+});
 // console.log(document.querySelector('#navBar'));
 
+// *---------------* //
 // $0.2. Footer
+// *---------------* //
 
 const footerTemplate = `
-    <footer class="bg-gray-50">
-      <div
+<footer class="bg-gray-50">
+<div
         class="max-w-screen-xl mx-auto items-center md:items-start pb-24 pt-16 mt-32"
       >
         <div
@@ -277,9 +355,9 @@ const footerTemplate = `
 document.querySelector('#footer').innerHTML += footerTemplate;
 
 
-
-
-
+// *---------------* //
+// $0.3. Loading
+// *---------------* //
 
 
 // *---------------* //
@@ -1285,11 +1363,11 @@ if (form) {
       popup2.classList.add('flex');
 
     })
-    if (popup2){
-      setTimeout(()=>{
+    if (popup2) {
+      setTimeout(() => {
         popup2.classList.remove('flex');
         popup2.classList.add('hidden');
-      },2000);
+      }, 2000);
     }
 
     window.addEventListener('click', function (event) {
