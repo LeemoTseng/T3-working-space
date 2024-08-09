@@ -607,18 +607,18 @@ if (document.querySelector('#allPlan')) {
     planTitle.textContent = plan.title;
 
     const itemsDiv = document.createElement('div');
-    itemsDiv.className = 'items flex  items-baseline text-gray-900'
+    itemsDiv.className = 'items flex block items-baseline text-gray-900'
 
     const planCurrency = document.createElement('span');
     planCurrency.className = 'text-3xl font-semibold';
     planCurrency.textContent = plan.currency;
 
     const planPrice = document.createElement('span');
-    planPrice.className = 'text-5xl font-extrabold tracking-tight'
+    planPrice.className = 'md:text-5xl text-3xl font-extrabold tracking-tight h-[50px] md:h-[100px]'
     planPrice.textContent = plan.price;
 
     const planPeriod = document.createElement('span');
-    planPeriod.className = 'ms-1 text-xl font-normal text-gray-500'
+    planPeriod.className = 'ms-1 md:text-xl text-sm font-normal text-gray-500'
     planPeriod.textContent = plan.priod;
 
     const planDescription = document.createElement('p');
