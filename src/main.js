@@ -97,13 +97,13 @@ document.querySelector('#navBar').innerHTML += navbarTemplate;
 const footerTemplate = `
     <footer class="bg-gray-50">
       <div
-        class="max-w-screen-xl mx-auto items-center md:items-start pb-24 pt-24"
+        class="max-w-screen-xl mx-auto items-center md:items-start pb-24 pt-16 mt-32"
       >
         <div
           class="contact flex flex-col justify-center sm:flex sm:flex-row sm:justify-start items-center pb-2"
         >
           <a href=""><img class="w-40" src="assets/T3CO.png" alt="" /></a>
-          <div class="icon flex md:pl-5 pl-2 pb-3">
+          <div class="icon flex md:pl-5 pl-2 pb-3 pt-5">
             <a
               href="#"
               class="px-2 block text-secondary/60 transition-all duration-300 hover:text-primary"
@@ -267,7 +267,7 @@ const footerTemplate = `
           class="copywrite max-w-screen-xl flex flex-col items-center md:flex md:flex-row md:justify-between md:text-center mx-auto"
         >
           <div class="text-white font-semibold">T3CO Coworking Space</div>
-          <div class="text-white text-center md:text-start">
+          <div class="text-white text-center md:text-start ">
             © 2024 T3CO™ A Member of T3EX Global Holdings (Stock Code 2636)
           </div>
         </div>
