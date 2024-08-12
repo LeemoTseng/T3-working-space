@@ -1543,11 +1543,6 @@ input:focus {
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
 }
 
-.border-secondary {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--secondary) / var(--tw-border-opacity));
-}
-
 .border-secondary\/20 {
   border-color: hsl(var(--secondary) / 0.2);
 }

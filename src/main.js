@@ -16,6 +16,7 @@
 // $6. Articles 
 // $6.1. Pagination
 // $7. Form validation
+// $7.1. Form check
 //
 // *---------------* //
 
@@ -1267,6 +1268,19 @@ if (form) {
     const membershipInput = document.querySelector('#membership');
     const tourDateInput = document.querySelector('#tourDate');
     const howInput = document.querySelector('#how');
+    const companyInput = document.querySelector('#company');
+    const messageInput = document.querySelector('#message');
+
+
+
+    document.getElementById('popupName').textContent = nameInput.value;
+    document.getElementById('popupEmail').textContent = emailInput.value;
+    document.getElementById('popupPhone').textContent = phoneInput.value;
+    document.getElementById('popupMembership').textContent = membershipInput.value;
+    document.getElementById('popupTourDate').textContent = tourDateInput.value;
+    document.getElementById('popupHow').textContent = howInput.value !== 'default' ? howInput.value : '';
+    document.getElementById('popupCompany').textContent = companyInput.value;
+    document.getElementById('popupMessage').textContent = messageInput.value;
 
 
     // name validation
@@ -1388,3 +1402,4 @@ if (form) {
 } else {
   console.log('#contactForm not found');
 }
+
