@@ -1254,6 +1254,7 @@ if (totalPages) {
 
 const form = document.querySelector('#contactForm');
 
+
 if (form) {
 
   form.addEventListener('submit', function (event) {
@@ -1281,6 +1282,9 @@ if (form) {
     document.getElementById('popupHow').textContent = howInput.value !== 'default' ? howInput.value : '';
     document.getElementById('popupCompany').textContent = companyInput.value;
     document.getElementById('popupMessage').textContent = messageInput.value;
+
+
+
 
 
     // name validation
