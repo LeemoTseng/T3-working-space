@@ -1098,7 +1098,7 @@ if (articlesContainer) {
     titleDiv.append(h4, borderDiv);
 
     const descriptionP = document.createElement('p');
-    descriptionP.classList.add('text-gray-500', 'text-justify');
+    descriptionP.classList.add('text-gray-500', 'text-left','lg:text-justify');
     descriptionP.textContent = item.description;
 
     imgBoxDiv.append(imgElement);
