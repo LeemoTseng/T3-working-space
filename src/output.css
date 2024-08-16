@@ -1082,6 +1082,16 @@ input:focus {
   height: 1.5rem;
 }
 
+.size-8 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.size-7 {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -1627,6 +1637,10 @@ input:focus {
   padding: 2rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1760,6 +1774,10 @@ input:focus {
   padding-top: 2rem;
 }
 
+.pe-5 {
+  padding-inline-end: 1.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1774,6 +1792,10 @@ input:focus {
 
 .text-start {
   text-align: start;
+}
+
+.text-end {
+  text-align: end;
 }
 
 .align-middle {
@@ -2157,6 +2179,10 @@ input:focus {
     justify-content: center;
   }
 
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
   .sm\:gap-12 {
     gap: 3rem;
   }
@@ -2167,6 +2193,10 @@ input:focus {
 
   .sm\:p-8 {
     padding: 2rem;
+  }
+
+  .sm\:p-5 {
+    padding: 1.25rem;
   }
 
   .sm\:px-6 {
@@ -2312,10 +2342,6 @@ input:focus {
     text-align: center;
   }
 
-  .md\:text-justify {
-    text-align: justify;
-  }
-
   .md\:text-start {
     text-align: start;
   }
@@ -2421,10 +2447,6 @@ input:focus {
     padding-top: 3rem;
   }
 
-  .lg\:text-left {
-    text-align: left;
-  }
-
   .lg\:text-justify {
     text-align: justify;
   }
@@ -2458,5 +2480,10 @@ input:focus {
   .dark\:text-gray-400 {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }

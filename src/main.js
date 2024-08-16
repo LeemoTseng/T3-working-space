@@ -15,6 +15,7 @@
 // $5.1. swaper content
 // $6. Articles 
 // $6.1. Pagination
+// $6.2. Counter
 // $7. Form validation
 // $7.1. Form check
 //
@@ -1037,10 +1038,11 @@ if (articlesContainer) {
   articleData.forEach(item => {
 
     const linkElement = document.createElement('a');
+    linkElement.setAttribute('target', '_blank');
     linkElement.href = item.link;
 
     const articleDiv = document.createElement('div');
-    articleDiv.classList.add('article', 'rounded-xl', 'p-5', 'pb-20', 'hover:text-primary');
+    articleDiv.classList.add('article', 'rounded-xl', 'p-0','sm:p-5', 'pb-20', 'hover:text-primary');
 
     const imgBoxDiv = document.createElement('div');
     imgBoxDiv.classList.add('imgBox', 'overflow-hidden', 'rounded-xl', 'm-2', 'h-[300px]');
@@ -1061,7 +1063,7 @@ if (articlesContainer) {
     dateSpan.textContent = item.date;
 
     const readDiv = document.createElement('div');
-    readDiv.classList.add('read', 'flex', 'text-gray-400');
+    readDiv.classList.add('counterIcon','read', 'flex', 'text-gray-400');
 
     const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -1202,11 +1204,6 @@ if (articleList) {
 // $6.1. Pagination 
 // *---------------* //
 
-// *---------------* //
-// $6.1. Pagination 
-// *---------------* //
-
-
 let currentPage = 1;
 const totalPages = document.querySelectorAll('[data-page]').length;
 
@@ -1246,6 +1243,12 @@ if (totalPages) {
 } else {
   console.log('#Pagination not found');
 }
+
+// *---------------* //
+// $6.2. Counter 
+// *---------------* //
+
+const counterIcon = document.querySelectorAll('.counterIcon');
 
 
 // *---------------* //
