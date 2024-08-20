@@ -1082,11 +1082,6 @@ input:focus {
   height: 1.5rem;
 }
 
-.size-8 {
-  width: 2rem;
-  height: 2rem;
-}
-
 .size-7 {
   width: 1.75rem;
   height: 1.75rem;
@@ -1232,6 +1227,10 @@ input:focus {
   width: 150px;
 }
 
+.w-\[200px\] {
+  width: 200px;
+}
+
 .w-\[24px\] {
   width: 24px;
 }
@@ -1242,6 +1241,10 @@ input:focus {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[100px\] {
+  width: 100px;
 }
 
 .max-w-2xl {
@@ -1609,6 +1612,10 @@ input:focus {
      object-fit: cover;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1635,10 +1642,6 @@ input:focus {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-10 {
@@ -1734,6 +1737,10 @@ input:focus {
   padding-inline-end: 0.5rem;
 }
 
+.pe-5 {
+  padding-inline-end: 1.25rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1774,10 +1781,6 @@ input:focus {
   padding-top: 2rem;
 }
 
-.pe-5 {
-  padding-inline-end: 1.25rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1792,10 +1795,6 @@ input:focus {
 
 .text-start {
   text-align: start;
-}
-
-.text-end {
-  text-align: end;
 }
 
 .align-middle {
@@ -1969,6 +1968,11 @@ input:focus {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
@@ -2191,12 +2195,12 @@ input:focus {
     padding: 3rem;
   }
 
-  .sm\:p-8 {
-    padding: 2rem;
-  }
-
   .sm\:p-5 {
     padding: 1.25rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-6 {
@@ -2480,10 +2484,5 @@ input:focus {
   .dark\:text-gray-400 {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
