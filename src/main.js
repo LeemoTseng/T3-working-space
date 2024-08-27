@@ -606,7 +606,7 @@ if (document.querySelector('#allPlan')) {
     planDiv.className = 'plan flex flex-col max-w-lg';
 
     const planContainer = document.createElement('div');
-    planContainer.className = 'container w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
+    planContainer.className = 'container w-full h-full flex flex-col justify-between p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
 
     const planTitle = document.createElement('h6');
     planTitle.textContent = plan.title;
@@ -636,13 +636,20 @@ if (document.querySelector('#allPlan')) {
 
     itemsDiv.append(fromSpan, planCurrency, planPrice, planPeriod);
 
+    const divider = document.createElement('div');
+    divider.className = 'modified-container flex-grow';
 
     const featureList = document.createElement('ul');
     featureList.className = 'space-y-5 my-7';
     featureList.setAttribute('role', 'list');
 
+    divider.append(featureList);
+    
+
     // Feature focus
     plan.features.forEach(feature => {
+
+
       const featureItem = document.createElement('li');
       featureItem.className = 'flex items-center';
 
@@ -687,15 +694,21 @@ if (document.querySelector('#allPlan')) {
 
       featureItem.append(featureIcon, featureText)
       featureList.append(featureItem);
+      divider.append(featureList);
+
+
+
     });
+    
 
     //Btn - Choose plan
     const chooseButton = document.createElement('button');
     chooseButton.type = 'button';
-    chooseButton.className = 'btn-default text-sm px-5 py-2.5 inline-flex justify-center w-full text-center';
+                              
+    chooseButton.className = 'btn-default text-sm px-5 py-2.5 justify-center w-full text-center mt-auto';
     chooseButton.textContent = 'Choose plan';
 
-    planContainer.append(planTitle, itemsDiv, planDescription, featureList, chooseButton);
+    planContainer.append(planTitle, itemsDiv, planDescription, divider, chooseButton);
     planDiv.append(planContainer);
 
     document.querySelector('#allPlan').append(planDiv);
