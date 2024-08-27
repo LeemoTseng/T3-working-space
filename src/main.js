@@ -596,7 +596,6 @@ const plans = [
 ]
 
 
-
 if (document.querySelector('#allPlan')) {
 
   plans.forEach(plan => {
@@ -606,7 +605,7 @@ if (document.querySelector('#allPlan')) {
     planDiv.className = 'plan flex flex-col max-w-lg';
 
     const planContainer = document.createElement('div');
-    planContainer.className = 'container w-full h-full flex flex-col justify-between p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
+    planContainer.className = 'container w-full h-full flex flex-col items-start p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
 
     const planTitle = document.createElement('h6');
     planTitle.textContent = plan.title;
@@ -619,7 +618,7 @@ if (document.querySelector('#allPlan')) {
     planCurrency.textContent = plan.currency;
 
     const planPrice = document.createElement('span');
-    planPrice.className = 'md:text-5xl text-3xl font-extrabold tracking-tight h-[50px] md:h-[100px]'
+    planPrice.className = 'md:text-5xl text-3xl font-extrabold tracking-tight py-2'
     planPrice.textContent = plan.price;
 
     const planPeriod = document.createElement('span');
@@ -637,74 +636,52 @@ if (document.querySelector('#allPlan')) {
     itemsDiv.append(fromSpan, planCurrency, planPrice, planPeriod);
 
     const divider = document.createElement('div');
-    divider.className = 'modified-container flex-grow';
+    divider.className = 'modified-container';
 
     const featureList = document.createElement('ul');
     featureList.className = 'space-y-5 my-7';
     featureList.setAttribute('role', 'list');
 
     divider.append(featureList);
-    
+
 
     // Feature focus
     plan.features.forEach(feature => {
-
-
-      const featureItem = document.createElement('li');
-      featureItem.className = 'flex items-center';
-
-      const featureIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      featureIcon.setAttribute('class', 'flex-shrink-0 w-4 h-4');
-      featureIcon.setAttribute('aria-hidden', 'true');
-      featureIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-      featureIcon.setAttribute('fill', 'none');
-      featureIcon.setAttribute('viewBox', '0 0 24 24');
-
-      const featurePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      featurePath.setAttribute('stroke', 'currentColor');
-      featurePath.setAttribute('stroke-linecap', 'round');
-      featurePath.setAttribute('stroke-linejoin', 'round');
-      featurePath.setAttribute('stroke-width', '3');
-
-
       if (feature.available) {
+        const featureItem = document.createElement('li');
+        featureItem.className = 'flex items-center';
+
+        const featureIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        featureIcon.setAttribute('class', 'flex-shrink-0 w-4 h-4');
+        featureIcon.setAttribute('aria-hidden', 'true');
+        featureIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        featureIcon.setAttribute('fill', 'none');
+        featureIcon.setAttribute('viewBox', '0 0 24 24');
+
+        const featurePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        featurePath.setAttribute('stroke', 'currentColor');
+        featurePath.setAttribute('stroke-linecap', 'round');
+        featurePath.setAttribute('stroke-linejoin', 'round');
+        featurePath.setAttribute('stroke-width', '3');
+
         featureIcon.classList.add('text-primary');
         featurePath.setAttribute('d', 'M5 11.917 9.724 16.5 19 7.5');
 
-      } 
-      else {
-        featureIcon.classList.add('hidden','text-gray-300');
-        featurePath.setAttribute('d', 'M6 18 17.94 6M18 18 6.06 6');
-        
+        featureIcon.append(featurePath);
+
+        const featureText = document.createElement('span');
+        featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'ms-3');
+        featureText.textContent = feature.text;
+
+        featureItem.append(featureIcon, featureText);
+        featureList.append(featureItem);
       }
-
-      featureIcon.append(featurePath);
-
-      const featureText = document.createElement('span');
-      featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'ms-3');
-
-      if (!feature.available) {
-        featureText.classList.add('hidden','text-gray-300');
-      } else {
-        featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'text-gray-600', 'ms-3')
-      }
-
-      featureText.textContent = feature.text;
-
-
-      featureItem.append(featureIcon, featureText)
-      featureList.append(featureItem);
-      divider.append(featureList);
-
-
-
     });
-    
 
     //Btn - Choose plan
     const chooseButton = document.createElement('button');
     chooseButton.type = 'button';
-                              
+
     chooseButton.className = 'btn-default text-sm px-5 py-2.5 justify-center w-full text-center mt-auto';
     chooseButton.textContent = 'Choose plan';
 
@@ -713,10 +690,11 @@ if (document.querySelector('#allPlan')) {
 
     document.querySelector('#allPlan').append(planDiv);
 
-  })
+  });
 } else {
   console.log('#allPlan not found');
 }
+
 
 
 // *---------------* //
@@ -1060,7 +1038,7 @@ if (articlesContainer) {
     linkElement.href = item.link;
 
     const articleDiv = document.createElement('div');
-    articleDiv.classList.add('article', 'rounded-xl', 'p-0','sm:p-5', 'pb-20', 'hover:text-primary');
+    articleDiv.classList.add('article', 'rounded-xl', 'p-0', 'sm:p-5', 'pb-20', 'hover:text-primary');
 
     const imgBoxDiv = document.createElement('div');
     imgBoxDiv.classList.add('imgBox', 'overflow-hidden', 'rounded-xl', 'm-2', 'h-[300px]');
@@ -1081,7 +1059,7 @@ if (articlesContainer) {
     dateSpan.textContent = item.date;
 
     const readDiv = document.createElement('div');
-    readDiv.classList.add('counterIcon','read', 'flex', 'text-gray-400');
+    readDiv.classList.add('counterIcon', 'read', 'flex', 'text-gray-400');
 
     const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -1118,7 +1096,7 @@ if (articlesContainer) {
     titleDiv.append(h4, borderDiv);
 
     const descriptionP = document.createElement('p');
-    descriptionP.classList.add('text-gray-500', 'text-left','lg:text-justify');
+    descriptionP.classList.add('text-gray-500', 'text-left', 'lg:text-justify');
     descriptionP.textContent = item.description;
 
     imgBoxDiv.append(imgElement);
