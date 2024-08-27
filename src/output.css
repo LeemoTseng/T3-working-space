@@ -861,6 +861,52 @@ input:focus {
   inset: 0px;
 }
 
+.inset-1\/2 {
+  inset: 50%;
+}
+
+.inset-2 {
+  inset: 0.5rem;
+}
+
+.-inset-1 {
+  inset: -0.25rem;
+}
+
+.-inset-1\/2 {
+  inset: -50%;
+}
+
+.inset-x-1\/2 {
+  left: 50%;
+  right: 50%;
+}
+
+.inset-y-1\/2 {
+  top: 50%;
+  bottom: 50%;
+}
+
+.-inset-x-full {
+  left: -100%;
+  right: -100%;
+}
+
+.inset-x-full {
+  left: 100%;
+  right: 100%;
+}
+
+.inset-y-0 {
+  top: 0px;
+  bottom: 0px;
+}
+
+.-inset-y-1\/2 {
+  top: -50%;
+  bottom: -50%;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -887,6 +933,78 @@ input:focus {
 
 .top-2 {
   top: 0.5rem;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-auto {
+  top: auto;
+}
+
+.top-0\.5 {
+  top: 0.125rem;
+}
+
+.top-full {
+  top: 100%;
+}
+
+.top-1\/4 {
+  top: 25%;
+}
+
+.-top-1\/4 {
+  top: -25%;
+}
+
+.-top-1\/3 {
+  top: -33.333333%;
+}
+
+.-top-1\/2 {
+  top: -50%;
+}
+
+.-top-1 {
+  top: -0.25rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
+.top-\[2px\] {
+  top: 2px;
+}
+
+.top-\[5px\] {
+  top: 5px;
+}
+
+.top-\[10px\] {
+  top: 10px;
+}
+
+.top-\[11px\] {
+  top: 11px;
 }
 
 .z-50 {
@@ -1099,6 +1217,11 @@ input:focus {
   height: 1.75rem;
 }
 
+.size-5 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -1169,6 +1292,14 @@ input:focus {
 
 .h-full {
   height: 100%;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-1\/4 {
+  height: 25%;
 }
 
 .max-h-14 {
@@ -1569,6 +1700,11 @@ input:focus {
 
 .border-secondary\/20 {
   border-color: hsl(var(--secondary) / 0.2);
+}
+
+.border-red-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(185 28 28 / var(--tw-border-opacity));
 }
 
 .bg-black {
@@ -1989,6 +2125,16 @@ input:focus {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
