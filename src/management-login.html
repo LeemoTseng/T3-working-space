@@ -57,7 +57,7 @@
         />
         <!-- $1. Icon isHidden:true -->
         <svg
-          id="hiddenPassword"
+          id="hiddenIcon"
           class="size-5 cursor-pointer absolute -inset-y-1/2 right-5 top-[11px] text-gray-500"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -73,7 +73,7 @@
         </svg>
         <!-- $1. Icon isHidden:false -->
         <svg
-          id="showPassword"
+          id="showIcon"
           class="hidden cursor-pointer size-5 absolute -inset-y-1/2 right-5 top-[11px] text-gray-500"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -93,8 +93,8 @@
           />
         </svg>
       </div>
-      <!-- warning -->
-      <div class="warning relative h-full">
+      <!-- errorMessage -->
+      <div id="errorMessage" class="hidden warning relative h-full">
         <p>
           <span class="text-red-700 text-start items-start inset-0 -left-5"
             >Invalid email or password, please try again.</span
