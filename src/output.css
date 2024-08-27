@@ -968,6 +968,10 @@ input:focus {
   margin-bottom: 1rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -1014,6 +1018,10 @@ input:focus {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-24 {
@@ -1195,6 +1203,10 @@ input:focus {
   width: 10rem;
 }
 
+.w-44 {
+  width: 11rem;
+}
+
 .w-52 {
   width: 13rem;
 }
@@ -1237,6 +1249,10 @@ input:focus {
 
 .w-\[320px\] {
   width: 320px;
+}
+
+.w-\[500px\] {
+  width: 500px;
 }
 
 .w-full {

@@ -555,6 +555,7 @@ const plans = [
       { text: 'Electric height adjustable desks', available: false },
       { text: 'Ergonomic chairs', available: false },
       { text: 'Secure and private rooms', available: false },
+      { text: 'Secure and private rooms', available: false },
     ]
   },
   {
@@ -593,6 +594,8 @@ const plans = [
     ]
   }
 ]
+
+
 
 if (document.querySelector('#allPlan')) {
 
@@ -661,9 +664,11 @@ if (document.querySelector('#allPlan')) {
         featureIcon.classList.add('text-primary');
         featurePath.setAttribute('d', 'M5 11.917 9.724 16.5 19 7.5');
 
-      } else {
-        featureIcon.classList.add('text-gray-300');
+      } 
+      else {
+        featureIcon.classList.add('hidden','text-gray-300');
         featurePath.setAttribute('d', 'M6 18 17.94 6M18 18 6.06 6');
+        
       }
 
       featureIcon.append(featurePath);
@@ -672,7 +677,7 @@ if (document.querySelector('#allPlan')) {
       featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'ms-3');
 
       if (!feature.available) {
-        featureText.classList.add('text-gray-300');
+        featureText.classList.add('hidden','text-gray-300');
       } else {
         featureText.classList.add('text-base', 'font-normal', 'leading-tight', 'text-gray-600', 'ms-3')
       }
