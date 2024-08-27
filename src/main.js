@@ -626,7 +626,7 @@ if (document.querySelector('#allPlan')) {
     planPeriod.textContent = plan.priod;
 
     const planDescription = document.createElement('p');
-    planDescription.className = 'font-light text-gray-500 sm:text-lg mt-3';
+    planDescription.className = 'font-light text-gray-500 sm:text-lg mt-3 h-14';
     planDescription.textContent = plan.description;
 
     const fromSpan = document.createElement('span');
