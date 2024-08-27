@@ -820,6 +820,14 @@ input:focus {
   inset: 0px;
 }
 
+.inset-10 {
+  inset: 2.5rem;
+}
+
+.-inset-0 {
+  inset: -0px;
+}
+
 .-inset-y-1\/2 {
   top: -50%;
   bottom: -50%;
@@ -855,6 +863,14 @@ input:focus {
 
 .top-\[11px\] {
   top: 11px;
+}
+
+.-left-40 {
+  left: -10rem;
+}
+
+.-left-5 {
+  left: -1.25rem;
 }
 
 .z-50 {
@@ -1958,6 +1974,11 @@ input:focus {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
