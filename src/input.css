@@ -51,6 +51,9 @@
   h2 {
     @apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900;
   }
+  h4 {
+    @apply mb-2 text-xl font-bold text-secondary;
+  }
   h5 {
     @apply mb-1 text-lg font-bold;
   }

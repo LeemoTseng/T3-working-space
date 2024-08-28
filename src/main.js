@@ -30,9 +30,6 @@
 // $0.1. Navbar
 // *---------------* //
 
-
-
-
 const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-50">
         <div
           class="mx-auto px-4 py-2 flex item-center justify-between items-center"
@@ -876,11 +873,11 @@ if (document.querySelector('#advantages')) {
 }
 
 // *---------------* //
-// $5. plugin - swaper 
+// $5. plugin - swiper 
 // *---------------* //
 // ./assets/swiper.js
 // *---------------* //
-// $5.1. swaper content
+// $5.1. swiper content
 // *---------------* //
 
 const swaperContent = [
@@ -942,7 +939,8 @@ if (swiperWrapper) {
     overlayDiv.classList.add(
       "absolute",
       "inset-0",
-      "bg-black/[.2]",
+      "bg-black/[.4]",
+      "z-50",
       "transition-all",
       "duration-200"
     );
@@ -1207,7 +1205,7 @@ if (totalPages) {
   const updatePagination = () => {
     document.querySelectorAll('[data-page]').forEach(button => {
       button.classList.remove('bg-primary', 'text-white');
-      button.classList.add('text-gray-900');
+      button.classList.add('text-primary');
     });
     const activeBtn = document.querySelector(`[data-page="${currentPage}"]`);
     activeBtn.classList.remove('text-gray-900');
