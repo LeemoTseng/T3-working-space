@@ -92,6 +92,3 @@
     @apply ring-primary ring-2 ring-primary/50;
   }
 }
-
-/* Importing Swiper CSS */
-@import "../src/assets/swiper-bundle.min.css";
