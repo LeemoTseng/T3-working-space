@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Importing Swiper CSS */
-@import "../../node_modules/swiper/swiper.min.css";
-@import "../../node_modules/swiper/modules/pagination.min.css";
-
 /* Setting default color */
 
 :root {
@@ -96,3 +92,6 @@
     @apply ring-primary ring-2 ring-primary/50;
   }
 }
+
+/* Importing Swiper CSS */
+@import "../src/assets/swiper-bundle.min.css";

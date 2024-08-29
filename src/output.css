@@ -2135,8 +2135,6 @@ input:focus {
   transition-duration: 500ms;
 }
 
-/* Importing Swiper CSS */
-
 /* Setting default color */
 
 :root {
@@ -2176,6 +2174,8 @@ input:focus {
 }
 
 /* Settings */
+
+/* Importing Swiper CSS */
 
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
