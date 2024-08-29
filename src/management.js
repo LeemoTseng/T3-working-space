@@ -2,19 +2,25 @@
 //
 // Index
 //
-// $0. HTML Template
+// $0. Plugins
 // $0.1. Navbar
 // $1. Language toggle
 // $2. Icon isHidden
 // $3. Side menu
 // $4. Dropdown
+// $5. Drag and drop
 //
 // *---------------* //
 
 
 // *---------------* //
-// $0. HTML Template
+// $0. Plugins
 // *---------------* //
+
+//Drag and Drop
+
+
+
 
 
 // *---------------* //
@@ -232,31 +238,41 @@ if (document.querySelector('#sideMenu')) {
 
             const pageA = document.createElement('a')
             pageA.setAttribute('href', '#')
-            pageA.className = 'active:text-white text-secondary/50 hover:text-secondary/80'
+            pageA.className = ' text-secondary/70 hover:text-secondary/80'
 
             const pageLi = document.createElement('li')
-            pageLi.className = 'p-1 m-1 active:bg-secondary hover:bg-secondary/5 rounded-md'
+            pageLi.className = 'transition-all p-1 m-1 rounded-md hover:bg-secondary/5'
 
             const pageSpan = document.createElement('span')
             pageSpan.className = 'pl-3'
             pageSpan.textContent = subItem
-            //--------------------------------//
-            // page active style - unfinished !!!!!!!!
-            //--------------------------------//
-            const currentPage = window.location.pathname.split('/').pop();
-            const trimedCurrentPage = currentPage.toLowerCase().replace('management-', '').trim();
-            const trimedSubItem = subItem.toLowerCase().replace(' ', '').trim();
 
-            console.log(trimedSubItem)
-            console.log(trimedCurrentPage)
+            //--------------------------------//
+            // page active style
+            //--------------------------------//
+            // const currentPage = window.location.pathname.split('/').pop();
+            // const trimedCurrentPage = currentPage.toLowerCase().replace('management-', '').trim();
+            // const trimedSubItem = subItem.toLowerCase().replace(' ', '').trim();
 
-            if (trimedCurrentPage.toLowerCase().includes(trimedSubItem)) {
-                pageA.classList.add('text-white')
-                pageLi.classList.add('bg-secondary')
-            }
+            // console.log(trimedSubItem)
+            // console.log(trimedCurrentPage)
+
+            // if (trimedCurrentPage.toLowerCase().includes(trimedSubItem)) {
+            //     pageA.classList.add('text-white')
+            //     pageLi.classList.add('bg-secondary')
+            // }
             //--------------------------------//
-            // page active style - unfinished !!!!!!!!
+            // page active style
             //--------------------------------//
+
+            pageLi.addEventListener('click', function () {
+                pageA.classList.toggle('text-white')
+                pageLi.classList.toggle('bg-secondary')
+                pageA.classList.toggle('hover:text-white')
+                pageLi.classList.toggle('hover:bg-secondary/5')
+
+            })
+
 
             pageLi.append(pageSpan)
             pageA.append(pageLi)
@@ -289,21 +305,43 @@ if (document.querySelector('#sideMenu')) {
 // $4. Dropdown
 // *---------------* //
 
+if (document.querySelectorAll('.dropdown')) {
+    const dropdown = document.querySelectorAll('.dropdown')
+    dropdown.forEach((items) => {
 
-const dropdownButton = document.getElementById('dropdownDefaultButton');
-const dropdownMenu = document.getElementById('dropdown');
 
 
-dropdownButton.addEventListener('click', function () {
-    dropdownMenu.classList.toggle('hidden');
-});
+    })
+} else {
+    console.log('.dropdown not found');
+}
 
-// Close dropdown when clicking outside of it
-document.addEventListener('click', function (event) {
-    const isClickInside = dropdownButton.contains(event.target) || dropdownMenu.contains(event.target);
 
-    if (!isClickInside) {
-        dropdownMenu.classList.add('hidden');
-    }
-});
+// *---------------* //
+// $5. Drag and drop
+// *---------------* //
 
+if (document.querySelectorAll('.draggable')) {
+
+    let source = null;
+
+    const draggable = document.querySelectorAll('.draggable')
+    draggable.forEach((items) => {
+        items.addEventListener('dragstart', (e) => {
+            e.target.classList.add('bg-black')
+        });
+        items.addEventListener("dragend", (e) => {
+            e.target.classList.remove("bg-black");
+        });
+    })
+
+    const dragZone = document.querySelectorAll('.drag-zone')
+    dragZone.forEach((items) => {
+        items.addEventListener('dragenter', (e) => {
+            e.target.classList.add("bg-blue");
+        })
+        items.addEventListener('dragenter', (e) => {
+            e.target.classList.remove("bg-blue");
+        })
+    })
+}
