@@ -1429,6 +1429,7 @@ if (document.querySelector('#imgGroup')) {
 
   const imgGroup = document.querySelector('#imgGroup');
   const enlargedWindow = document.querySelector('#enlargedWindow');
+  let enlargedWindowImg = '';
 
   isEnlarged = false;
 
@@ -1440,9 +1441,9 @@ if (document.querySelector('#imgGroup')) {
     const imgBox = e.target.closest('.imgBox');
     if (imgBox){
       const img = imgBox.querySelector('img');
-      enlargedImage.src = img.src;
+      enlargedWindowImg = img.src;
+      enlargedWindow.querySelector('img').src = enlargedWindowImg;
     }
-
 
     //點擊後的enlarge效果
     if (isEnlarged) {
@@ -1460,10 +1461,8 @@ if (document.querySelector('#imgGroup')) {
       }, 50);
     }
 
-
-
-    console.log(isEnlarged);
-    console.log(enlargedWindow)
+    // console.log(isEnlarged);
+    // console.log(enlargedWindow)
 
   })
 
@@ -1474,7 +1473,7 @@ if (document.querySelector('#imgGroup')) {
       enlargedWindow.classList.add('opacity-0');
       setTimeout(() => {
         enlargedWindow.classList.add('hidden');
-      }, 500);
+      }, 50);
     }
 
     console.log(isEnlarged);
