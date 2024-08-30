@@ -11,8 +11,8 @@
 // $2. Plans
 // $3. Partners' logos
 // $4. Advantages
-// $5. plugin - swaper
-// $5.1. swaper content
+// $5. plugin - swiper
+// $5.1. swiper content
 // $6. Articles 
 // $6.1. Pagination
 // $6.2. Counter
@@ -875,12 +875,12 @@ if (document.querySelector('#advantages')) {
 // *---------------* //
 // $5. plugin - swiper 
 // *---------------* //
-// ./assets/swiper.js
+
 // *---------------* //
 // $5.1. swiper content
 // *---------------* //
 
-const swaperContent = [
+const swiperContent = [
   {
     title: 'Welcome to Taipei\'s Premiere New Coworking Space.',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamuset lorem eget tellus tempus vulputate. Suspendisse nec lobortisipsum, ut dictum neque. Nulla mi velit,',
@@ -917,7 +917,7 @@ const swaperContent = [
 const swiperWrapper = document.getElementById("swiper-wrapper");
 
 if (swiperWrapper) {
-  swaperContent.forEach((item) => {
+  swiperContent.forEach((item) => {
     const swiperSlide = document.createElement("div");
     swiperSlide.classList.add("swiper-slide",
       "relative",
@@ -940,7 +940,7 @@ if (swiperWrapper) {
       "absolute",
       "inset-0",
       "bg-black/[.4]",
-      "z-50",
+      
       "transition-all",
       "duration-200"
     );
@@ -951,7 +951,7 @@ if (swiperWrapper) {
       "absolute",
       "inset-0",
       "top-1/3",
-      "z-50",
+
       "px-4",
     );
 
@@ -977,12 +977,25 @@ if (swiperWrapper) {
     imgBoxDiv.append(img, overlayDiv);
     link.append(imgBoxDiv, textDiv);
     swiperSlide.append(link);
+    
     swiperWrapper.append(swiperSlide);
 
-    console.log(swiperWrapper)
+    // console.log(swiperWrapper)
+
   });
 } else {
   console.log("#swiper-wrapper not found");
+}
+
+function setActiveBulletColor() {
+  document.querySelectorAll('.swiper-pagination-bullet').forEach((item) => {
+    item.classList.add('bg-gray-300')
+  });
+  const activeBullet = document.querySelector('.swiper-pagination-bullet-active');
+  if (activeBullet) {
+    activeBullet.classList.remove('bg-gray-300');
+    activeBullet.classList.add('bg-primary');
+  }
 }
 
 

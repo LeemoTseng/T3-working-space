@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>T3CO - Content Management System - Home</title>
+    <script src="../src/assets/Sortable/Sortable.min.js"></script>
     <link
       rel="icon"
       href="assets/management/management_favicon.ico"
@@ -11,17 +12,7 @@
     />
     <link rel="stylesheet" href="output.css" />
     <script src="management.js" defer></script>
-    <style>
-      .cassette {
-        padding: 10px;
-        border: 1px solid #000;
-        margin: 5px;
-        cursor: grab;
-      }
-      .cassette.dragging {
-        opacity: 0.5;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <!-- ----- -->
@@ -120,6 +111,8 @@
                   </div>
                   <!-- *4. table - Main section -->
                   <div class="dropTable p-3 mt-5 text-secondary">
+                    <p class="font-bold text-lg">Main section</p>
+
                     <table class="">
                       <tbody class="p-2">
                         <div class="flex justify-between items-center pb-5">
@@ -138,7 +131,6 @@
                                 d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
                               />
                             </svg>
-                            <p class="font-bold text-lg">Main section</p>
                           </div>
                           <!-- <a href=""
                             ><button
@@ -274,7 +266,8 @@
                   <!-- *5. table - Options -->
                   <div class="dropTable p-3 my-5 text-secondary">
                     <table class="">
-                      <tbody id="dragZone" class="p-2">
+                      <!-- $5.2. Sortable(plugin) -->
+                      <tbody id="sortable1" class="p-2">
                         <div class="flex justify-between items-center pb-5">
                           <div class="flex">
                             <svg
@@ -293,17 +286,134 @@
                             </svg>
                             <p class="font-bold text-lg">Options</p>
                           </div>
-                          <a href=""
-                            ><button
+                          <!--  $5.1. Add an item btn -->
+
+                          <a href="" id="addBtn"
+                            ><div
                               class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
                             >
                               Add
-                            </button></a
+                            </div></a
                           >
+                          <div id="Popup">
+                            <div
+                              class="relative z-10"
+                              aria-labelledby="modal-title"
+                              role="dialog"
+                              aria-modal="true"
+                            >
+                              <div
+                                class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                                aria-hidden="true"
+                              ></div>
+
+                              <div
+                                class="fixed inset-0 z-10 w-screen overflow-y-auto"
+                              >
+                                <div
+                                  class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+                                >
+                                  <div
+                                    class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+                                  >
+                                    <div
+                                      class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4"
+                                    >
+                                      <div class="sm:flex sm:items-start">
+                                        <div
+                                          class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left"
+                                        >
+                                          <h3
+                                            class="pt-5 text-base font-semibold leading-6 text-gray-900"
+                                          >
+                                            Add an item
+                                          </h3>
+                                          <div class="mt-2">
+                                            <p
+                                              class="text-sm text-gray-500 pb-5"
+                                            >
+                                              Are you sure you want to
+                                              deactivate your account? All of
+                                              your data will be permanently
+                                              removed. This action cannot be
+                                              undone.
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="flex justify-around items-center space-y-2"
+                                          >
+                                            <h6 class="w-1/3 m-0">Option</h6>
+                                            <input
+                                              type="text"
+                                              class="w-full h-8"
+                                            />
+                                          </div>
+                                          <div
+                                            class="flex justify-around items-center space-y-2"
+                                          >
+                                            <h6 class="w-1/3 m-0">Price</h6>
+                                            <input
+                                              type="text"
+                                              class="w-full h-8"
+                                            />
+                                          </div>
+                                          <div
+                                            class="flex justify-around items-center space-y-2"
+                                          >
+                                            <h6 class="w-1/3 m-0">per</h6>
+                                            <input
+                                              type="text"
+                                              class="w-full h-8"
+                                            />
+                                          </div>
+                                          <div
+                                            class="flex justify-around items-center space-y-2"
+                                          >
+                                            <h6 class="w-1/3 m-0">
+                                              Description
+                                            </h6>
+                                            <input
+                                              type="text"
+                                              class="w-full h-8"
+                                            />
+                                          </div>
+                                          <div
+                                            class="flex justify-items-start items-baseline space-y-3"
+                                          >
+                                            <h6 class="w-1/3 m-0">Services</h6>
+                                            <p class="text-[12px] m-0">
+                                              Please edit in the Services table
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="px-5 py-3 pt-10 sm:flex sm:flex-row-reverse sm:px-6"
+                                          >
+                                            <button
+                                              type="button"
+                                              class="inline-flex w-full justify-center rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-secondary/80 sm:ml-3 sm:w-auto"
+                                            >
+                                              Add
+                                            </button>
+                                            <button
+                                              id="cancelBtn"
+                                              type="button"
+                                              class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                                            >
+                                              Cancel
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <tr class="border-b text-sm">
                           <th align="center" width="2%">#</th>
-                          <th align="center" width="2%">O</th>
+                          <th align="center" width="2%"></th>
                           <th align="left" width="5%">Option</th>
                           <th align="left" width="5%">Price</th>
                           <th align="left" width="5%">Per</th>
@@ -331,12 +441,11 @@
                           <th align="left" width="5%">Update</th>
                           <th align="left" width="2%">Edit</th>
                         </tr>
+                        <!-- Drag and drop to render -->
                         <tr
                           draggable="true"
-                          data-id="1"
-                          class="draggable text-secondary/80 border-b bg-white"
+                          class="drag-source text-secondary/80 border-b bg-white"
                         >
-                          <!-- Drag and drop to render -->
                           <td class="py-3 align-top">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -344,7 +453,7 @@
                               viewBox="0 0 24 24"
                               stroke-width="1.5"
                               stroke="currentColor"
-                              class="size-5"
+                              class="size-5 cursor-grab hover:text-primary"
                             >
                               <path
                                 stroke-linecap="round"
@@ -353,12 +462,13 @@
                               />
                             </svg>
                           </td>
-                          <td class="py-3 align-top">
+                          <td class="py-3 align-top enabled">
+                            <!-- $6. Enable style -->
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 24 24"
                               fill="currentColor"
-                              class="size-5 text-primary"
+                              class="size-5 text-primary cursor-pointer"
                             >
                               <path
                                 fill-rule="evenodd"
@@ -572,8 +682,7 @@
                         </tr>
                         <tr
                           draggable="true"
-                          data-id="1"
-                          class="text-secondary/80 border-b"
+                          class="drag-source text-secondary/80 border-b"
                         >
                           <td class="py-3 align-top">
                             <svg
@@ -582,7 +691,7 @@
                               viewBox="0 0 24 24"
                               stroke-width="1.5"
                               stroke="currentColor"
-                              class="size-5"
+                              class="size-5 cursor-grab hover:text-primary"
                             >
                               <path
                                 stroke-linecap="round"
@@ -591,12 +700,13 @@
                               />
                             </svg>
                           </td>
-                          <td class="py-3 align-top">
+                          <td class="py-3 align-top enabled">
+                            <!-- $6. Enable style -->
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 24 24"
                               fill="currentColor"
-                              class="size-5 text-secondary/20"
+                              class="size-5 text-secondary/20 cursor-pointer"
                             >
                               <path
                                 fill-rule="evenodd"
@@ -820,8 +930,7 @@
     </div>
 
     <!-- TEST -->
-    <div id="app"></div>
-    <script type="module" src="./assets/drag-and-drop.js"></script>
+
     <!-- TEST -->
   </body>
 </html>

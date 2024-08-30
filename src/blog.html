@@ -6,25 +6,30 @@
     <title>Premier Coworking Space in Taipei's Xinyi District | T3CO</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <script src="../node_modules/flowbite/dist/flowbite.min.js" defer></script>
-    <!-- plugins - swiper -->
-    <script type="module" defer>
-      import swiper from "../src/assets/swiper-bundle.min.mjs";
-    </script>
-    <link href="../src/assets/swiper-bundle.min.css" rel="stylesheet" />
-    <!-- customize css -->
+
     <script src="main.js" defer></script>
+    <!-- plugins - swiper -->
+    <script
+      type="module"
+      src="./assets/plugins/swiper/swiper.js"
+      defer
+    ></script>
+    <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.css" />
+
+    <!-- customize css -->
     <link rel="stylesheet" href="./output.css" />
+
+    <style></style>
   </head>
   <body>
     <!-- Navbar -->
     <div id="navBar" class="pt-20"></div>
 
     <!-- plugin - swiper -->
-    <div class="swiper w-full">
+    <div class="swiper swiper-main w-full">
       <div class="swiper-wrapper" id="swiper-wrapper">
         <!-- $5.1. swiper content -->
       </div>
-
       <div class="swiper-pagination"></div>
     </div>
     <!-- Blog -->
@@ -143,6 +148,5 @@
 
     <!-- footer -->
     <div id="footer"></div>
-    <script type="module" src="./assets/swiper.js" defer></script>
   </body>
 </html>

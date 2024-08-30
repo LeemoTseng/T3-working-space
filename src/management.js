@@ -7,7 +7,7 @@
 // $1. Language toggle
 // $2. Icon isHidden
 // $3. Side menu
-// $4. Dropdown
+// $4. Table style
 // $5. Drag and drop
 //
 // *---------------* //
@@ -16,9 +16,6 @@
 // *---------------* //
 // $0. Plugins
 // *---------------* //
-
-//Drag and Drop
-
 
 
 
@@ -300,48 +297,52 @@ if (document.querySelector('#sideMenu')) {
 }
 
 
-
 // *---------------* //
-// $4. Dropdown
+// $4. Enable style
 // *---------------* //
 
-if (document.querySelectorAll('.dropdown')) {
-    const dropdown = document.querySelectorAll('.dropdown')
-    dropdown.forEach((items) => {
+const enabled = document.querySelectorAll('.enabled');
 
+enabled.forEach((items) => {
+    items.addEventListener('click', (e) => {
+        const targetElement = e.target.closest('.enabled');
+        const enabledSvg = targetElement.querySelector('svg');
 
-
-    })
-} else {
-    console.log('.dropdown not found');
-}
+        if (enabledSvg) {
+            enabledSvg.classList.toggle('text-primary');
+            enabledSvg.classList.toggle('text-secondary/20');
+        }
+    });
+});
 
 
 // *---------------* //
 // $5. Drag and drop
 // *---------------* //
 
-if (document.querySelectorAll('.draggable')) {
+// *---------------* //
+// $5.1. Add an item btn
+// *---------------* //
 
-    let source = null;
+if (document.querySelector('#addBtn')) {
+    
+    const Popup = 
 
-    const draggable = document.querySelectorAll('.draggable')
-    draggable.forEach((items) => {
-        items.addEventListener('dragstart', (e) => {
-            e.target.classList.add('bg-black')
-        });
-        items.addEventListener("dragend", (e) => {
-            e.target.classList.remove("bg-black");
-        });
-    })
 
-    const dragZone = document.querySelectorAll('.drag-zone')
-    dragZone.forEach((items) => {
-        items.addEventListener('dragenter', (e) => {
-            e.target.classList.add("bg-blue");
-        })
-        items.addEventListener('dragenter', (e) => {
-            e.target.classList.remove("bg-blue");
-        })
-    })
+    // const addBtn = document.querySelector('#addBtn');
+
+
 }
+
+
+
+// *---------------* //
+// $5.2. Sortable(plugin)
+// *---------------* //
+
+
+const sortable1El = document.querySelector('#sortable1')
+const sortable1 = Sortable.create(sortable1El, {
+    animation: 500,
+
+})
