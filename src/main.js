@@ -18,6 +18,7 @@
 // $6.2. Counter
 // $7. Form validation
 // $7.1. Form check
+// $8. Space - Photos enlargement
 //
 // *---------------* //
 
@@ -940,7 +941,7 @@ if (swiperWrapper) {
       "absolute",
       "inset-0",
       "bg-black/[.4]",
-      
+
       "transition-all",
       "duration-200"
     );
@@ -977,7 +978,7 @@ if (swiperWrapper) {
     imgBoxDiv.append(img, overlayDiv);
     link.append(imgBoxDiv, textDiv);
     swiperSlide.append(link);
-    
+
     swiperWrapper.append(swiperSlide);
 
     // console.log(swiperWrapper)
@@ -1415,5 +1416,69 @@ if (form) {
 
 } else {
   console.log('#contactForm not found');
+}
+
+
+
+// *---------------* //
+// $8. Space - Photos enlargement
+// *---------------* //
+
+
+if (document.querySelector('#imgGroup')) {
+
+  const imgGroup = document.querySelector('#imgGroup');
+  const enlargedWindow = document.querySelector('#enlargedWindow');
+
+  isEnlarged = false;
+
+  imgGroup.addEventListener('click', (e) => {
+
+    isEnlarged = !isEnlarged;
+
+    //傳入圖片
+    const imgBox = e.target.closest('.imgBox');
+    if (imgBox){
+      const img = imgBox.querySelector('img');
+      enlargedImage.src = img.src;
+    }
+
+
+    //點擊後的enlarge效果
+    if (isEnlarged) {
+      enlargedWindow.classList.toggle('hidden');
+
+      setTimeout(() => {
+        enlargedWindow.classList.remove('opacity-0');
+        enlargedWindow.classList.add('opacity-100');
+      }, 50);
+    } else {
+      enlargedWindow.classList.remove('opacity-100');
+      enlargedWindow.classList.add('opacity-0');
+      setTimeout(() => {
+        enlargedWindow.classList.add('hidden');
+      }, 50);
+    }
+
+
+
+    console.log(isEnlarged);
+    console.log(enlargedWindow)
+
+  })
+
+  enlargedWindow.addEventListener('click', (e) => {
+    if (isEnlarged) {
+      isEnlarged = false;
+      enlargedWindow.classList.remove('opacity-100');
+      enlargedWindow.classList.add('opacity-0');
+      setTimeout(() => {
+        enlargedWindow.classList.add('hidden');
+      }, 500);
+    }
+
+    console.log(isEnlarged);
+  });
+
 }
 
