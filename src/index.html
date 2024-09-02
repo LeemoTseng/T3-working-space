@@ -363,25 +363,24 @@
               ></textarea>
             </div>
           </div>
-          <button
-            type="submit"
+          <div
             id="submitBtn"
-            class="btn-default mt-10 px-10 justify-center w-full text-center md:w-[120px] mx-auto"
+            class="btn-default cursor-pointer mt-10 px-10 justify-center w-full text-center md:w-[120px] mx-auto"
           >
             Submit
-          </button>
+          </div>
         </form>
         <!-- Popup -->
         <div
           id="popup"
-          class="hidden fixed inset-0 items-center justify-center bg-black/50 transition-all duration-300"
+          class="popup hidden fixed inset-0 items-center justify-center bg-black/50 transition-all duration-300"
         >
           <div
             class="m-2 bg-white p-8 rounded-lg shadow-lg relative max-w-md w-full"
           >
             <button
               id="closePopupBtn"
-              class="absolute text-3xl top-2 right-5 text-gray-500 hover:text-gray-800"
+              class="closePopupBtn absolute text-3xl top-2 right-5 text-gray-500 hover:text-gray-800"
             >
               &times;
             </button>
@@ -425,6 +424,7 @@
             </div>
             <div class="btn-group sm:flex sm:flex-col flex-row pt-5">
               <button
+                type="submit"
                 id="submitPopupBtn"
                 class="w-full px-4 mr-2 py-2 bg-primary text-white rounded-lg"
               >
@@ -442,8 +442,15 @@
         <!-- popup2 - success! -->
         <div
           id="popup2"
-          class="hidden fixed inset-0 items-center justify-center bg-black bg-opacity-50"
+          class="popup hidden fixed inset-0 items-center justify-center bg-black bg-opacity-50"
         >
+          <div class="clossBtn relative">
+            <button
+              class="closePopupBtn absolute text-3xl -top-14 -right-[440px] text-gray-500 hover:text-gray-800 z-10"
+            >
+              &times;
+            </button>
+          </div>
           <div
             class="flex items-center text-primary m-2 bg-white p-8 rounded-lg shadow-lg relative max-w-md w-full"
           >
@@ -469,6 +476,45 @@
             </div>
           </div>
         </div>
+        <!-- popup3 - error! -->
+        <div
+          id="popup3"
+          class="popup hidden fixed inset-0 items-center justify-center bg-black bg-opacity-50"
+        >
+          <div class="clossBtn relative">
+            <button
+              class="closePopupBtn absolute text-3xl -top-14 -right-[440px] text-gray-500 hover:text-gray-800 z-10"
+            >
+              &times;
+            </button>
+          </div>
+          <div
+            class="flex items-center text-primary m-2 bg-white p-8 rounded-lg shadow-lg relative max-w-md w-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-12 mr-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+              />
+            </svg>
+
+            <div>
+              <h2 class="text-lg font-bold mb-0 text-primary">Error</h2>
+              <p class="text-gray-500">
+                Please check your information and try again.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- google map -->
         <div class="googleMap mx-auto w-full">
           <iframe
             class="rounded-none border overflow-hidden w-full h-[450px] sm:h-[600px]"

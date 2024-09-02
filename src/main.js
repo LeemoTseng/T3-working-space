@@ -1265,13 +1265,15 @@ const counterIcon = document.querySelectorAll('.counterIcon');
 
 const form = document.querySelector('#contactForm');
 
-
 if (form) {
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
+  const submitBtn = document.querySelector('#submitBtn');
+
+  submitBtn.addEventListener('click', function (e) {
+
     document.querySelectorAll('.errorMessages').forEach(item => item.remove());
 
+    // form validation
     let formIsValid = true;
 
     const nameInput = document.querySelector('#name');
@@ -1284,18 +1286,14 @@ if (form) {
     const messageInput = document.querySelector('#message');
 
 
-
-    document.getElementById('popupName').textContent = nameInput.value;
-    document.getElementById('popupEmail').textContent = emailInput.value;
-    document.getElementById('popupPhone').textContent = phoneInput.value;
-    document.getElementById('popupMembership').textContent = membershipInput.value;
-    document.getElementById('popupTourDate').textContent = tourDateInput.value;
-    document.getElementById('popupHow').textContent = howInput.value !== 'default' ? howInput.value : '';
-    document.getElementById('popupCompany').textContent = companyInput.value;
-    document.getElementById('popupMessage').textContent = messageInput.value;
-
-
-
+    document.querySelector('#popupName').textContent = nameInput.value;
+    document.querySelector('#popupEmail').textContent = emailInput.value;
+    document.querySelector('#popupPhone').textContent = phoneInput.value;
+    document.querySelector('#popupMembership').textContent = membershipInput.value;
+    document.querySelector('#popupTourDate').textContent = tourDateInput.value;
+    document.querySelector('#popupHow').textContent = howInput.value !== 'default' ? howInput.value : '';
+    document.querySelector('#popupCompany').textContent = companyInput.value;
+    document.querySelector('#popupMessage').textContent = messageInput.value;
 
 
     // name validation
@@ -1371,42 +1369,76 @@ if (form) {
 
     const popup = document.querySelector('#popup');
     const popup2 = document.querySelector('#popup2');
+    const popup3 = document.querySelector('#popup3');
 
-    if (formIsValid) {
+    const closePopupBtn = document.querySelectorAll('.closePopupBtn');
+
+    closePopupBtn.forEach((items) => {
+
+      items.addEventListener('click', (e) => {
+        e.target.closest('.popup').classList.remove('flex')
+        e.target.closest('.popup').classList.add('hidden')
+        // console.log(e.target.closest('.popup'));
+      })
+    })
+
+    if (!formIsValid) {
       popup.classList.remove('hidden');
       popup.classList.add('flex');
+
     }
 
-    document.querySelector('#closePopupBtn').addEventListener('click', function () {
-      popup.classList.remove('flex');
-      popup.classList.add('hidden');
-    })
     document.querySelector('#laterPopupBtn').addEventListener('click', function () {
       popup.classList.remove('flex');
       popup.classList.add('hidden');
     })
 
-    document.querySelector('#submitPopupBtn').addEventListener('click', function () {
+    //clean input value
+
+
+    const submitPopupBtn = document.querySelector('#submitPopupBtn');
+    submitPopupBtn.addEventListener('click', function () {
+      console.log(submitPopupBtn);
       popup.classList.add('hidden');
-      popup2.classList.remove('hidden');
-      popup2.classList.add('flex');
+      popup.classList.remove('flex');
+
+      // 發送請求寫在這
+
+      axios.post(`/${culture}/Join/SubmitData`, data)
+        .then(res => {
+          console.log(res);
+
+          popup2.classList.remove('hidden');
+          popup2.classList.add('flex');
+
+          nameInput.value = '';
+          emailInput.value = '';
+          phoneInput.value = '';
+          membershipInput.value = '';
+          tourDateInput.value = '';
+          howInput.value = '';
+          companyInput.value = '';
+          messageInput.value = '';
+        })
+        .catch(err => {
+          console.log(err);
+          popup3.classList.remove('hidden');
+          popup3.classList.add('flex');
+        })
+
+
 
     })
-    if (popup2) {
-      setTimeout(() => {
-        popup2.classList.remove('flex');
-        popup2.classList.add('hidden');
-      }, 2000);
-    }
 
-    window.addEventListener('click', function (event) {
-      if (event.target === popup2) {
+    // Close popup
+    window.addEventListener('click', function (e) {
+      if (e.target === popup2) {
         popup2.classList.remove('flex');
         popup2.classList.add('hidden');
       }
     });
-    window.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
         popup2.classList.remove('flex');
         popup2.classList.add('hidden');
       }
@@ -1439,7 +1471,7 @@ if (document.querySelector('#imgGroup')) {
 
     //傳入圖片
     const imgBox = e.target.closest('.imgBox');
-    if (imgBox){
+    if (imgBox) {
       const img = imgBox.querySelector('img');
       enlargedWindowImg = img.src;
       enlargedWindow.querySelector('img').src = enlargedWindowImg;
