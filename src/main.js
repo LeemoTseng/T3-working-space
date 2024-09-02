@@ -1463,53 +1463,52 @@ if (document.querySelector('#imgGroup')) {
   const enlargedWindow = document.querySelector('#enlargedWindow');
   let enlargedWindowImg = '';
 
-  isEnlarged = false;
+  let isEnlarged = false;
 
-  imgGroup.addEventListener('click', (e) => {
+  imgGroup.addEventListener('click', async (e) => {
 
     isEnlarged = !isEnlarged;
 
-    //傳入圖片
+    // 傳入圖片路徑
     const imgBox = e.target.closest('.imgBox');
+    
     if (imgBox) {
       const img = imgBox.querySelector('img');
+      // console.log(img);
       enlargedWindowImg = img.src;
       enlargedWindow.querySelector('img').src = enlargedWindowImg;
+      
     }
 
-    //點擊後的enlarge效果
     if (isEnlarged) {
-      enlargedWindow.classList.toggle('hidden');
+      enlargedWindow.classList.remove('hidden');   
 
-      setTimeout(() => {
-        enlargedWindow.classList.remove('opacity-0');
-        enlargedWindow.classList.add('opacity-100');
-      }, 50);
+      enlargedWindow.classList.remove('opacity-0');
+      enlargedWindow.classList.add('opacity-100');
+
+
     } else {
+
       enlargedWindow.classList.remove('opacity-100');
-      enlargedWindow.classList.add('opacity-0');
-      setTimeout(() => {
-        enlargedWindow.classList.add('hidden');
-      }, 50);
+      enlargedWindow.classList.add('opacity-0',);
+
+
+      enlargedWindow.classList.add('hidden');
     }
 
-    // console.log(isEnlarged);
-    // console.log(enlargedWindow)
+  });
 
-  })
-
+  // 點擊外部關閉enlarge
   enlargedWindow.addEventListener('click', (e) => {
     if (isEnlarged) {
       isEnlarged = false;
       enlargedWindow.classList.remove('opacity-100');
       enlargedWindow.classList.add('opacity-0');
-      setTimeout(() => {
-        enlargedWindow.classList.add('hidden');
-      }, 50);
-    }
 
-    console.log(isEnlarged);
+      enlargedWindow.classList.add('hidden');
+    }
   });
 
 }
+
 
