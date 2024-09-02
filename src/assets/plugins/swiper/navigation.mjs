@@ -1,5 +1,5 @@
-import { c as createElementIfNotDefined } from '../shared/create-element-if-not-defined.mjs';
-import { m as makeElementsArray } from '../shared/utils.mjs';
+import { c as createElementIfNotDefined } from './create-element-if-not-defined.mjs';
+import { m as makeElementsArray } from './utils.mjs';
 
 function Navigation(_ref) {
   let {

@@ -11,12 +11,11 @@
  */
 
 
-import { S as Swiper } from '../../../../node_modules/swiper/shared/swiper-core.mjs';
+import { S as Swiper } from './swiper-core.mjs';
 
-import Navigation from '../../../../node_modules/swiper/modules/navigation.mjs';
-import Pagination from '../../../../node_modules/swiper/modules/pagination.mjs';
-
-import Autoplay from '../../../../node_modules/swiper/modules/autoplay.mjs';
+import Navigation from './navigation.mjs';
+import Pagination from './pagination.mjs';
+import Autoplay from './autoplay.mjs';
 
 
 // Swiper Class

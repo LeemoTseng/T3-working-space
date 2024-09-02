@@ -1,4 +1,4 @@
-import { g as getDocument } from '../shared/ssr-window.esm.mjs';
+import { g as getDocument } from './ssr-window.esm.mjs';
 
 /* eslint no-underscore-dangle: "off" */
 /* eslint no-use-before-define: "off" */
