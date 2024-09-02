@@ -849,41 +849,21 @@ input:focus {
   inset: 0px;
 }
 
-.inset-1\/2 {
-  inset: 50%;
-}
-
 .-inset-y-1\/2 {
   top: -50%;
   bottom: -50%;
-}
-
-.inset-x-10 {
-  left: 2.5rem;
-  right: 2.5rem;
-}
-
-.inset-x-3\/4 {
-  left: 75%;
-  right: 75%;
-}
-
-.inset-x-full {
-  left: 100%;
-  right: 100%;
-}
-
-.inset-x-96 {
-  left: 24rem;
-  right: 24rem;
 }
 
 .-left-5 {
   left: -1.25rem;
 }
 
-.-top-10 {
-  top: -2.5rem;
+.-right-\[440px\] {
+  right: -440px;
+}
+
+.-top-14 {
+  top: -3.5rem;
 }
 
 .left-0 {
@@ -892,10 +872,6 @@ input:focus {
 
 .left-1\/2 {
   left: 50%;
-}
-
-.right-0 {
-  right: 0px;
 }
 
 .right-5 {
@@ -920,54 +896,6 @@ input:focus {
 
 .top-\[11px\] {
   top: 11px;
-}
-
-.-top-12 {
-  top: -3rem;
-}
-
-.-top-14 {
-  top: -3.5rem;
-}
-
-.-right-32 {
-  right: -8rem;
-}
-
-.-right-0 {
-  right: -0px;
-}
-
-.-right-96 {
-  right: -24rem;
-}
-
-.-right-\[400px\] {
-  right: -400px;
-}
-
-.-right-\[450px\] {
-  right: -450px;
-}
-
-.-right-\[420px\] {
-  right: -420px;
-}
-
-.-right-\[425px\] {
-  right: -425px;
-}
-
-.-right-\[430px\] {
-  right: -430px;
-}
-
-.-right-\[440px\] {
-  right: -440px;
-}
-
-.-right-\[300px\] {
-  right: -300px;
 }
 
 .z-10 {
@@ -1217,6 +1145,11 @@ input:focus {
 .size-7 {
   width: 1.75rem;
   height: 1.75rem;
+}
+
+.size-10 {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .h-10 {
@@ -2426,6 +2359,18 @@ input:focus {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:scale-\[0\.1\]:hover {
+  --tw-scale-x: 0.1;
+  --tw-scale-y: 0.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-\[1\.1\]:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -2546,10 +2491,6 @@ input:focus {
 }
 
 @media (min-width: 640px) {
-  .sm\:-right-\[440px\] {
-    right: -440px;
-  }
-
   .sm\:my-8 {
     margin-top: 2rem;
     margin-bottom: 2rem;

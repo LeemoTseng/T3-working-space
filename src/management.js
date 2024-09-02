@@ -12,6 +12,8 @@
 //
 // *---------------* //
 
+const { Collapse } = require("flowbite");
+
 
 // *---------------* //
 // $0. Plugins
@@ -298,9 +300,10 @@ if (document.querySelector('#sideMenu')) {
 
 
 // *---------------* //
-// $4. Enable style
+// $4. Table style
 // *---------------* //
 
+//enabled
 const enabled = document.querySelectorAll('.enabled');
 
 enabled.forEach((items) => {
@@ -315,6 +318,17 @@ enabled.forEach((items) => {
     });
 });
 
+//collapsed
+const titleCollapse = document.querySelectorAll('.titleCollapse');
+const dropAllTables = document.querySelectorAll('.dropAllTables');
+
+tableIsCollapsed = false;
+
+console.log(titleCollapse.closest('.dropdown').clo)
+
+
+
+
 
 // *---------------* //
 // $5. Drag and drop
@@ -325,8 +339,8 @@ enabled.forEach((items) => {
 // *---------------* //
 
 if (document.querySelector('#addBtn')) {
-    
-    const Popup = 
+
+    const Popup =
 
 
     // const addBtn = document.querySelector('#addBtn');
