@@ -12,7 +12,6 @@
 //
 // *---------------* //
 
-const { Collapse } = require("flowbite");
 
 
 // *---------------* //
@@ -303,8 +302,15 @@ if (document.querySelector('#sideMenu')) {
 // $4. Table style
 // *---------------* //
 
-//enabled
+// Enabled
+
 const enabled = document.querySelectorAll('.enabled');
+
+let isEnable = false;
+
+function enabledClick(e){
+    e.target.closest('svg').classLi
+}
 
 enabled.forEach((items) => {
     items.addEventListener('click', (e) => {
@@ -318,13 +324,24 @@ enabled.forEach((items) => {
     });
 });
 
-//collapsed
+// Collapsed
+
 const titleCollapse = document.querySelectorAll('.titleCollapse');
-const dropAllTables = document.querySelectorAll('.dropAllTables');
 
-tableIsCollapsed = false;
+function collapseTable(e){
+    e.target.closest('.dropdown').querySelectorAll('.dropTable').forEach((items)=>{
+        items.classList.toggle('hidden');
+    })
+}
 
-console.log(titleCollapse.closest('.dropdown').clo)
+titleCollapse.forEach((items)=>{
+    items.addEventListener('click',function(e){
+        collapseTable(e);
+    })
+})
+
+
+
 
 
 
@@ -338,15 +355,12 @@ console.log(titleCollapse.closest('.dropdown').clo)
 // $5.1. Add an item btn
 // *---------------* //
 
-if (document.querySelector('#addBtn')) {
-
-    const Popup =
-
+// if (document.querySelector('#addBtn')) {
 
     // const addBtn = document.querySelector('#addBtn');
 
 
-}
+// }
 
 
 
@@ -355,8 +369,8 @@ if (document.querySelector('#addBtn')) {
 // *---------------* //
 
 
-const sortable1El = document.querySelector('#sortable1')
-const sortable1 = Sortable.create(sortable1El, {
-    animation: 500,
+// const sortable1El = document.querySelector('#sortable1')
+// const sortable1 = Sortable.create(sortable1El, {
+//     animation: 500,
 
-})
+// })
