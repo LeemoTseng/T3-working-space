@@ -309,20 +309,24 @@ const enabled = document.querySelectorAll('.enabled');
 let isEnable = false;
 
 function enabledClick(e){
-    e.target.closest('svg').classLi
+    e.target.closest('svg').classList.add('text-primary')
+    e.target.closest('svg').classList.remove('text-secondary/20')
 }
 
-enabled.forEach((items) => {
-    items.addEventListener('click', (e) => {
-        const targetElement = e.target.closest('.enabled');
-        const enabledSvg = targetElement.querySelector('svg');
 
-        if (enabledSvg) {
-            enabledSvg.classList.toggle('text-primary');
-            enabledSvg.classList.toggle('text-secondary/20');
-        }
-    });
-});
+
+
+// enabled.forEach((items) => {
+//     items.addEventListener('click', (e) => {
+//         const targetElement = e.target.closest('.enabled');
+//         const enabledSvg = targetElement.querySelector('svg');
+
+//         if (enabledSvg) {
+//             enabledSvg.classList.toggle('text-primary');
+//             enabledSvg.classList.toggle('text-secondary/20');
+//         }
+//     });
+// });
 
 // Collapsed
 
