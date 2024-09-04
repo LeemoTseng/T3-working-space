@@ -225,7 +225,7 @@ if (document.querySelector('#sideMenu')) {
         // console.log(pageDiv)
 
         const pageH5 = document.createElement('h5')
-        pageH5.className = 'mb-0 pl-3 text-secondary text-md'
+        pageH5.className = 'mb-0 pl-3 text-secondary text-md hover:text-primary cursor-pointer'
         pageH5.textContent = item.page
 
         const pageUl = document.createElement('ul')
@@ -236,7 +236,7 @@ if (document.querySelector('#sideMenu')) {
 
             const pageA = document.createElement('a')
             pageA.setAttribute('href', '#')
-            pageA.className = ' text-secondary/70 hover:text-secondary/80'
+            pageA.className = ' text-secondary/70 hover:text-secondary/80 block w-full h-full'
 
             const pageLi = document.createElement('li')
             pageLi.className = 'transition-all p-1 m-1 rounded-md hover:bg-secondary/5'
@@ -327,6 +327,7 @@ function enabledClick(e){
 //         }
 //     });
 // });
+
 
 // Collapsed
 
