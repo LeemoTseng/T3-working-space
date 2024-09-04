@@ -1215,6 +1215,10 @@ input:focus {
   height: 120px;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
 .h-\[2\.3rem\] {
   height: 2.3rem;
 }
@@ -1251,10 +1255,6 @@ input:focus {
   height: 100%;
 }
 
-.h-\[160px\] {
-  height: 160px;
-}
-
 .max-h-14 {
   max-height: 3.5rem;
 }
@@ -1281,6 +1281,10 @@ input:focus {
 
 .w-11\/12 {
   width: 91.666667%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .w-24 {
@@ -1343,10 +1347,6 @@ input:focus {
   width: 150px;
 }
 
-.w-\[170px\] {
-  width: 170px;
-}
-
 .w-\[2\.6rem\] {
   width: 2.6rem;
 }
@@ -1373,18 +1373,6 @@ input:focus {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-\[160px\] {
-  width: 160px;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
 }
 
 .min-w-4 {
@@ -1819,11 +1807,6 @@ input:focus {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 
 .p-0 {
