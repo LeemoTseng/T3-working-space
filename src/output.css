@@ -813,6 +813,10 @@ input:focus {
   --tw-ring-color: hsl(var(--primary) / 0.5);
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .\!visible {
   visibility: visible !important;
 }
@@ -1803,6 +1807,10 @@ input:focus {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-primary\/10 {
+  background-color: hsl(var(--primary) / 0.1);
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -2005,6 +2013,10 @@ input:focus {
   padding-top: 2.5rem;
 }
 
+.pt-14 {
+  padding-top: 3.5rem;
+}
+
 .pt-16 {
   padding-top: 4rem;
 }
@@ -2039,10 +2051,6 @@ input:focus {
 
 .pt-\[40px\] {
   padding-top: 40px;
-}
-
-.pt-14 {
-  padding-top: 3.5rem;
 }
 
 .text-left {
@@ -2313,6 +2321,10 @@ input:focus {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline {
+  outline-style: solid;
 }
 
 .ring-1 {
