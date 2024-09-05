@@ -4,6 +4,8 @@
 //
 // $0. Plugins
 // $0.1. Navbar
+// $0.2. table - Main section 
+// $0.3. table - Options
 // $1. Language toggle
 // $2. Icon isHidden
 // $3. Side menu
@@ -28,6 +30,159 @@
 
 // const navbarTemplate = ``
 // document.querySelector('#navBar').innerHTML += navbarTemplate;
+
+// *---------------* //
+// $0.2. table - Main section
+// *---------------* //
+
+const tableMainSection = `<div class="flex">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6 mr-2 text-secondary/50"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                            />
+                          </svg>
+                          <p class="font-bold text-lg">Main section</p>
+                        </div>
+                        <table class="">
+                          <tbody class="p-2">
+                            <div
+                              class="flex justify-between items-center pb-5"
+                            ></div>
+
+                            <tr class="border-b text-sm">
+                              <th align="left" width="20%">Title</th>
+                              <th align="left" width="50%">Subtitle</th>
+                              <th align="left" width="10%">Established</th>
+                              <th align="left" width="10%">Update</th>
+                              <th align="left" width="2%">Edit</th>
+                            </tr>
+
+                            <tr class="text-secondary/80 border-b">
+                              <td class="py-3">
+                                Designed for business teams like yours
+                              </td>
+                              <td class="py-3">
+                                All of our membership options are designed to
+                                help you and your team be more comfortable and
+                                productive
+                              </td>
+                              <td class="py-3">
+                                <ul>
+                                  <li class="flex justify-start items-center">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-5 pr-1"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                      />
+                                    </svg>
+                                    <p class="text-[13px]">Lee Mo</p>
+                                  </li>
+                                  <li class="flex justify-start items-start">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.8"
+                                      stroke="currentColor"
+                                      class="size-5 pr-1"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                      />
+                                    </svg>
+                                    <p class="text-[13px]">
+                                      2024/07/29 <br />mm:ss
+                                    </p>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td class="py-3">
+                                <ul>
+                                  <li class="flex justify-start items-center">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-5 pr-1"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                      />
+                                    </svg>
+                                    <p class="text-[13px]">Lee Mo</p>
+                                  </li>
+                                  <li class="flex justify-start items-start">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.8"
+                                      stroke="currentColor"
+                                      class="size-5 pr-1"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                      />
+                                    </svg>
+                                    <p class="text-[13px]">
+                                      2024/07/29 <br />mm:ss
+                                    </p>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td align="center" class="py-3">
+                                <a href="">
+                                  <div
+                                    class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                                      />
+                                    </svg></div
+                                ></a>
+                              </td>
+                            </tr>
+                          </tbody></table>`
+document.querySelector('#tableMainSection').innerHTML += tableMainSection;
+
+// *---------------* //
+// $0.3. table - Options
+// *---------------* //
 
 
 
@@ -304,43 +459,48 @@ if (document.querySelector('#sideMenu')) {
 
 // Enabled
 
-const enabled = document.querySelectorAll('.enabled');
+let isClicked = false;
 
-let isEnable = false;
 
-function enabledClick(e){
-    e.target.closest('svg').classList.add('text-primary')
-    e.target.closest('svg').classList.remove('text-secondary/20')
+function enabledClicked(e) {
+
+    if (!isClicked) {
+        isClicked = true;
+        console.log(e.target.closest('svg'))
+        e.target.closest('svg').classList.remove('text-secondary/20')
+        e.target.closest('svg').classList.add('text-primary')
+
+    } else {
+        isClicked = false;
+        e.target.closest('svg').classList.remove('text-primary')
+        e.target.closest('svg').classList.add('text-secondary/20')
+    }
+
 }
 
+const enabled = document.querySelectorAll('.enabled');
+
+enabled.forEach((item) => {
+    item.addEventListener('click', function (e) {
+        enabledClicked(e);
+    })
+})
 
 
-
-// enabled.forEach((items) => {
-//     items.addEventListener('click', (e) => {
-//         const targetElement = e.target.closest('.enabled');
-//         const enabledSvg = targetElement.querySelector('svg');
-
-//         if (enabledSvg) {
-//             enabledSvg.classList.toggle('text-primary');
-//             enabledSvg.classList.toggle('text-secondary/20');
-//         }
-//     });
-// });
 
 
 // Collapsed
 
-const titleCollapse = document.querySelectorAll('.titleCollapse');
 
-function collapseTable(e){
-    e.target.closest('.dropdown').querySelectorAll('.dropTable').forEach((items)=>{
+function collapseTable(e) {
+    e.target.closest('.dropdown').querySelectorAll('.dropTable').forEach((items) => {
         items.classList.toggle('hidden');
     })
 }
 
-titleCollapse.forEach((items)=>{
-    items.addEventListener('click',function(e){
+const titleCollapse = document.querySelectorAll('.titleCollapse');
+titleCollapse.forEach((items) => {
+    items.addEventListener('click', function (e) {
         collapseTable(e);
     })
 })
@@ -362,7 +522,7 @@ titleCollapse.forEach((items)=>{
 
 // if (document.querySelector('#addBtn')) {
 
-    // const addBtn = document.querySelector('#addBtn');
+// const addBtn = document.querySelector('#addBtn');
 
 
 // }
@@ -374,8 +534,8 @@ titleCollapse.forEach((items)=>{
 // *---------------* //
 
 
-// const sortable1El = document.querySelector('#sortable1')
-// const sortable1 = Sortable.create(sortable1El, {
-//     animation: 500,
+const sortableEl = document.querySelector('#sortable')
+const sortable = Sortable.create(sortableEl, {
+    animation: 300,
 
-// })
+})
