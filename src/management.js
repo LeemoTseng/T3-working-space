@@ -537,5 +537,9 @@ titleCollapse.forEach((items) => {
 const sortableEl = document.querySelector('#sortable')
 const sortable = Sortable.create(sortableEl, {
     animation: 300,
+    ghostClass: 'bg-primary/5',
+    filter:'.disabled',
+    handle: 'td', 
+
 
 })
