@@ -1784,6 +1784,10 @@ input:focus {
   background-color: hsl(var(--primary) / var(--tw-bg-opacity));
 }
 
+.bg-primary\/5 {
+  background-color: hsl(var(--primary) / 0.05);
+}
+
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--secondary) / var(--tw-bg-opacity));
@@ -1797,22 +1801,6 @@ input:focus {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-secondary\/5 {
-  background-color: hsl(var(--secondary) / 0.05);
-}
-
-.bg-secondary\/10 {
-  background-color: hsl(var(--secondary) / 0.1);
-}
-
-.bg-primary\/10 {
-  background-color: hsl(var(--primary) / 0.1);
-}
-
-.bg-primary\/5 {
-  background-color: hsl(var(--primary) / 0.05);
 }
 
 .bg-opacity-50 {
@@ -2053,6 +2041,10 @@ input:focus {
   padding-top: 40px;
 }
 
+.pt-14 {
+  padding-top: 3.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2262,6 +2254,10 @@ input:focus {
 
 .text-secondary\/80 {
   color: hsl(var(--secondary) / 0.8);
+}
+
+.text-secondary\/90 {
+  color: hsl(var(--secondary) / 0.9);
 }
 
 .text-slate-400 {
