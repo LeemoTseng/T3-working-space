@@ -1872,3 +1872,38 @@ sortableContainers.forEach((container, containerIndex) => {
 // $6. Popup
 // *---------------* //
 
+
+// table
+
+// const tableMainSection = document.querySelector('#tableMainSection')
+// const tableOptions = document.querySelector('#tableOptions')
+// const tableServices = document.querySelector('#tableServices')
+
+
+
+const mainSectionContent = [
+  {
+    title: '',
+    subtitle: ''
+  }
+]
+const optionContent = [
+  {
+    order: '',
+    enabled: false,
+    isPriceFloating: false,
+    option: '',
+    price: '',
+    per: '',
+    description: '',
+    services: '',
+  }
+]
+
+
+const servicesContent = [{
+  order: 1,
+  service: '',
+}]
+
+
