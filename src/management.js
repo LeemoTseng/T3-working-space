@@ -6,6 +6,7 @@
 // $0.1. Navbar
 // $0.2. table - Main section 
 // $0.3. table - Options
+// $0.4. table - Services
 // $1. Language toggle
 // $2. Icon isHidden
 // $3. Side menu
@@ -13,7 +14,7 @@
 // $5. Drag and drop
 // $5.1. Add an item btn
 // $5.2. Sortable(plugin)
-
+// $6. Popup
 //
 // *---------------* //
 
@@ -31,8 +32,48 @@
 // *---------------* //
 
 
-// const navbarTemplate = ``
-// document.querySelector('#navBar').innerHTML += navbarTemplate;
+const navbarTemplate = `<nav class="top-0 left-0 z-50 max-w-[90rem] mx-auto">
+          <div
+            class="mx-auto px-3 py-2 flex item-center justify-between items-center"
+          >
+            <!-- logo -->
+            <div class="logo w-32 md:mx-0 md:ml-0 md:flex-shrink-0">
+              <a href="#"
+                ><img
+                  class="mx-auto md:mx-0 md:ml-0"
+                  src="assets/T3CO.png"
+                  alt="T3ex-group"
+              /></a>
+            </div>
+
+            <div
+              id="languageToggle"
+              class="flex items-center mr-3 space-x-1 transition-all"
+            >
+              <!-- $1. Language toggle -->
+              <div id="chinese" class="flex items-center transition-all">
+                <a href="#"
+                  ><span
+                    class="transition-all flex items-center text-white bg-primary rounded-md px-2 py-1"
+                    >中文</span
+                  ></a
+                >
+              </div>
+              <div
+                id="english"
+                class="flex items-center p-1 transition-all text-center"
+              >
+                <a href="#"
+                  ><span
+                    class="transition-all text-secondary/30 hover:text-secondary/50 px-2 p-[6px]"
+                    >English</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>`
+document.querySelector('#navBar').innerHTML += navbarTemplate;
 
 // *---------------* //
 // $0.2. table - Main section
@@ -187,7 +228,7 @@ document.querySelector('#tableMainSection').innerHTML += tableMainSection;
 // $0.3. table - Options
 // *---------------* //
 
-const tableOptions = `                          <div class="dropTable p-1 my-5 text-secondary">
+const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                             <table class="sortable-container" cellpadding="2" >
                               <!-- $5.2. Sortable(plugin) -->
                               <tbody class="sortable p-2">
@@ -213,140 +254,13 @@ const tableOptions = `                          <div class="dropTable p-1 my-5 t
                                   </div>
                                   <!--  $5.1. Add an item btn -->
 
-                                  <a href="" id="addBtn"
+                                                                    <a href="#" class="addBtn"
                                     ><div
                                       class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
                                     >
                                       Add
                                     </div></a
                                   >
-                                  <!-- Adding popup -->
-                                  <div id="Popup" class="hidden">
-                                    <div
-                                      class="relative z-10"
-                                      aria-labelledby="modal-title"
-                                      role="dialog"
-                                      aria-modal="true"
-                                    >
-                                      <div
-                                        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-                                        aria-hidden="true"
-                                      ></div>
-
-                                      <div
-                                        class="fixed inset-0 z-10 w-screen overflow-y-auto"
-                                      >
-                                        <div
-                                          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
-                                        >
-                                          <div
-                                            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
-                                          >
-                                            <div
-                                              class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4"
-                                            >
-                                              <div
-                                                class="sm:flex sm:items-start"
-                                              >
-                                                <div
-                                                  class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left"
-                                                >
-                                                  <h3
-                                                    class="pt-5 text-base font-semibold leading-6 text-gray-900"
-                                                  >
-                                                    Add an item
-                                                  </h3>
-                                                  <div class="mt-2">
-                                                    <p
-                                                      class="text-sm text-gray-500 pb-5"
-                                                    >
-                                                      Are you sure you want to
-                                                      deactivate your account?
-                                                      All of your data will be
-                                                      permanently removed. This
-                                                      action cannot be undone.
-                                                    </p>
-                                                  </div>
-                                                  <div
-                                                    class="flex justify-around items-center space-y-2"
-                                                  >
-                                                    <h6 class="w-1/3 m-0">
-                                                      Option
-                                                    </h6>
-                                                    <input
-                                                      type="text"
-                                                      class="w-full h-8"
-                                                    />
-                                                  </div>
-                                                  <div
-                                                    class="flex justify-around items-center space-y-2"
-                                                  >
-                                                    <h6 class="w-1/3 m-0">
-                                                      Price
-                                                    </h6>
-                                                    <input
-                                                      type="text"
-                                                      class="w-full h-8"
-                                                    />
-                                                  </div>
-                                                  <div
-                                                    class="flex justify-around items-center space-y-2"
-                                                  >
-                                                    <h6 class="w-1/3 m-0">
-                                                      per
-                                                    </h6>
-                                                    <input
-                                                      type="text"
-                                                      class="w-full h-8"
-                                                    />
-                                                  </div>
-                                                  <div
-                                                    class="flex justify-around items-center space-y-2"
-                                                  >
-                                                    <h6 class="w-1/3 m-0">
-                                                      Description
-                                                    </h6>
-                                                    <input
-                                                      type="text"
-                                                      class="w-full h-8"
-                                                    />
-                                                  </div>
-                                                  <div
-                                                    class="flex justify-items-start items-baseline space-y-3"
-                                                  >
-                                                    <h6 class="w-1/3 m-0">
-                                                      Services
-                                                    </h6>
-                                                    <p class="text-[12px] m-0">
-                                                      Please edit in the
-                                                      Services table
-                                                    </p>
-                                                  </div>
-                                                  <div
-                                                    class="px-5 py-3 pt-10 sm:flex sm:flex-row-reverse sm:px-6"
-                                                  >
-                                                    <button
-                                                      type="button"
-                                                      class="inline-flex w-full justify-center rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-secondary/80 sm:ml-3 sm:w-auto"
-                                                    >
-                                                      Add
-                                                    </button>
-                                                    <button
-                                                      id="cancelBtn"
-                                                      type="button"
-                                                      class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                                                    >
-                                                      Cancel
-                                                    </button>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
                                 </div>
                                 <tr
                                   class="border-b text-sm disabled pointer-events-none select-none"
@@ -368,9 +282,9 @@ const tableOptions = `                          <div class="dropTable p-1 my-5 t
                                     </svg></th>
                                     
                                   <th align="left" width="5%">From</th>
-                                  <th align="left" width="8%">Option</th>
-                                  <th align="left" width="5%">Price</th>
-                                  <th align="left" width="5%">Per</th>
+                                  <th align="left" width="10%">Option</th>
+                                  <th align="left" width="8%">Price</th>
+                                  <th align="left" width="8%">Per</th>
                                   <th align="left" width="22%">Description</th>
                                   <th align="left" width="20%">
                                     <div class="flex items-center">
@@ -398,7 +312,7 @@ const tableOptions = `                          <div class="dropTable p-1 my-5 t
                                 <!-- Drag and drop to render -->
                                 <tr
                                   draggable="true"
-                                  class="drag-source text-secondary/80 border-b bg-white"
+                                  class="text-secondary/80 border-b"
                                 >
                                   <td class="py-3 align-top">
                                     <svg
@@ -655,7 +569,7 @@ const tableOptions = `                          <div class="dropTable p-1 my-5 t
                                 </tr>
                                 <tr
                                   draggable="true"
-                                  class="drag-source text-secondary/80 border-b"
+                                  class="text-secondary/80 border-b"
                                 >
                                   <td class="py-3 align-top">
                                     <svg
@@ -915,7 +829,674 @@ const tableOptions = `                          <div class="dropTable p-1 my-5 t
 document.querySelector('#tableOptions').innerHTML += tableOptions;
 
 
-const tableServices = ``
+// *---------------* //
+// $0.4. table - Services
+// *---------------* //
+
+
+
+const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
+                            <table class="sortable-container" cellpadding="2">
+                              <!-- $5.2. Sortable(plugin) -->
+                              <tbody class="sortable p-2">
+                                <div
+                                  class="flex justify-between items-center pb-5"
+                                >
+                                  <div class="flex">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-6 mr-2 text-secondary/50"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                                      />
+                                    </svg>
+                                    <p class="font-bold text-lg">Services</p>
+                                  </div>
+                                  <!--  $5.1. Add an item btn -->
+
+                                  <a href="#" class="addBtn"
+                                    ><div
+                                      class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
+                                    >
+                                      Add
+                                    </div></a
+                                  >
+                                </div>
+                                <tr
+                                  class="border-b text-sm disabled pointer-events-none select-none"
+                                >
+                                  <th align="left" width="5%">#</th>
+
+                                  <th align="left" width="73%">Service</th>
+
+                                  <th align="left" width="10%">Established</th>
+                                  <th align="left" width="10%">Update</th>
+                                  <th align="left" width="2%">Edit</th>
+                                </tr>
+                                <!-- Drag and drop to render -->
+                                <tr
+                                  draggable="true"
+                                  class="text-secondary/80 border-b"
+                                >
+                                  <td class="py-3 align-top">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-5 cursor-grab hover:text-primary"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                      />
+                                    </svg>
+                                  </td>
+
+                                  <td class="py-3 align-top">Shared seating</td>
+
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td align="center" class="py-3 align-top">
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 text-red-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <tr
+                                  draggable="true"
+                                  class="text-secondary/80 border-b"
+                                >
+                                  <td class="py-3 align-top">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-5 cursor-grab hover:text-primary"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                      />
+                                    </svg>
+                                  </td>
+
+                                  <td class="py-3 align-top">Shared seating</td>
+
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td align="center" class="py-3 align-top">
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 text-red-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <tr
+                                  draggable="true"
+                                  class="text-secondary/80 border-b"
+                                >
+                                  <td class="py-3 align-top">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-5 cursor-grab hover:text-primary"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                      />
+                                    </svg>
+                                  </td>
+
+                                  <td class="py-3 align-top">
+                                    Fully-equipped meeting rooms and high speed
+                                    internet
+                                  </td>
+
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td align="center" class="py-3 align-top">
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 text-red-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <tr
+                                  draggable="true"
+                                  class="text-secondary/80 border-b"
+                                >
+                                  <td class="py-3 align-top">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="size-5 cursor-grab hover:text-primary"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                      />
+                                    </svg>
+                                  </td>
+
+                                  <td class="py-3 align-top">
+                                    Complimentary coffee, beverages & snacks
+                                  </td>
+
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td class="py-3 align-top">
+                                    <ul>
+                                      <li
+                                        class="flex justify-start items-center"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">Lee Mo</p>
+                                      </li>
+                                      <li
+                                        class="flex justify-start items-start"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.8"
+                                          stroke="currentColor"
+                                          class="size-5 pr-1"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                          />
+                                        </svg>
+                                        <p class="text-[13px]">
+                                          2024/07/29 <br />mm:ss
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </td>
+                                  <td align="center" class="py-3 align-top">
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                    <a href="">
+                                      <div
+                                        class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-5 mb-2 text-red-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                          />
+                                        </svg></div
+                                    ></a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>`
 document.querySelector('#tableServices').innerHTML += tableServices;
 
 
@@ -1273,11 +1854,10 @@ sortableContainers.forEach((container, containerIndex) => {
     animation: 300,
     ghostClass: 'bg-primary/5',
     filter: '.disabled', // 過濾掉不可拖曳的行
-    preventOnFilter: true, // 防止點擊過濾的行觸發拖曳
     handle: 'td', // 設置拖曳的handle為<td>
 
     // 使用 onMove 回調確保 disabled 行不被移動
-    onMove: function(evt) {
+    onMove: function (evt) {
       // 如果目標行有 "disabled" 類，禁止移動
       return !evt.related.classList.contains('disabled');
     },
@@ -1291,7 +1871,558 @@ sortableContainers.forEach((container, containerIndex) => {
         console.log(item.id);
       });
 
-     }
+    }
   });
 });
 
+
+// *---------------* //
+// $6. Popup
+// *---------------* //
+
+
+// table
+
+// const tableMainSection = document.querySelector('#tableMainSection')
+// const tableOptions = document.querySelector('#tableOptions')
+// const tableServices = document.querySelector('#tableServices')
+
+
+
+const mainSectionContent = [
+  {
+    title: '',
+    subtitle: ''
+  }
+]
+
+const optionContent = [
+  {
+    order: '',
+    enabled: false,
+    isPriceFloating: false,
+    option: '',
+    price: '',
+    per: '',
+    description: '',
+    services: '',
+  }
+]
+
+
+
+const servicesContent = [{
+  order: 1,
+  service: '',
+}]
+
+
+
+// popup
+
+
+const mainSectionPopupTemplate = `    <div
+      id="popupMainSection"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Main section
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Voluptatum, molestiae iure consequatur repellat corporis
+                      accusantium?
+                    </p>
+                  </div>
+                  <div class="editContent space-y-3 py-5">
+                    <div>
+                      <label for="">Title</label>
+                      <input
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <div>
+                      <label for="">Subtitle</label>
+                      <textarea
+                        class="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        rows="4"
+                        type="text"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quia reiciendis officia iure praesentium adipisci voluptatum assumenda quidem similique excepturi?"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`
+const optionsPopupTemplate = `    <div
+      id="optionsPopup"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Add Options
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Voluptatum, molestiae iure consequatur repellat corporis
+                      accusantium?
+                    </p>
+                  </div>
+                  <div class="editContent space-y-3 py-5">
+                    <div>
+                      <label for="">Order</label>
+                      <input
+                        id="optionsOrder"
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <div>
+                      <label for="">Option</label>
+                      <input
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <div>
+                      <label for="">Price</label>
+                      <input
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <div>
+                      <label for="">Per</label>
+                      <input
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <div>
+                      <label for="">Description</label>
+                      <input
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <div>
+                      <label for="">Service</label>
+                      <input
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`
+const servicesPopupTemplate = `    <div
+      id="servicesPopup"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Add Service
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Voluptatum, molestiae iure consequatur repellat corporis
+                      accusantium?
+                    </p>
+                  </div>
+                  <div class="editContent space-y-3 py-5">
+                    <div>
+                      <label for="">Title</label>
+                      <input
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <div>
+                      <label for="">Subtitle</label>
+                      <textarea
+                        class="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        rows="4"
+                        type="text"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quia reiciendis officia iure praesentium adipisci voluptatum assumenda quidem similique excepturi?"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`
+const savePopupTemplate = `    <div
+      id="savePopup"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Do you want to save the new item?
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                    The new item will be saved in the system.
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveAgainBtn inline-flex w-full justify-center rounded-md bg-primary px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-10 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`
+
+const successPopupTemplate = `    <div
+      id="successPopup"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Success
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                    The new item has been saved successfully.
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-10 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`
+
+const deletePopupTemplate = `    <div
+      id="deletePupup"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    The action cannot be recovered
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      Do you want to delete
+                      <span class="text-red-700">HOT DESK</span> option?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-10 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`
+
+
+document.querySelector('#tableMainSection').innerHTML += mainSectionPopupTemplate;
+document.querySelector('#tableOptions').innerHTML += optionsPopupTemplate;
+document.querySelector('#tableOptions').innerHTML += savePopupTemplate;
+document.querySelector('#tableOptions').innerHTML += successPopupTemplate;
+document.querySelector('#tableServices').innerHTML += servicesPopupTemplate;
+document.querySelector('#tableServices').innerHTML += savePopupTemplate;
+
+
+// update content
+function updateContent(contentArray, inputFields) {
+  contentArray[0].order = inputFields.order.value;
+ console.log(contentArray)
+}
+
+
+//Success popup
+
+function showSuccessPopup(selectedTable) {
+  const successPopup = selectedTable.querySelector('#successPopup');
+  if (successPopup) {
+    successPopup.classList.remove('hidden');
+
+  }
+}
+
+
+// open popup
+
+const addBtn = document.querySelectorAll('.addBtn');
+const saveBtn = document.querySelectorAll('.saveBtn');
+const saveAgainBtn = document.querySelectorAll('.saveAgainBtn');
+
+addBtn.forEach((item) => {
+  item.addEventListener('click', function (e) {
+    const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
+    if (allPopup.length > 0) {
+      allPopup[0].classList.remove('hidden');
+    }
+  });
+});
+
+saveBtn.forEach((item) => {
+  item.addEventListener('click', function (e) {
+    const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
+    if (allPopup.length > 1) {
+      allPopup[0].classList.add('hidden');
+      allPopup[1].classList.remove('hidden');
+    }
+  });
+});
+saveAgainBtn.forEach((item) => {
+  item.addEventListener('click', function (e) {
+    const selectedTable = e.target.closest('.tableContainer');
+    
+    if (selectedTable.querySelector('#optionsOrder')) {
+      const inputFields = {
+        order: selectedTable.querySelector('#optionsOrder'),
+        // 加入其他需要的字段...
+      };
+      updateContent(optionContent, inputFields);
+      
+    } else if (selectedTable.querySelector('#servicesOrder')) {
+      const inputFields = {
+        order: selectedTable.querySelector('#servicesOrder'),
+        // 加入其他需要的字段...
+      };
+      updateContent(servicesContent, inputFields);
+    }
+
+    // 顯示成功彈窗
+    showSuccessPopup(selectedTable);
+    console.log('Content updated:', optionContent, servicesContent);
+
+  });
+});
+
+
+
+// Close btn
+
+function closePopup(e) {
+  const popup = e.target.closest('.popup');
+  if (popup) {
+    popup.classList.add('hidden');
+  }
+}
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('closeBtn')) {
+    closePopup(e);
+  }
+});
