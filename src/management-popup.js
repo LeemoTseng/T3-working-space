@@ -414,92 +414,92 @@ const deletePopupTemplate = `    <div
 
 
 
-// 插入彈窗模板
-document.querySelector('#tableMainSection').innerHTML += mainSectionPopupTemplate;
-document.querySelector('#tableOptions').innerHTML += optionsPopupTemplate;
-document.querySelector('#tableOptions').innerHTML += savePopupTemplate;
-document.querySelector('#tableOptions').innerHTML += successPopupTemplate;
-document.querySelector('#tableServices').innerHTML += servicesPopupTemplate;
-document.querySelector('#tableServices').innerHTML += savePopupTemplate;
+// // 插入彈窗模板
+// document.querySelector('#tableMainSection').innerHTML += mainSectionPopupTemplate;
+// document.querySelector('#tableOptions').innerHTML += optionsPopupTemplate;
+// document.querySelector('#tableOptions').innerHTML += savePopupTemplate;
+// document.querySelector('#tableOptions').innerHTML += successPopupTemplate;
+// document.querySelector('#tableServices').innerHTML += servicesPopupTemplate;
+// document.querySelector('#tableServices').innerHTML += savePopupTemplate;
 
-// 更新內容的通用函數
-function updateContent(contentArray, inputFields) {
-  contentArray[0].order = inputFields.order.value;
-  console.log(contentArray); // 調試，顯示更新後的內容
-}
+// // 更新內容的通用函數
+// function updateContent(contentArray, inputFields) {
+//   contentArray[0].order = inputFields.order.value;
+//   console.log(contentArray); // 調試，顯示更新後的內容
+// }
 
-// 顯示成功彈窗的函數
-function showSuccessPopup(selectedTable) {
-  const successPopup = selectedTable.querySelector('#successPopup');
-  if (successPopup) {
-    successPopup.classList.remove('hidden');
-  }
-}
+// // 顯示成功彈窗的函數
+// function showSuccessPopup(selectedTable) {
+//   const successPopup = selectedTable.querySelector('#successPopup');
+//   if (successPopup) {
+//     successPopup.classList.remove('hidden');
+//   }
+// }
 
-// 開啟彈窗的通用邏輯
-const addBtn = document.querySelectorAll('.addBtn');
-const saveBtn = document.querySelectorAll('.saveBtn');
-const saveAgainBtn = document.querySelectorAll('.saveAgainBtn');
+// // 開啟彈窗的通用邏輯
+// const addBtn = document.querySelectorAll('.addBtn');
+// const saveBtn = document.querySelectorAll('.saveBtn');
+// const saveAgainBtn = document.querySelectorAll('.saveAgainBtn');
 
-// 開啟彈窗邏輯
-addBtn.forEach((item) => {
-  item.addEventListener('click', function (e) {
-    const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
-    if (allPopup.length > 0) {
-      allPopup[0].classList.remove('hidden'); // 顯示第一個彈窗
-    }
-  });
-});
+// // 開啟彈窗邏輯
+// addBtn.forEach((item) => {
+//   item.addEventListener('click', function (e) {
+//     const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
+//     if (allPopup.length > 0) {
+//       allPopup[0].classList.remove('hidden'); // 顯示第一個彈窗
+//     }
+//   });
+// });
 
-// 保存按鈕的邏輯：關閉當前彈窗，顯示下一個
-saveBtn.forEach((item) => {
-  item.addEventListener('click', function (e) {
-    const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
-    if (allPopup.length > 1) {
-      allPopup[0].classList.add('hidden'); // 隱藏當前彈窗
-      allPopup[1].classList.remove('hidden'); // 顯示下一個彈窗
-    }
-  });
-});
+// // 保存按鈕的邏輯：關閉當前彈窗，顯示下一個
+// saveBtn.forEach((item) => {
+//   item.addEventListener('click', function (e) {
+//     const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
+//     if (allPopup.length > 1) {
+//       allPopup[0].classList.add('hidden'); // 隱藏當前彈窗
+//       allPopup[1].classList.remove('hidden'); // 顯示下一個彈窗
+//     }
+//   });
+// });
 
-// 最終保存邏輯，更新數據並顯示成功彈窗
-saveAgainBtn.forEach((item) => {
-  item.addEventListener('click', function (e) {
-    const selectedTable = e.target.closest('.tableContainer');
+// // 最終保存邏輯，更新數據並顯示成功彈窗
+// saveAgainBtn.forEach((item) => {
+//   item.addEventListener('click', function (e) {
+//     const selectedTable = e.target.closest('.tableContainer');
 
-    // 檢查是否是 options 或 services 的表格，並更新相應的內容
-    if (selectedTable.querySelector('#optionsOrder')) {
-      const inputFields = {
-        order: selectedTable.querySelector('#optionsOrder'),
-        // 可擴展其他需要的字段...
-      };
-      updateContent(optionContent, inputFields);
+//     // 檢查是否是 options 或 services 的表格，並更新相應的內容
+//     if (selectedTable.querySelector('#optionsOrder')) {
+//       const inputFields = {
+//         order: selectedTable.querySelector('#optionsOrder'),
+//         // 可擴展其他需要的字段...
+//       };
+//       updateContent(optionContent, inputFields);
 
-    } else if (selectedTable.querySelector('#servicesOrder')) {
-      const inputFields = {
-        order: selectedTable.querySelector('#servicesOrder'),
-        // 可擴展其他需要的字段...
-      };
-      updateContent(servicesContent, inputFields);
-    }
+//     } else if (selectedTable.querySelector('#servicesOrder')) {
+//       const inputFields = {
+//         order: selectedTable.querySelector('#servicesOrder'),
+//         // 可擴展其他需要的字段...
+//       };
+//       updateContent(servicesContent, inputFields);
+//     }
 
-    // 顯示成功彈窗
-    showSuccessPopup(selectedTable);
-    console.log('Content updated:', optionContent, servicesContent);
-  });
-});
+//     // 顯示成功彈窗
+//     showSuccessPopup(selectedTable);
+//     console.log('Content updated:', optionContent, servicesContent);
+//   });
+// });
 
-// 關閉彈窗邏輯
-function closePopup(e) {
-  const popup = e.target.closest('.popup');
-  if (popup) {
-    popup.classList.add('hidden');
-  }
-}
+// // 關閉彈窗邏輯
+// function closePopup(e) {
+//   const popup = e.target.closest('.popup');
+//   if (popup) {
+//     popup.classList.add('hidden');
+//   }
+// }
 
-// 綁定關閉按鈕事件
-document.addEventListener('click', function (e) {
-  if (e.target.classList.contains('closeBtn')) {
-    closePopup(e);
-  }
-});
+// // 綁定關閉按鈕事件
+// document.addEventListener('click', function (e) {
+//   if (e.target.classList.contains('closeBtn')) {
+//     closePopup(e);
+//   }
+// });
