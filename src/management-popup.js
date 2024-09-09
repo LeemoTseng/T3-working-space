@@ -37,6 +37,7 @@ const mainSectionPopupTemplate = `    <div
                     <div>
                       <label for="">Title</label>
                       <input
+                        id="mainSectionTitle"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
                         placeholder="Design for Business teams like yours"
@@ -45,6 +46,7 @@ const mainSectionPopupTemplate = `    <div
                     <div>
                       <label for="">Subtitle</label>
                       <textarea
+                      id="mainSectionSubtitle"
                         class="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         rows="4"
                         type="text"
@@ -66,7 +68,8 @@ const mainSectionPopupTemplate = `    <div
               </button>
               <button
                 type="button"
-                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                data-popup="mainSectionPopup"
+                class="closeBtn  mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Close
               </button>
@@ -109,55 +112,60 @@ const optionsPopupTemplate = `    <div
                   </div>
                   <div class="editContent space-y-3 py-5">
                     <div>
-                      <label for="">Order</label>
+                      <label for="optionsOrder">Order</label>
                       <input
                         id="optionsOrder"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
-                        placeholder="Design for Business teams like yours"
+                        placeholder="Enter order"
                       />
                     </div>
                     <div>
-                      <label for="">Option</label>
+                      <label for="optionsOption">Option</label>
                       <input
+                        id="optionsOption"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
-                        placeholder="Design for Business teams like yours"
+                        placeholder="Enter option"
                       />
                     </div>
                     <div>
-                      <label for="">Price</label>
+                      <label for="optionsPrice">Price</label>
                       <input
+                        id="optionsPrice"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
-                        placeholder="Design for Business teams like yours"
+                        placeholder="Enter price"
                       />
                     </div>
                     <div>
-                      <label for="">Per</label>
+                      <label for="optionsPer">Per</label>
                       <input
+                        id="optionsPer"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
-                        placeholder="Design for Business teams like yours"
+                        placeholder="Per unit"
                       />
                     </div>
                     <div>
-                      <label for="">Description</label>
+                      <label for="optionsDescription">Description</label>
                       <input
+                        id="optionsDescription"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
-                        placeholder="Design for Business teams like yours"
+                        placeholder="Enter description"
                       />
                     </div>
                     <div>
-                      <label for="">Service</label>
+                      <label for="optionsServices">Service</label>
                       <input
+                        id="optionsServices"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
-                        placeholder="Design for Business teams like yours"
+                        placeholder="Enter service"
                       />
                     </div>
-                  </div>
+                  </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
                 </div>
               </div>
             </div>
@@ -172,6 +180,7 @@ const optionsPopupTemplate = `    <div
               </button>
               <button
                 type="button"
+                data-popup="optionsPopup"
                 class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Close
@@ -215,21 +224,22 @@ const servicesPopupTemplate = `    <div
                   </div>
                   <div class="editContent space-y-3 py-5">
                     <div>
-                      <label for="">Title</label>
+                      <label for="">Order</label>
                       <input
+                      id="servicesOrder"
                         class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
                         type="text"
                         placeholder="Design for Business teams like yours"
                       />
                     </div>
                     <div>
-                      <label for="">Subtitle</label>
-                      <textarea
-                        class="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
-                        rows="4"
-                        type="text"
-                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quia reiciendis officia iure praesentium adipisci voluptatum assumenda quidem similique excepturi?"
-                      ></textarea>
+                      <label for="">Services</label>
+                      <input
+                        id="service"
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="number"
+                        placeholder="Design for Business teams like yours"
+                      />
                     </div>
                   </div>
                 </div>
@@ -246,6 +256,7 @@ const servicesPopupTemplate = `    <div
               </button>
               <button
                 type="button"
+                data-popup="servicesPopup"
                 class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Close
@@ -256,7 +267,7 @@ const servicesPopupTemplate = `    <div
       </div>
     </div>`
 const savePopupTemplate = `    <div
-      id="savePopup"
+      id="confirmPopup"
       class="popup relative z-10 hidden"
       aria-labelledby="modal-title"
       role="dialog"
@@ -278,11 +289,11 @@ const savePopupTemplate = `    <div
               <div class="sm:flex sm:items-start">
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
                   <h3 class="text-xl font-semibold leading-6 text-gray-900">
-                    Do you want to save the new item?
+                    Do you want to { save the new item } ?
                   </h3>
                   <div class="mt-2">
                     <p class="text-sm text-gray-500">
-                    The new item will be saved in the system.
+                    The action will be saved in the system.
 
                     </p>
                   </div>
@@ -294,11 +305,12 @@ const savePopupTemplate = `    <div
             >
               <button
                 type="button"
-                class="saveAgainBtn inline-flex w-full justify-center rounded-md bg-primary px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+                class="confirmBtn inline-flex w-full justify-center rounded-md bg-primary px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
               >
                 Yes
               </button>
               <button
+                data-popup="confirmPopup"
                 type="button"
                 class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-10 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
@@ -336,7 +348,7 @@ const successPopupTemplate = `    <div
                   </h3>
                   <div class="mt-2">
                     <p class="text-sm text-gray-500">
-                    The new item has been saved successfully.
+                    The action has been saved successfully.
 
                     </p>
                   </div>
@@ -348,6 +360,7 @@ const successPopupTemplate = `    <div
             >
               <button
                 type="button"
+                data-popup="successPopup"
                 class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-10 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Ok
@@ -357,9 +370,9 @@ const successPopupTemplate = `    <div
         </div>
       </div>
     </div>`
-const deletePopupTemplate = `    <div
-      id="deletePupup"
-      class="popup relative z-10 hidden"
+const errorPopupTemplate = `    <div
+      id="errorPupup"
+      class="popup relative z-10"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -380,12 +393,11 @@ const deletePopupTemplate = `    <div
               <div class="sm:flex sm:items-start">
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left py-5">
                   <h3 class="text-xl font-semibold leading-6 text-gray-900">
-                    The action cannot be recovered
+                    Error !
                   </h3>
                   <div class="mt-2">
                     <p class="text-sm text-gray-500">
-                      Do you want to delete
-                      <span class="text-red-700">HOT DESK</span> option?
+                      Please try again or contact the administrator.
                     </p>
                   </div>
                 </div>
@@ -396,15 +408,10 @@ const deletePopupTemplate = `    <div
             >
               <button
                 type="button"
-                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
-              >
-                Yes
-              </button>
-              <button
-                type="button"
+                data-popup="errorPupup"
                 class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-10 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
-                No
+                Ok
               </button>
             </div>
           </div>
@@ -412,129 +419,173 @@ const deletePopupTemplate = `    <div
       </div>
     </div>`
 
-// 插入彈窗模板
-const popupAll = document.querySelector('#popupAll');
-popupAll.innerHTML += mainSectionPopupTemplate;
-popupAll.innerHTML += optionsPopupTemplate;
-popupAll.innerHTML += savePopupTemplate;
-popupAll.innerHTML += successPopupTemplate;
-popupAll.innerHTML += servicesPopupTemplate;
-popupAll.innerHTML += deletePopupTemplate;
+
+// data return
 
 
-// add btn clicked
+const mainSectionContent = [
+  {
+    title: '',
+    subtitle: ''
+  }
+]
+const optionContent = [
+  {
+    optionsOrder: '',
+    enabled: false,
+    isPriceFloating: false,
+    option: '',
+    price: '',
+    per: '',
+    description: '',
+    services: '',
+  }
+]
+const servicesContent = [{
+  servicesOrder: 1,
+  service: '',
+}]
 
-const addBtn = document.querySelectorAll('.addBtn');
 
 
-// add popup while add btn clicked
 
-function openPopup(){
-  let popup = document.querySelector('.popup');
-  if (popup){
-    popup.classLit
+// loading All of the popup template
+document.addEventListener('DOMContentLoaded', function () {
+  const popupAll = document.querySelector('#popupAll');
+  if (popupAll) {
+    popupAll.innerHTML += mainSectionPopupTemplate;
+    popupAll.innerHTML += optionsPopupTemplate;
+    popupAll.innerHTML += savePopupTemplate;
+    popupAll.innerHTML += successPopupTemplate;
+    popupAll.innerHTML += servicesPopupTemplate;
+    popupAll.innerHTML += errorPopupTemplate;
   }
 
+
+});
+
+
+// Open popup
+
+function openPopup(popupId, content = null) {
+  const popup = document.querySelector(`#${popupId}`);
+  if (popup) {
+    if (content) {
+      const contentElement = popup.querySelector('.popup')
+      contentElement.innerHTML = content;
+    }
+    popup.classList.remove('hidden');
+  }
 }
 
+// Close popup
+
+function closePopup(popupId) {
+  const popup = document.querySelector(`#${popupId}`);
+  if (popup) {
+    popup.classList.add('hidden');
+  }
+}
+
+// Clicked event
+
+document.addEventListener('click', function (e) {
+
+  // open
+  if (e.target.matches('.addBtn')) {
+    const popupId = e.target.getAttribute('data-popup');
+    const itemData = e.target.getAttribute('data-item');
+    //  console.log(e.target);
+    openPopup(popupId);
+  }
+
+  // close
+  if (e.target.matches('.closeBtn')) {
+    const popupId = e.target.getAttribute('data-popup');
+    closePopup(popupId);
+  }
+})
+
+//save data?
+
+document.addEventListener('click', function (e) {
+  if (e.target.matches('.saveBtn')) {
+    // console.log(e.target.matches('.saveBtn'))
+    closePopup(e.target.closest('.popup').id); // 關閉當前彈窗
+    openPopup('confirmPopup');
+  }
+
+  //yes save!
+
+  if (e.target.matches('.confirmBtn')) {
+    // console.log(e.target.matches('.confirmBtn'))
+
+    //data return - main section
+    const title = document.getElementById('mainSectionTitle').value;
+    const subtitle = document.getElementById('mainSectionSubtitle').value;
+
+    //data return - options
+    const order = document.getElementById('optionsOrder').value;
+    const option = document.getElementById('optionsOption').value;
+    const price = document.getElementById('optionsPrice').value;
+    const per = document.getElementById('optionsPer').value;
+    const description = document.getElementById('optionsDescription').value;
+    const services = document.getElementById('optionsServices').value;
+
+    //data return - services
+    const servicesOrder = document.getElementById('servicesOrder').value;
+    const service = document.getElementById('service').value;
+
+    // 將數據存儲到 mainSectionContent、 optionContent、servicesContent中
+
+    mainSectionContent[0] = {
+      title: title,
+      subtitle: subtitle
+    };
+    optionContent[0] = {
+      Order: order,
+      enabled: true, // 假設保存後啟用
+      isPriceFloating: false, // 根據業務邏輯設置此值
+      option: option,
+      price: price,
+      per: per,
+      description: description,
+      services: services,
+    };
+    servicesContent[0] = {
+      Order: servicesOrder,
+      service: service,
+    };
+
+    console.log('main section的資料：', mainSectionContent);
+    console.log('options的資料：', optionContent);
+    console.log('services的資料：', servicesContent);
 
 
-// addBtn.forEach((item)=>{
-//   item.addEventListener('click',function(e){
+    // 清空表單
+    title.value = ''
+    subtitle.value = ''
+    order.value = ''
+    option.value = ''
+    price.value = ''
+    per.value = ''
+    description.value = ''
+    services.value = ''
+    servicesOrder.value = ''
+    service.value = ''
 
-//   })
-// })
+
+    closePopup('confirmPopup'); // 關閉確認保存視窗
+    openPopup('successPopup'); // 打開保存成功提示
+  }
+
+  // don't save
+  if (e.target.matches('.closeBtn')) {
+    const popupId = e.target.getAttribute('data-popup');
+    // console.log(popupId)
+    closePopup(popupId);
+  }
+})
 
 
 
-
-
-// // 插入彈窗模板
-// document.querySelector('#tableMainSection').innerHTML += mainSectionPopupTemplate;
-// document.querySelector('#tableOptions').innerHTML += optionsPopupTemplate;
-// document.querySelector('#tableOptions').innerHTML += savePopupTemplate;
-// document.querySelector('#tableOptions').innerHTML += successPopupTemplate;
-// document.querySelector('#tableServices').innerHTML += servicesPopupTemplate;
-// document.querySelector('#tableServices').innerHTML += savePopupTemplate;
-
-// // 更新內容的通用函數
-// function updateContent(contentArray, inputFields) {
-//   contentArray[0].order = inputFields.order.value;
-//   console.log(contentArray); // 調試，顯示更新後的內容
-// }
-
-// // 顯示成功彈窗的函數
-// function showSuccessPopup(selectedTable) {
-//   const successPopup = selectedTable.querySelector('#successPopup');
-//   if (successPopup) {
-//     successPopup.classList.remove('hidden');
-//   }
-// }
-
-// // 開啟彈窗的通用邏輯
-// const addBtn = document.querySelectorAll('.addBtn');
-// const saveBtn = document.querySelectorAll('.saveBtn');
-// const saveAgainBtn = document.querySelectorAll('.saveAgainBtn');
-
-// // 開啟彈窗邏輯
-// addBtn.forEach((item) => {
-//   item.addEventListener('click', function (e) {
-//     const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
-//     if (allPopup.length > 0) {
-//       allPopup[0].classList.remove('hidden'); // 顯示第一個彈窗
-//     }
-//   });
-// });
-
-// // 保存按鈕的邏輯：關閉當前彈窗，顯示下一個
-// saveBtn.forEach((item) => {
-//   item.addEventListener('click', function (e) {
-//     const allPopup = e.target.closest('.tableContainer').querySelectorAll('.popup');
-//     if (allPopup.length > 1) {
-//       allPopup[0].classList.add('hidden'); // 隱藏當前彈窗
-//       allPopup[1].classList.remove('hidden'); // 顯示下一個彈窗
-//     }
-//   });
-// });
-
-// // 最終保存邏輯，更新數據並顯示成功彈窗
-// saveAgainBtn.forEach((item) => {
-//   item.addEventListener('click', function (e) {
-//     const selectedTable = e.target.closest('.tableContainer');
-
-//     // 檢查是否是 options 或 services 的表格，並更新相應的內容
-//     if (selectedTable.querySelector('#optionsOrder')) {
-//       const inputFields = {
-//         order: selectedTable.querySelector('#optionsOrder'),
-//         // 可擴展其他需要的字段...
-//       };
-//       updateContent(optionContent, inputFields);
-
-//     } else if (selectedTable.querySelector('#servicesOrder')) {
-//       const inputFields = {
-//         order: selectedTable.querySelector('#servicesOrder'),
-//         // 可擴展其他需要的字段...
-//       };
-//       updateContent(servicesContent, inputFields);
-//     }
-
-//     // 顯示成功彈窗
-//     showSuccessPopup(selectedTable);
-//     console.log('Content updated:', optionContent, servicesContent);
-//   });
-// });
-
-// // 關閉彈窗邏輯
-// function closePopup(e) {
-//   const popup = e.target.closest('.popup');
-//   if (popup) {
-//     popup.classList.add('hidden');
-//   }
-// }
-
-// // 綁定關閉按鈕事件
-// document.addEventListener('click', function (e) {
-//   if (e.target.classList.contains('closeBtn')) {
-//     closePopup(e);
-//   }
-// });

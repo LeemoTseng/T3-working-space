@@ -229,7 +229,7 @@ document.querySelector('#tableMainSection').innerHTML += tableMainSection;
 // *---------------* //
 
 const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
-                            <table class="sortable-container" cellpadding="2" >
+                            <table class="sortable-container" cellpadding="2">
                               <!-- $5.2. Sortable(plugin) -->
                               <tbody class="sortable p-2">
                                 <div
@@ -253,11 +253,11 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                     <p class="font-bold text-lg">Options</p>
                                   </div>
                                   <!--  $5.1. Add an item btn -->
-
-                                   <a href="#" class="addBtn"
-                                   data-popup="OptionsAddBtn"
+                                  <a href="#"
                                     ><div
-                                      class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
+                                    data-popup="optionsPopup"
+                                    data-item="optionsData"
+                                      class="addBtn text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
                                     >
                                       Add
                                     </div></a
@@ -267,21 +267,23 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                   class="border-b text-sm disabled pointer-events-none select-none"
                                 >
                                   <th align="center" width="2%">#</th>
-                                  <th align="left" width="3%">                                    <svg
+                                  <th align="left" width="3%">
+                                    <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
                                       viewBox="0 0 24 24"
                                       stroke-width="1.5"
                                       stroke="currentColor"
-                                      class="size-5 "
+                                      class="size-5"
                                     >
                                       <path
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
                                         d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                                       />
-                                    </svg></th>
-                                    
+                                    </svg>
+                                  </th>
+
                                   <th align="left" width="5%">From</th>
                                   <th align="left" width="10%">Option</th>
                                   <th align="left" width="8%">Price</th>
@@ -330,9 +332,8 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                                       />
                                     </svg>
-
                                   </td>
-                                  
+
                                   <td class="enabled py-3 align-top">
                                     <!-- $6. Table style -->
                                     <svg
@@ -529,23 +530,23 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                   </td>
                                   <td align="center" class="py-3 align-top">
                                     <div
-                                        class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
-                                      >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          fill="none"
-                                          viewBox="0 0 24 24"
-                                          stroke-width="1.5"
-                                          stroke="currentColor"
-                                          class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                        >
-                                          <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
-                                          />
-                                        </svg></div
+                                      class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                     >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                      >
+                                        <path
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                                        />
+                                      </svg>
+                                    </div>
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -602,7 +603,7 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                       />
                                     </svg>
                                   </td>
-                                  <td class="py-3 align-top "> - </td>
+                                  <td class="py-3 align-top">-</td>
 
                                   <td class="py-3 align-top">HOT DESK</td>
                                   <td class="py-3 align-top">6,500</td>
@@ -784,23 +785,23 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                   </td>
                                   <td align="center" class="py-3 align-top">
                                     <div
-                                        class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
-                                      >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          fill="none"
-                                          viewBox="0 0 24 24"
-                                          stroke-width="1.5"
-                                          stroke="currentColor"
-                                          class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                        >
-                                          <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
-                                          />
-                                        </svg></div
+                                      class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                     >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        class="size-5 mb-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                      >
+                                        <path
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                                        />
+                                      </svg>
+                                    </div>
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -860,14 +861,15 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                   </div>
                                   <!--  $5.1. Add an item btn -->
 
-                                  <a href="#" class="addBtn"
-                                  data-popup="ServicesAddBtn"
-                                    ><div
-                                      class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
+                                  <a href="#">
+                                    <div
+                                    data-popup="servicesPopup"
+                                    data-item="servicesData"
+                                      class="addBtn text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
                                     >
                                       Add
-                                    </div></a
-                                  >
+                                    </div>
+                                  </a>
                                 </div>
                                 <tr
                                   class="border-b text-sm disabled pointer-events-none select-none"
@@ -1575,7 +1577,6 @@ if (document.querySelector('#login')) {
       errorMessage.classList.remove('hidden');
     } else {
       errorMessage.classList.add('hidden');
-      // console.log(emailInput.value);
     }
   })
 
@@ -1823,12 +1824,6 @@ titleCollapse.forEach((items) => {
 // $5.1. Add an item btn
 // *---------------* //
 
-// if (document.querySelector('#addBtn')) {
-
-// const addBtn = document.querySelector('#addBtn');
-
-
-// }
 
 
 
@@ -1857,7 +1852,7 @@ sortableContainers.forEach((container, containerIndex) => {
       items.forEach((item, idx) => {
         if (idx === 0) return; // 跳過第一個行
         item.id = `order-${containerIndex + 1}-item-${idx}`;
-        console.log(item.id);
+        // console.log(item.id);
       });
 
     }
@@ -1869,36 +1864,5 @@ sortableContainers.forEach((container, containerIndex) => {
 // $6. Popup
 // *---------------* //
 
-
-// table
-
-// const tableMainSection = document.querySelector('#tableMainSection')
-// const tableOptions = document.querySelector('#tableOptions')
-// const tableServices = document.querySelector('#tableServices')
-
-
-
-const mainSectionContent = [
-  {
-    title: '',
-    subtitle: ''
-  }
-]
-const optionContent = [
-  {
-    order: '',
-    enabled: false,
-    isPriceFloating: false,
-    option: '',
-    price: '',
-    per: '',
-    description: '',
-    services: '',
-  }
-]
-const servicesContent = [{
-  order: 1,
-  service: '',
-}]
 
 
