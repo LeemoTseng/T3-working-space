@@ -254,7 +254,7 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                   </div>
                                   <!--  $5.1. Add an item btn -->
 
-                                                                    <a href="#" class="addBtn"
+                                   <a href="#" class="addBtn"
                                     ><div
                                       class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
                                     >

@@ -413,6 +413,32 @@ const deletePopupTemplate = `    <div
     </div>`
 
 
+// add btn clicked
+
+const addBtn = document.querySelectorAll('.addBtn');
+
+
+// add popup while add btn clicked
+
+function openPopup(){
+  let popup = document.querySelector('.popup');
+  if (popup){
+    popup.classLit
+  }
+
+}
+
+
+
+// addBtn.forEach((item)=>{
+//   item.addEventListener('click',function(e){
+
+//   })
+// })
+
+
+
+
 
 // // 插入彈窗模板
 // document.querySelector('#tableMainSection').innerHTML += mainSectionPopupTemplate;

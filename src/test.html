@@ -4,11 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>popup test</title>
-    <link rel="stylesheet" href="output.css" />
+
+    <style>
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      .popup.active {
+        display: block;
+      }
+
+      .popup-content {
+        margin-bottom: 10px;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="output.css" /> -->
     <script src="management-popup.js" defer></script>
   </head>
-  <body class="flex flex-col">
-    <button class="addPopup btn-default w-[100px] spac">Popup</button>
-    <button class="addPopup btn-default w-[100px]">Popup</button>
+  <body>
+    <div class="popup" id="popup1">
+      <div class="popup-content">Popup 1 Content</div>
+      <button class="close-popup" data-popup="popup1">Close</button>
+    </div>
+
+    <div class="popup" id="popup2">
+      <div class="popup-content">Popup 2 Content</div>
+      <button class="close-popup" data-popup="popup2">Close</button>
+    </div>
+
+    <button class="popup-trigger" data-popup="popup1">Open Popup 1</button>
+    <button class="popup-trigger" data-popup="popup2">Open Popup 2</button>
+
+    <script>
+      // 打開彈窗
+      function openPopup(popupId) {
+        const popup = document.getElementById(popupId);
+        if (popup) {
+          popup.classList.add("active");
+        }
+      }
+
+      // 關閉彈窗
+      function closePopup(popupId) {
+        const popup = document.getElementById(popupId);
+        if (popup) {
+          popup.classList.remove("active");
+        }
+      }
+
+      // 綁定事件
+      document.addEventListener("click", function (event) {
+        // 打開彈窗的觸發按鈕
+        if (event.target.matches(".popup-trigger")) {
+          const popupId = event.target.getAttribute("data-popup");
+          openPopup(popupId);
+        }
+
+        // 關閉彈窗的按鈕
+        if (event.target.matches(".close-popup")) {
+          const popupId = event.target.getAttribute("data-popup");
+          closePopup(popupId);
+        }
+      });
+      function openPopup(popupId, content) {
+        const popup = document.getElementById(popupId);
+        if (popup) {
+          const contentElement = popup.querySelector(".popup-content");
+          contentElement.innerHTML = content; // 動態更新內容
+          popup.classList.add("active");
+        }
+      }
+
+      document
+        .querySelector(".popup-trigger")
+        .addEventListener("click", function () {
+          openPopup("popup1", "This is the new content for Popup 1");
+        });
+    </script>
   </body>
 </html>
