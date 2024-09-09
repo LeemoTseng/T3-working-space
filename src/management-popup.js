@@ -412,6 +412,15 @@ const deletePopupTemplate = `    <div
       </div>
     </div>`
 
+// 插入彈窗模板
+const popupAll = document.querySelector('#popupAll');
+popupAll.innerHTML += mainSectionPopupTemplate;
+popupAll.innerHTML += optionsPopupTemplate;
+popupAll.innerHTML += savePopupTemplate;
+popupAll.innerHTML += successPopupTemplate;
+popupAll.innerHTML += servicesPopupTemplate;
+popupAll.innerHTML += deletePopupTemplate;
+
 
 // add btn clicked
 

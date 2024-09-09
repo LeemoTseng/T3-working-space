@@ -255,6 +255,7 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                   <!--  $5.1. Add an item btn -->
 
                                    <a href="#" class="addBtn"
+                                   data-popup="OptionsAddBtn"
                                     ><div
                                       class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
                                     >
@@ -527,8 +528,7 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                     </ul>
                                   </td>
                                   <td align="center" class="py-3 align-top">
-                                    <a href="">
-                                      <div
+                                    <div
                                         class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                       >
                                         <svg
@@ -545,7 +545,7 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                             d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                                           />
                                         </svg></div
-                                    ></a>
+                                    >
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -783,8 +783,7 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                     </ul>
                                   </td>
                                   <td align="center" class="py-3 align-top">
-                                    <a href="">
-                                      <div
+                                    <div
                                         class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                       >
                                         <svg
@@ -801,7 +800,7 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                                             d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                                           />
                                         </svg></div
-                                    ></a>
+                                    >
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -862,6 +861,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                   <!--  $5.1. Add an item btn -->
 
                                   <a href="#" class="addBtn"
+                                  data-popup="ServicesAddBtn"
                                     ><div
                                       class="text-sm font-bold ml-5 border border-secondary px-10 py-0 rounded-md hover:bg-secondary hover:text-white transition-all"
                                     >
@@ -969,6 +969,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                         </svg>
                                         <p class="text-[13px]">Lee Mo</p>
                                       </li>
+
                                       <li
                                         class="flex justify-start items-start"
                                       >
@@ -993,8 +994,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                     </ul>
                                   </td>
                                   <td align="center" class="py-3 align-top">
-                                    <a href="">
-                                      <div
+                                    <div
                                         class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                       >
                                         <svg
@@ -1011,7 +1011,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                             d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                                           />
                                         </svg></div
-                                    ></a>
+                                    >
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -1145,8 +1145,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                     </ul>
                                   </td>
                                   <td align="center" class="py-3 align-top">
-                                    <a href="">
-                                      <div
+                                    <div
                                         class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                       >
                                         <svg
@@ -1163,7 +1162,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                             d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                                           />
                                         </svg></div
-                                    ></a>
+                                    >
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -1300,8 +1299,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                     </ul>
                                   </td>
                                   <td align="center" class="py-3 align-top">
-                                    <a href="">
-                                      <div
+                                    <div
                                         class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                       >
                                         <svg
@@ -1318,7 +1316,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                             d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                                           />
                                         </svg></div
-                                    ></a>
+                                    >
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -1454,8 +1452,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                     </ul>
                                   </td>
                                   <td align="center" class="py-3 align-top">
-                                    <a href="">
-                                      <div
+                                    <div
                                         class="hover relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                                       >
                                         <svg
@@ -1472,7 +1469,7 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                                             d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                                           />
                                         </svg></div
-                                    ></a>
+                                    >
                                     <a href="">
                                       <div
                                         class="hover relative h-10 w-10 hover:text-white hover:bg-secondary/5 rounded-full"
@@ -1899,8 +1896,6 @@ const optionContent = [
     services: '',
   }
 ]
-
-
 const servicesContent = [{
   order: 1,
   service: '',
