@@ -1862,7 +1862,6 @@ if (document.querySelectorAll('.sortable-container')) {
           item.id = `order-${containerIndex + 1}-item-${idx}`;
           // console.log(item.id);
         });
-
       }
     });
   });
