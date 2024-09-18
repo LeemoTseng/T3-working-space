@@ -1251,6 +1251,18 @@ input:focus {
   height: 100%;
 }
 
+.h-\[50px\] {
+  height: 50px;
+}
+
+.h-\[100\] {
+  height: 100;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
 .max-h-14 {
   max-height: 3.5rem;
 }
@@ -1267,6 +1279,10 @@ input:focus {
   max-height: 500px;
 }
 
+.max-h-\[100px\] {
+  max-height: 100px;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -1279,8 +1295,8 @@ input:focus {
   width: 2.5rem;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
+.w-10\/12 {
+  width: 83.333333%;
 }
 
 .w-2\/3 {
@@ -1375,8 +1391,12 @@ input:focus {
   width: 100vw;
 }
 
-.w-10\/12 {
-  width: 83.333333%;
+.w-\[120px\] {
+  width: 120px;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .min-w-4 {
@@ -1435,8 +1455,16 @@ input:focus {
   max-width: 1280px;
 }
 
-.max-w-\[80rem\] {
-  max-width: 80rem;
+.max-w-\[100px\] {
+  max-width: 100px;
+}
+
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
+.max-w-\[150px\] {
+  max-width: 150px;
 }
 
 .flex-none {
@@ -1533,6 +1561,10 @@ input:focus {
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1720,6 +1752,10 @@ input:focus {
   border-top-width: 1px;
 }
 
+.border-dashed {
+  border-style: dashed;
+}
+
 .border-none {
   border-style: none;
 }
@@ -1819,6 +1855,19 @@ input:focus {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-slate-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+
+.bg-secondary\/10 {
+  background-color: hsl(var(--secondary) / 0.1);
+}
+
+.bg-secondary\/5 {
+  background-color: hsl(var(--secondary) / 0.05);
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1854,6 +1903,11 @@ input:focus {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .p-0 {
@@ -1981,6 +2035,11 @@ input:focus {
   padding-bottom: 2rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -2087,6 +2146,10 @@ input:focus {
 
 .pt-\[40px\] {
   padding-top: 40px;
+}
+
+.pt-0 {
+  padding-top: 0px;
 }
 
 .text-left {
@@ -2315,6 +2378,15 @@ input:focus {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+
+.text-secondary\/90 {
+  color: hsl(var(--secondary) / 0.9);
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -2493,6 +2565,11 @@ input:focus {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:border-secondary:hover {
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--secondary) / var(--tw-border-opacity));
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -2520,6 +2597,10 @@ input:focus {
   background-color: hsl(var(--secondary) / 0.05);
 }
 
+.hover\:bg-secondary\/90:hover {
+  background-color: hsl(var(--secondary) / 0.9);
+}
+
 .hover\:text-gray-800:hover {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
@@ -2541,6 +2622,19 @@ input:focus {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-secondary\/90:hover {
+  color: hsl(var(--secondary) / 0.9);
+}
+
+.hover\:text-secondary\/95:hover {
+  color: hsl(var(--secondary) / 0.95);
+}
+
+.hover\:text-secondary:hover {
+  --tw-text-opacity: 1;
+  color: hsl(var(--secondary) / var(--tw-text-opacity));
 }
 
 .hover\:shadow-lg:hover {
