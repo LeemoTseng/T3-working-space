@@ -14,7 +14,7 @@
 // $5. Drag and drop
 // $5.1. Add an item btn
 // $5.2. Sortable(plugin)
-// $6. Popup
+// $6. Blog
 //
 // *---------------* //
 
@@ -222,7 +222,9 @@ const tableMainSection = `<div class="flex">
                               </td>
                             </tr>
                           </tbody></table>`
-document.querySelector('#tableMainSection').innerHTML += tableMainSection;
+if (document.querySelector('#tableMainSection')) {
+  document.querySelector('#tableMainSection').innerHTML += tableMainSection;
+}
 
 // *---------------* //
 // $0.3. table - Options
@@ -826,7 +828,11 @@ const tableOptions = `<div class="dropTable p-1 my-5 text-secondary">
                               </tbody>
                             </table>
                           </div>`
-document.querySelector('#tableOptions').innerHTML += tableOptions;
+
+if (document.querySelector('#tableOptions')) {
+  document.querySelector('#tableOptions').innerHTML += tableOptions;
+}
+
 
 
 // *---------------* //
@@ -1496,8 +1502,10 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                               </tbody>
                             </table>
                           </div>`
-document.querySelector('#tableServices').innerHTML += tableServices;
 
+if (document.querySelector('#tableServices')){
+document.querySelector('#tableServices').innerHTML += tableServices;
+}
 
 // *---------------* //
 // $1. Language toggle
@@ -1824,45 +1832,44 @@ titleCollapse.forEach((items) => {
 // $5.1. Add an item btn
 // *---------------* //
 
-
-
-
 // *---------------* //
 // $5.2. Sortable(plugin)
 // *---------------* //
 
 
-const sortableContainers = document.querySelectorAll('.sortable-container');
-sortableContainers.forEach((container, containerIndex) => {
-  const sortable = Sortable.create(container.querySelector('.sortable'), {
-    animation: 300,
-    ghostClass: 'bg-primary/5',
-    filter: '.disabled', // 過濾掉不可拖曳的行
-    handle: 'td', // 設置拖曳的handle為<td>
+if (document.querySelectorAll('.sortable-container')) {
 
-    // 使用 onMove 回調確保 disabled 行不被移動
-    onMove: function (evt) {
-      // 如果目標行有 "disabled" 類，禁止移動
-      return !evt.related.classList.contains('disabled');
-    },
 
-    onEnd: function (evt) {
-      const items = container.querySelectorAll('tr');
+  const sortableContainers = document.querySelectorAll('.sortable-container');
+  sortableContainers.forEach((container, containerIndex) => {
+    const sortable = Sortable.create(container.querySelector('.sortable'), {
+      animation: 300,
+      ghostClass: 'bg-primary/5',
+      filter: '.disabled', // 過濾掉不可拖曳的行
+      handle: 'td', // 設置拖曳的handle為<td>
 
-      items.forEach((item, idx) => {
-        if (idx === 0) return; // 跳過第一個行
-        item.id = `order-${containerIndex + 1}-item-${idx}`;
-        // console.log(item.id);
-      });
+      // 使用 onMove 回調確保 disabled 行不被移動
+      onMove: function (evt) {
+        // 如果目標行有 "disabled" 類，禁止移動
+        return !evt.related.classList.contains('disabled');
+      },
 
-    }
+      onEnd: function (evt) {
+        const items = container.querySelectorAll('tr');
+
+        items.forEach((item, idx) => {
+          if (idx === 0) return; // 跳過第一個行
+          item.id = `order-${containerIndex + 1}-item-${idx}`;
+          // console.log(item.id);
+        });
+
+      }
+    });
   });
-});
-
+}
 
 // *---------------* //
-// $6. Popup
+// $6. Blog
 // *---------------* //
-
 
 

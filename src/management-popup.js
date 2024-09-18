@@ -372,7 +372,7 @@ const successPopupTemplate = `    <div
     </div>`
 const errorPopupTemplate = `    <div
       id="errorPupup"
-      class="popup relative z-10"
+      class="popup relative z-10 hidden"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"

@@ -1,6 +1,11 @@
 
 import Swiper from './swiper-bundle.mjs';
 
+const slidesCount = document.querySelectorAll('.swiper-main .swiper-slide').length;
+
+if (slidesCount >1){
+
+
 const swiper = new Swiper('.swiper-main', {
 
   loop: true,
@@ -43,4 +48,6 @@ function setActiveBulletColor() {
   }
 }
 // console.log('swiper.js is fully loaded!');
-
+} else {
+  console.log('There is only one slide in the slider');
+}
