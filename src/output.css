@@ -1664,12 +1664,20 @@ input:focus {
   overflow-y: auto;
 }
 
+.whitespace-normal {
+  white-space: normal;
+}
+
 .text-wrap {
   text-wrap: wrap;
 }
 
 .text-nowrap {
   text-wrap: nowrap;
+}
+
+.break-all {
+  word-break: break-all;
 }
 
 .rounded-3xl {
