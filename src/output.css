@@ -1371,10 +1371,6 @@ input:focus {
   width: 100vw;
 }
 
-.w-72 {
-  width: 18rem;
-}
-
 .min-w-4 {
   min-width: 1rem;
 }
@@ -1433,14 +1429,6 @@ input:focus {
 
 .max-w-screen-xl {
   max-width: 1280px;
-}
-
-.max-w-full {
-  max-width: 100%;
-}
-
-.max-w-\[300px\] {
-  max-width: 300px;
 }
 
 .flex-none {
