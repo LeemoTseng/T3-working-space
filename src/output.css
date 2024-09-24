@@ -1074,10 +1074,6 @@ input:focus {
   margin-top: 8rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mt-48 {
   margin-top: 12rem;
 }
@@ -1251,18 +1247,6 @@ input:focus {
   height: 100%;
 }
 
-.h-\[50px\] {
-  height: 50px;
-}
-
-.h-\[100\] {
-  height: 100;
-}
-
-.h-\[100px\] {
-  height: 100px;
-}
-
 .max-h-14 {
   max-height: 3.5rem;
 }
@@ -1277,10 +1261,6 @@ input:focus {
 
 .max-h-\[500px\] {
   max-height: 500px;
-}
-
-.max-h-\[100px\] {
-  max-height: 100px;
 }
 
 .min-h-full {
@@ -1391,12 +1371,8 @@ input:focus {
   width: 100vw;
 }
 
-.w-\[120px\] {
-  width: 120px;
-}
-
-.w-\[200px\] {
-  width: 200px;
+.w-72 {
+  width: 18rem;
 }
 
 .min-w-4 {
@@ -1417,6 +1393,10 @@ input:focus {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.max-w-\[100px\] {
+  max-width: 100px;
 }
 
 .max-w-\[1024px\] {
@@ -1455,16 +1435,12 @@ input:focus {
   max-width: 1280px;
 }
 
-.max-w-\[100px\] {
-  max-width: 100px;
+.max-w-full {
+  max-width: 100%;
 }
 
-.max-w-\[500px\] {
-  max-width: 500px;
-}
-
-.max-w-\[150px\] {
-  max-width: 150px;
+.max-w-\[300px\] {
+  max-width: 300px;
 }
 
 .flex-none {
@@ -1700,6 +1676,10 @@ input:focus {
   overflow-y: auto;
 }
 
+.text-wrap {
+  text-wrap: wrap;
+}
+
 .text-nowrap {
   text-wrap: nowrap;
 }
@@ -1841,6 +1821,10 @@ input:focus {
   background-color: hsl(var(--secondary) / var(--tw-bg-opacity));
 }
 
+.bg-secondary\/5 {
+  background-color: hsl(var(--secondary) / 0.05);
+}
+
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
@@ -1853,19 +1837,6 @@ input:focus {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-slate-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.bg-secondary\/10 {
-  background-color: hsl(var(--secondary) / 0.1);
-}
-
-.bg-secondary\/5 {
-  background-color: hsl(var(--secondary) / 0.05);
 }
 
 .bg-opacity-50 {
@@ -1903,11 +1874,6 @@ input:focus {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 
 .p-0 {
@@ -2035,11 +2001,6 @@ input:focus {
   padding-bottom: 2rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -2146,10 +2107,6 @@ input:focus {
 
 .pt-\[40px\] {
   padding-top: 40px;
-}
-
-.pt-0 {
-  padding-top: 0px;
 }
 
 .text-left {
@@ -2330,6 +2287,11 @@ input:focus {
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+
 .text-secondary {
   --tw-text-opacity: 1;
   color: hsl(var(--secondary) / var(--tw-text-opacity));
@@ -2359,6 +2321,10 @@ input:focus {
   color: hsl(var(--secondary) / 0.8);
 }
 
+.text-secondary\/90 {
+  color: hsl(var(--secondary) / 0.9);
+}
+
 .text-slate-400 {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
@@ -2376,15 +2342,6 @@ input:focus {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
-
-.text-secondary\/90 {
-  color: hsl(var(--secondary) / 0.9);
 }
 
 .opacity-0 {
@@ -2565,11 +2522,6 @@ input:focus {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:border-secondary:hover {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--secondary) / var(--tw-border-opacity));
-}
-
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -2622,19 +2574,6 @@ input:focus {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-secondary\/90:hover {
-  color: hsl(var(--secondary) / 0.9);
-}
-
-.hover\:text-secondary\/95:hover {
-  color: hsl(var(--secondary) / 0.95);
-}
-
-.hover\:text-secondary:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--secondary) / var(--tw-text-opacity));
 }
 
 .hover\:shadow-lg:hover {
