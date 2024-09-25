@@ -930,6 +930,10 @@ input:focus {
   margin: 0.5rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -1098,6 +1102,10 @@ input:focus {
   margin-top: auto;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -1124,6 +1132,10 @@ input:focus {
 
 .grid {
   display: grid;
+}
+
+.list-item {
+  display: list-item;
 }
 
 .hidden {
@@ -1245,6 +1257,14 @@ input:focus {
 
 .h-full {
   height: 100%;
+}
+
+.h-52 {
+  height: 13rem;
+}
+
+.h-lvh {
+  height: 100lvh;
 }
 
 .max-h-14 {
@@ -1473,6 +1493,14 @@ input:focus {
   cursor: pointer;
 }
 
+.cursor-auto {
+  cursor: auto;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1481,6 +1509,30 @@ input:focus {
 
 .resize {
   resize: both;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-outside {
+  list-style-position: outside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-decimal {
+  list-style-type: decimal;
+}
+
+.list-none {
+  list-style-type: none;
+}
+
+.list-image-none {
+  list-style-image: none;
 }
 
 .grid-cols-1 {
@@ -1664,6 +1716,10 @@ input:focus {
   overflow-y: auto;
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .whitespace-normal {
   white-space: normal;
 }
@@ -1702,6 +1758,10 @@ input:focus {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 
 .border {
@@ -1845,6 +1905,10 @@ input:focus {
 
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.bg-none {
+  background-image: none;
 }
 
 .from-secondary\/40 {
@@ -2182,6 +2246,18 @@ input:focus {
   line-height: 1rem;
 }
 
+.text-\[17\.73px\] {
+  font-size: 17.73px;
+}
+
+.text-\[11rem\] {
+  font-size: 11rem;
+}
+
+.text-\[0\.875rem\] {
+  font-size: 0.875rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2204,6 +2280,14 @@ input:focus {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-\[0\.875rem\] {
+  font-weight: 0.875rem;
+}
+
+.font-\[11rem\] {
+  font-weight: 11rem;
 }
 
 .uppercase {
@@ -2570,6 +2654,11 @@ input:focus {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-red-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-lg:hover {
