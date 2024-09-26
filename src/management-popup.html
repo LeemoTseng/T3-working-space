@@ -14,7 +14,133 @@
     <button class="btn2 btn-default bg-secondary rounded-sm">
       表單編輯的談書
     </button>
+    <button class="btn3 btn-default bg-secondary rounded-sm">
+      Promotion彈出視窗
+    </button>
     <p>點選Esc離開</p>
+
+    <!-- Promotion彈出視窗 -->
+    <div
+      id="popupEdit3"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen h- overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="">
+                <div class="text-center sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Promotion
+                  </h3>
+                  <div class="editContent space-y-3 py-5">
+                    <!-- Order -->
+                    <div class="py-0">
+                      <p class="text-[0.875rem] font-medium mb-2">
+                        Order <span class="text-secondary">#5</span>
+                      </p>
+                    </div>
+                    <!-- Title -->
+                    <div>
+                      <label for="">Title</label>
+                      <input
+                        id="mainSectionTitle"
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <!-- Subtitle -->
+                    <div>
+                      <label for="">Subtitle</label>
+                      <textarea
+                        id="mainSectionSubtitle"
+                        class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        rows="4"
+                        type="text"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quia reiciendis officia iure praesentium adipisci voluptatum assumenda quidem similique excepturi?"
+                      ></textarea>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="flex justify-between space-x-5">
+                      <div class="startDate flex-1">
+                        <label for="">Start date</label>
+                        <input
+                          id=""
+                          class="justify-between rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                          type="date"
+                          placeholder="Choose a membership"
+                        />
+                      </div>
+                      <div class="startDate flex-1">
+                        <label for="">End date</label>
+                        <input
+                          id=""
+                          class="block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                          type="date"
+                          placeholder="Choose a membership"
+                        />
+                      </div>
+                    </div>
+                    <!-- Link -->
+                    <div>
+                      <label for="">Link</label>
+                      <input
+                        id=""
+                        class="block w-full rounded-md border-0 py-1.5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="https://"
+                      />
+                    </div>
+                    <!-- Upload image -->
+                    <div>
+                      <label for="">Upload image</label>
+                      <input
+                        type="file"
+                        class="bg-transparent border-none shadow-none px-0"
+                      />
+                      <div class="imgbox object-contain">
+                        <img src="./assets/home page/P1103469.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                data-popup="mainSectionPopup"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- 表單編輯的談書 -->
     <div
@@ -393,7 +519,7 @@
                       <label for="">Upload image</label>
                       <input
                         type="file"
-                        class="bg-transparent border-none shadow-none"
+                        class="bg-transparent border-none shadow-none px-0"
                       />
                       <div class="imgbox object-contain">
                         <img src="./assets/home page/P1103469.jpg" alt="" />
@@ -429,6 +555,7 @@
     <script>
       const popupEdit1 = document.querySelector("#popupEdit1");
       const popupEdit2 = document.querySelector("#popupEdit2");
+      const popupEdit3 = document.querySelector("#popupEdit3");
       const closeBtn = document.querySelectorAll(".closeBtn");
 
       // Close popup
@@ -447,10 +574,16 @@
           popupEdit2.classList.toggle("hidden");
         }
       });
+      document.querySelector(".btn3").addEventListener("click", () => {
+        if (popupEdit3) {
+          popupEdit3.classList.toggle("hidden");
+        }
+      });
       window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           popupEdit1.classList.add("hidden");
           popupEdit2.classList.add("hidden");
+          popupEdit3.classList.add("hidden");
         }
       });
     </script>
