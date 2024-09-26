@@ -60,7 +60,7 @@
     @apply block mb-2 text-sm font-medium text-gray-900;
   }
   input {
-    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary focus:border-primary;
+    @apply block p-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 shadow-none focus:ring-primary focus:border-primary;
   }
   input:focus {
     @apply ring-primary ring-2 ring-primary/50 border-primary;
@@ -86,7 +86,7 @@
     }
   }
   .select-default {
-    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300  focus:ring-primary focus:border-primary;
+    @apply block p-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300  focus:ring-primary focus:border-primary;
   }
   .select-default:focus {
     @apply ring-primary ring-2 ring-primary/50;
