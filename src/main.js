@@ -118,8 +118,8 @@ const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-5
         </div>
       </nav>
       <!-- mobile-menu -->
-      <div id="mobile-menu" class="md:hidden hidden">
-        <ul class="flex flex-col space-y-4 px-4 py-4">
+      <div id="mobile-menu" class="bg-white w-full md:hidden hidden fixed z-10 shadow-md">
+        <ul class="flex flex-col space-y-4 px-4 py-4 ">
           <li>
             <a
               href="index.html"
