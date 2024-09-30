@@ -63,11 +63,14 @@
     @apply block p-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 shadow-none focus:ring-primary focus:border-primary;
   }
   input:focus {
-    @apply ring-primary ring-2 ring-primary/50 border-primary;
+    @apply bg-primary text-primary ring-primary ring-2 ring-primary/50 border-primary;
   }
 }
 
 @layer components {
+  .checked {
+    @apply accent-primary ring-0 focus:ring-0 text-primary-foreground;
+  }
   .btn-default {
     @apply inline-flex items-center py-2 px-5 font-medium text-center text-primary-foreground rounded-lg bg-primary focus:ring-4 focus:ring-primary/50 transition-all duration-200;
   }
