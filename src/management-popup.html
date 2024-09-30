@@ -113,6 +113,7 @@
                       />
                     </div>
                     <!-- Upload image -->
+
                     <div>
                       <label for="">Upload image</label>
                       <p class="text-sm text-secondary/20">
@@ -120,14 +121,10 @@
                       </p>
                       <input
                         type="file"
-                        class="bg-transparent border-none shadow-none px-0"
+                        class="imageUpload bg-transparent border-none shadow-none px-0"
                       />
                       <div class="imgbox object-fill">
-                        <img
-                          class="max-h-28"
-                          src="./assets/home page/P1103469.jpg"
-                          alt=""
-                        />
+                        <img class="thumbnail max-h-28" src="" alt="" />
                       </div>
                     </div>
                   </div>
@@ -588,14 +585,10 @@
                       <label for="">Upload image</label>
                       <input
                         type="file"
-                        class="bg-transparent border-none shadow-none px-0"
+                        class="imageUpload bg-transparent border-none shadow-none px-0"
                       />
                       <div class="imgbox object-fill">
-                        <img
-                          class="max-h-28"
-                          src="./assets/home page/P1103469.jpg"
-                          alt=""
-                        />
+                        <img class="thumbnail max-h-28" src="" alt="" />
                       </div>
                     </div>
                   </div>
@@ -867,7 +860,7 @@
     <!-- 首頁的三個特色編輯彈出式窗 -->
     <div
       id="popupEdit1"
-      class="popup relative z-10 hidden"
+      class="popup relative z-10"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -1045,14 +1038,10 @@
                       <label for="">Upload image</label>
                       <input
                         type="file"
-                        class="bg-transparent border-none shadow-none px-0"
+                        class="imageUpload bg-transparent border-none shadow-none px-0"
                       />
                       <div class="imgbox object-fill">
-                        <img
-                          class="max-h-28"
-                          src="./assets/home page/P1103469.jpg"
-                          alt=""
-                        />
+                        <img class="thumbnail max-h-28" src="" alt="" />
                       </div>
                     </div>
                   </div>
@@ -1080,6 +1069,28 @@
         </div>
       </div>
     </div>
+
+    <!-- View the thumbnail -->
+    <script>
+      const fileInputs = document.querySelectorAll(".imageUpload");
+      fileInputs.forEach((input, index) => {
+        input.addEventListener("change", function (event) {
+          const file = event.target.files[0]; // Get the uploaded file
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              // Find the corresponding img element for this input field
+              const thumbnail = input.parentNode.querySelector(".thumbnail");
+              if (thumbnail) {
+                thumbnail.src = e.target.result; // Set the src of the img to the uploaded file's data URL
+                console.log(thumbnail.src);
+              }
+            };
+            reader.readAsDataURL(file); // Read the file as a data URL
+          }
+        });
+      });
+    </script>
 
     <!-- 控制彈出式窗的按鈕 -->
     <script>
