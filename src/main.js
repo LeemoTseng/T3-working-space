@@ -1531,5 +1531,3 @@ if (document.querySelector('#imgGroup')) {
   });
 
 }
-
-
