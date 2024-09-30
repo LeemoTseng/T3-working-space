@@ -27,8 +27,141 @@
       <button class="btn6 btn-default bg-secondary rounded-sm">
         Our partners的彈窗
       </button>
+      <button class="btn7 btn-default bg-secondary rounded-sm">
+        Booking資料的彈窗
+      </button>
     </div>
     <p>點選Esc離開</p>
+
+    <!-- Booking資料的彈窗 -->
+    <div
+      id="popupEdit7"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen h- overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="">
+                <div class="text-center sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Our partners
+                  </h3>
+                  <div class="editContent space-y-3 py-5">
+                    <!-- Booking data -->
+                    <div class="flex flex-col space-y-1 text-sm">
+                      <div class="flex justify-start">
+                        <p class="text-gray-700">Name</p>
+                        <p id="popupName" class="text-gray-400 pl-2">
+                          Elizabeth
+                        </p>
+                      </div>
+
+                      <div class="flex justify-start">
+                        <p class="text-gray-700">Email</p>
+                        <p id="popupEmail" class="text-gray-400 pl-2">
+                          Elizabeth@gmail.com
+                        </p>
+                      </div>
+
+                      <div class="flex justify-start">
+                        <p class="text-gray-700">Phone</p>
+                        <p id="popupPhone" class="text-gray-400 pl-2">
+                          0911559233
+                        </p>
+                      </div>
+
+                      <div class="flex justify-start">
+                        <p class="text-gray-700">Membership</p>
+                        <p id="popupMembership" class="text-gray-400 pl-2">
+                          memberships
+                        </p>
+                      </div>
+
+                      <div class="flex justify-start">
+                        <p class="text-gray-700">Tour Date</p>
+                        <p id="popupTourDate" class="text-gray-400 pl-2">
+                          yyyy/mm/dd
+                        </p>
+                      </div>
+                      <div class="flex justify-start">
+                        <p class="text-gray-700">Company</p>
+                        <p id="popupCompany" class="text-gray-400 pl-2">
+                          ddssda
+                        </p>
+                      </div>
+                      <div class="flex flex-col justify-start w-full">
+                        <p class="text-gray-700">How did you hear about us?</p>
+                        <p
+                          id="popupHow"
+                          class="text-gray-400 break-all whitespace-normal"
+                        >
+                          How did you hear about us?
+                        </p>
+                      </div>
+                      <div class="flex flex-col">
+                        <p class="text-gray-700">Message</p>
+                        <p
+                          id="popupMessage"
+                          class="text-gray-400 break-all whitespace-normal"
+                        >
+                          Lorem ipsum dolor, sit amet consectetur adipisicing
+                          elit. Nobis, expedita ipsum? Error temporibus
+                          voluptate vitae! Quo eveniet repellendus voluptas
+                          natus officiis at deserunt, perspiciatis fugiat, eum
+                          alias, dolorum ab neque!
+                        </p>
+                      </div>
+                      <!-- memo -->
+                      <div class="flex flex-col">
+                        <p class="text-gray-700">Memo</p>
+                        <textarea
+                          id=""
+                          class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                          rows="4"
+                          type="text"
+                          placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quia reiciendis officia iure praesentium adipisci voluptatum assumenda quidem similique excepturi?"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                data-popup="mainSectionPopup"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Our partners的彈窗 -->
     <div
       id="popupEdit6"
@@ -152,7 +285,6 @@
         </div>
       </div>
     </div>
-
     <!-- Services的彈窗 -->
     <div
       id="popupEdit5"
@@ -860,7 +992,7 @@
     <!-- 首頁的三個特色編輯彈出式窗 -->
     <div
       id="popupEdit1"
-      class="popup relative z-10"
+      class="popup relative z-10 hidden"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -1100,6 +1232,8 @@
       const popupEdit4 = document.querySelector("#popupEdit4");
       const popupEdit5 = document.querySelector("#popupEdit5");
       const popupEdit6 = document.querySelector("#popupEdit6");
+      const popupEdit7 = document.querySelector("#popupEdit7");
+
       const closeBtn = document.querySelectorAll(".closeBtn");
 
       // Close popup
@@ -1138,6 +1272,11 @@
           popupEdit6.classList.toggle("hidden");
         }
       });
+      document.querySelector(".btn7").addEventListener("click", () => {
+        if (popupEdit7) {
+          popupEdit7.classList.toggle("hidden");
+        }
+      });
 
       window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
@@ -1147,6 +1286,7 @@
           popupEdit4.classList.add("hidden");
           popupEdit5.classList.add("hidden");
           popupEdit6.classList.add("hidden");
+          popupEdit7.classList.add("hidden");
         }
       });
     </script>
