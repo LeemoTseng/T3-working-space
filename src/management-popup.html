@@ -9,23 +9,152 @@
 
   <body>
     <div class="p-2 flex space-x-2 space-y-2 flex-wrap">
-      <button class="btn1 btn-default bg-secondary rounded-sm">
-        首頁的三個特色編輯彈出式窗
+      <button class="btn1 btn-default bg-secondary rounded-sm mt-2 ml-2">
+        首頁的三個特色編輯彈窗
       </button>
       <button class="btn2 btn-default bg-secondary rounded-sm">
-        表單編輯的談書
+        表單編輯的彈窗
       </button>
       <button class="btn3 btn-default bg-secondary rounded-sm">
-        Promotion彈出視窗
+        Promotion彈窗
       </button>
       <button class="btn4 btn-default bg-secondary rounded-sm">
         Plan的彈窗
       </button>
       <button class="btn5 btn-default bg-secondary rounded-sm">
-        Services的彈窗
+        Service的彈窗
+      </button>
+      <button class="btn6 btn-default bg-secondary rounded-sm">
+        Our partners的彈窗
       </button>
     </div>
     <p>點選Esc離開</p>
+    <!-- Our partners的彈窗 -->
+    <div
+      id="popupEdit6"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen h- overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="">
+                <div class="text-center sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Our partners
+                  </h3>
+                  <div class="editContent space-y-3 py-5">
+                    <!-- Order -->
+                    <div class="py-0">
+                      <p class="text-[0.875rem] font-medium mb-2">
+                        Order<span class="text-secondary">#5</span>
+                      </p>
+                    </div>
+                    <!-- Enable -->
+                    <div class="flex space-x-2">
+                      <p class="text-[0.875rem] font-medium mb-2">Enabled</p>
+                      <label
+                        class="switch inline-block relative w-[40px] h-[22px]"
+                      >
+                        <input
+                          type="checkbox"
+                          class="appearance-none peer absolute w-0 h-0 opacity-0"
+                        />
+                        <span
+                          class="slider round block absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 rounded-full transition duration-400 peer-checked:bg-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-opacity-50"
+                        ></span>
+                        <span
+                          class="slider-circle block absolute left-1 bottom-1 bg-white w-[14px] h-[14px] rounded-full transition-transform duration-400 peer-checked:translate-x-[18px]"
+                        ></span>
+                      </label>
+                    </div>
+                    <!-- Title -->
+                    <div>
+                      <label for="">Partner name</label>
+                      <input
+                        id=""
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="Design for Business teams like yours"
+                      />
+                    </div>
+                    <!-- Subtitle -->
+                    <div>
+                      <label for="">Description</label>
+                      <textarea
+                        id=""
+                        class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        rows="4"
+                        type="text"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quia reiciendis officia iure praesentium adipisci voluptatum assumenda quidem similique excepturi?"
+                      ></textarea>
+                    </div>
+
+                    <!-- Link -->
+                    <div>
+                      <label for="">Link</label>
+                      <input
+                        id=""
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="text"
+                        placeholder="https://"
+                      />
+                    </div>
+                    <!-- Upload image -->
+                    <div>
+                      <label for="">Upload image</label>
+                      <p class="text-sm text-secondary/20">
+                        Recommended type: png, horizaontal, 200x100(px)
+                      </p>
+                      <input
+                        type="file"
+                        class="bg-transparent border-none shadow-none px-0"
+                      />
+                      <div class="imgbox object-fill">
+                        <img
+                          class="max-h-28"
+                          src="./assets/home page/P1103469.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                data-popup="mainSectionPopup"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Services的彈窗 -->
     <div
@@ -1048,6 +1177,7 @@
       const popupEdit3 = document.querySelector("#popupEdit3");
       const popupEdit4 = document.querySelector("#popupEdit4");
       const popupEdit5 = document.querySelector("#popupEdit5");
+      const popupEdit6 = document.querySelector("#popupEdit6");
       const closeBtn = document.querySelectorAll(".closeBtn");
 
       // Close popup
@@ -1081,6 +1211,12 @@
           popupEdit5.classList.toggle("hidden");
         }
       });
+      document.querySelector(".btn6").addEventListener("click", () => {
+        if (popupEdit6) {
+          popupEdit6.classList.toggle("hidden");
+        }
+      });
+
       window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           popupEdit1.classList.add("hidden");
@@ -1088,6 +1224,7 @@
           popupEdit3.classList.add("hidden");
           popupEdit4.classList.add("hidden");
           popupEdit5.classList.add("hidden");
+          popupEdit6.classList.add("hidden");
         }
       });
     </script>
