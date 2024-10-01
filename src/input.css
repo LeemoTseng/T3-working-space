@@ -63,7 +63,7 @@
     @apply block p-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 shadow-none focus:ring-primary focus:border-primary;
   }
   input:focus {
-    @apply bg-primary text-primary ring-primary ring-2 ring-primary/50 border-primary;
+    @apply bg-secondary/5 text-secondary ring-primary ring-2 ring-primary/50 border-primary;
   }
 }
 
