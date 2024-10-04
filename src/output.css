@@ -1008,11 +1008,6 @@ input:focus {
   margin-bottom: 1.75rem;
 }
 
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1446,20 +1441,12 @@ input:focus {
   width: 100vw;
 }
 
-.w-\[120px\] {
-  width: 120px;
-}
-
 .min-w-4 {
   min-width: 1rem;
 }
 
 .min-w-\[200px\] {
   min-width: 200px;
-}
-
-.min-w-\[100px\] {
-  min-width: 100px;
 }
 
 .max-w-2xl {
@@ -3060,20 +3047,12 @@ input:focus {
     flex-direction: row;
   }
 
-  .md\:flex-col {
-    flex-direction: column;
-  }
-
   .md\:items-start {
     align-items: flex-start;
   }
 
   .md\:justify-start {
     justify-content: flex-start;
-  }
-
-  .md\:justify-center {
-    justify-content: center;
   }
 
   .md\:justify-between {
