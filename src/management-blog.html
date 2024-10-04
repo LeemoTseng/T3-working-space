@@ -75,30 +75,30 @@
                     </p>
                   </div>
 
-                  <div class="pt-3 flex items-center">
-                    <p class="font-semibold text-sm text-secondary">
-                      Enable post
+                  <div class="pt-3 flex">
+                    <p class="font-semibold text-sm text-secondary pr-3">
+                      Enable
                     </p>
-                    <div class="enabled pl-3">
-                      <!-- $6. Enable style -->
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="size-6 cursor-pointer text-secondary/20"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
+                    <label
+                      class="switch inline-block relative w-[40px] h-[22px]"
+                    >
+                      <input
+                        class="appearance-none peer absolute w-0 h-0 opacity-0"
+                        asp-for="IsEnabled"
+                        type="checkbox"
+                      />
+                      <span
+                        class="slider round block absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 rounded-full transition duration-400 peer-checked:bg-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-opacity-50"
+                      ></span>
+                      <span
+                        class="slider-circle block absolute left-1 bottom-1 bg-white w-[14px] h-[14px] rounded-full transition-transform duration-400 peer-checked:translate-x-[18px]"
+                      ></span>
+                    </label>
                   </div>
 
-                  <div class="pt-3">
-                    <label class="font-semibold text-sm text-secondary w-20">
-                      Enable date
+                  <div class="pt-1">
+                    <label class="font-semibold text-sm text-secondary">
+                      Release date
                     </label>
                     <input type="date" class="lg:w-1/2" placeholder="" />
                   </div>

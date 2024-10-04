@@ -155,7 +155,17 @@ const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-5
               >Blog</a
             >
           </li>
+          <li>
+          <!-- Language selector -->
+          <div class="language">
+            <select class="border border-gray-300 rounded-md p-2 px-3 w-full">
+              <option value="en">English</option>
+              <option value="zh">中文（繁體）</option>
+            </select>
+          </div>
+          </li>
         </ul>
+
       </div>`
 document.querySelector('#navBar').innerHTML += navbarTemplate;
 
