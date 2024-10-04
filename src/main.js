@@ -1562,7 +1562,7 @@ tw.addEventListener('click', function() {
 });
 
 en.addEventListener('click', function() {
-  document.getElementById('tw').classList.remove('bg-primary', 'text-white');
+  tw.classList.remove('bg-primary', 'text-white');
   this.classList.add('bg-primary', 'text-white');
   
   en.querySelector('p').classList.add('text-white');
