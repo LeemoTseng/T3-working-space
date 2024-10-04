@@ -19,6 +19,8 @@
 // $7. Form validation
 // $7.1. Form check
 // $8. Space - Photos enlargement
+// $9. Navbar - Mobile - Language switch
+// $10. Cookie consent popup
 //
 // *---------------* //
 
@@ -1569,6 +1571,29 @@ en.addEventListener('click', function() {
   tw.querySelector('p').classList.remove('text-white');
 });
 
+// *---------------* //
+// $10. Cookie consent popup
+// *---------------* //
 
+const cookieConsentTemplate = `    <div
+      id="cookieConsent"
+      class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-secondary/85 shadow-lg"
+    >
+      <div
+        class="max-w-screen-xl mx-auto flex md:flex-row justify-center items-center flex-col"
+      >
+        <p class="text-white py-3">
+          我們使用Cookies為用戶提供更好的瀏覽體驗。繼續瀏覽該網站表示您同意我們的<a
+            href="#"
+            class="border-b"
+            >隱私權政策</a
+          >。
+        </p>
+        <div class="bg-primary w-[100px] px-3 py-1 rounded-sm">
+          <p class="text-white text-center cursor-pointer">同意</p>
+        </div>
+      </div>
+    </div>`
 
-
+const cookieConsent = document.querySelector('#cookieConsent');
+cookieConsent.innerHTML += cookieConsentTemplate;
