@@ -119,7 +119,7 @@ const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-5
       </nav>
       <!-- mobile-menu -->
       <div id="mobile-menu" class="bg-white w-full md:hidden hidden fixed z-10 shadow-md">
-        <ul class="flex flex-col space-y-4 px-4 py-4 ">
+        <ul class="flex flex-col space-y-4 px-4 py-4">
           <li>
             <a
               href="index.html"
@@ -151,17 +151,19 @@ const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-5
           <li>
             <a
               href="blog.html"
-              class="pb-3 block text-gray-600 hover:text-primary transition-all duration-200"
+              class="border-b pb-3 block text-gray-600 hover:text-primary transition-all duration-200"
               >Blog</a
             >
           </li>
           <li>
           <!-- Language selector -->
-          <div class="language">
-            <select class="border border-gray-300 rounded-md p-2 px-3 w-full">
-              <option value="en">English</option>
-              <option value="zh">中文（繁體）</option>
-            </select>
+          <div id="languageSwitch" class="flex justify-end space-x-2">
+              <div id="tw" class=" p-2 rounded-md bg-primary">
+                <p class="text-white ">中文</p>
+              </div>
+              <div id="en" class="p-2 rounded-md">
+                <p>English</p>
+              </div>
           </div>
           </li>
         </ul>
@@ -377,8 +379,9 @@ const footerTemplate = `<footer class="bg-gray-50">
           class="copywrite max-w-screen-xl flex flex-col items-center md:flex md:flex-row md:justify-between md:text-center mx-auto"
         >
           <div class="text-white font-semibold">T3CO Coworking Space</div>
-          <div class="text-white text-center md:text-start">
-            © 2024 T3CO™ A Member of T3EX Global Holdings (Stock Code 2636)
+          <div class="flex space-x-2">
+            <p class="text-white text-center md:text-start">© 2024 T3CO™ A Member of T3EX Global Holdings (Stock Code 2636)</p>
+            <a class="text-white text-center md:text-start border-b cursor-pointer">隱私權政策</a>
           </div>
         </div>
       </div>
@@ -1541,3 +1544,31 @@ if (document.querySelector('#imgGroup')) {
   });
 
 }
+
+// *---------------* //
+// $9. Navbar - Mobile - Language switch
+// *---------------* //
+
+const tw = document.getElementById('tw')
+const en = document.getElementById('en')
+
+tw.addEventListener('click', function() {
+
+  en.classList.remove('bg-primary', 'text-white');
+  this.classList.add('bg-primary', 'text-white');
+
+  tw.querySelector('p').classList.add('text-white');
+  en.querySelector('p').classList.remove('text-white');
+});
+
+en.addEventListener('click', function() {
+  document.getElementById('tw').classList.remove('bg-primary', 'text-white');
+  this.classList.add('bg-primary', 'text-white');
+  
+  en.querySelector('p').classList.add('text-white');
+  tw.querySelector('p').classList.remove('text-white');
+});
+
+
+
+
