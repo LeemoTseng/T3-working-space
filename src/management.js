@@ -15,6 +15,7 @@
 // $5.1. Add an item btn
 // $5.2. Sortable(plugin)
 // $6. Blog - Add an section
+// $7. set section
 //
 // *---------------* //
 
@@ -1503,8 +1504,8 @@ const tableServices = `<div class="dropTable p-1 my-5 text-secondary">
                             </table>
                           </div>`
 
-if (document.querySelector('#tableServices')){
-document.querySelector('#tableServices').innerHTML += tableServices;
+if (document.querySelector('#tableServices')) {
+  document.querySelector('#tableServices').innerHTML += tableServices;
 }
 
 // *---------------* //
@@ -1941,10 +1942,71 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, a?</textarea
                     />
                   </div>`
   const postSection = document.querySelector('#postSection')
-  
+
   // console.log(postSection)
-  
-  const addSectionBtn =  document.querySelector('#addSection')
+
+  const addSectionBtn = document.querySelector('#addSection')
 
 }
+
+
+// *---------------* //
+// $7. set section
+// *---------------* //
+
+const moreOptions = document.querySelectorAll('.moreOptions');
+
+moreOptions.forEach((item) => {
+  item.addEventListener('click', function (e) {
+    e.target.closest('.moreOptions').querySelector('.setSection').classList.toggle('hidden')
+
+  })
+})
+
+
+// *---------------* //
+// $8. Pagination
+// *---------------* //
+
+let currentPage = 1;
+const totalPages = document.querySelectorAll('[data-page]').length;
+
+if (totalPages) {
+  const updatePagination = () => {
+    document.querySelectorAll('[data-page]').forEach(button => {
+      button.classList.remove('bg-secondary', 'text-white');
+      button.classList.add('text-secondary');
+    });
+    const activeBtn = document.querySelector(`[data-page="${currentPage}"]`);
+    activeBtn.classList.remove('text-primary');
+    activeBtn.classList.add('bg-secondary', 'text-white');
+
+    document.querySelectorAll('[data-page]').forEach(button => {
+      button.addEventListener('click', function () {
+        currentPage = parseInt(this.getAttribute('data-page'));
+        updatePagination();
+      });
+    })
+
+  };
+  document.querySelector('#prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      updatePagination();
+    }
+  });
+
+  document.querySelector('#nextBtn').addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage += 1;
+      updatePagination();
+    }
+  });
+
+  updatePagination();
+} else {
+  console.log('#Pagination not found');
+}
+
+
 
