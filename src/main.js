@@ -33,7 +33,7 @@
 // $0.1. Navbar
 // *---------------* //
 
-const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-50">
+const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-50 shadow-sm">
         <div
           class="mx-auto px-4 py-2 flex item-center justify-between items-center"
         >
@@ -71,7 +71,7 @@ const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-5
             /></a>
           </div>
           <!-- menu -->
-          <div class="menu flex-grow hidden md:flex justify-center">
+          <div class="menu flex-grow hidden md:flex justify-center ">
             <ul class="flex space-x-6 font-medium">
               <li class="mx-2">
                 <a
@@ -120,8 +120,8 @@ const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-5
         </div>
       </nav>
       <!-- mobile-menu -->
-      <div id="mobile-menu" class="bg-white w-full md:hidden hidden fixed z-10 shadow-md">
-        <ul class="flex flex-col space-y-4 px-4 py-4">
+      <div id="mobile-menu" class="bg-white w-full md:hidden hidden fixed z-50">
+        <ul class="flex flex-col space-y-4 px-4 py-4 shadow-sm">
           <li>
             <a
               href="index.html"
@@ -160,10 +160,10 @@ const navbarTemplate = `      <nav class="bg-white w-full fixed top-0 left-0 z-5
           <li>
           <!-- Language selector -->
           <div id="languageSwitch" class="flex justify-end space-x-2">
-              <div id="tw" class=" p-2 rounded-md bg-primary">
+              <div id="tw" class=" p-2 rounded-md bg-primary cursor-pointer">
                 <p class="text-white ">中文</p>
               </div>
-              <div id="en" class="p-2 rounded-md">
+              <div id="en" class="p-2 rounded-md cursor-pointer">
                 <p>English</p>
               </div>
           </div>
@@ -179,6 +179,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   hamburgerButton.addEventListener('click', function () {
     mobileMenu.classList.toggle('hidden');
+  });
+  // 點擊其他地方會關閉mobile-menu
+  document.addEventListener('click', function (e) {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnButton = hamburgerButton.contains(e.target);
+
+    if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+    }
   });
 });
 // console.log(document.querySelector('#navBar'));
@@ -381,9 +390,9 @@ const footerTemplate = `<footer class="bg-gray-50">
           class="copywrite max-w-screen-xl flex flex-col items-center md:flex md:flex-row md:justify-between md:text-center mx-auto"
         >
           <div class="text-white font-semibold">T3CO Coworking Space</div>
-          <div class="flex space-x-2">
-            <p class="text-white text-center md:text-start">© 2024 T3CO™ A Member of T3EX Global Holdings (Stock Code 2636)</p>
-            <a class="text-white text-center md:text-start border-b cursor-pointer">隱私權政策</a>
+          <div class="md:flex md:flex-row flex flex-col items-center space-x-2 ">
+            <p class="text-white text-center">© 2024 T3CO™ A Member of T3EX Global Holdings (Stock Code 2636)</p>
+            <a class="text-white underline cursor-pointer">隱私權政策</a>
           </div>
         </div>
       </div>
@@ -636,7 +645,7 @@ if (document.querySelector('#allPlan')) {
 
     // forEach plan card
     const planDiv = document.createElement('div');
-    planDiv.className = 'plan flex flex-col max-w-lg';
+    planDiv.className = 'plan flex flex-col max-w-lg mx-auto lg:mx-0';
 
     const planContainer = document.createElement('div');
     planContainer.className = 'container w-full h-full flex flex-col items-start p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
@@ -1507,20 +1516,21 @@ if (document.querySelector('#imgGroup')) {
 
     // 傳入圖片路徑
     const imgBox = e.target.closest('.imgBox');
-    
+
     if (imgBox) {
       const img = imgBox.querySelector('img');
-      // console.log(img);
       enlargedWindowImg = img.src;
       enlargedWindow.querySelector('img').src = enlargedWindowImg;
-      
+
     }
 
     if (isEnlarged) {
-      enlargedWindow.classList.remove('hidden');   
+      enlargedWindow.classList.remove('hidden');
 
       enlargedWindow.classList.remove('opacity-0');
       enlargedWindow.classList.add('opacity-100');
+
+      document.body.style.overflow = 'hidden';
 
 
     } else {
@@ -1530,6 +1540,7 @@ if (document.querySelector('#imgGroup')) {
 
 
       enlargedWindow.classList.add('hidden');
+      document.body.style.overflow = '';
     }
 
   });
@@ -1539,9 +1550,9 @@ if (document.querySelector('#imgGroup')) {
     if (isEnlarged) {
       isEnlarged = false;
       enlargedWindow.classList.remove('opacity-100');
-      enlargedWindow.classList.add('opacity-0');
+      enlargedWindow.classList.add('opacity-0', 'hidden');
 
-      enlargedWindow.classList.add('hidden');
+      document.body.style.overflow = '';
     }
   });
 
@@ -1554,7 +1565,7 @@ if (document.querySelector('#imgGroup')) {
 const tw = document.getElementById('tw')
 const en = document.getElementById('en')
 
-tw.addEventListener('click', function() {
+tw.addEventListener('click', function () {
 
   en.classList.remove('bg-primary', 'text-white');
   this.classList.add('bg-primary', 'text-white');
@@ -1563,10 +1574,10 @@ tw.addEventListener('click', function() {
   en.querySelector('p').classList.remove('text-white');
 });
 
-en.addEventListener('click', function() {
+en.addEventListener('click', function () {
   tw.classList.remove('bg-primary', 'text-white');
   this.classList.add('bg-primary', 'text-white');
-  
+
   en.querySelector('p').classList.add('text-white');
   tw.querySelector('p').classList.remove('text-white');
 });
@@ -1575,25 +1586,28 @@ en.addEventListener('click', function() {
 // $10. Cookie consent popup
 // *---------------* //
 
-const cookieConsentTemplate = `    <div
-      id="cookieConsent"
-      class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-secondary/85 shadow-lg"
-    >
+if (document.querySelector('#cookieConsent')) {
+  const cookieConsent = document.querySelector('#cookieConsent');
+  const cookieConsentTemplate = `<div
+        class="alpha absolute inset-0 bg-secondary opacity-80 w-full h-full"
+      ></div>
+
       <div
-        class="max-w-screen-xl mx-auto flex md:flex-row justify-center items-center flex-col"
+        class="relative p-2 z-10 max-w-screen-xl flex flex-col justify-center mx-auto items-center md:flex-row md:justify-around md:items-center"
       >
         <p class="text-white py-3">
           我們使用Cookies為用戶提供更好的瀏覽體驗。繼續瀏覽該網站表示您同意我們的<a
             href="#"
-            class="border-b"
+            class="underline"
             >隱私權政策</a
           >。
         </p>
-        <div class="bg-primary w-[100px] px-3 py-1 rounded-sm">
-          <p class="text-white text-center cursor-pointer">同意</p>
-        </div>
-      </div>
-    </div>`
+        <button
+          class="bg-primary px-3 py-1 w-[100px] text-white text-center cursor-pointer rounded-sm"
+        >
+          同意
+        </button>
+      </div>`
 
-const cookieConsent = document.querySelector('#cookieConsent');
-cookieConsent.innerHTML += cookieConsentTemplate;
+  cookieConsent.innerHTML += cookieConsentTemplate;
+}

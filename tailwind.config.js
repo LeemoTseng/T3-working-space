@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Noto Sans', 'Arial', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border) / <alpha-value>)",
         input: "hsl(var(--input) / <alpha-value>)",
@@ -43,6 +46,6 @@ module.exports = {
       },
 
     },
-    plugins: [require("tailwindcss-animate"),require('flowbite/plugin')],
+    plugins: [require("tailwindcss-animate"), require('flowbite/plugin')],
   },
 };
