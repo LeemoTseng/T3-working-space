@@ -7,7 +7,9 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
     <script src="../node_modules/flowbite/dist/flowbite.min.js" defer></script>
+    <script src="./assets/plugins/layui/layui.js"></script>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="./assets/plugins/layui/layui.css" />
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body>
@@ -309,9 +311,9 @@
               />
             </div>
             <!-- Membership -->
-            <div class="">
+            <div class="relative">
               <label for="membership">Membership type(required)</label>
-              <select class="border select-default" id="membership">
+              <select class="border select-default h-[46px]" id="membership">
                 <option value="default" selected disabled>
                   Please select an option
                 </option>
@@ -322,9 +324,16 @@
             </div>
 
             <!-- Date -->
-            <div class="">
+            <div class="relative">
               <label for="date">Tour Date</label>
-              <input class="border" type="date" id="tourDate" />
+              <!-- <input class="border" type="date" id="tourDate" /> -->
+              <input
+                type="text"
+                size="20"
+                id="datepicker"
+                placeholder="yyyy-mm-dd"
+                required
+              />
             </div>
             <!-- Company (optional) -->
             <div class="">
@@ -337,9 +346,13 @@
               />
             </div>
             <!-- How did you hear about us? -->
-            <div class="">
+            <div class="relative">
               <label for="how">How did you hear about us? (required)</label>
-              <select class="border select-default" id="how">
+              <select
+                class="border select-default h-[46px]"
+                id="how"
+                style="line-height: 1.5; vertical-align: middle"
+              >
                 <option value="default" selected disabled>
                   Please select an option
                 </option>
@@ -358,7 +371,11 @@
                 rows="6"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary"
                 placeholder="leave a comment..."
+                maxlength="500"
               ></textarea>
+              <div class="text-right text-sm text-gray-500 mt-1" id="charCount">
+                0/500
+              </div>
             </div>
           </div>
           <div
@@ -563,10 +580,92 @@
     </div>
     <!-- Footer -->
     <div id="footer"></div>
-
     <!-- cookie consent popup -->
     <!-- <div id="cookieConsent"></div> -->
     <!-- cookie -->
-    <div id="cookieConsent" class="fixed bottom-[0.1px] w-full"></div>
+    <div id="cookieConsent" class="fixed bottom-0 w-full max-h-[30svh]"></div>
   </body>
+
+  <!--  Scripts -->
+  <script>
+    // Length limited textarea
+    const messageTextarea = document.getElementById("message");
+    const charCountDisplay = document.getElementById("charCount");
+
+    messageTextarea.addEventListener("input", () => {
+      const currentLength = messageTextarea.value.length;
+      charCountDisplay.textContent = `${currentLength}/500`;
+    });
+
+    // Date picker
+    layui.use(["laydate"], function () {
+      var laydate = layui.laydate;
+
+      laydate.render({
+        elem: "#datepicker",
+        format: "yyyy-MM-dd",
+        lang: "en",
+        trigger: "click",
+        theme: "#F6ab00",
+        ready: function () {
+          console.log("laydate loaded");
+
+          // hover style
+          // 動態插入 CSS 規則來修改按鈕懸停顏色
+          const style = document.createElement("style");
+          style.innerHTML = `
+        /* 按鈕懸停時字體顏色變為橘色 */
+        .laydate-footer-btns span:hover {
+          color: #F7941D !important; /* 橘色 */
+        }
+      `;
+          document.head.appendChild(style);
+
+          // 替換下一個月箭頭圖標
+          const nextMonthIcon = document.querySelector(".laydate-next-m");
+          if (nextMonthIcon) {
+            nextMonthIcon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+            stroke-width="2" stroke="currentColor" style="width: 18px; height: 24px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        `;
+          }
+
+          // 替換上一個月箭頭圖標
+          const prevMonthIcon = document.querySelector(".laydate-prev-m");
+          if (prevMonthIcon) {
+            prevMonthIcon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+            stroke-width="2" stroke="currentColor" style="width: 18px; height: 24px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        `;
+          }
+
+          // 替換下一年箭頭圖標
+          const nextYearIcon = document.querySelector(".laydate-next-y");
+          if (nextYearIcon) {
+            nextYearIcon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+            stroke-width="2" stroke="currentColor" style="width: 18px; height: 24px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 4.5l7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+          </svg>
+        `;
+          }
+
+          // 替換上一年箭頭圖標
+          const prevYearIcon = document.querySelector(".laydate-prev-y");
+          if (prevYearIcon) {
+            prevYearIcon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+            stroke-width="2" stroke="currentColor" style="width: 18px; height: 24px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 4.5l-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
+          </svg>
+        `;
+          }
+        },
+      });
+    });
+  </script>
 </html>

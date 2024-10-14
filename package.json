@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "flowbite": "^2.5.1",
+    "layui": "^2.9.17",
     "swiper": "^11.1.9",
     "tailwindcss-animate": "^1.0.7"
   }

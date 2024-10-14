@@ -1596,7 +1596,7 @@ if (document.querySelector('#cookieConsent')) {
         class="relative p-2 z-10 max-w-screen-xl flex flex-col justify-center mx-auto items-center md:flex-row md:justify-around md:items-center"
       >
         <p class="text-white py-3">
-          我們使用Cookies為用戶提供更好的瀏覽體驗。繼續瀏覽該網站表示您同意我們的<a
+          我們使用Cookies為用戶提供更好的瀏覽體驗。繼續瀏覽該網站表示您同意我們的我們使用Cookies為用戶提供更好的瀏覽體驗。繼續瀏覽該網站表示您同意我們的lorem<a
             href="#"
             class="underline"
             >隱私權政策</a
