@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>HTML樣式轉換</p>
+    <textarea
+      class="border bg-slate-200"
+      id="transformContent"
+      rows="10"
+      cols="50"
+    ></textarea>
+    <button id="convertButton" class="btn-default">轉換</button>
+    <p>轉換後的HTML：</p>
+    <textarea
+      class="border bg-slate-200"
+      id="outputContent"
+      rows="10"
+      cols="50"
+      readonly
+    ></textarea>
+  </body>
+  <script>
+    const transform = document.getElementById("transformContent");
+    const convertButton = document.getElementById("convertButton");
+    const outputContent = document.getElementById("outputContent");
+
+    convertButton.addEventListener("click", () => {
+      let content = transform.value;
+
+      content = content
+        .replace(/<p>&nbsp;<\/p>/g, "")
+        .replace(/<\/?br\s*\/?>/g, "");
+
+      // 提取 h2 和 h3 標題並生成目錄項
+      let tocItems = [];
+      content = content.replace(/<(h2|h3)>(.*?)<\/\1>/g, (match, tag, text) => {
+        const id = `heading-${Date.now()}-${Math.random()
+          .toString(36)
+          .substr(2, 9)}`;
+        tocItems.push({ id, tag, text });
+        return `<${tag} id="${id}" style="scroll-margin-top: 60px;" class="${
+          tag === "h2"
+            ? "text text-2xl font-bold text-gray-800 pt-8"
+            : "text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide"
+        }">${text}</${tag}>`;
+      });
+
+      // 處理表格內的 <li> 標籤
+      content = content.replace(/<table[\s\S]*?<\/table>/g, (tableContent) => {
+        return tableContent.replace(
+          /<li(.*?)>/g,
+          '<li$1 class="text text-lg text-gray-700 leading-relaxed space-y-1 pt-1 text-justify tracking-wide">'
+        );
+      });
+
+      // 處理不在表格內的 <li> 標籤
+      content = content.replace(
+        /<li(.*?)>/g,
+        '<li$1 class="text text-lg text-gray-700 leading-relaxed space-y-3 pt-5 text-justify tracking-wide">'
+      );
+
+      // 處理圖片標籤 <img>
+      content = content.replace(
+        /<img\s+src="(.*?)"\s+alt="(.*?)"\s*>/g,
+        (match, src, alt) => {
+          // 將 <img> 的 alt 內容輸出到控制台
+          console.log(src, alt);
+
+          // 返回修改後的 <div> 包裹 <img> 結構
+          return `<div class="imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden">
+      <img class="w-full h-full object-contain" src="${src}" alt="${alt}">
+    </div>`;
+        }
+      );
+
+      // 格式化 <p>、<h2>、<h3>、<h4>、<table> 和 <td> 標籤
+      content = content
+        .replace(
+          /<p>/g,
+          '<p class="text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+        )
+        .replace(
+          /<h2>/g,
+          '<h2 style="scroll-margin-top: 60px;" class="text text-2xl font-bold text-gray-800 pt-8">'
+        )
+        .replace(
+          /<h3>/g,
+          '<h3 style="scroll-margin-top: 60px;" class="text text-xl text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+        )
+        .replace(
+          /<h4>/g,
+          '<h4 class="text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+        )
+        .replace(/<table>/g, '<table class="w-10/12 mx-auto my-5">')
+        .replace(
+          /<td>/g,
+          '<td class="p-3 border-b border-gray-400 text-center align-middle">'
+        );
+
+      // 構建目錄 HTML 結構
+      let tocContent = `
+        <div class="index border border-secondary/50 p-5">
+          <p class="text-2xl font-semibold pb-3">目錄</p>
+          <ul class="space-y-2">
+      `;
+
+      tocItems.forEach((item) => {
+        tocContent += `
+          <li class="hover:text-primary">
+            <a href="#${item.id}">${item.text}</a>
+          </li>
+        `;
+      });
+
+      tocContent += `
+          </ul>
+        </div>
+      `;
+
+      // 將目錄內容和格式化的內容合併
+      outputContent.value = tocContent + content;
+    });
+  </script>
+</html>

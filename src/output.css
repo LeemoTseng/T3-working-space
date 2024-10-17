@@ -1333,6 +1333,10 @@ input:focus {
   height: 100%;
 }
 
+.h-\[5px\] {
+  height: 5px;
+}
+
 .max-h-14 {
   max-height: 3.5rem;
 }
@@ -1488,6 +1492,18 @@ input:focus {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.w-\[50px\] {
+  width: 50px;
 }
 
 .min-w-4 {
@@ -1811,6 +1827,10 @@ input:focus {
   overflow-y: auto;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .whitespace-normal {
   white-space: normal;
 }
@@ -1857,6 +1877,10 @@ input:focus {
 
 .border-0 {
   border-width: 0px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-4 {
@@ -1908,6 +1932,11 @@ input:focus {
   border-color: hsl(var(--primary) / var(--tw-border-opacity));
 }
 
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .border-red-600 {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
@@ -1924,6 +1953,20 @@ input:focus {
 
 .border-secondary\/80 {
   border-color: hsl(var(--secondary) / 0.8);
+}
+
+.border-gray-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+
+.border-secondary\/50 {
+  border-color: hsl(var(--secondary) / 0.5);
 }
 
 .bg-black {
@@ -1989,6 +2032,16 @@ input:focus {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -2167,6 +2220,11 @@ input:focus {
   padding-bottom: 2rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -2289,6 +2347,10 @@ input:focus {
 
 .pt-\[40px\] {
   padding-top: 40px;
+}
+
+.pt-\[50px\] {
+  padding-top: 50px;
 }
 
 .text-left {
