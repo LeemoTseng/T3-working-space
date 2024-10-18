@@ -300,29 +300,9 @@
                               id="convertButton"
                               class="btn cursor-pointer rounded-md bg-secondary/80 hover:bg-secondary px-2 py-1 text-white w-[200px] text-center"
                             >
-                              Inspect image tags
+                              Styling Html
                             </div>
                           </div>
-                          <!-- inspect the image -->
-                          <div class="imgInspect">
-                            <div class="flex items-center pt-5">
-                              <p
-                                class="font-semibold text-sm text-nowrap text-secondary"
-                              >
-                                <span>1-</span><span>alt</span>
-                              </p>
-                              <input
-                                type="file"
-                                class="imageUpload w-fit border-none bg-transparent shadow-none p-2"
-                              />
-                              <div
-                                class="imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden"
-                              >
-                                <img class="thumbnail" src="" alt="" />
-                              </div>
-                            </div>
-                          </div>
-
                           <div class="pt-5">
                             <div class="font-semibold text-sm text-secondary">
                               Output HTML
@@ -331,10 +311,18 @@
                               readonly
                               id="outputContent"
                               type="text"
-                              rows="2"
-                              class="w-full rounded-lg p-2 text-secondary bg-gray-50"
+                              rows="10"
+                              class="w-full rounded-lg p-2 text-secondary bg-secondary/5"
                             ></textarea>
                           </div>
+                          <!-- inspect the image -->
+                          <p class="pt-5 font-semibold text-sm text-secondary">
+                            Inspected images
+                          </p>
+                          <div
+                            id="imgInspectContainer"
+                            class="imgInspect"
+                          ></div>
                         </div>
                       </div>
                     </div>
@@ -508,29 +496,94 @@
                 </ul>
               </div>
             `;
-
         // 將目錄內容和格式化的內容合併
         outputContent.value = tocContent + content;
       });
+      //$Inspect image tags
+      convertButton.addEventListener("click", function () {
+        const imgInspectContainer = document.querySelector(
+          "#imgInspectContainer"
+        );
+        imgInspectContainer.innerHTML = "";
 
-      // $imageUpload : preview the image
-      const fileInputs = document.querySelectorAll(".imageUpload");
-      fileInputs.forEach((input, index) => {
-        input.addEventListener("change", function (event) {
-          const file = event.target.files[0]; // Get the uploaded file
-          if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-              // Find the corresponding img element for this input field
-              const thumbnail = input.parentNode.querySelector(".thumbnail");
-              if (thumbnail) {
-                thumbnail.src = e.target.result; // Set the src of the img to the uploaded file's data URL
-                console.log(thumbnail.src);
+        const imgTags = transformContent.value.match(
+          /<img\s+[^>]*src=["']?([^"'\s>]+)["']?\s+alt=["']?([^"'\s>]+)["']?[^>]*\/?>/g
+        );
+
+        console.log(imgTags);
+
+        if (imgTags) {
+          imgTags.forEach((imgTag, index) => {
+            // 提取 src 和 alt
+            const [, src, alt] = imgTag.match(
+              /src=["'“”]?([^"'\s>“”]+)["'“”]?\s+alt=["'“”]?([^"'\s>“”]+)["'“”]?/
+            );
+
+            // 動態插入結構
+            const imgInspectHTML = `
+                  <div class="flex items-center pt-5">
+                    <p class="font-semibold text-sm text-nowrap text-secondary">
+                      <span>${index + 1}-</span><span>${alt}</span>
+                    </p>
+                    <input
+                      type="file"
+                      class="imageUpload w-fit border-none bg-transparent shadow-none p-2"
+                      data-index="${index}"
+                    />
+                    <div class="imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden">
+                      <img class="thumbnail" src="${src}" alt="${alt}" />
+                    </div>
+                  </div>
+                `;
+            imgInspectContainer.insertAdjacentHTML("beforeend", imgInspectHTML);
+          });
+
+          document.querySelectorAll(".imageUpload").forEach((input, index) => {
+            input.addEventListener("change", function (event) {
+              const file = event.target.files[0]; // 獲取上傳的文件
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                  // 找到對應的 img 標籤
+                  const thumbnail =
+                    input.parentNode.querySelector(".thumbnail");
+                  if (thumbnail) {
+                    const newSrc = e.target.result; // 讀取文件的結果
+                    thumbnail.src = newSrc; // 更新縮略圖
+
+                    // 更新 outputContent 中對應的 img src
+                    const imgTags = outputContent.value.match(
+                      /<img\s+[^>]*src=["'“”]?([^"'\s>“”]+)["'“”]?\s+alt=["'“”]?([^"'\s>“”]+)["'“”]?[^>]*\/?>/g
+                    );
+
+                    if (imgTags) {
+                      let updatedContent = outputContent.value;
+                      imgTags[index] = imgTags[index].replace(
+                        /src=["'“”]?([^"'\s>“”]+)["'“”]?/,
+                        `src="${newSrc}"`
+                      );
+                      updatedContent = updatedContent.replace(
+                        /<img\s+[^>]*src=["'“”]?([^"'\s>“”]+)["'“”]?\s+alt=["'“”]?([^"'\s>“”]+)["'“”]?[^>]*\/?>/g,
+                        (match, p1, p2, offset) => {
+                          return imgTags[offset] || match;
+                        }
+                      );
+                      // 更新 outputContent 中的值
+                      outputContent.value = updatedContent;
+                    }
+                  }
+                };
+                reader.readAsDataURL(file); // 將文件讀取為數據URL
               }
-            };
-            reader.readAsDataURL(file); // Read the file as a data URL
-          }
-        });
+            });
+          });
+        } else {
+          const imgNotFoundHtml = `<p class="text-sm text-gray-400">
+                              No image tags found.
+                            </p>`;
+          imgInspectContainer.insertAdjacentHTML("beforeend", imgNotFoundHtml);
+          console.log("No image tags found");
+        }
       });
     </script>
   </body>
