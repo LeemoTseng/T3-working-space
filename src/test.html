@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- htmlEditContent -->
+    <div id="htmlEditContent" class="hidden">
+      <div class="pt-5">
+        <div class="font-semibold text-sm text-secondary">Insert HTML</div>
+        <textarea
+          id="transformContent"
+          type="text"
+          rows="10"
+          class="w-full rounded-lg p-2 text-secondary"
+        ></textarea>
+      </div>
+      <div class="pt-5">
+        <div
+          id="convertButton"
+          class="btn cursor-pointer rounded-md bg-secondary/80 hover:bg-secondary px-2 py-1 text-white w-[200px] text-center"
+        >
+          Inspect image tags
+        </div>
+      </div>
+      <!-- inspect the image -->
+      <div class="imgInspect">
+        <div class="flex items-center pt-5">
+          <p class="font-semibold text-sm text-nowrap text-secondary">
+            <span>1-</span><span>alt</span>
+          </p>
+          <input
+            type="file"
+            class="imageUpload w-fit border-none bg-transparent shadow-none p-2"
+          />
+          <div
+            class="imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden"
+          >
+            <img class="thumbnail" src="" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-5">
+        <div class="font-semibold text-sm text-secondary">Output HTML</div>
+        <textarea
+          readonly
+          id="outputContent"
+          type="text"
+          rows="2"
+          class="w-full rounded-lg p-2 text-secondary bg-gray-50"
+        ></textarea>
+      </div>
+    </div>
+
+    <script>
+      const transformContent = document.getElementById("transformContent");
+      const convertButton = document.getElementById("convertButton");
+      const outputContainer = document.getElementById("outputContainer");
+      const outputContent = document.getElementById("outputContent");
+      const imgInspectContainer = document.querySelector(".imgInspect");
+      const updateButton = document.getElementById("updateButton");
+
+      // 儲存圖片數據
+      let imgData = [];
+
+      // 轉換按鈕點擊事件
+      convertButton.addEventListener("click", () => {
+        let content = transformContent.value;
+
+        // 清空上次的檢查區塊內容
+        imgInspectContainer.innerHTML = "";
+
+        // 處理 <img> 並收集 img 的 alt 和 src 信息
+        imgData = [];
+        content = content.replace(
+          /<img\s+src="(.*?)"\s+alt="(.*?)"\s*>/g,
+          (match, src, alt, index) => {
+            // 儲存每個 img 的 alt 和 src 信息
+            imgData.push({ src, alt, index });
+
+            // 返回修改後的 <div> 包裹 <img> 結構
+            return `<div class="imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden">
+              <img class="w-full h-full object-contain" src="${src}" alt="${alt}">
+            </div>`;
+          }
+        );
+
+        // 將處理過的 HTML 內容顯示在 outputContainer 中
+        outputContainer.innerHTML = content;
+
+        // 根據 imgData 生成對應的 HTML 並插入到 imgInspectContainer 中
+        imgData.forEach((img, index) => {
+          const imgInspectHTML = `
+            <div class="flex items-center pt-5">
+              <p class="font-semibold text-sm text-nowrap text-secondary">
+                <span>${index + 1}-</span><span>${img.alt}</span>
+              </p>
+              <input type="file" class="imageUpload w-fit border-none bg-transparent shadow-none p-2" data-index="${index}" />
+              <div class="imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden">
+                <img class="thumbnail" src="${img.src}" alt="${img.alt}" />
+              </div>
+            </div>
+          `;
+          imgInspectContainer.insertAdjacentHTML("beforeend", imgInspectHTML);
+        });
+
+        // 綁定圖片上傳事件
+        document.querySelectorAll(".imageUpload").forEach((input) => {
+          input.addEventListener("change", (event) => {
+            const index = event.target.getAttribute("data-index");
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+              const newSrc = e.target.result;
+              imgData[index].src = newSrc;
+
+              // 更新對應的圖片縮略圖
+              const thumbnail =
+                imgInspectContainer.querySelectorAll(".thumbnail")[index];
+              thumbnail.src = newSrc;
+            };
+
+            reader.readAsDataURL(file);
+          });
+        });
+      });
+
+      // 點擊放入按鈕，將圖片的 alt 和 src 放回 HTML
+      updateButton.addEventListener("click", () => {
+        let finalHTML = outputContainer.innerHTML;
+
+        // 替換 <img> 的 src 和 alt
+        imgData.forEach((img) => {
+          const regex = new RegExp(
+            `<img\\s+src=".*?"\\s+alt="${img.alt}"\\s*>`
+          );
+          finalHTML = finalHTML.replace(
+            regex,
+            `<img src="${img.src}" alt="${img.alt}">`
+          );
+        });
+
+        // 將結果顯示在 outputContent 中
+        outputContent.value = finalHTML;
+      });
+    </script>
+  </body>
+</html>

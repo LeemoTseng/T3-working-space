@@ -96,7 +96,23 @@
                     </label>
                   </div>
 
-                  <div class="pt-1">
+                  <div class="pt-5">
+                    <labal
+                      class="text-secondary font-semibold text-sm leading-6"
+                      >Category</labal
+                    >
+                    <select
+                      name=""
+                      id=""
+                      class="select-default select-default:focus lg:w-1/2 w-full"
+                    >
+                      <option value="">Option</option>
+                      <option value="">Option</option>
+                      <option value="">Option</option>
+                    </select>
+                  </div>
+
+                  <div class="pt-5">
                     <label class="font-semibold text-sm text-secondary">
                       Release date
                     </label>
@@ -115,23 +131,9 @@
                     >
                     <input type="text" />
                   </div>
-                  <div class="pt-5">
-                    <labal
-                      class="text-secondary font-semibold text-sm leading-6"
-                      >Catagory</labal
-                    >
-                    <select
-                      name=""
-                      id=""
-                      class="select-default select-default:focus lg:w-1/2 w-full"
-                    >
-                      <option value="">Option</option>
-                      <option value="">Option</option>
-                      <option value="">Option</option>
-                    </select>
-                  </div>
+
                   <div class="pt-3">
-                    <div class="upload flex items-center">
+                    <div class="upload flex flex-col">
                       <p
                         class="font-semibold text-sm text-nowrap text-secondary"
                       >
@@ -139,17 +141,13 @@
                       </p>
                       <input
                         type="file"
-                        class="border-none bg-transparent shadow-none p-2"
+                        class="imageUpload border-none bg-transparent shadow-none p-2"
                       />
-                    </div>
-                    <div
-                      class="imgbox object-cover max-h-[200px] max-w-[100px] overflow-hidden"
-                    >
-                      <img
-                        class=""
-                        src="https://picsum.photos/id/684/600/500"
-                        alt=""
-                      />
+                      <div
+                        class="imgbox flex-wrap object-cover max-h-[200px] max-w-[100px] overflow-hidden"
+                      >
+                        <img class="thumbnail" src="" alt="" />
+                      </div>
                     </div>
 
                     <div class="flex pt-10">
@@ -182,93 +180,166 @@
                           d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
                         ></path>
                       </svg>
+                      <!-- $button : section mode, html mode -->
+                      <div class="switch flex space-x-2">
+                        <p
+                          id="sectionEditMode"
+                          class="p-2 cursor-pointer rounded-md font-medium bg-secondary/80 text-white"
+                        >
+                          Section mode
+                        </p>
+                        <p
+                          id="htmlEditMode"
+                          class="p-2 cursor-pointer rounded-md font-medium bg-secondary/5 text-secondary/50"
+                        >
+                          Html mode
+                        </p>
+                      </div>
                     </div>
+                    <!-- $Transfer the HTML content -->
                     <div id="postSection">
                       <div
                         class="postSection px-5 py-5 my-3 rounded-md bg-secondary/5"
                       >
-                        <div class="flex justify-between text-red-800">
-                          <div>
-                            <p class="font-semibold text-sm text-secondary">
-                              Order<span class="text-secondary"> #5</span>
-                            </p>
+                        <!-- sectionEditContent -->
+                        <div id="sectionEditContent" class="">
+                          <div class="flex justify-between text-red-800">
+                            <div>
+                              <p class="font-semibold text-sm text-secondary">
+                                Order<span class="text-secondary"> #5</span>
+                              </p>
+                            </div>
+                            <a href="#" class="flex space-x-2">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-5"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                />
+                              </svg>
+                              <p class="font-semibold text-sm">
+                                Delete this section
+                              </p>
+                            </a>
                           </div>
-                          <a href="#" class="flex space-x-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke-width="1.5"
-                              stroke="currentColor"
-                              class="size-5"
+                          <div>
+                            <labal class="font-semibold text-sm text-secondary"
+                              >Subtitle</labal
                             >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-                              />
-                            </svg>
-                            <p class="font-semibold text-sm">
-                              Delete this section
+                            <input
+                              type="text"
+                              class="border-none shadow-none bg-white"
+                            />
+                          </div>
+                          <div class="pt-5">
+                            <div class="font-semibold text-sm text-secondary">
+                              Contetent
+                            </div>
+                            <textarea
+                              type="text"
+                              rows="3"
+                              class="w-full rounded-lg p-2 text-secondary"
+                            ></textarea>
+                          </div>
+                          <div class="upload pt-5 flex flex-col">
+                            <p
+                              class="font-semibold text-sm text-nowrap text-secondary"
+                            >
+                              Image upload
                             </p>
-                          </a>
-                        </div>
+                            <input
+                              type="file"
+                              class="imageUpload imageup border-none bg-transparent shadow-none p-2"
+                            />
+                            <div
+                              class="imgbox object-cover max-h-[200px] max-w-[100px] overflow-hidden"
+                            >
+                              <img class="thumbnail" src="" alt="" />
+                            </div>
+                          </div>
 
-                        <div>
+                          <div class="pt-5"></div>
                           <labal class="font-semibold text-sm text-secondary"
-                            >Subtitle</labal
+                            >Image description</labal
                           >
                           <input
                             type="text"
                             class="border-none shadow-none bg-white"
                           />
-                        </div>
-                        <div class="pt-5">
-                          <div class="font-semibold text-sm text-secondary">
-                            Contetent
+                          <div class="cursor-pointer pt-5">
+                            <div
+                              id="addSection"
+                              class="w-full text-secondary/80 text-center text-sm font-bold border border-dashed border-secondary px-3 py-2 rounded-md hover:bg-secondary/5 transition-all"
+                            >
+                              Add a new section
+                            </div>
                           </div>
-                          <textarea
-                            type="text"
-                            rows="3"
-                            class="w-full rounded-lg p-2 text-secondary"
-                          ></textarea>
                         </div>
-                        <div class="upload flex items-center">
-                          <p
-                            class="font-semibold text-sm text-nowrap text-secondary"
-                          >
-                            Image upload
-                          </p>
-                          <input
-                            type="file"
-                            class="border-none bg-transparent shadow-none p-2"
-                          />
+                        <!-- htmlEditContent -->
+                        <div id="htmlEditContent" class="hidden">
+                          <div class="pt-5">
+                            <div class="font-semibold text-sm text-secondary">
+                              Insert HTML
+                            </div>
+                            <textarea
+                              id="transformContent"
+                              type="text"
+                              rows="10"
+                              class="w-full rounded-lg p-2 text-secondary"
+                            ></textarea>
+                          </div>
+                          <div class="pt-5">
+                            <div
+                              id="convertButton"
+                              class="btn cursor-pointer rounded-md bg-secondary/80 hover:bg-secondary px-2 py-1 text-white w-[200px] text-center"
+                            >
+                              Inspect image tags
+                            </div>
+                          </div>
+                          <!-- inspect the image -->
+                          <div class="imgInspect">
+                            <div class="flex items-center pt-5">
+                              <p
+                                class="font-semibold text-sm text-nowrap text-secondary"
+                              >
+                                <span>1-</span><span>alt</span>
+                              </p>
+                              <input
+                                type="file"
+                                class="imageUpload w-fit border-none bg-transparent shadow-none p-2"
+                              />
+                              <div
+                                class="imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden"
+                              >
+                                <img class="thumbnail" src="" alt="" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="pt-5">
+                            <div class="font-semibold text-sm text-secondary">
+                              Output HTML
+                            </div>
+                            <textarea
+                              readonly
+                              id="outputContent"
+                              type="text"
+                              rows="2"
+                              class="w-full rounded-lg p-2 text-secondary bg-gray-50"
+                            ></textarea>
+                          </div>
                         </div>
-                        <div
-                          class="imgbox object-cover max-h-[200px] max-w-[100px] overflow-hidden"
-                        >
-                          <img src="https://picsum.photos/200/100" alt="" />
-                        </div>
-                        <div class="pt-5"></div>
-                        <labal class="font-semibold text-sm text-secondary"
-                          >Image description</labal
-                        >
-                        <input
-                          type="text"
-                          class="border-none shadow-none bg-white"
-                        />
                       </div>
-                      <!-- $6. Blog - Add an section -->
                     </div>
                   </div>
-                  <div class="cursor-pointer">
-                    <div
-                      id="addSection"
-                      class="w-full text-secondary/80 text-center text-sm font-bold border border-dashed border-secondary px-3 py-2 rounded-md hover:bg-secondary/5 transition-all"
-                    >
-                      Add a new section
-                    </div>
-                  </div>
+
                   <div class="border-b pt-10"></div>
                   <div class="btns pt-10 flex space-x-2">
                     <a href="#">
@@ -295,5 +366,172 @@
         </div>
       </section>
     </div>
+
+    <script>
+      // $button : section mode, html mode
+      const sectionEditMode = document.getElementById("sectionEditMode");
+      const htmlEditMode = document.getElementById("htmlEditMode");
+      const sectionEditContent = document.getElementById("sectionEditContent");
+      const htmlEditContent = document.getElementById("htmlEditContent");
+
+      let currentMode = "sectionEditMode";
+
+      sectionEditMode.addEventListener("click", () => {
+        if (currentMode === "htmlEditMode") {
+          sectionEditMode.className =
+            "p-2 cursor-pointer rounded-md font-medium bg-secondary/80 text-white";
+          htmlEditMode.className =
+            "p-2 cursor-pointer rounded-md font-medium bg-secondary/5 text-secondary/50";
+          currentMode = "sectionEditMode";
+          sectionEditContent.classList.remove("hidden");
+          htmlEditContent.classList.add("hidden");
+
+          console.log(currentMode);
+        }
+      });
+
+      htmlEditMode.addEventListener("click", () => {
+        if (currentMode === "sectionEditMode") {
+          htmlEditMode.className =
+            "p-2 cursor-pointer rounded-md font-medium bg-secondary/80 text-white";
+          sectionEditMode.className =
+            "p-2 cursor-pointer rounded-md font-medium bg-secondary/5 text-secondary/50";
+          currentMode = "htmlEditMode";
+          sectionEditContent.classList.add("hidden");
+          htmlEditContent.classList.remove("hidden");
+
+          console.log(currentMode);
+        }
+      });
+
+      // $Transfer the HTML content
+
+      const transformContent = document.getElementById("transformContent");
+      const convertButton = document.getElementById("convertButton");
+      const outputContent = document.getElementById("outputContent");
+
+      convertButton.addEventListener("click", () => {
+        let content = transformContent.value;
+
+        content = content
+          .replace(/<p>&nbsp;<\/p>/g, "")
+          .replace(/<\/?br\s*\/?>/g, "");
+
+        // 提取 h2 和 h3 標題並生成目錄項
+        let tocItems = [];
+        content = content.replace(
+          /<(h2|h3)>(.*?)<\/\1>/g,
+          (match, tag, text) => {
+            const id = `heading-${Date.now()}-${Math.random()
+              .toString(36)
+              .substr(2, 9)}`;
+            tocItems.push({ id, tag, text });
+            return `<${tag} id="${id}" style="scroll-margin-top: 60px;" class="${
+              tag === "h2"
+                ? "text text-2xl font-bold text-gray-800 pt-8"
+                : "text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide"
+            }">${text}</${tag}>`;
+          }
+        );
+
+        // 處理表格內的 <li> 標籤
+        content = content.replace(
+          /<table[\s\S]*?<\/table>/g,
+          (tableContent) => {
+            return tableContent.replace(
+              /<li(.*?)>/g,
+              '<li$1 class="text text-lg text-gray-700 leading-relaxed space-y-1 pt-1 text-justify tracking-wide">'
+            );
+          }
+        );
+
+        // 處理不在表格內的 <li> 標籤
+        content = content.replace(
+          /<li(.*?)>/g,
+          '<li$1 class="text text-lg text-gray-700 leading-relaxed space-y-3 pt-5 text-justify tracking-wide">'
+        );
+
+        // 處理圖片標籤 <img>
+        content = content.replace(
+          /<img\s+src="(.*?)"\s+alt="(.*?)"\s*>/g,
+          (match, src, alt) => {
+            // 將 <img> 的 alt 內容輸出到控制台
+            console.log(src, alt);
+
+            // 返回修改後的 <div> 包裹 <img> 結構
+            return `<div class="imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden">
+            <img class="w-full h-full object-contain" src="${src}" alt="${alt}">
+          </div>`;
+          }
+        );
+
+        // 格式化 <p>、<h2>、<h3>、<h4>、<table> 和 <td> 標籤
+        content = content
+          .replace(
+            /<p>/g,
+            '<p class="text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+          )
+          .replace(
+            /<h2>/g,
+            '<h2 style="scroll-margin-top: 60px;" class="text text-2xl font-bold text-gray-800 pt-8">'
+          )
+          .replace(
+            /<h3>/g,
+            '<h3 style="scroll-margin-top: 60px;" class="text text-xl text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+          )
+          .replace(
+            /<h4>/g,
+            '<h4 class="text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+          )
+          .replace(/<table>/g, '<table class="w-10/12 mx-auto my-5">')
+          .replace(
+            /<td>/g,
+            '<td class="p-3 border-b border-gray-400 text-center align-middle">'
+          );
+
+        // 構建目錄 HTML 結構
+        let tocContent = `
+              <div class="index border border-secondary/50 p-5">
+                <p class="text-2xl font-semibold pb-3">目錄</p>
+                <ul class="space-y-2">
+            `;
+
+        tocItems.forEach((item) => {
+          tocContent += `
+                <li class="hover:text-primary">
+                  <a href="#${item.id}">${item.text}</a>
+                </li>
+              `;
+        });
+
+        tocContent += `
+                </ul>
+              </div>
+            `;
+
+        // 將目錄內容和格式化的內容合併
+        outputContent.value = tocContent + content;
+      });
+
+      // $imageUpload : preview the image
+      const fileInputs = document.querySelectorAll(".imageUpload");
+      fileInputs.forEach((input, index) => {
+        input.addEventListener("change", function (event) {
+          const file = event.target.files[0]; // Get the uploaded file
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              // Find the corresponding img element for this input field
+              const thumbnail = input.parentNode.querySelector(".thumbnail");
+              if (thumbnail) {
+                thumbnail.src = e.target.result; // Set the src of the img to the uploaded file's data URL
+                console.log(thumbnail.src);
+              }
+            };
+            reader.readAsDataURL(file); // Read the file as a data URL
+          }
+        });
+      });
+    </script>
   </body>
 </html>
