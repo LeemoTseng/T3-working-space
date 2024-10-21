@@ -507,7 +507,7 @@
         imgInspectContainer.innerHTML = "";
 
         const imgTags = transformContent.value.match(
-          /<img\s+[^>]*src=["']?([^"'\s>]+)["']?\s+alt=["']?([^"'\s>]+)["']?[^>]*\/?>/g
+          /<img\s+[^>]*src=["']?([^"'\s>]*)["']?\s+alt=["']?([^"'\s>]*)["']?[^>]*\/?>/g
         );
 
         console.log(imgTags);
@@ -515,8 +515,8 @@
         if (imgTags) {
           imgTags.forEach((imgTag, index) => {
             // 提取 src 和 alt
-            const [, src, alt] = imgTag.match(
-              /src=["'“”]?([^"'\s>“”]+)["'“”]?\s+alt=["'“”]?([^"'\s>“”]+)["'“”]?/
+            const [, src = "", alt = ""] = imgTag.match(
+              /src=["']?([^"'\s>]*)["']?\s+alt=["']?([^"'\s>]*)["']?/
             );
 
             // 動態插入結構
