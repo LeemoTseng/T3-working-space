@@ -393,7 +393,6 @@
       });
 
       // $Transfer the HTML content
-
       const transformContent = document.getElementById("transformContent");
       const convertButton = document.getElementById("convertButton");
       const outputContent = document.getElementById("outputContent");
@@ -414,11 +413,11 @@
               .toString(36)
               .substr(2, 9)}`;
             tocItems.push({ id, tag, text });
-            return `<${tag} id="${id}" style="scroll-margin-top: 60px;" class="${
+            return `<${tag} id='${id}' style='scroll-margin-top: 100px;' class='${
               tag === "h2"
                 ? "text text-2xl font-bold text-gray-800 pt-8"
                 : "text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide"
-            }">${text}</${tag}>`;
+            }'>${text}</${tag}>`;
           }
         );
 
@@ -428,7 +427,7 @@
           (tableContent) => {
             return tableContent.replace(
               /<li(.*?)>/g,
-              '<li$1 class="text text-lg text-gray-700 leading-relaxed space-y-1 pt-1 text-justify tracking-wide">'
+              "<li$1 class='text text-lg text-gray-700 leading-relaxed space-y-1 pt-1 text-justify tracking-wide'>"
             );
           }
         );
@@ -436,7 +435,7 @@
         // 處理不在表格內的 <li> 標籤
         content = content.replace(
           /<li(.*?)>/g,
-          '<li$1 class="text text-lg text-gray-700 leading-relaxed space-y-3 pt-5 text-justify tracking-wide">'
+          "<li$1 class='text text-lg text-gray-700 leading-relaxed space-y-3 pt-5 text-justify tracking-wide'>"
         );
 
         // 處理圖片標籤 <img>
@@ -447,9 +446,9 @@
             console.log(src, alt);
 
             // 返回修改後的 <div> 包裹 <img> 結構
-            return `<div class="imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden">
-            <img class="w-full h-full object-contain" src="${src}" alt="${alt}">
-          </div>`;
+            return `<div class='imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden'>
+      <img class='w-full h-full object-contain' src='${src}' alt='${alt}'>
+    </div>`;
           }
         );
 
@@ -457,48 +456,49 @@
         content = content
           .replace(
             /<p>/g,
-            '<p class="text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+            "<p class='text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
           )
           .replace(
             /<h2>/g,
-            '<h2 style="scroll-margin-top: 60px;" class="text text-2xl font-bold text-gray-800 pt-8">'
+            "<h2 style='scroll-margin-top: 60px;' class='text text-2xl font-bold text-gray-800 pt-8'>"
           )
           .replace(
             /<h3>/g,
-            '<h3 style="scroll-margin-top: 60px;" class="text text-xl text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+            "<h3 style='scroll-margin-top: 60px;' class='text text-xl text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
           )
           .replace(
             /<h4>/g,
-            '<h4 class="text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide">'
+            "<h4 class='text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
           )
-          .replace(/<table>/g, '<table class="w-10/12 mx-auto my-5">')
+          .replace(/<table>/g, "<table class='w-10/12 mx-auto my-5'>")
           .replace(
             /<td>/g,
-            '<td class="p-3 border-b border-gray-400 text-center align-middle">'
+            "<td class='p-3 border-b border-gray-400 text-center align-middle'>"
           );
 
         // 構建目錄 HTML 結構
         let tocContent = `
-              <div class="index border border-secondary/50 p-5">
-                <p class="text-2xl font-semibold pb-3">目錄</p>
-                <ul class="space-y-2">
-            `;
+        <div class='index border border-secondary/50 p-5'>
+          <p class='text-2xl font-semibold pb-3'>目錄</p>
+          <ul class='space-y-2'>
+      `;
 
         tocItems.forEach((item) => {
           tocContent += `
-                <li class="hover:text-primary">
-                  <a href="#${item.id}">${item.text}</a>
-                </li>
-              `;
+          <li class='hover:text-primary'>
+            <a href='#${item.id}' class='hover:text-primary'>${item.text}</a>
+          </li>
+        `;
         });
 
         tocContent += `
-                </ul>
-              </div>
-            `;
+          </ul>
+        </div>
+      `;
         // 將目錄內容和格式化的內容合併
         outputContent.value = tocContent + content;
       });
+
       //$Inspect image tags
       convertButton.addEventListener("click", function () {
         const imgInspectContainer = document.querySelector(
@@ -521,20 +521,20 @@
 
             // 動態插入結構
             const imgInspectHTML = `
-                  <div class="flex items-center pt-5">
-                    <p class="font-semibold text-sm text-nowrap text-secondary">
-                      <span>${index + 1}-</span><span>${alt}</span>
-                    </p>
-                    <input
-                      type="file"
-                      class="imageUpload w-fit border-none bg-transparent shadow-none p-2"
-                      data-index="${index}"
-                    />
-                    <div class="imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden">
-                      <img class="thumbnail" src="${src}" alt="${alt}" />
-                    </div>
-                  </div>
-                `;
+            <div class='flex items-center pt-5'>
+              <p class='font-semibold text-sm text-nowrap text-secondary'>
+                <span>${index + 1}-</span><span>${alt}</span>
+              </p>
+              <input
+                type='file'
+                class='imageUpload w-fit border-none bg-transparent shadow-none p-2'
+                data-index='${index}'
+              />
+              <div class='imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden'>
+                <img class='thumbnail' src='${src}' alt='${alt}' />
+              </div>
+            </div>
+          `;
             imgInspectContainer.insertAdjacentHTML("beforeend", imgInspectHTML);
           });
 
@@ -560,7 +560,7 @@
                       let updatedContent = outputContent.value;
                       imgTags[index] = imgTags[index].replace(
                         /src=["'“”]?([^"'\s>“”]+)["'“”]?/,
-                        `src="${newSrc}"`
+                        `src='${newSrc}'`
                       );
                       updatedContent = updatedContent.replace(
                         /<img\s+[^>]*src=["'“”]?([^"'\s>“”]+)["'“”]?\s+alt=["'“”]?([^"'\s>“”]+)["'“”]?[^>]*\/?>/g,
@@ -578,9 +578,9 @@
             });
           });
         } else {
-          const imgNotFoundHtml = `<p class="text-sm text-gray-400">
-                              No image tags found.
-                            </p>`;
+          const imgNotFoundHtml = `<p class='text-sm text-gray-400'>
+                            No image tags found.
+                          </p>`;
           imgInspectContainer.insertAdjacentHTML("beforeend", imgNotFoundHtml);
           console.log("No image tags found");
         }
