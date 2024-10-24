@@ -121,6 +121,19 @@
 
                   <div class="pt-3">
                     <labal class="font-semibold text-sm text-secondary"
+                      >Meta description</labal
+                    >
+                    <input type="text" />
+                  </div>
+                  <div class="pt-3">
+                    <labal class="font-semibold text-sm text-secondary"
+                      >Slug</labal
+                    >
+                    <input type="text" />
+                  </div>
+
+                  <div class="pt-3">
+                    <labal class="font-semibold text-sm text-secondary"
                       >Title</labal
                     >
                     <input type="text" />
@@ -132,7 +145,7 @@
                     <input type="text" />
                   </div>
 
-                  <div class="pt-3">
+                  <div class="pt-5">
                     <div class="upload flex flex-col">
                       <p
                         class="font-semibold text-sm text-nowrap text-secondary"
@@ -148,6 +161,12 @@
                       >
                         <img class="thumbnail" src="" alt="" />
                       </div>
+                    </div>
+                    <div class="pt-5">
+                      <labal class="font-semibold text-sm text-secondary"
+                        >Main image description
+                      </labal>
+                      <input type="text" />
                     </div>
 
                     <div class="flex pt-10">
@@ -166,20 +185,27 @@
                         />
                       </svg>
                       <p class="font-bold text-lg">Content section</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6 pl-1 text-secondary/70"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
-                        ></path>
-                      </svg>
+                      <div class="info group relative inline-block">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="size-5 text-secondary/20 hover:text-secondary/80"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        <p
+                          class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                        >
+                          <!-- 依據需求分為區塊分編輯與 HTML 編輯 -->
+                          According to the needs, it is divided into section
+                          editing and HTML editing
+                        </p>
+                      </div>
                       <!-- $button : section mode, html mode -->
                       <div class="switch flex space-x-2">
                         <p
@@ -230,8 +256,8 @@
                             </a>
                           </div>
                           <div>
-                            <labal class="font-semibold text-sm text-secondary"
-                              >Subtitle</labal
+                            <label class="font-semibold text-sm text-secondary"
+                              >Subtitle</label
                             >
                             <input
                               type="text"
@@ -266,8 +292,8 @@
                           </div>
 
                           <div class="pt-5"></div>
-                          <labal class="font-semibold text-sm text-secondary"
-                            >Image description</labal
+                          <label class="font-semibold text-sm text-secondary"
+                            >Image description</label
                           >
                           <input
                             type="text"
@@ -285,8 +311,29 @@
                         <!-- htmlEditContent -->
                         <div id="htmlEditContent" class="hidden">
                           <div class="pt-5">
-                            <div class="font-semibold text-sm text-secondary">
-                              Insert HTML
+                            <div class="flex">
+                              <div class="font-semibold text-sm text-secondary">
+                                Insert HTML
+                              </div>
+                              <div class="info group relative inline-block">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  class="size-5 text-secondary/20 hover:text-secondary/80"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                <p
+                                  class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                                >
+                                  Please input the HTML content
+                                </p>
+                              </div>
                             </div>
                             <textarea
                               id="transformContent"
@@ -298,9 +345,103 @@
                           <div class="pt-5">
                             <div
                               id="convertButton"
-                              class="btn cursor-pointer rounded-md bg-secondary/80 hover:bg-secondary px-2 py-1 text-white w-[200px] text-center"
+                              class="btn cursor-pointer rounded-md border border-secondary/30 bg-secondary/5 hover:bg-secondary/10 px-2 py-1 text-secondary w-[200px] text-center"
                             >
-                              Styling Html
+                              Inspect Html
+                            </div>
+                          </div>
+                          <!-- inspect the image -->
+                          <div>
+                            <div class="flex">
+                              <p
+                                class="pt-5 font-semibold text-sm text-secondary z-20"
+                              >
+                                Inspect images
+                              </p>
+                              <div
+                                class="info group relative inline-block pt-5"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  class="size-5 text-secondary/20 hover:text-secondary/80"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                <p
+                                  class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                                >
+                                  Search for image links and apply them to HTML
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            id="imgInspectContainer"
+                            class="imgInspect"
+                          ></div>
+                          <!-- search for text -->
+                          <div class="pt-5">
+                            <div class="searchBar flex">
+                              <label
+                                class="font-semibold text-sm text-secondary"
+                                >Search for text</label
+                              >
+                              <div class="info group relative inline-block">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  class="size-5 text-secondary/20 hover:text-secondary/80"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                <p
+                                  class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                                >
+                                  1. Search for text in the ouput HTML.
+                                  <br />
+                                  <!-- 每個字詞只能套用一次連結，重複套用會導致嵌套錯誤 -->
+                                  2. Each word can only apply one link, repeated
+                                  application will cause nesting errors.
+                                  <br />
+                                  3. Make a new search to apply more.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="flex space-x-2">
+                              <input
+                                id="searchInput"
+                                type="text"
+                                class="border p-2 w-[250px]"
+                                placeholder="Enter text to search"
+                              />
+                              <div
+                                id="searchButton"
+                                class="btn pt-1.5 cursor-pointer bg-secondary/50 hover:bg-secondary/55 px-2 text-white rounded-md"
+                              >
+                                Search
+                              </div>
+                            </div>
+                          </div>
+                          <div id="searchResultsContainer" class="pt-5"></div>
+                          <!-- 按鈕來將連結應用到 HTML 中 -->
+                          <div class="pt-5">
+                            <div
+                              id="applyLinksButton"
+                              class="btn cursor-pointer rounded-md border border-secondary/30 bg-secondary/5 hover:bg-secondary/10 px-2 py-1 text-secondary w-[250px] text-center"
+                            >
+                              Apply Links to Output HTML
                             </div>
                           </div>
                           <div class="pt-5">
@@ -315,14 +456,6 @@
                               class="w-full rounded-lg p-2 text-secondary bg-secondary/5"
                             ></textarea>
                           </div>
-                          <!-- inspect the image -->
-                          <p class="pt-5 font-semibold text-sm text-secondary">
-                            Inspected images
-                          </p>
-                          <div
-                            id="imgInspectContainer"
-                            class="imgInspect"
-                          ></div>
                         </div>
                       </div>
                     </div>
@@ -374,7 +507,7 @@
           sectionEditContent.classList.remove("hidden");
           htmlEditContent.classList.add("hidden");
 
-          console.log(currentMode);
+          // console.log(currentMode);
         }
       });
 
@@ -402,7 +535,19 @@
 
         content = content
           .replace(/<p>&nbsp;<\/p>/g, "")
+          .replace(/<p><\/p>/g, "")
+          .replace(/<p> <\/p>/g, "")
+          .replace(/<p> &nbsp; <\/p>/g, "")
           .replace(/<\/?br\s*\/?>/g, "");
+
+        // 處理<a>標籤
+        //         content = content.replace(
+        //           /<a\s+href="(.*?)"\s*>(.*?)<\/a>/g,
+        //           (match, href, text) => {
+        //             return `<a href='${href}' class='underline underline-offset-4 decoration-2 decoration-primary
+        //  '>${text}</a>`;
+        //           }
+        //         );
 
         // 提取 h2 和 h3 標題並生成目錄項
         let tocItems = [];
@@ -447,8 +592,8 @@
 
             // 返回修改後的 <div> 包裹 <img> 結構
             return `<div class='imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden'>
-      <img class='w-full h-full object-contain' src='${src}' alt='${alt}'>
-    </div>`;
+                    <img class='w-full h-full object-contain' src='${src}' alt='${alt}'>
+                  </div>`;
           }
         );
 
@@ -478,23 +623,26 @@
 
         // 構建目錄 HTML 結構
         let tocContent = `
-        <div class='index border border-secondary/50 p-5'>
-          <p class='text-2xl font-semibold pb-3'>目錄</p>
-          <ul class='space-y-2'>
-      `;
+                      <div class='index border border-secondary/50 p-5'>
+                        <p class='text-2xl font-semibold pb-3'>目錄</p>
+                        <ul class='space-y-2'>
+                    `;
 
         tocItems.forEach((item) => {
           tocContent += `
-          <li class='hover:text-primary'>
-            <a href='#${item.id}' class='hover:text-primary'>${item.text}</a>
-          </li>
-        `;
+                        <li class='hover:text-primary'>
+                          <a href='#${item.id}' class='hover:text-primary'>${item.text}</a>
+                        </li>
+                      `;
         });
 
         tocContent += `
-          </ul>
-        </div>
-      `;
+                        </ul>
+                      </div>
+                    `;
+        // 清空輸出區域
+        searchInput.value = "";
+        searchResultsContainer.innerHTML = ""; // 清空搜尋結果顯示區域
         // 將目錄內容和格式化的內容合併
         outputContent.value = tocContent + content;
       });
@@ -521,20 +669,20 @@
 
             // 動態插入結構
             const imgInspectHTML = `
-            <div class='flex items-center pt-5'>
-              <p class='font-semibold text-sm text-nowrap text-secondary'>
-                <span>${index + 1}-</span><span>${alt}</span>
-              </p>
-              <input
-                type='file'
-                class='imageUpload w-fit border-none bg-transparent shadow-none p-2'
-                data-index='${index}'
-              />
-              <div class='imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden'>
-                <img class='thumbnail' src='${src}' alt='${alt}' />
-              </div>
-            </div>
-          `;
+                          <div class='flex items-center pt-5'>
+                            <p class='text-sm text-nowrap text-secondary'>
+                              <span>${index + 1}-</span><span>${alt}</span>
+                            </p>
+                            <input
+                              type='file'
+                              class='imageUpload w-fit border-none bg-transparent shadow-none p-2'
+                              data-index='${index}'
+                            />
+                            <div class='imgbox object-cover max-h-[50px] max-w-[50px] overflow-hidden'>
+                              <img class='thumbnail' src='${src}' alt='${alt}' />
+                            </div>
+                          </div>
+                        `;
             imgInspectContainer.insertAdjacentHTML("beforeend", imgInspectHTML);
           });
 
@@ -579,11 +727,112 @@
           });
         } else {
           const imgNotFoundHtml = `<p class='text-sm text-gray-400'>
-                            No image tags found.
-                          </p>`;
+                                          No image tags found.
+                                        </p>`;
           imgInspectContainer.insertAdjacentHTML("beforeend", imgNotFoundHtml);
           console.log("No image tags found");
         }
+      });
+
+      // $Search for text
+      // $Search for text
+      searchButton.addEventListener("click", () => {
+        const query = searchInput.value.trim().toLowerCase(); // 獲取搜尋欄位的值
+        const content = outputContent.value; // 獲取 Output HTML textarea 的內容
+        searchResultsContainer.innerHTML = ""; // 清空結果容器
+
+        if (query === "") {
+          searchResultsContainer.innerHTML =
+            "<p class='text-sm text-gray-400'>Please enter a search term.</p>";
+          return;
+        }
+
+        // 使用正則表達式搜尋所有匹配項，前後捕捉最多 15 個字符
+        const regex = new RegExp(`(.{0,15})(${query})(.{0,15})`, "gi");
+        const matches = [...content.matchAll(regex)];
+
+        if (matches.length > 0) {
+          searchResultsContainer.innerHTML = `<p class='text-sm text-secondary'>Found ${matches.length} matches for "<strong>${query}</strong>"</p>`;
+
+          // 列出所有匹配的結果，並用 data-index 來標記它們
+          matches.forEach((match, index) => {
+            const before = match[1] || ""; // 匹配到結果之前的最多 15 個字符
+            const matchedText = match[2]; // 匹配到的結果
+            const after = match[3] || ""; // 匹配到結果之後的最多 15 個字符
+
+            // 添加到結果容器，並用 data-index 標記對應的匹配項
+            searchResultsContainer.innerHTML += `
+        <div class="items-center space-x-2 py-2">
+          <p class="text-sm text-secondary">${before}<span class="text-primary" data-match-index="${index}">${matchedText}</span>${after}</p>
+          <input type="text" class="border p-1 text-sm" placeholder="Hyperlink here" data-index="${index}">
+        </div>
+      `;
+          });
+          // 重新啟用 Apply Links 按鈕
+          applyLinksButton.style.pointerEvents = "auto"; // 恢復按鈕的點擊事件
+          applyLinksButton.style.backgroundColor = ""; // 恢復原背景顏色
+          applyLinksButton.style.color = "#565656";
+          applyLinksButton.style.cursor = "pointer";
+          applyLinksButton.innerHTML = "Apply Links to Output HTML"; // 恢復按鈕文字
+        } else {
+          searchResultsContainer.innerHTML = `<p class='text-sm text-gray-400'>No matches found for "<strong>${query}</strong>".</p>`;
+        }
+      });
+
+      // Apply links to output html
+      applyLinksButton.addEventListener("click", () => {
+        const query = searchInput.value.trim(); // 獲取搜尋字串
+        const inputs = document.querySelectorAll(
+          "#searchResultsContainer input"
+        );
+        let outputHTML = outputContent.value; // 獲取 output HTML 內容
+
+        // 確保搜尋結果存在且搜尋到的字詞不為空
+        if (!query || !inputs.length) {
+          alert("Please search first or provide valid input.");
+          return;
+        }
+
+        // 依次遍歷每個輸入框
+        inputs.forEach((input) => {
+          const url = input.value.trim(); // 获取 input 的值
+          const index = input.getAttribute("data-index"); // 获取 input 的 data-index
+
+          if (url) {
+            // 使用正則表達式準確匹配第 index 個結果
+            const regex = new RegExp(`(.{0,15})(${query})(.{0,15})`, "gi");
+            const matches = [...outputHTML.matchAll(regex)];
+
+            if (matches[index]) {
+              const matchedText = matches[index][2]; // 匹配到的文字
+              const fullMatch = matches[index][0]; // 匹配的完整片段
+
+              // 构建新的 <a> 标签
+              const newLink = `<a href='${url}' class='underline underline-offset-4 decoration-2 decoration-primary'>${matchedText}</a>`;
+
+              // 找到具體的匹配項位置，並進行替換
+              let startIndex = outputHTML.indexOf(fullMatch);
+
+              if (startIndex !== -1) {
+                // 逐一替換對應的匹配結果
+                outputHTML =
+                  outputHTML.slice(0, startIndex) + // 匹配之前的內容
+                  fullMatch.replace(matchedText, newLink) + // 替換匹配的內容
+                  outputHTML.slice(startIndex + fullMatch.length); // 匹配之後的內容
+              }
+            }
+          }
+        });
+
+        // 更新 Output HTML 的內容
+        outputContent.value = outputHTML;
+
+        // 禁用按鈕並更改其樣式
+        applyLinksButton.style.pointerEvents = "none";
+        applyLinksButton.style.backgroundColor = "#e3e3e3";
+        applyLinksButton.style.color = "#939393";
+        applyLinksButton.style.cursor = "not-allowed";
+        applyLinksButton.innerHTML = "Links Applied";
       });
     </script>
   </body>
