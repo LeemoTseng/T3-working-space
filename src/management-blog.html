@@ -674,12 +674,13 @@
                             <p class='text-sm text-nowrap text-secondary'>
                               <span>${index + 1}-</span><span>「${alt}」</span>
                             </p>
-                            <input type='text' class='border p-1 text-sm' placeholder='Alternative text here' />
+                            <input type='text' class='border p-1 text-sm' placeholder='${alt}' />
                             <input
                               type='file'
                               class='imageUpload w-fit border-none bg-transparent shadow-none p-2'
                               data-index='${index}'
-                            />
+                              p
+                            />${alt}'
                             <div class='imgbox'>
                               <img class='thumbnail object-cover  overflow-hidden max-h-[100px] max-w-[150px]' src='${src}' alt='${alt}' />
                             </div>
@@ -764,9 +765,9 @@
 
             // 添加到結果容器，並用 data-index 標記對應的匹配項
             searchResultsContainer.innerHTML += `
-        <div class="items-center space-x-2 py-2">
-          <p class="text-sm text-secondary">${before}<span class="text-primary" data-match-index="${index}">${matchedText}</span>${after}</p>
-          <input type="text" class="border p-1 text-sm" placeholder="Hyperlink here" data-index="${index}">
+        <div class='items-center space-x-2 py-2'>
+          <p class='text-sm text-secondary">${before}<span class='text-primary' data-match-index='${index}'>${matchedText}</span>${after}</p>
+          <input type='text' class='border p-1 text-sm' placeholder='Hyperlink here' data-index="${index}">
         </div>
       `;
           });
@@ -777,7 +778,7 @@
           applyLinksButton.style.cursor = "pointer";
           applyLinksButton.innerHTML = "Apply Links to Output HTML"; // 恢復按鈕文字
         } else {
-          searchResultsContainer.innerHTML = `<p class='text-sm text-gray-400'>No matches found for "<strong>${query}</strong>".</p>`;
+          searchResultsContainer.innerHTML = `<p class='text-sm text-gray-400'>No matches found for '<strong>${query}</strong>'.</p>`;
         }
       });
 
