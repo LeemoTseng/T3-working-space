@@ -791,6 +791,7 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
                             <div class="font-semibold text-sm text-secondary">
                               Output HTML
                             </div>
+
                             <div
                               id="outputContent"
                               class="w-full h-[200px] overflow-y-auto rounded-lg p-2 text-secondary bg-secondary/10"
@@ -800,6 +801,37 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
                           </div>
 
                           <!-- search for text -->
+                          <div class="flex pt-5">
+                            <p
+                              class="font-semibold text-sm text-secondary z-20"
+                            >
+                              Search for text
+                            </p>
+                            <div class="info group relative inline-block">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="size-5 text-secondary/20 hover:text-secondary/80"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                  clip-rule="evenodd"
+                                />
+                              </svg>
+                              <p
+                                class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                              >
+                                1. Search for text in the ouput HTML.
+                                <br />
+                                2. Each word can only apply one link, repeated
+                                application will replace the previous link.
+                                <br />
+                                3. Make a new search to apply more.
+                              </p>
+                            </div>
+                          </div>
                           <div class="mt-2 flex space-x-2">
                             <input
                               type="text"
@@ -1184,13 +1216,13 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
             if (p1 && p2 && p3) {
               return `${p1}${p2}${p3}`; // 保留 <img> 標籤和 alt 內容，不做替換
             }
-            // 當前匹配項不在 <img> 的 alt 中（p4 為匹配項）時，進行高亮處理
-            return `<span class="highlight bg-yellow-300">${p4}</span>`;
+            // 當前匹配項不在 <img> 的 alt 中（p4 為匹配項）時，僅標記為 span
+            return `<span class="match">${p4}</span>`;
           }
         );
 
         // 獲取所有高亮的結果
-        matches = Array.from(outputContent.querySelectorAll(".highlight"));
+        matches = Array.from(outputContent.querySelectorAll(".match"));
 
         if (matches.length > 0) {
           currentIndex = 0;
@@ -1286,12 +1318,14 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
       }
 
       function updateCurrentMatch() {
-        // 清除現有選中的項目
+        // 清除所有選中的項目
         matches.forEach((match) =>
-          match.classList.remove("current", "bg-orange-400")
+          match.classList.remove("highlight", "current", "bg-orange-400")
         );
+
         if (matches[currentIndex]) {
-          matches[currentIndex].classList.add("current", "bg-orange-400");
+          // 只高亮當前匹配項
+          matches[currentIndex].classList.add("highlight", "bg-orange-400");
           matches[currentIndex].scrollIntoView({
             behavior: "smooth",
             block: "center",
