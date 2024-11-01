@@ -795,9 +795,7 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
                             <div
                               id="outputContent"
                               class="w-full h-[200px] overflow-y-auto rounded-lg p-2 text-secondary bg-secondary/10"
-                            >
-                              <div id="searchResultsContainer"></div>
-                            </div>
+                            ></div>
                           </div>
 
                           <!-- search for text -->
@@ -981,9 +979,6 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
       const transformContent = document.getElementById("transformContent");
       const convertButton = document.getElementById("convertButton");
       const outputContent = document.getElementById("outputContent");
-      const searchResultsContainer = document.getElementById(
-        "searchResultsContainer"
-      );
 
       convertButton.addEventListener("click", () => {
         let content = transformContent.value;
@@ -1092,7 +1087,6 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
 
         // 清空搜尋結果區域
         searchInput.value = "";
-        searchResultsContainer.innerHTML = ""; // 清空搜尋結果顯示區域
 
         // 更新 outputContent 的 innerHTML 而不是 value
         outputContent.innerHTML = tocContent + content;
@@ -1300,6 +1294,8 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
           );
           applyLinkButton.style.pointerEvents = "none"; // 禁用點擊
         }
+
+        outputContent.classList = "";
         console.log(outputContent);
       });
 
