@@ -25,6 +25,28 @@
         />
       </div>
       <p class="text-secondary text-2xl font-bold p-5 mt-20 mb-5">Login</p>
+      <!-- $1. Language toggle -->
+      <div id="languageToggle" class="flex space-x-1 pb-5 transition-all">
+        <div id="chinese" class="flex items-center transition-all">
+          <a href="#"
+            ><span
+              class="transition-all flex items-center text-white bg-primary rounded-md px-2 py-1"
+              >中文</span
+            ></a
+          >
+        </div>
+        <div
+          id="english"
+          class="flex items-center p-1 transition-all text-center"
+        >
+          <a href="#"
+            ><span
+              class="transition-all text-secondary/30 hover:text-secondary/50 px-2 p-[6px]"
+              >English</span
+            ></a
+          >
+        </div>
+      </div>
       <div class="email w-full relative">
         <input
           class="w-full mb-5"
@@ -93,6 +115,7 @@
           />
         </svg>
       </div>
+
       <!-- errorMessage -->
       <div id="errorMessage" class="hidden warning relative h-full">
         <p>
