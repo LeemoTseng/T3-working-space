@@ -1612,6 +1612,17 @@ if (document.querySelector('#login')) {
 // $3. Side menu
 // *---------------* //
 
+const logoutTemplate = `
+          <div class="pt-8"></div>
+          <div
+          id="logout"
+          class="hover:bg-secondary/5 border text-center w-11/12 py-1 mt-2 rounded-md"
+        >
+          <p class="text-base text-secondary/70 cursor-pointer">logout</p>
+        </div>
+`
+
+
 const sideMenuList = [
   {
     page: 'Home',
@@ -1768,12 +1779,16 @@ if (document.querySelector('#sideMenu')) {
       item.setAttribute('stroke-width', '2')
     })
 
+
   })
+  sideMenu.innerHTML += logoutTemplate;
 
 
 } else {
   console.log('#sideMenu not found');
 }
+
+
 
 
 // *---------------* //
