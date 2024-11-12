@@ -74,7 +74,10 @@ const navbarTemplate = `<nav class="top-0 left-0 z-50 max-w-[90rem] mx-auto">
             </div>
           </div>
         </nav>`
-document.querySelector('#navBar').innerHTML += navbarTemplate;
+if (document.querySelector('#navBar')){
+
+  document.querySelector('#navBar').innerHTML += navbarTemplate;
+}
 
 // *---------------* //
 // $0.2. table - Main section
