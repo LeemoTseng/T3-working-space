@@ -1148,7 +1148,7 @@ if (articlesContainer) {
     h4.textContent = item.title;
 
     const borderDiv = document.createElement('div');
-    borderDiv.classList.add('border-t', 'my-3');
+    borderDiv.classList.add('my-3');
 
     titleDiv.append(h4, borderDiv);
 
@@ -1157,7 +1157,7 @@ if (articlesContainer) {
     descriptionP.textContent = item.description;
 
     imgBoxDiv.append(imgElement);
-    textDiv.append(dateDiv, titleDiv, descriptionP);
+    textDiv.append(dateDiv, titleDiv);
     articleDiv.append(imgBoxDiv, textDiv);
     linkElement.append(articleDiv);
 
