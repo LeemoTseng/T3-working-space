@@ -93,23 +93,37 @@
                           <th align="left" width="">
                             <div class="flex">
                               Section
-                              <svg
-                                class="w-5 h-5 text-secondary/80 cursor-pointer hover:text-primary/90"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
+                              <!-- $1. toggle sequence icon -->
+                              <div class="sequence cursor-pointer">
+                                <svg
+                                  class="sequenceIcon size-3 text-primary"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="3"
                                   stroke="currentColor"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="m8 15 4 4 4-4m0-6-4-4-4 4"
-                                />
-                              </svg>
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                                  />
+                                </svg>
+                                <svg
+                                  class="sequenceIcon size-3 text-secondary"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="3"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                                  />
+                                </svg>
+                              </div>
                             </div>
                           </th>
                           <th align="center" width="">Enable</th>
@@ -117,23 +131,37 @@
                           <th align="left" width="">
                             <div class="flex">
                               Category
-                              <svg
-                                class="w-5 h-5 text-secondary/80 cursor-pointer hover:text-primary/90"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
+                              <!-- $1. toggle sequence icon -->
+                              <div class="sequence cursor-pointer">
+                                <svg
+                                  class="sequenceIcon size-3 text-primary"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="3"
                                   stroke="currentColor"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="m8 15 4 4 4-4m0-6-4-4-4 4"
-                                />
-                              </svg>
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                                  />
+                                </svg>
+                                <svg
+                                  class="sequenceIcon size-3 text-secondary"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="3"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                                  />
+                                </svg>
+                              </div>
                             </div>
                           </th>
                           <th align="left" width="">Image</th>
@@ -534,23 +562,37 @@
                           <th align="left" width="">
                             <div class="flex">
                               Category
-                              <svg
-                                class="w-5 h-5 text-secondary/80 cursor-pointer hover:text-primary/90"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
+                              <!-- $1. toggle sequence icon -->
+                              <div class="sequence cursor-pointer">
+                                <svg
+                                  class="sequenceIcon size-3 text-primary"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="3"
                                   stroke="currentColor"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="m8 15 4 4 4-4m0-6-4-4-4 4"
-                                />
-                              </svg>
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                                  />
+                                </svg>
+                                <svg
+                                  class="sequenceIcon size-3 text-secondary"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="3"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                                  />
+                                </svg>
+                              </div>
                             </div>
                           </th>
                           <th align="left" width="">Image</th>
@@ -988,5 +1030,24 @@
     <!-- Pop up -->
     <div id="popupAll"></div>
     <!-- Pop up -->
+
+    <script>
+      // $1. toggle sequence icon
+      const sequenceElements = document.querySelectorAll(".sequence");
+      sequenceElements.forEach((sequence) => {
+        sequence.addEventListener("click", () => {
+          const sequenceIcons = sequence.querySelectorAll(".sequenceIcon");
+          sequenceIcons.forEach((icon) => {
+            if (icon.classList.contains("text-primary")) {
+              icon.classList.remove("text-primary");
+              icon.classList.add("text-secondary");
+            } else {
+              icon.classList.remove("text-secondary");
+              icon.classList.add("text-primary");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

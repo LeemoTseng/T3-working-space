@@ -1958,10 +1958,18 @@ const moreOptions = document.querySelectorAll('.moreOptions');
 
 moreOptions.forEach((item) => {
   item.addEventListener('click', function (e) {
-    e.target.closest('.moreOptions').querySelector('.setSection').classList.toggle('hidden')
+    e.stopPropagation(); 
+    e.target.closest('.moreOptions').querySelector('.setSection').classList.toggle('hidden');
+  });
+});
 
-  })
-})
+// 點擊螢幕其他地方時關閉 .setSection
+document.addEventListener('click', function () {
+  document.querySelectorAll('.setSection').forEach((section) => {
+    section.classList.add('hidden');
+  });
+});
+
 
 
 // *---------------* //
