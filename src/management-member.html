@@ -193,6 +193,7 @@
                           </td>
                           <td align="center" class="py-3">
                             <div
+                              id="popupResetBtn"
                               class="hover cursor-pointer relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                             >
                               <svg
@@ -655,6 +656,69 @@
       </div>
     </div>
 
+    <!-- Pop up - Reset -->
+    <div
+      id="popupReset"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen h- overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="">
+                <div class="text-center sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Reset
+                  </h3>
+                  <div class="memberInfo pt-3">
+                    <div class="flex space-x-2 text-secondary/80 text-sm">
+                      <p class="font-bold">Account</p>
+                      <p>leemotseng</p>
+                    </div>
+                  </div>
+                  <div class="setting">
+                    <input
+                      placeholder="Please reset the password"
+                      class="h-[30px] my-3"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                data-popup="mainSectionPopup"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
       // Open popup
       const popupRole = document.querySelector("#popupRole");
@@ -663,6 +727,7 @@
       const popupLoginLogBtn = document.querySelector("#popupLoginLogBtn");
       const popupActionLog = document.querySelector("#popupActionLog");
       const popupActionLogBtn = document.querySelector("#popupActionLogBtn");
+      const popupReset = document.querySelector("#popupReset");
 
       // open popup
       popupRoleBtn.addEventListener("click", () => {
@@ -678,6 +743,11 @@
       popupActionLogBtn.addEventListener("click", () => {
         if (popupActionLog) {
           popupActionLog.classList.toggle("hidden");
+        }
+      });
+      popupResetBtn.addEventListener("click", () => {
+        if (popupReset) {
+          popupReset.classList.toggle("hidden");
         }
       });
 
