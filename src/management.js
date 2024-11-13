@@ -1618,10 +1618,9 @@ const logoutTemplate = `
           id="logout"
           class="hover:bg-secondary/5 border text-center w-11/12 py-1 mt-2 rounded-md"
         >
-          <p class="text-base text-secondary/70 cursor-pointer">logout</p>
+          <p class="text-base text-secondary/70 cursor-pointer">Logout</p>
         </div>
 `
-
 
 const sideMenuList = [
   {
