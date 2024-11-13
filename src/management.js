@@ -1616,7 +1616,7 @@ const logoutTemplate = `
           <div class="pt-8"></div>
           <div
           id="logout"
-          class="hover:bg-secondary/5 border text-center w-11/12 py-1 mt-2 rounded-md"
+          class="hover:bg-secondary/5 border text-center w-11/12 py-1 mt-2 mb-10 rounded-md"
         >
           <p class="text-base text-secondary/70 cursor-pointer">Logout</p>
         </div>
@@ -1781,7 +1781,6 @@ if (document.querySelector('#sideMenu')) {
 
   })
   sideMenu.innerHTML += logoutTemplate;
-
 
 } else {
   console.log('#sideMenu not found');
