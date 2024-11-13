@@ -518,7 +518,6 @@
                         </div>
                       </div>
                     </div>
-                    <<<<<<< HEAD
                   </div>
                 </div>
               </div>
@@ -636,7 +635,6 @@
                         </div>
                       </div>
                     </div>
-                    ======= >>>>>>> refs/remotes/origin/main
                   </div>
                 </div>
               </div>
@@ -658,131 +656,131 @@
     </div>
 
     <script>
-            // Open popup
-            const popupRole = document.querySelector("#popupRole");
-            const popupRoleBtn = document.querySelector("#popupRoleBtn");
-            const popupLoginLog = document.querySelector("#popupLoginLog");
-            const popupLoginLogBtn = document.querySelector("#popupLoginLogBtn");
-            const popupActionLog = document.querySelector("#popupActionLog");
-            const popupActionLogBtn = document.querySelector("#popupActionLogBtn");
+      // Open popup
+      const popupRole = document.querySelector("#popupRole");
+      const popupRoleBtn = document.querySelector("#popupRoleBtn");
+      const popupLoginLog = document.querySelector("#popupLoginLog");
+      const popupLoginLogBtn = document.querySelector("#popupLoginLogBtn");
+      const popupActionLog = document.querySelector("#popupActionLog");
+      const popupActionLogBtn = document.querySelector("#popupActionLogBtn");
 
-            // open popup
-            popupRoleBtn.addEventListener("click", () => {
-              if (popupRole) {
-                popupRole.classList.toggle("hidden");
-              }
-            });
-            popupLoginLogBtn.addEventListener("click", () => {
-              if (popupLoginLog) {
-                popupLoginLog.classList.toggle("hidden");
-              }
-            });
-            popupActionLogBtn.addEventListener("click", () => {
-              if (popupActionLog) {
-                popupActionLog.classList.toggle("hidden");
-              }
-            });
+      // open popup
+      popupRoleBtn.addEventListener("click", () => {
+        if (popupRole) {
+          popupRole.classList.toggle("hidden");
+        }
+      });
+      popupLoginLogBtn.addEventListener("click", () => {
+        if (popupLoginLog) {
+          popupLoginLog.classList.toggle("hidden");
+        }
+      });
+      popupActionLogBtn.addEventListener("click", () => {
+        if (popupActionLog) {
+          popupActionLog.classList.toggle("hidden");
+        }
+      });
 
-            //close btn
-            const closeBtn = document.querySelectorAll(".closeBtn");
-            closeBtn.forEach((btn) => {
-              btn.addEventListener("click", () => {
-                const popup = btn.closest(".popup");
-                popup.classList.toggle("hidden");
-              });
-            });
+      //close btn
+      const closeBtn = document.querySelectorAll(".closeBtn");
+      closeBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const popup = btn.closest(".popup");
+          popup.classList.toggle("hidden");
+        });
+      });
 
-            // popup - pagination
-            class Pagination {
-              constructor(container, totalPages) {
-                this.container = container;
-                this.totalPages = totalPages;
-                this.currentPage = 1;
+      // popup - pagination
+      class Pagination {
+        constructor(container, totalPages) {
+          this.container = container;
+          this.totalPages = totalPages;
+          this.currentPage = 1;
 
-                this.prevButton = this.container.querySelector(".prev-button");
-                this.nextButton = this.container.querySelector(".next-button");
-                this.pageNumbersDiv = this.container.querySelector(".page-numbers");
+          this.prevButton = this.container.querySelector(".prev-button");
+          this.nextButton = this.container.querySelector(".next-button");
+          this.pageNumbersDiv = this.container.querySelector(".page-numbers");
 
-                this.init();
-              }
+          this.init();
+        }
 
-              init() {
-                this.renderPagination();
-                this.addEventListeners();
-              }
+        init() {
+          this.renderPagination();
+          this.addEventListeners();
+        }
 
-              renderPagination() {
-                this.pageNumbersDiv.innerHTML = ""; // 清空分頁按鈕
+        renderPagination() {
+          this.pageNumbersDiv.innerHTML = ""; // 清空分頁按鈕
 
-                for (let i = 1; i <= this.totalPages; i++) {
-                  const pageButton = document.createElement("button");
-                  pageButton.textContent = i;
-                  pageButton.className = `px-3 py-1 rounded ${
-                    i === this.currentPage
-                      ? "bg-secondary/70 text-white"
-                      : "bg-gray-200"
-                  } hover:bg-secondary/80 hover:text-white`;
-                  pageButton.onclick = () => this.goToPage(i);
-                  this.pageNumbersDiv.appendChild(pageButton);
-                }
+          for (let i = 1; i <= this.totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.className = `px-3 py-1 rounded ${
+              i === this.currentPage
+                ? "bg-secondary/70 text-white"
+                : "bg-gray-200"
+            } hover:bg-secondary/80 hover:text-white`;
+            pageButton.onclick = () => this.goToPage(i);
+            this.pageNumbersDiv.appendChild(pageButton);
+          }
 
-                this.updateButtonStates();
-              }
+          this.updateButtonStates();
+        }
 
-              updateButtonStates() {
-                this.prevButton.disabled = this.currentPage === 1;
-                this.nextButton.disabled = this.currentPage === this.totalPages;
-              }
+        updateButtonStates() {
+          this.prevButton.disabled = this.currentPage === 1;
+          this.nextButton.disabled = this.currentPage === this.totalPages;
+        }
 
-              goToPage(page) {
-                this.currentPage = page;
-                console.log(
-                  `Pagination ID: ${this.container.dataset.paginationId}, Current Page: ${page}`
-                );
-                this.renderPagination();
-              }
+        goToPage(page) {
+          this.currentPage = page;
+          console.log(
+            `Pagination ID: ${this.container.dataset.paginationId}, Current Page: ${page}`
+          );
+          this.renderPagination();
+        }
 
-              addEventListeners() {
-                this.prevButton.addEventListener("click", () => {
-                  if (this.currentPage > 1) {
-                    this.goToPage(this.currentPage - 1);
-                  }
-                });
-
-                this.nextButton.addEventListener("click", () => {
-                  if (this.currentPage < this.totalPages) {
-                    this.goToPage(this.currentPage + 1);
-                  }
-                });
-              }
+        addEventListeners() {
+          this.prevButton.addEventListener("click", () => {
+            if (this.currentPage > 1) {
+              this.goToPage(this.currentPage - 1);
             }
+          });
 
-            // 初始化每個分頁
-            document
-              .querySelectorAll(".pagination-container")
-              .forEach((container) => {
-                const paginationId = container.dataset.paginationId;
-                let totalPages;
+          this.nextButton.addEventListener("click", () => {
+            if (this.currentPage < this.totalPages) {
+              this.goToPage(this.currentPage + 1);
+            }
+          });
+        }
+      }
 
-                // 根據分頁 ID 設置總頁數
-                switch (paginationId) {
-                  case "loginPagination":
-                    totalPages = 5;
-                    break;
-      <<<<<<< HEAD
-                  case "actionPagination":
-                    totalPages = 6;
-      =======
-                  case "ActionLogPagination":
-                    totalPages = 10;
-      >>>>>>> refs/remotes/origin/main
-                    break;
-                    totalPages = 1; // 預設頁數
-                }
+      // 初始化每個分頁
+      document
+        .querySelectorAll(".pagination-container")
+        .forEach((container) => {
+          const paginationId = container.dataset.paginationId;
+          let totalPages;
 
-                // 初始化分頁
-                new Pagination(container, totalPages);
-              });
+          // 根據分頁 ID 設置總頁數
+          switch (paginationId) {
+            case "loginPagination":
+              totalPages = 5;
+              break;
+
+            case "actionPagination":
+              totalPages = 6;
+
+            case "ActionLogPagination":
+              totalPages = 10;
+
+              break;
+              totalPages = 1; // 預設頁數
+          }
+
+          // 初始化分頁
+          new Pagination(container, totalPages);
+        });
     </script>
   </body>
 </html>
