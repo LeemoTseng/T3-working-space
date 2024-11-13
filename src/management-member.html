@@ -172,6 +172,7 @@
                           </td>
                           <td align="center" class="py-3">
                             <div
+                              id="popupActionLogBtn"
                               class="hover cursor-pointer relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                             >
                               <svg
@@ -440,7 +441,7 @@
           class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
         >
           <div
-            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg m-2"
           >
             <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
               <div class="">
@@ -448,14 +449,15 @@
                   <h3 class="text-xl font-semibold leading-6 text-gray-900">
                     Login log
                   </h3>
+
                   <div class="table w-full pt-3">
-                    <table width="100%">
+                    <table width="100%" cellpadding="5">
                       <thead>
-                        <tr class="border-b text-sm">
-                          <th>Account</th>
-                          <th>Name</th>
-                          <th>IP</th>
-                          <th>Time</th>
+                        <tr class="border-b text-sm p-3">
+                          <th class="px-3">Account</th>
+                          <th class="px-3">Name</th>
+                          <th class="px-3">IP</th>
+                          <th class="px-3">Time</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -469,6 +471,170 @@
                         </tr>
                       </tbody>
                     </table>
+                    <!-- popup - login log pagination -->
+                    <div class="popupPagination">
+                      <div
+                        class="pagination-container"
+                        data-pagination-id="loginPagination"
+                      >
+                        <div class="flex justify-center mt-4 space-x-2">
+                          <button
+                            class="prev-button px-4 py-2 text-secondary hover:bg-gray-200 rounded disabled:text-secondary/30 disabled:bg-transparent"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="2"
+                              stroke="currentColor"
+                              class="size-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                              />
+                            </svg>
+                          </button>
+                          <div class="page-numbers flex space-x-2"></div>
+                          <button
+                            class="next-button px-4 py-2 text-secondary hover:bg-gray-200 rounded disabled:text-secondary/30 disabled:bg-transparent"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="2"
+                              stroke="currentColor"
+                              class="size-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                data-popup="mainSectionPopup"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop up - Action log -->
+    <div
+      id="popupActionLog"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen h- overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl m-2"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="">
+                <div class="text-center sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Action log
+                  </h3>
+
+                  <div class="table w-full pt-3">
+                    <table width="100%" cellpadding="10">
+                      <thead>
+                        <tr class="border-b text-sm">
+                          <th>Account</th>
+                          <th>Name</th>
+                          <th>Route</th>
+                          <th>Page</th>
+                          <th>IP</th>
+                          <th width="50%">memo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="text-sm text-secondary/80 border-b">
+                          <td>leemotseng</td>
+                          <td>leemotseng</td>
+                          <td>/pagesampeee.com</td>
+                          <td>/page.com</td>
+                          <td>123.213.321</td>
+                          <td>Lorem</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- popup - Action log pagination -->
+                    <div class="popupPagination">
+                      <div
+                        class="pagination-container"
+                        data-pagination-id="actionPagination"
+                      >
+                        <div class="flex justify-center mt-4 space-x-2">
+                          <button
+                            class="prev-button px-4 py-2 text-secondary hover:bg-gray-200 rounded disabled:text-secondary/30 disabled:bg-transparent"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="2"
+                              stroke="currentColor"
+                              class="size-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                              />
+                            </svg>
+                          </button>
+                          <div class="page-numbers flex space-x-2"></div>
+                          <button
+                            class="next-button px-4 py-2 text-secondary hover:bg-gray-200 rounded disabled:text-secondary/30 disabled:bg-transparent"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="2"
+                              stroke="currentColor"
+                              class="size-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -495,6 +661,8 @@
       const popupRoleBtn = document.querySelector("#popupRoleBtn");
       const popupLoginLog = document.querySelector("#popupLoginLog");
       const popupLoginLogBtn = document.querySelector("#popupLoginLogBtn");
+      const popupActionLog = document.querySelector("#popupActionLog");
+      const popupActionLogBtn = document.querySelector("#popupActionLogBtn");
 
       // open popup
       popupRoleBtn.addEventListener("click", () => {
@@ -507,6 +675,11 @@
           popupLoginLog.classList.toggle("hidden");
         }
       });
+      popupActionLogBtn.addEventListener("click", () => {
+        if (popupActionLog) {
+          popupActionLog.classList.toggle("hidden");
+        }
+      });
 
       //close btn
       const closeBtn = document.querySelectorAll(".closeBtn");
@@ -516,6 +689,93 @@
           popup.classList.toggle("hidden");
         });
       });
+
+      // popup - pagination
+      class Pagination {
+        constructor(container, totalPages) {
+          this.container = container;
+          this.totalPages = totalPages;
+          this.currentPage = 1;
+
+          this.prevButton = this.container.querySelector(".prev-button");
+          this.nextButton = this.container.querySelector(".next-button");
+          this.pageNumbersDiv = this.container.querySelector(".page-numbers");
+
+          this.init();
+        }
+
+        init() {
+          this.renderPagination();
+          this.addEventListeners();
+        }
+
+        renderPagination() {
+          this.pageNumbersDiv.innerHTML = ""; // 清空分頁按鈕
+
+          for (let i = 1; i <= this.totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.className = `px-3 py-1 rounded ${
+              i === this.currentPage
+                ? "bg-secondary/70 text-white"
+                : "bg-gray-200"
+            } hover:bg-secondary/80 hover:text-white`;
+            pageButton.onclick = () => this.goToPage(i);
+            this.pageNumbersDiv.appendChild(pageButton);
+          }
+
+          this.updateButtonStates();
+        }
+
+        updateButtonStates() {
+          this.prevButton.disabled = this.currentPage === 1;
+          this.nextButton.disabled = this.currentPage === this.totalPages;
+        }
+
+        goToPage(page) {
+          this.currentPage = page;
+          console.log(
+            `Pagination ID: ${this.container.dataset.paginationId}, Current Page: ${page}`
+          );
+          this.renderPagination();
+        }
+
+        addEventListeners() {
+          this.prevButton.addEventListener("click", () => {
+            if (this.currentPage > 1) {
+              this.goToPage(this.currentPage - 1);
+            }
+          });
+
+          this.nextButton.addEventListener("click", () => {
+            if (this.currentPage < this.totalPages) {
+              this.goToPage(this.currentPage + 1);
+            }
+          });
+        }
+      }
+
+      // 初始化每個分頁
+      document
+        .querySelectorAll(".pagination-container")
+        .forEach((container) => {
+          const paginationId = container.dataset.paginationId;
+          let totalPages;
+
+          // 根據分頁 ID 設置總頁數
+          switch (paginationId) {
+            case "loginPagination":
+              totalPages = 5;
+              break;
+            case "actionPagination":
+              totalPages = 6;
+              break;
+              totalPages = 1; // 預設頁數
+          }
+
+          // 初始化分頁
+          new Pagination(container, totalPages);
+        });
     </script>
   </body>
 </html>

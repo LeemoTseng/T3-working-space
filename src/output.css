@@ -1133,6 +1133,10 @@ input:focus {
   margin-top: 8rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -1854,6 +1858,10 @@ input:focus {
   word-break: break-all;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -2032,6 +2040,10 @@ input:focus {
 
 .bg-secondary\/50 {
   background-color: hsl(var(--secondary) / 0.5);
+}
+
+.bg-secondary\/70 {
+  background-color: hsl(var(--secondary) / 0.7);
 }
 
 .bg-secondary\/80 {
@@ -2809,6 +2821,11 @@ input:focus {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -2837,6 +2854,10 @@ input:focus {
 
 .hover\:bg-secondary\/55:hover {
   background-color: hsl(var(--secondary) / 0.55);
+}
+
+.hover\:bg-secondary\/80:hover {
+  background-color: hsl(var(--secondary) / 0.8);
 }
 
 .hover\:bg-secondary\/90:hover {
@@ -2968,6 +2989,14 @@ input:focus {
   pointer-events: none;
 }
 
+.disabled\:bg-transparent:disabled {
+  background-color: transparent;
+}
+
+.disabled\:text-secondary\/30:disabled {
+  color: hsl(var(--secondary) / 0.3);
+}
+
 .disabled\:opacity-50:disabled {
   opacity: 0.5;
 }
@@ -3051,6 +3080,10 @@ input:focus {
 
   .sm\:w-full {
     width: 100%;
+  }
+
+  .sm\:max-w-4xl {
+    max-width: 56rem;
   }
 
   .sm\:max-w-lg {
