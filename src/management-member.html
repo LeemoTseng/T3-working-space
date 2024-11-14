@@ -219,6 +219,7 @@
                           </td>
                           <td align="center" class="py-3">
                             <div
+                              id="popupEditBtn"
                               class="hover cursor-pointer relative h-10 w-10 hover:bg-secondary/5 rounded-full"
                             >
                               <svg
@@ -839,6 +840,156 @@
       </div>
     </div>
 
+    <!-- Popup up - Edit -->
+    <div
+      id="popupEdit"
+      class="popup relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen h- overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="">
+                <div class="text-center sm:mt-0 sm:text-left py-5">
+                  <h3 class="text-xl font-semibold leading-6 text-gray-900">
+                    Edit User
+                  </h3>
+                  <div class="editContent space-y-3 py-5">
+                    <div>
+                      <label for="account"
+                        >@T3coBackend.Resources.Language.Account</label
+                      >
+                      <input
+                        id="account"
+                        class="block border border-transparent w-full py-1.5 text-gray-400 sm:text-sm sm:leading-6 focus:outline-none focus:ring-0 focus:border-transparent focus:text-gray-400 active:text-gray-400"
+                        type="text"
+                        value="@Model.Account"
+                        readonly
+                      />
+                    </div>
+                    <div>
+                      <label for="username"
+                        >@T3coBackend.Resources.Language.Username</label
+                      >
+                      <input
+                        id="username"
+                        class="block border border-transparent w-full py-1.5 text-gray-400 sm:text-sm sm:leading-6 focus:outline-none focus:ring-0 focus:border-transparent focus:text-gray-400 active:text-gray-400"
+                        type="text"
+                        value="@Model.UserName"
+                      />
+                    </div>
+                    <div>
+                      <label for="oldPassword"
+                        >@T3coBackend.Resources.Language.Password</label
+                      >
+                      <input
+                        id="oldPassword"
+                        name="oldPassword"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="password"
+                        value=""
+                        placeholder="至少8個字元，包含大小寫字母、數字"
+                      />
+                      <span id="passwordMessage"></span>
+                    </div>
+                    <div>
+                      <label for="newPassword">新密碼</label>
+                      <input
+                        id="newPassword"
+                        name="newPassword"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="password"
+                        value=""
+                        placeholder="至少8個字元，包含大小寫字母、數字"
+                      />
+                      <span id="passwordMessage"></span>
+                    </div>
+                    <div>
+                      <label for="confirmPassword">確認新密碼：</label>
+                      <input
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 ring-secondary/50 focus:ring-2 focus:ring-inset focus-primary/50 focus:ring-primary/60 sm:text-sm sm:leading-6"
+                        type="password"
+                        value=""
+                        placeholder="至少8個字元，包含大小寫字母、數字"
+                      />
+                      <span
+                        id="passwordMismatchMessage"
+                        style="color: red; display: none"
+                        >新密碼與確認密碼不一致</span
+                      >
+                    </div>
+                    <div>
+                      <label for="email"
+                        >@T3coBackend.Resources.Language.Email</label
+                      >
+                      <input
+                        id="email"
+                        class="block border border-transparent w-full py-1.5 text-gray-400 sm:text-sm sm:leading-6 focus:outline-none focus:ring-0 focus:border-transparent focus:text-gray-400 active:text-gray-400"
+                        type="email"
+                        value="@Model.Email"
+                        readonly
+                      />
+                    </div>
+                    <div class="flex space-x-2">
+                      <p class="text-[0.875rem] font-medium mb-2">
+                        @T3coBackend.Resources.Language.Enabled
+                      </p>
+                      <label
+                        class="switch inline-block relative w-[40px] h-[22px]"
+                      >
+                        <input id="enabled" class="appearance-none peer absolute
+                        w-0 h-0 opacity-0" type="checkbox" @(Model.IsEnabled ?
+                        "checked" : "") />
+                        <span
+                          class="slider round block absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 rounded-full transition duration-400 peer-checked:bg-primary peer-focus:ring-2 peer-focus:ring-primary peer-focus:ring-opacity-50"
+                        ></span>
+                        <span
+                          class="slider-circle block absolute left-1 bottom-1 bg-white w-[14px] h-[14px] rounded-full transition-transform duration-400 peer-checked:translate-x-[18px]"
+                        ></span>
+                      </label>
+                    </div>
+                    <input type="hidden" id="language-field" value="@lang" />
+                    <input type="hidden" id="id" value="@Model.Id" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="saveBtn inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                data-popup="optionsPopup"
+                class="closeBtn mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
       // Open popup
       const popupRole = document.querySelector("#popupRole");
@@ -848,6 +999,9 @@
       const popupActionLog = document.querySelector("#popupActionLog");
       const popupActionLogBtn = document.querySelector("#popupActionLogBtn");
       const popupReset = document.querySelector("#popupReset");
+      const popupResetBtn = document.querySelector("#popupResetBtn");
+      const popupEdit = document.querySelector("#popupEdit");
+      const popupEditBtn = document.querySelector("#popupEditBtn");
 
       // open popup
       popupRoleBtn.addEventListener("click", () => {
@@ -868,6 +1022,11 @@
       popupResetBtn.addEventListener("click", () => {
         if (popupReset) {
           popupReset.classList.toggle("hidden");
+        }
+      });
+      popupEditBtn.addEventListener("click", () => {
+        if (popupEdit) {
+          popupEdit.classList.toggle("hidden");
         }
       });
 
