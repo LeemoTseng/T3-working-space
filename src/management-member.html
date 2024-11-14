@@ -574,7 +574,7 @@
     <!-- Pop up - Action log -->
     <div
       id="popupActionLog"
-      class="popup relative z-10 hidden"
+      class="popup relative z-10"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -597,12 +597,40 @@
                   <h3 class="text-xl font-semibold leading-6 text-gray-900">
                     Action log
                   </h3>
+
                   <!-- searchBar -->
                   <div class="flex justify-between">
                     <div></div>
                     <div
-                      class="searchBar my-2 transition-all rounded-md flex items-center"
+                      class="searchBar space-x-2 transition-all rounded-md flex items-center"
                     >
+                      <input
+                        id="startDate"
+                        type="date"
+                        class="h-[22px] w-[150px] border border-secondary/80 pl-2 rounded-md focus:bg-transparent focus:ring-0 focus:outline-none py-1"
+                        placeholder="Search"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="3"
+                        stroke="currentColor"
+                        class="size-3 -mx-px text-secondary/80"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+
+                      <input
+                        id="endDate"
+                        type="date"
+                        class="h-[22px] w-[150px] border border-secondary/80 pl-2 rounded-md focus:bg-transparent focus:ring-0 focus:outline-none py-1"
+                        placeholder="Search"
+                      />
                       <input
                         type="text"
                         class="h-[22px] w-[200px] border border-secondary/80 pl-2 rounded-md focus:bg-transparent focus:ring-0 focus:outline-none py-1"
