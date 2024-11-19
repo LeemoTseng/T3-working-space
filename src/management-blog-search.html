@@ -309,7 +309,60 @@
                           </div>
                         </div>
                         <!-- htmlEditContent -->
-                        <div id="htmlEditContent" class="hidden">
+                        <div id="htmlEditContent"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-b pt-10"></div>
+                  <div class="btns pt-10 flex space-x-2">
+                    <a href="#">
+                      <div
+                        id="addSection"
+                        class="w-[150px] text-center text-sm font-bold px-3 py-2 rounded-md hover:bg-secondary/90 text-white bg-secondary transition-all"
+                      >
+                        Save all changes
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div
+                        id="addSection"
+                        class="w-[150px] text-secondary/90 text-center text-sm font-bold border border-secondary px-3 py-2 rounded-md hover:bg-secondary/5 transition-all"
+                      >
+                        Back to list
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // $button : section mode, html mode
+      const sectionEditMode = document.getElementById("sectionEditMode");
+      const htmlEditMode = document.getElementById("htmlEditMode");
+      const sectionEditContent = document.getElementById("sectionEditContent");
+      const htmlEditContent = document.getElementById("htmlEditContent");
+
+      let currentMode = "sectionEditMode";
+
+      sectionEditMode.addEventListener("click", () => {
+        if (currentMode === "htmlEditMode") {
+          sectionEditMode.className =
+            "p-2 cursor-pointer rounded-md font-medium bg-secondary/80 text-white";
+          htmlEditMode.className =
+            "p-2 cursor-pointer rounded-md font-medium bg-secondary/5 text-secondary/50";
+          currentMode = "sectionEditMode";
+          sectionEditContent.classList.remove("hidden");
+          htmlEditContent.innerHTML = "";
+        }
+      });
+
+      htmlEditModeTemplate = `<div>
                           <div class="pt-5">
                             <div class="flex">
                               <div class="font-semibold text-sm text-secondary">
@@ -908,58 +961,7 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
                             id="imgInspectContainer"
                             class="imgInspect"
                           ></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="border-b pt-10"></div>
-                  <div class="btns pt-10 flex space-x-2">
-                    <a href="#">
-                      <div
-                        id="addSection"
-                        class="w-[150px] text-center text-sm font-bold px-3 py-2 rounded-md hover:bg-secondary/90 text-white bg-secondary transition-all"
-                      >
-                        Save all changes
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div
-                        id="addSection"
-                        class="w-[150px] text-secondary/90 text-center text-sm font-bold border border-secondary px-3 py-2 rounded-md hover:bg-secondary/5 transition-all"
-                      >
-                        Back to list
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <script>
-      // $button : section mode, html mode
-      const sectionEditMode = document.getElementById("sectionEditMode");
-      const htmlEditMode = document.getElementById("htmlEditMode");
-      const sectionEditContent = document.getElementById("sectionEditContent");
-      const htmlEditContent = document.getElementById("htmlEditContent");
-
-      let currentMode = "sectionEditMode";
-
-      sectionEditMode.addEventListener("click", () => {
-        if (currentMode === "htmlEditMode") {
-          sectionEditMode.className =
-            "p-2 cursor-pointer rounded-md font-medium bg-secondary/80 text-white";
-          htmlEditMode.className =
-            "p-2 cursor-pointer rounded-md font-medium bg-secondary/5 text-secondary/50";
-          currentMode = "sectionEditMode";
-          sectionEditContent.classList.remove("hidden");
-          htmlEditContent.classList.add("hidden");
-        }
-      });
+                        </div>`;
 
       htmlEditMode.addEventListener("click", () => {
         if (currentMode === "sectionEditMode") {
@@ -968,151 +970,148 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
           sectionEditMode.className =
             "p-2 cursor-pointer rounded-md font-medium bg-secondary/5 text-secondary/50";
           currentMode = "htmlEditMode";
+          htmlEditContent.innerHTML = htmlEditModeTemplate;
           sectionEditContent.classList.add("hidden");
-          htmlEditContent.classList.remove("hidden");
+          // console.log(currentMode);
 
-          console.log(currentMode);
-        }
-      });
+          // $Transfer the HTML content
+          const transformContent = document.getElementById("transformContent");
+          const convertButton = document.getElementById("convertButton");
+          const outputContent = document.getElementById("outputContent");
 
-      // $Transfer the HTML content
-      const transformContent = document.getElementById("transformContent");
-      const convertButton = document.getElementById("convertButton");
-      const outputContent = document.getElementById("outputContent");
+          convertButton.addEventListener("click", () => {
+            let content = transformContent.value;
 
-      convertButton.addEventListener("click", () => {
-        let content = transformContent.value;
+            // 將所有 " 符號變成 ' 符號
+            content = content.replace(/"/g, "'");
 
-        // 將所有 " 符號變成 ' 符號
-        content = content.replace(/"/g, "'");
+            content = content
+              .replace(/<p>&nbsp;<\/p>/g, "")
+              .replace(/<p><\/p>/g, "")
+              .replace(/<p> <\/p>/g, "")
+              .replace(/<p> &nbsp; <\/p>/g, "")
+              .replace(/<\/?br\s*\/?>/g, "");
 
-        content = content
-          .replace(/<p>&nbsp;<\/p>/g, "")
-          .replace(/<p><\/p>/g, "")
-          .replace(/<p> <\/p>/g, "")
-          .replace(/<p> &nbsp; <\/p>/g, "")
-          .replace(/<\/?br\s*\/?>/g, "");
-
-        // 提取 h2 和 h3 標題並生成目錄項
-        let tocItems = [];
-        content = content.replace(
-          /<(h2|h3)>(.*?)<\/\1>/g,
-          (match, tag, text) => {
-            const id = `heading-${Date.now()}-${Math.random()
-              .toString(36)
-              .substr(2, 9)}`;
-            tocItems.push({ id, tag, text });
-            return `<${tag} id='${id}' style='scroll-margin-top: 100px;' class='${
-              tag === "h2"
-                ? "text text-2xl font-bold text-gray-800 pt-8"
-                : "text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide"
-            }'>${text}</${tag}>`;
-          }
-        );
-
-        // 處理表格內的 <li> 標籤
-        content = content.replace(
-          /<table[\s\S]*?<\/table>/g,
-          (tableContent) => {
-            return tableContent.replace(
-              /<li(.*?)>/g,
-              "<li$1 class='text text-lg text-gray-700 leading-relaxed space-y-1 pt-1 text-justify tracking-wide'>"
+            // 提取 h2 和 h3 標題並生成目錄項
+            let tocItems = [];
+            content = content.replace(
+              /<(h2|h3)>(.*?)<\/\1>/g,
+              (match, tag, text) => {
+                const id = `heading-${Date.now()}-${Math.random()
+                  .toString(36)
+                  .substr(2, 9)}`;
+                tocItems.push({ id, tag, text });
+                return `<${tag} id='${id}' style='scroll-margin-top: 100px;' class='${
+                  tag === "h2"
+                    ? "text text-2xl font-bold text-gray-800 pt-8"
+                    : "text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide"
+                }'>${text}</${tag}>`;
+              }
             );
-          }
-        );
 
-        // 處理不在表格內的 <li> 標籤
-        content = content.replace(
-          /<li(.*?)>/g,
-          "<li$1 class='text text-lg text-gray-700 leading-relaxed space-y-3 pt-5 text-justify tracking-wide'>"
-        );
+            // 處理表格內的 <li> 標籤
+            content = content.replace(
+              /<table[\s\S]*?<\/table>/g,
+              (tableContent) => {
+                return tableContent.replace(
+                  /<li(.*?)>/g,
+                  "<li$1 class='text text-lg text-gray-700 leading-relaxed space-y-1 pt-1 text-justify tracking-wide'>"
+                );
+              }
+            );
 
-        // 處理圖片標籤 <img>
-        content = content.replace(
-          /<img\s+src=["']([^"']*?)["']\s+alt=["']([^"']*?)["']\s*\/?>/g,
-          (match, src, alt) => {
-            // 將 <img> 的 src 和 alt 內容輸出到控制台
-            console.log("src:", src, "alt:", alt);
+            // 處理不在表格內的 <li> 標籤
+            content = content.replace(
+              /<li(.*?)>/g,
+              "<li$1 class='text text-lg text-gray-700 leading-relaxed space-y-3 pt-5 text-justify tracking-wide'>"
+            );
 
-            // 返回修改後的 <div> 包裹 <img> 結構
-            return `<div class='imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden'>
+            // 處理圖片標籤 <img>
+            content = content.replace(
+              /<img\s+src=["']([^"']*?)["']\s+alt=["']([^"']*?)["']\s*\/?>/g,
+              (match, src, alt) => {
+                // 將 <img> 的 src 和 alt 內容輸出到控制台
+                console.log("src:", src, "alt:", alt);
+
+                // 返回修改後的 <div> 包裹 <img> 結構
+                return `<div class='imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden'>
               <img class='w-full h-full object-contain' src='${src}' alt='${alt}'>
             </div>`;
-          }
-        );
+              }
+            );
 
-        // 格式化 <p>、<h2>、<h3>、<h4>、<table> 和 <td> 標籤
-        content = content
-          .replace(
-            /<p>/g,
-            "<p class='text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
-          )
-          .replace(
-            /<h2>/g,
-            "<h2 style='scroll-margin-top: 60px;' class='text text-2xl font-bold text-gray-800 pt-8'>"
-          )
-          .replace(
-            /<h3>/g,
-            "<h3 style='scroll-margin-top: 60px;' class='text text-xl text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
-          )
-          .replace(
-            /<h4>/g,
-            "<h4 class='text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
-          )
-          .replace(/<table>/g, "<table class='w-10/12 mx-auto my-5'>")
-          .replace(
-            /<td>/g,
-            "<td class='p-3 border-b border-gray-400 text-center align-middle'>"
-          );
+            // 格式化 <p>、<h2>、<h3>、<h4>、<table> 和 <td> 標籤
+            content = content
+              .replace(
+                /<p>/g,
+                "<p class='text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
+              )
+              .replace(
+                /<h2>/g,
+                "<h2 style='scroll-margin-top: 60px;' class='text text-2xl font-bold text-gray-800 pt-8'>"
+              )
+              .replace(
+                /<h3>/g,
+                "<h3 style='scroll-margin-top: 60px;' class='text text-xl text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
+              )
+              .replace(
+                /<h4>/g,
+                "<h4 class='text text-lg text-gray-700 leading-relaxed space-y-4 pt-5 text-justify tracking-wide'>"
+              )
+              .replace(/<table>/g, "<table class='w-10/12 mx-auto my-5'>")
+              .replace(
+                /<td>/g,
+                "<td class='p-3 border-b border-gray-400 text-center align-middle'>"
+              );
 
-        // 構建目錄 HTML 結構
-        let tocContent = `
+            // 構建目錄 HTML 結構
+            let tocContent = `
           <div class='index border border-secondary/50 p-5'>
             <p class='text-2xl font-semibold pb-3'>目錄</p>
             <ul class='space-y-2'>
         `;
 
-        tocItems.forEach((item) => {
-          tocContent += `
+            tocItems.forEach((item) => {
+              tocContent += `
             <li class='hover:text-primary'>
               <a href='#${item.id}' class='hover:text-primary'>${item.text}</a>
             </li>
           `;
-        });
+            });
 
-        tocContent += `
+            tocContent += `
             </ul>
           </div>
         `;
 
-        // 清空搜尋結果區域
-        searchInput.value = "";
+            // 清空搜尋結果區域
+            searchInput.value = "";
 
-        // 更新 outputContent 的 innerHTML 而不是 value
-        outputContent.innerHTML = tocContent + content;
-      });
+            // 更新 outputContent 的 innerHTML 而不是 value
+            outputContent.innerHTML = tocContent + content;
+          });
 
-      // 檢查並更新圖片標籤
-      convertButton.addEventListener("click", function () {
-        const imgInspectContainer = document.querySelector(
-          "#imgInspectContainer"
-        );
-        imgInspectContainer.innerHTML = "";
+          // 檢查並更新圖片標籤
+          convertButton.addEventListener("click", function () {
+            const imgInspectContainer = document.querySelector(
+              "#imgInspectContainer"
+            );
+            imgInspectContainer.innerHTML = "";
 
-        const imgTags = outputContent.innerHTML.match(
-          /<img\s+[^>]*src=["']?([^"'\s>]*)["']?\s+alt=["']?([^"'\s>]*)["']?[^>]*\/?>/g
-        );
-
-        console.log(imgTags);
-
-        if (imgTags) {
-          imgTags.forEach((imgTag, index) => {
-            const [, src = "", alt = ""] = imgTag.match(
-              /src=["']?([^"'\s>]*)["']?\s+alt=["']?([^"'\s>]*)["']?/
+            const imgTags = outputContent.innerHTML.match(
+              /<img\s+[^>]*src=["']?([^"'\s>]*)["']?\s+alt=["']?([^"'\s>]*)["']?[^>]*\/?>/g
             );
 
-            // 動態插入結構
-            const imgInspectHTML = `
+            console.log(imgTags);
+
+            if (imgTags) {
+              imgTags.forEach((imgTag, index) => {
+                const [, src = "", alt = ""] = imgTag.match(
+                  /src=["']?([^"'\s>]*)["']?\s+alt=["']?([^"'\s>]*)["']?/
+                );
+
+                // 動態插入結構
+                const imgInspectHTML = `
               <div class='flex flex-col pt-5'>
                 <p class='text-sm text-nowrap text-secondary'>
                   <span>${index + 1}-</span><span>「${alt}」</span>
@@ -1128,208 +1127,221 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
                 </div>
               </div>
             `;
-            imgInspectContainer.insertAdjacentHTML("beforeend", imgInspectHTML);
-          });
+                imgInspectContainer.insertAdjacentHTML(
+                  "beforeend",
+                  imgInspectHTML
+                );
+              });
 
-          document.querySelectorAll(".imageUpload").forEach((input, index) => {
-            input.addEventListener("change", function (event) {
-              const file = event.target.files[0];
-              if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                  const thumbnail =
-                    input.parentNode.querySelector(".thumbnail");
-                  if (thumbnail) {
-                    const newSrc = e.target.result;
-                    thumbnail.src = newSrc;
+              document
+                .querySelectorAll(".imageUpload")
+                .forEach((input, index) => {
+                  input.addEventListener("change", function (event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                      const reader = new FileReader();
+                      reader.onload = function (e) {
+                        const thumbnail =
+                          input.parentNode.querySelector(".thumbnail");
+                        if (thumbnail) {
+                          const newSrc = e.target.result;
+                          thumbnail.src = newSrc;
 
-                    // 直接更新 outputContent 中的圖片 src
-                    outputContent.innerHTML = outputContent.innerHTML.replace(
-                      new RegExp(
-                        `(<img[^>]*src=["'])([^"']*)(["'][^>]*alt=["']${alt}["'][^>]*>)`,
-                        "g"
-                      ),
-                      `$1${newSrc}$3`
-                    );
-                  }
-                };
-                reader.readAsDataURL(file);
-              }
-            });
-          });
-        } else {
-          const imgNotFoundHtml = `<p class='text-sm text-gray-400'>No image tags found.</p>`;
-          imgInspectContainer.insertAdjacentHTML("beforeend", imgNotFoundHtml);
-          console.log("No image tags found");
-        }
-      });
-
-      // $Search for text
-
-      const searchInput = document.getElementById("searchInput");
-      const searchButton = document.getElementById("searchButton");
-      const prevButton = document.getElementById("prevButton");
-      const nextButton = document.getElementById("nextButton");
-
-      let matches = [];
-      let currentIndex = -1;
-
-      searchButton.addEventListener("click", (event) => {
-        event.preventDefault(); // 防止頁面刷新
-        const query = searchInput.value.trim();
-        if (query === "") {
-          alert("Please enter a search term");
-          return;
-        }
-
-        clearHighlights(); // 清除之前的高亮
-
-        // 恢復 "Apply Links to Output HTML" 按鈕的狀態
-        applyLinkButton.textContent = "Apply Links to Output HTML";
-        applyLinkButton.classList.remove(
-          "bg-gray-200",
-          "text-gray-400",
-          "cursor-not-allowed"
-        );
-        applyLinkButton.classList.add(
-          "bg-secondary/5",
-          "hover:bg-secondary/10",
-          "text-secondary"
-        );
-        applyLinkButton.style.pointerEvents = "auto"; // 恢復點擊
-
-        // 搜尋所有符合結果並高亮（跳過 <img> 的 alt 內容）
-        const regex = new RegExp(
-          `(<img[^>]*alt="[^"]*?)(${query})([^"]*"[^>]*>)|(${query})`,
-          "gi"
-        );
-        outputContent.innerHTML = outputContent.innerHTML.replace(
-          regex,
-          (match, p1, p2, p3, p4) => {
-            // 當前匹配項在 <img> 的 alt 中（p1, p2, p3 不為空）時，返回原文字
-            if (p1 && p2 && p3) {
-              return `${p1}${p2}${p3}`; // 保留 <img> 標籤和 alt 內容，不做替換
+                          // 直接更新 outputContent 中的圖片 src
+                          outputContent.innerHTML =
+                            outputContent.innerHTML.replace(
+                              new RegExp(
+                                `(<img[^>]*src=["'])([^"']*)(["'][^>]*alt=["']${alt}["'][^>]*>)`,
+                                "g"
+                              ),
+                              `$1${newSrc}$3`
+                            );
+                        }
+                      };
+                      reader.readAsDataURL(file);
+                    }
+                  });
+                });
+            } else {
+              const imgNotFoundHtml = `<p class='text-sm text-gray-400'>No image tags found.</p>`;
+              imgInspectContainer.insertAdjacentHTML(
+                "beforeend",
+                imgNotFoundHtml
+              );
+              console.log("No image tags found");
             }
-            // 當前匹配項不在 <img> 的 alt 中（p4 為匹配項）時，僅標記為 span
-            return `<span class="match">${p4}</span>`;
-          }
-        );
-
-        // 獲取所有高亮的結果
-        matches = Array.from(outputContent.querySelectorAll(".match"));
-
-        if (matches.length > 0) {
-          currentIndex = 0;
-          updateCurrentMatch();
-        } else {
-          alert("No matches found");
-        }
-      });
-
-      prevButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        if (matches.length === 0) return;
-        currentIndex = (currentIndex - 1 + matches.length) % matches.length;
-        updateCurrentMatch();
-      });
-
-      nextButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        if (matches.length === 0) return;
-        currentIndex = (currentIndex + 1) % matches.length;
-        updateCurrentMatch();
-      });
-
-      applyLinkButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        const url = urlInput.value.trim();
-        if (!url) {
-          alert("invalid link");
-          return;
-        }
-        if (matches.length > 0 && currentIndex !== -1) {
-          const currentMatch = matches[currentIndex];
-          // 檢查匹配項是否已在 <a> 標籤內
-          const parentLink = currentMatch.closest("a");
-          if (parentLink) {
-            // 如果已有 <a> 標籤，更新 href 屬性為新鏈接
-            parentLink.href = url;
-          } else {
-            // 如果沒有 <a> 標籤，將匹配項包裹在新的 <a> 標籤內
-            const matchedText = currentMatch.textContent;
-            const linkHTML = `<a href='${url}' class='underline underline-offset-4 decoration-2 decoration-primary'>${matchedText}</a>`;
-            currentMatch.outerHTML = linkHTML;
-          }
-
-          // 保存當前滾動位置
-          const scrollPosition = outputContent.scrollTop;
-
-          const matchedText = currentMatch.textContent;
-          const linkHTML = `<a href='${url}' class='underline underline-offset-4 decoration-2 decoration-primary'>${matchedText}</a>`;
-          // currentMatch.outerHTML = linkHTML;
-
-          // 重設高亮和當前樣式
-          clearHighlights();
-
-          matches = Array.from(outputContent.querySelectorAll(".highlight"));
-
-          if (matches.length > 0) {
-            currentIndex = 0;
-            updateCurrentMatch();
-          }
-          // 恢復滾動位置
-          outputContent.scrollTop = scrollPosition;
-
-          // 改變按鈕樣式並禁用按鈕
-          applyLinkButton.textContent = "Link Applied";
-          applyLinkButton.classList.add(
-            "bg-gray-200",
-            "text-gray-400",
-            "cursor-not-allowed"
-          );
-          applyLinkButton.classList.remove(
-            "bg-secondary/5",
-            "hover:bg-secondary/10",
-            "text-secondary"
-          );
-          applyLinkButton.style.pointerEvents = "none"; // 禁用點擊
-        }
-
-        outputContent.classList.remove("highlight", "current");
-        outputContent.style.height = "200px";
-        outputContent.style.overflowY = "auto";
-        // console.log(outputContent);
-      });
-
-      function clearHighlights() {
-        // 清除之前的所有高亮和當前樣式
-        outputContent.innerHTML = outputContent.innerHTML.replace(
-          /<span[^>]*class="[^"]*\bhighlight\b[^"]*\bbg-yellow-300\b[^"]*"[^>]*>(.*?)<\/span>/g,
-          "$1"
-        );
-        outputContent.innerHTML = outputContent.innerHTML.replace(
-          /<span[^>]*class="[^"]*\bcurrent\b[^"]*\bbg-orange-400\b[^"]*"[^>]*>(.*?)<\/span>/g,
-          "$1"
-        );
-        matches = [];
-        currentIndex = -1;
-      }
-
-      function updateCurrentMatch() {
-        // 清除所有選中的項目
-        matches.forEach((match) =>
-          match.classList.remove("highlight", "current", "bg-orange-400")
-        );
-
-        if (matches[currentIndex]) {
-          // 只高亮當前匹配項
-          matches[currentIndex].classList.add("highlight", "bg-orange-400");
-          matches[currentIndex].scrollIntoView({
-            behavior: "smooth",
-            block: "center",
           });
+
+          // $Search for text
+
+          const searchInput = document.getElementById("searchInput");
+          const searchButton = document.getElementById("searchButton");
+          const prevButton = document.getElementById("prevButton");
+          const nextButton = document.getElementById("nextButton");
+
+          let matches = [];
+          let currentIndex = -1;
+
+          searchButton.addEventListener("click", (event) => {
+            event.preventDefault(); // 防止頁面刷新
+            const query = searchInput.value.trim();
+            if (query === "") {
+              alert("Please enter a search term");
+              return;
+            }
+
+            clearHighlights(); // 清除之前的高亮
+
+            // 恢復 "Apply Links to Output HTML" 按鈕的狀態
+            applyLinkButton.textContent = "Apply Links to Output HTML";
+            applyLinkButton.classList.remove(
+              "bg-gray-200",
+              "text-gray-400",
+              "cursor-not-allowed"
+            );
+            applyLinkButton.classList.add(
+              "bg-secondary/5",
+              "hover:bg-secondary/10",
+              "text-secondary"
+            );
+            applyLinkButton.style.pointerEvents = "auto"; // 恢復點擊
+
+            // 搜尋所有符合結果並高亮（跳過 <img> 的 alt 內容）
+            const regex = new RegExp(
+              `(<img[^>]*alt="[^"]*?)(${query})([^"]*"[^>]*>)|(${query})`,
+              "gi"
+            );
+            outputContent.innerHTML = outputContent.innerHTML.replace(
+              regex,
+              (match, p1, p2, p3, p4) => {
+                // 當前匹配項在 <img> 的 alt 中（p1, p2, p3 不為空）時，返回原文字
+                if (p1 && p2 && p3) {
+                  return `${p1}${p2}${p3}`; // 保留 <img> 標籤和 alt 內容，不做替換
+                }
+                // 當前匹配項不在 <img> 的 alt 中（p4 為匹配項）時，僅標記為 span
+                return `<span class="match">${p4}</span>`;
+              }
+            );
+
+            // 獲取所有高亮的結果
+            matches = Array.from(outputContent.querySelectorAll(".match"));
+
+            if (matches.length > 0) {
+              currentIndex = 0;
+              updateCurrentMatch();
+            } else {
+              alert("No matches found");
+            }
+          });
+
+          prevButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (matches.length === 0) return;
+            currentIndex = (currentIndex - 1 + matches.length) % matches.length;
+            updateCurrentMatch();
+          });
+
+          nextButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (matches.length === 0) return;
+            currentIndex = (currentIndex + 1) % matches.length;
+            updateCurrentMatch();
+          });
+
+          applyLinkButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            const url = urlInput.value.trim();
+            if (!url) {
+              alert("invalid link");
+              return;
+            }
+            if (matches.length > 0 && currentIndex !== -1) {
+              const currentMatch = matches[currentIndex];
+              // 檢查匹配項是否已在 <a> 標籤內
+              const parentLink = currentMatch.closest("a");
+              if (parentLink) {
+                // 如果已有 <a> 標籤，更新 href 屬性為新鏈接
+                parentLink.href = url;
+              } else {
+                // 如果沒有 <a> 標籤，將匹配項包裹在新的 <a> 標籤內
+                const matchedText = currentMatch.textContent;
+                const linkHTML = `<a href='${url}' class='underline underline-offset-4 decoration-2 decoration-primary'>${matchedText}</a>`;
+                currentMatch.outerHTML = linkHTML;
+              }
+
+              // 保存當前滾動位置
+              const scrollPosition = outputContent.scrollTop;
+
+              const matchedText = currentMatch.textContent;
+              const linkHTML = `<a href='${url}' class='underline underline-offset-4 decoration-2 decoration-primary'>${matchedText}</a>`;
+              // currentMatch.outerHTML = linkHTML;
+
+              // 重設高亮和當前樣式
+              clearHighlights();
+
+              matches = Array.from(
+                outputContent.querySelectorAll(".highlight")
+              );
+
+              if (matches.length > 0) {
+                currentIndex = 0;
+                updateCurrentMatch();
+              }
+              // 恢復滾動位置
+              outputContent.scrollTop = scrollPosition;
+
+              // 改變按鈕樣式並禁用按鈕
+              applyLinkButton.textContent = "Link Applied";
+              applyLinkButton.classList.add(
+                "bg-gray-200",
+                "text-gray-400",
+                "cursor-not-allowed"
+              );
+              applyLinkButton.classList.remove(
+                "bg-secondary/5",
+                "hover:bg-secondary/10",
+                "text-secondary"
+              );
+              applyLinkButton.style.pointerEvents = "none"; // 禁用點擊
+            }
+
+            outputContent.classList.remove("highlight", "current");
+            outputContent.style.height = "200px";
+            outputContent.style.overflowY = "auto";
+            // console.log(outputContent);
+          });
+
+          function clearHighlights() {
+            // 清除之前的所有高亮和當前樣式
+            outputContent.innerHTML = outputContent.innerHTML.replace(
+              /<span[^>]*class="[^"]*\bhighlight\b[^"]*\bbg-yellow-300\b[^"]*"[^>]*>(.*?)<\/span>/g,
+              "$1"
+            );
+            outputContent.innerHTML = outputContent.innerHTML.replace(
+              /<span[^>]*class="[^"]*\bcurrent\b[^"]*\bbg-orange-400\b[^"]*"[^>]*>(.*?)<\/span>/g,
+              "$1"
+            );
+            matches = [];
+            currentIndex = -1;
+          }
+
+          function updateCurrentMatch() {
+            // 清除所有選中的項目
+            matches.forEach((match) =>
+              match.classList.remove("highlight", "current", "bg-orange-400")
+            );
+
+            if (matches[currentIndex]) {
+              // 只高亮當前匹配項
+              matches[currentIndex].classList.add("highlight", "bg-orange-400");
+              matches[currentIndex].scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            }
+          }
         }
-      }
+      });
     </script>
   </body>
 </html>
