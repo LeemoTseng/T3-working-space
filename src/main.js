@@ -1143,14 +1143,14 @@ if (articlesContainer) {
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('title', 'pt-3');
 
-    const h4 = document.createElement('h4');
-    h4.classList.add('text-2xl', 'font-bold');
-    h4.textContent = item.title;
+    const h2 = document.createElement('h2');
+    h2.classList.add('text-2xl', 'font-bold','mb-2' ,'text-secondary');
+    h2.textContent = item.title;
 
     const borderDiv = document.createElement('div');
     borderDiv.classList.add('my-3');
 
-    titleDiv.append(h4, borderDiv);
+    titleDiv.append(h2, borderDiv);
 
     const descriptionP = document.createElement('p');
     descriptionP.classList.add('text-gray-500', 'text-left', 'lg:text-justify');
@@ -1235,8 +1235,8 @@ if (articleList) {
     dateDiv.classList.add('date', 'text-gray-400', 'font-medium');
     dateDiv.textContent = article.date;
 
-    const titleDiv = document.createElement('div');
-    titleDiv.classList.add('title', 'text-2xl', 'font-bold', 'py-2', 'hover:text-primary');
+    const titleDiv = document.createElement('h2');
+    titleDiv.classList.add('title', 'text-2xl', 'font-bold', 'py-2', 'hover:text-primary', 'mb-0');
     titleDiv.textContent = article.title;
 
     const contentDiv = document.createElement('div');
