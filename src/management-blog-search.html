@@ -848,7 +848,7 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
                               class="btn pt-1.5 cursor-pointer border bg-secondary/5 hover:bg-secondary/10 px-2 text-secondary rounded-md"
                               disabled
                             >
-                              <span> <</span>
+                              <span> < </span>
                             </div>
 
                             <div
@@ -1295,8 +1295,10 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
           applyLinkButton.style.pointerEvents = "none"; // 禁用點擊
         }
 
-        outputContent.classList = "";
-        console.log(outputContent);
+        outputContent.classList.remove("highlight", "current");
+        outputContent.style.height = "200px";
+        outputContent.style.overflowY = "auto";
+        // console.log(outputContent);
       });
 
       function clearHighlights() {
