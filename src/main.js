@@ -650,8 +650,9 @@ if (document.querySelector('#allPlan')) {
     const planContainer = document.createElement('div');
     planContainer.className = 'container w-full h-full flex flex-col items-start p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8'
 
-    const planTitle = document.createElement('h6');
+    const planTitle = document.createElement('h3');
     planTitle.textContent = plan.title;
+    planTitle.className = 'mb-4 text-sm font-bold text-gray-500';
 
     const itemsDiv = document.createElement('div');
     itemsDiv.className = 'items flex block items-baseline text-gray-900'
