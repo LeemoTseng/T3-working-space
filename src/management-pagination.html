@@ -375,7 +375,7 @@
                       <div class="flex justify-center pt-10 items-center gap-4">
                         <button
                           id="prevBtn"
-                          class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-secondary uppercase align-middle transition-all rounded-lg select-none hover:bg-secondary/10 active:bg-secondary disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                          class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-secondary uppercase align-middle transition-all rounded-lg select-none hover:bg-secondary/10 active:bg-secondary/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                           type="button"
                         >
                           <svg
@@ -394,41 +394,10 @@
                             ></path>
                           </svg>
                         </button>
-                        <div class="flex items-center gap-2">
-                          <button
-                            data-page="1"
-                            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none text-primary"
-                            type="button"
-                          >
-                            <span
-                              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            >
-                              1
-                            </span>
-                          </button>
-                          <button
-                            data-page="2"
-                            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none text-primary"
-                            type="button"
-                          >
-                            <span
-                              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            >
-                              2
-                            </span>
-                          </button>
-                          <button
-                            data-page="3"
-                            class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none bg-secondary text-white"
-                            type="button"
-                          >
-                            <span
-                              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            >
-                              3
-                            </span>
-                          </button>
-                        </div>
+                        <div
+                          id="paginationContainer"
+                          class="flex items-center gap-2"
+                        ></div>
                         <button
                           id="nextBtn"
                           class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-secondary uppercase align-middle transition-all rounded-lg select-none hover:bg-secondary/10 active:bg-secondary/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
