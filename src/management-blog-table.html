@@ -15,7 +15,9 @@
     <script src="management.js" defer></script>
   </head>
   <body>
-    <div class="flex flex-col justify-between h-[450px] w-full pt-3">
+    <div
+      class="flex flex-col justify-between h-[500px] overflow-y-scroll w-full pt-3"
+    >
       <table width="100%" cellpadding="5">
         <thead>
           <tr class="border-b text-sm">
@@ -27,7 +29,7 @@
             <th width="20%">建立時間</th>
           </tr>
         </thead>
-        <tbody id="loginLogBody">
+        <tbody id="loginLogBody" class="h-[200px] overflow-y-scroll">
           <tr class="text-sm text-secondary/80 border-b">
             <td>91</td>
             <td>NatalieLin</td>
@@ -48,7 +50,14 @@
                   d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 ></path>
               </svg>
-              <p>Success</p>
+              <p>
+                Success Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Perferendis debitis pariatur fuga esse distinctio fugiat?
+                Ad aliquam, eum hic praesentium quas veritatis eligendi saepe
+                cumque autem esse ducimus, in at neque animi nam sit adipisci
+                atque quia. Voluptates accusantium nobis vero ab! Laborum saepe
+                corrupti iusto quasi obcaecati, cumque ducimus!
+              </p>
             </td>
             <td>2024-12-03 10:36:47</td>
           </tr>
@@ -241,7 +250,10 @@
         </tbody>
       </table>
       <!-- popup - login log pagination -->
-      <div class="loginPagination">
+      <div
+        class="loginPagination"
+        class="absolute bottom-[60px] left-1/2 -translate-x-1/2"
+      >
         <div>
           <div class="flex justify-center mt-4 space-x-2">
             <button
