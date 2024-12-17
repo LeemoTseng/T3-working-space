@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T3CO - Content Management System - Home</title>
+    <script src="../src/assets/plugins/sortable/Sortable.js"></script>
+    <link
+      rel="icon"
+      href="assets/management/management_favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <script src="management-popup.js" defer></script>
+    <script src="management.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+      <div class="">
+        <div class="text-center sm:mt-0 sm:text-left py-5 pb-10">
+          <h3 class="text-xl font-semibold leading-6 text-gray-900">操作Log</h3>
+
+          <!-- searchBar -->
+          <div class="flex justify-between">
+            <div></div>
+
+            <div
+              class="searchBar space-x-2 transition-all rounded-md flex items-center"
+            >
+              <input
+                id="actionStartDate"
+                type="date"
+                class="h-[22px] w-[150px] border border-secondary/80 pl-2 rounded-md focus:bg-transparent focus:ring-0 focus:outline-none py-1"
+                placeholder="Search"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="3"
+                stroke="currentColor"
+                class="size-3 -mx-px text-secondary/80"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                ></path>
+              </svg>
+
+              <input
+                id="actionEndDate"
+                type="date"
+                class="h-[22px] w-[150px] border border-secondary/80 pl-2 rounded-md focus:bg-transparent focus:ring-0 focus:outline-none py-1"
+                placeholder="Search"
+              />
+              <input
+                type="text"
+                id="searchInput"
+                class="h-[22px] w-[200px] border border-secondary/80 pl-2 rounded-md focus:bg-transparent focus:ring-0 focus:outline-none py-1"
+                placeholder="Search"
+              />
+              <div
+                id="searchActionLog"
+                class="flex justify-end cursor-pointer items-center px-2 ml-1 rounded-md border border-secondary hover:bg-secondary hover:text-white transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  ></path>
+                </svg>
+                <p class="text-sm font-bold ml-1 py-0">搜尋</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col justify-between h-[500px] overflow-y-scroll w-full pt-3"
+          >
+            <table width="100%" class="table-fixed" cellpadding="5">
+              <thead>
+                <tr class="border-b text-sm text-wrap">
+                  <th width="5%">#</th>
+                  <th width="5%">用戶帳號</th>
+                  <th width="5%">用戶名稱</th>
+                  <th width="15%">路徑</th>
+                  <th width="5%">IP</th>
+                  <th width="50%">操作</th>
+                  <th width="15%">建立時間</th>
+                </tr>
+              </thead>
+              <tbody id="actionLogBody" class="overflow-y-scroll">
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td max-width="10%">1</td>
+                  <td max-width="10%">NatalieLin</td>
+                  <td max-width="10%">Natalie</td>
+                  <td max-width="10%">/Space/Image</td>
+                  <td max-width="10%">::1</td>
+                  <td max-width="20%">
+                    新增空間圖片，Id:0, Id: 0, FileNameEn: test, FileNameZh:
+                    測試, Url: assets/space/共享空間-1.jpg, Order: 10,
+                    IsEnabled: False, CreateBy: NatalieLin, CreateDate:
+                    2024/12/17 上午 10:14:22, UpdateBy: , UpdateDate:
+                  </td>
+                  <td width="30%">2024-12-17 10:14:22</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>2</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Space/Advantage/19</td>
+                  <td>::1</td>
+                  <td>
+                    刪除Id:19，內容: Id:19, Title:test,
+                    Description:tesgrwrhwrty,
+                    Url:assets/advantages/共享辦公室-2.jpg, IsEnabled:False,
+                    Order:7, Language:zh-TW, CreateBy:NatalieLin,
+                    CreateDate:2024/12/16 下午 05:26:16, UpdateBy:, UpdateDate:
+                  </td>
+                  <td>2024-12-16 17:30:24</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>3</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Space/Advantage</td>
+                  <td>::1</td>
+                  <td>新增優勢: Id :19, Title:test</td>
+                  <td>2024-12-16 17:26:16</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>4</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Memberships/Service/25</td>
+                  <td>::1</td>
+                  <td>
+                    刪除Id:25，內容: Id:25, ServiceName:test1216, Order:10,
+                    Language:zh-TW, CreateBy:Natalie, CreateDate:2024/10/28 下午
+                    03:09:05, UpdateBy:NatalieLin, UpdateDate:2024/12/16 下午
+                    04:22:52,
+                    TPlanService:System.Collections.Generic.List`1[T3coBackend.EFModels.TPlanService]
+                  </td>
+                  <td>2024-12-16 16:54:13</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>5</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Memberships/Service/27</td>
+                  <td>::1</td>
+                  <td>刪除服務，Id:27</td>
+                  <td>2024-12-16 16:30:37</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>6</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Memberships/Service/25</td>
+                  <td>::1</td>
+                  <td>
+                    編輯服務，Id:25，異動內容: ServiceName: test1111 =&gt;
+                    test1216
+                  </td>
+                  <td>2024-12-16 16:22:52</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>7</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Memberships/Promotion/12</td>
+                  <td>::1</td>
+                  <td>
+                    編輯促銷活動，Id:12，異動內容: Title: test1214 =&gt;
+                    test1216; Description: rgadfvde =&gt; test
+                  </td>
+                  <td>2024-12-16 16:09:50</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>8</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Memberships/Promotion/12</td>
+                  <td>::1</td>
+                  <td>
+                    編輯促銷活動，Id:12，異動內容: Title: test -&gt; test1214;
+                    Description: yfyfyfy -&gt; rgadfvde; StartDate: 2024/12/18
+                    上午 12:00:00 -&gt; 2024/12/20 上午 12:00:00
+                  </td>
+                  <td>2024-12-16 15:50:19</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>9</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Memberships/Promotion</td>
+                  <td>::1</td>
+                  <td>新增促銷活動，Id:12</td>
+                  <td>2024-12-16 15:48:37</td>
+                </tr>
+                <tr class="text-sm text-secondary/80 border-b">
+                  <td>10</td>
+                  <td>NatalieLin</td>
+                  <td>Natalie</td>
+                  <td>/Memberships/Plan/12</td>
+                  <td>::1</td>
+                  <td>
+                    編輯方案，Id:12，異動內容: PlanName: test3rferfeafa -&gt;
+                    test; Price: 3,002323e -&gt; 3,000
+                  </td>
+                  <td>2024-12-16 15:31:56</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- popup - action log pagination -->
+            <div
+              id="actionPagination"
+              class="absolute bottom-[60px] left-1/2 -translate-x-1/2"
+            >
+              <div>
+                <div class="flex justify-center mt-4 space-x-2">
+                  <div class="actionPaginationContainer flex space-x-2">
+                    <button
+                      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none bg-secondary text-white"
+                    >
+                      1</button
+                    ><button
+                      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    >
+                      2
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

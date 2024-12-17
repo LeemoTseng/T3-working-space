@@ -905,6 +905,10 @@ input:focus {
   bottom: 0.25rem;
 }
 
+.bottom-\[60px\] {
+  bottom: 60px;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -947,10 +951,6 @@ input:focus {
 
 .top-\[85px\] {
   top: 85px;
-}
-
-.bottom-\[60px\] {
-  bottom: 60px;
 }
 
 .z-10 {
@@ -1355,28 +1355,12 @@ input:focus {
   height: 500px;
 }
 
-.h-\[620px\] {
-  height: 620px;
-}
-
 .h-\[80vh\] {
   height: 80vh;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-\[600px\] {
-  height: 600px;
-}
-
-.h-\[6000px\] {
-  height: 6000px;
-}
-
-.h-\[100px\] {
-  height: 100px;
 }
 
 .max-h-14 {
@@ -1549,6 +1533,10 @@ input:focus {
   width: 100vw;
 }
 
+.w-\[1000px\] {
+  width: 1000px;
+}
+
 .min-w-4 {
   min-width: 1rem;
 }
@@ -1613,6 +1601,14 @@ input:focus {
   max-width: 1280px;
 }
 
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
+.max-w-\[250px\] {
+  max-width: 250px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1635,6 +1631,10 @@ input:focus {
 
 .basis-auto {
   flex-basis: auto;
+}
+
+.table-fixed {
+  table-layout: fixed;
 }
 
 .border-collapse {
@@ -1884,6 +1884,10 @@ input:focus {
 
 .whitespace-normal {
   white-space: normal;
+}
+
+.text-wrap {
+  text-wrap: wrap;
 }
 
 .text-nowrap {
