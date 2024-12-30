@@ -2627,6 +2627,10 @@ input:focus {
   color: hsl(var(--secondary) / 0.3);
 }
 
+.text-secondary\/40 {
+  color: hsl(var(--secondary) / 0.4);
+}
+
 .text-secondary\/50 {
   color: hsl(var(--secondary) / 0.5);
 }
@@ -2664,10 +2668,6 @@ input:focus {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-secondary\/40 {
-  color: hsl(var(--secondary) / 0.4);
 }
 
 .underline {

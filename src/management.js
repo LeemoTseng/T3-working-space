@@ -1996,89 +1996,94 @@ document.addEventListener('click', function () {
 let currentPage = 1;
 const totalPages = 50; // 總頁數
 
-const updatePagination = () => {
-  const paginationContainer = document.querySelector('#paginationContainer');
-  paginationContainer.innerHTML = ''; // 清空原有內容
+if (document.querySelector('#paginationContainer')) {
 
-  const createButton = (page, isDots = false) => {
-    const button = document.createElement('button');
-    button.className =
-      'relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
 
-    if (isDots) {
-      button.textContent = '...';
-      button.disabled = true;
-    } else {
-      button.setAttribute('data-page', page);
-      button.innerHTML = `<span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">${page}</span>`;
-      if (page === currentPage) {
-        button.classList.add('bg-secondary', 'text-white');
+  const updatePagination = () => {
+    const paginationContainer = document.querySelector('#paginationContainer');
+    paginationContainer.innerHTML = ''; // 清空原有內容
+
+    const createButton = (page, isDots = false) => {
+      const button = document.createElement('button');
+      button.className =
+        'relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
+
+      if (isDots) {
+        button.textContent = '...';
+        button.disabled = true;
       } else {
-        button.classList.add('text-secondary');
-        button.addEventListener('click', () => {
-          currentPage = page;
-          updatePagination();
-        });
+        button.setAttribute('data-page', page);
+        button.innerHTML = `<span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">${page}</span>`;
+        if (page === currentPage) {
+          button.classList.add('bg-secondary', 'text-white');
+        } else {
+          button.classList.add('text-secondary');
+          button.addEventListener('click', () => {
+            currentPage = page;
+            updatePagination();
+          });
+        }
       }
-    }
-    paginationContainer.appendChild(button);
-  };
+      paginationContainer.appendChild(button);
+    };
 
-  const renderPages = () => {
-    if (totalPages <= 10) {
-      for (let i = 1; i <= totalPages; i++) {
-        createButton(i);
-      }
-    } else {
-
-      createButton(1);
-      let startPage, endPage;
-      if (currentPage <= 3) {
-        startPage = 2;
-        endPage = 8;
-      } else if (currentPage >= totalPages - 2) {
-        startPage = totalPages - 7;
-        endPage = totalPages - 1;
+    const renderPages = () => {
+      if (totalPages <= 10) {
+        for (let i = 1; i <= totalPages; i++) {
+          createButton(i);
+        }
       } else {
-        startPage = currentPage - 3;
-        endPage = currentPage + 3;
-      }
 
-      if (startPage > 2) {
-        createButton(null, true);
-      }
+        createButton(1);
+        let startPage, endPage;
+        if (currentPage <= 3) {
+          startPage = 2;
+          endPage = 8;
+        } else if (currentPage >= totalPages - 2) {
+          startPage = totalPages - 7;
+          endPage = totalPages - 1;
+        } else {
+          startPage = currentPage - 3;
+          endPage = currentPage + 3;
+        }
 
-      for (let i = startPage; i <= endPage; i++) {
-        if (i !== 1 && i !== totalPages) { 
-        createButton(i);
-      }
-      }
-      if (endPage < totalPages - 1) {
-        createButton(null, true);
-      }
+        if (startPage > 2) {
+          createButton(null, true);
+        }
 
-      createButton(totalPages);
-    }
+        for (let i = startPage; i <= endPage; i++) {
+          if (i !== 1 && i !== totalPages) {
+            createButton(i);
+          }
+        }
+        if (endPage < totalPages - 1) {
+          createButton(null, true);
+        }
+
+        createButton(totalPages);
+      }
+    };
+
+    renderPages();
   };
+}
+if (document.querySelector('#prevBtn')) {
+  document.querySelector('#prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      updatePagination();
+    }
+  });
 
-  renderPages();
-};
+  document.querySelector('#nextBtn').addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage += 1;
+      updatePagination();
+    }
+  });
+}
 
-document.querySelector('#prevBtn').addEventListener('click', () => {
-  if (currentPage > 1) {
-    currentPage -= 1;
-    updatePagination();
-  }
-});
-
-document.querySelector('#nextBtn').addEventListener('click', () => {
-  if (currentPage < totalPages) {
-    currentPage += 1;
-    updatePagination();
-  }
-});
-
-updatePagination();
+// updatePagination();
 
 
 

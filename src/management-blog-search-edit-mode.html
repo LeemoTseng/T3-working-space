@@ -911,6 +911,7 @@
                                   >
                                     >
                                   </div>
+                                  <div id="searchResultCounter" class="mt-2 text-sm text-gray-600"></div>
                                 </div>
                                 <input
                                   type="text"
@@ -1042,7 +1043,7 @@
               /<img\s+src=["']([^"']*?)["']\s+alt=["']([^"']*?)["']\s*\/?>/g,
               (match, src, alt) => {
                 // 將 <img> 的 src 和 alt 內容輸出到控制台
-                console.log("src:", src, "alt:", alt);
+                // console.log("src:", src, "alt:", alt);
 
                 // 返回修改後的 <div> 包裹 <img> 結構
                 return `<div class='imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden'>
@@ -1113,7 +1114,7 @@
               /<img\s+[^>]*src=["']?([^"'\s>]*)["']?\s+alt=["']?([^"'\s>]*)["']?[^>]*\/?>/g
             );
 
-            console.log(imgTags);
+            // console.log(imgTags);
 
             if (imgTags) {
               imgTags.forEach((imgTag, index) => {
@@ -1179,18 +1180,22 @@
                 "beforeend",
                 imgNotFoundHtml
               );
-              console.log("No image tags found");
+              // console.log("No image tags found");
             }
           });
 
           // $Search for text
 
           const searchInput = document.getElementById("searchInput");
+          const urlInput = document.getElementById("urlInput");
           const searchButton = document.getElementById("searchButton");
           const prevButton = document.getElementById("prevButton");
           const nextButton = document.getElementById("nextButton");
           const applyLinkButton = document.getElementById("applyLinkButton");
           const LinkApplied = document.getElementById("LinkApplied");
+          const searchResultCounter = document.getElementById(
+            "searchResultCounter"
+          );
 
           let matches = [];
           let currentIndex = -1;
@@ -1198,17 +1203,37 @@
           searchButton.addEventListener("click", (event) => {
             event.preventDefault(); // 防止頁面刷新
 
+            matches = [];
+            currentIndex = -1;
+
+            const previousMatches = outputContent.querySelectorAll(".match");
+            previousMatches.forEach((match) => {
+              const parent = match.parentNode;
+              if (parent) {
+                // 替換 .match 元素為其內部文字
+                while (match.firstChild) {
+                  parent.insertBefore(match.firstChild, match);
+                }
+                parent.removeChild(match);
+              }
+            });
+
             const query = searchInput.value.trim();
-            if (query === "") {
+            if (!query) {
               alert("Please enter a search term");
+              searchResultCounter.textContent = "";
               return;
             }
 
             clearHighlights(); // 清除之前的高亮
 
+            console.log("Searching for:", query);
+
             applyLinkButton.style.pointerEvents = "auto"; // 恢復點擊
             applyLinkButton.classList.remove("hidden");
             LinkApplied.classList.add("hidden");
+            prevButton.classList.remove("hidden");
+            nextButton.classList.remove("hidden");
 
             // 搜尋所有符合結果並高亮（跳過 <img> 的 alt 內容）
             const regex = new RegExp(
@@ -1234,23 +1259,34 @@
             if (matches.length > 0) {
               currentIndex = 0;
               updateCurrentMatch();
+              searchResultCounter.textContent = `Now ${
+                currentIndex + 1
+              } / Total${matches.length}`;
             } else {
               alert("No matches found");
             }
           });
 
           prevButton.addEventListener("click", (event) => {
+            const query = searchInput.value.trim(); //最新的直
             event.preventDefault();
             if (matches.length === 0) return;
             currentIndex = (currentIndex - 1 + matches.length) % matches.length;
             updateCurrentMatch();
+            searchResultCounter.textContent = `Now ${currentIndex + 1} / Total${
+              matches.length
+            }`;
           });
 
           nextButton.addEventListener("click", (event) => {
+            const query = searchInput.value.trim(); //最新的直
             event.preventDefault();
             if (matches.length === 0) return;
             currentIndex = (currentIndex + 1) % matches.length;
             updateCurrentMatch();
+            searchResultCounter.textContent = `Now ${currentIndex + 1} / Total${
+              matches.length
+            }`;
           });
 
           applyLinkButton.addEventListener("click", (event) => {
@@ -1296,20 +1332,10 @@
               // 恢復滾動位置
               outputContent.scrollTop = scrollPosition;
 
-              // 改變按鈕樣式並禁用按鈕
-              // applyLinkButton.textContent = "Link Applied";
-              // applyLinkButton.classList.add(
-              //   "bg-gray-200",
-              //   "text-gray-400",
-              //   "cursor-not-allowed"
-              // );
-              // applyLinkButton.classList.remove(
-              //   "bg-secondary/5",
-              //   "hover:bg-secondary/10",
-              //   "text-secondary"
-              // );
               applyLinkButton.style.pointerEvents = "none"; // 禁用點擊
               applyLinkButton.classList.add("hidden");
+              searchInput.value = "";
+              urlInput.value = "";
             }
 
             outputContent.classList.remove("highlight", "current");
@@ -1317,16 +1343,18 @@
             outputContent.style.overflowY = "auto";
 
             LinkApplied.classList.remove("hidden");
+            prevButton.classList.add("hidden");
+            nextButton.classList.add("hidden");
 
             // console.log(outputContent);
           });
 
           function clearHighlights() {
-            // 清除之前的所有高亮和當前樣式
-            outputContent.innerHTML = outputContent.innerHTML.replace(
-              /<span[^>]*class="[^"]*\bhighlight\b[^"]*\bbg-yellow-300\b[^"]*"[^>]*>(.*?)<\/span>/g,
-              "$1"
-            );
+            // 清除之前的所有高亮和當前樣式;
+            // outputContent.innerHTML = outputContent.innerHTML.replace(
+            //   /<span[^>]*class="[^"]*\bhighlight\b[^"]*\bbg-yellow-300\b[^"]*"[^>]*>(.*?)<\/span>/g,
+            //   "$1"
+            // );
             outputContent.innerHTML = outputContent.innerHTML.replace(
               /<span[^>]*class="[^"]*\bcurrent\b[^"]*\bbg-orange-400\b[^"]*"[^>]*>(.*?)<\/span>/g,
               "$1"
@@ -1340,6 +1368,7 @@
             matches.forEach((match) =>
               match.classList.remove("highlight", "current", "bg-orange-400")
             );
+            console.log(matches);
 
             if (matches[currentIndex]) {
               // 只高亮當前匹配項
@@ -1348,6 +1377,7 @@
                 behavior: "smooth",
                 block: "center",
               });
+              console.log("matches[currentIndex]", matches[currentIndex]);
             }
           }
         }
