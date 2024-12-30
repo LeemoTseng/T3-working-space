@@ -1533,10 +1533,6 @@ input:focus {
   width: 100vw;
 }
 
-.w-\[1000px\] {
-  width: 1000px;
-}
-
 .min-w-4 {
   min-width: 1rem;
 }
@@ -1599,14 +1595,6 @@ input:focus {
 
 .max-w-screen-xl {
   max-width: 1280px;
-}
-
-.max-w-\[500px\] {
-  max-width: 500px;
-}
-
-.max-w-\[250px\] {
-  max-width: 250px;
 }
 
 .flex-1 {
@@ -2676,6 +2664,10 @@ input:focus {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-secondary\/40 {
+  color: hsl(var(--secondary) / 0.4);
 }
 
 .underline {

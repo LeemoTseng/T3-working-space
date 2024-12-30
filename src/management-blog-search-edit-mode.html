@@ -363,609 +363,616 @@
       });
 
       htmlEditModeTemplate = `<div>
-                          <div class="pt-5">
-                            <div class="flex">
-                              <div class="font-semibold text-sm text-secondary">
-                                Insert HTML
-                              </div>
-                              <div class="info group relative inline-block">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="currentColor"
-                                  class="size-5 text-secondary/20 hover:text-secondary/80"
-                                >
-                                  <path
-                                    fill-rule="evenodd"
-                                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                                    clip-rule="evenodd"
+                                <div class="pt-5">
+                                  <div class="flex">
+                                    <div class="font-semibold text-sm text-secondary">
+                                      Insert HTML
+                                    </div>
+                                    <div class="info group relative inline-block">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        class="size-5 text-secondary/20 hover:text-secondary/80"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                          clip-rule="evenodd"
+                                        />
+                                      </svg>
+                                      <p
+                                        class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                                      >
+                                        Please input the HTML content
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <textarea
+                                    id="transformContent"
+                                    type="text"
+                                    rows="10"
+                                    class="w-full rounded-lg p-2 text-secondary"
+                                  >
+      <img src="https://picsum.photos/id/684/600/400" alt="共享空間租借指南：共享空間優缺點、租金方案與挑選重點一次看！">
+      <h2><strong>一、</strong><strong>共享空間</strong><strong>是什麼？彈性辦公、社群交流的新選擇</strong></h2>
+      <p><span style="font-weight: 400;">共享空間顧名思義就是將原本單一使用的空間，透過共享的方式，讓更多人共同利用。這種概念近年來在全球興起，不僅能更有效利用資源，更能促進人與人之間的互動與交流。而且這種空間模式靈活多變，可以根據不同需求提供各式場地與設施，適合不同形式的工作或活動。</span></p>
+      <p>&nbsp;</p>
+      <p><span style="font-weight: 400;">而共享空間主要可以區分為以下 2 大類：</span></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>共享辦公室</strong><span style="font-weight: 400;">：這類空間專為工作而設計，提供彈性租賃的辦公桌位、會議室等設施，讓你可以隨時隨地展開工作。不論你是自由工作者、新創團隊，還是中大型企業的團隊，都能在這裡找到適合自己的工作模式。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>共享活動空間</strong><span style="font-weight: 400;">：不只是辦公，共享空間也能用來舉辦各類活動！無論是產品發表會、工作坊還是社群聚會，這類空間都能根據活動需求提供不同配置，讓舉辦活動變得更加輕鬆、便利。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h2><strong>二、告別傳統出租空間！多元</strong><strong>共享空間服務</strong><strong>帶給你全新的體驗</strong></h2>
+      <p><span style="font-weight: 400;">簡單了解共享空間的概念後，接下來就讓我們以 T3CO 為例，一起探索共享空間的無限可能，看看它能為你帶來什麼樣的驚喜！</span></p>
+      <h3><strong>（一）多元空間</strong></h3>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>電話亭、直播空間、</strong><strong>共享會議室</strong><span style="font-weight: 400;">：這些專屬的工作空間提供安靜的環境，讓你能夠隨時進行通話、直播或團隊會議，以提升效率與專注力。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>接待區</strong><span style="font-weight: 400;">：友善親切的接待區讓客戶和訪客在進入空間時感受到熱情的歡迎，提升專業形象。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>開放式茶水區</strong><span style="font-weight: 400;">：提供多樣化的飲品和輕食，讓你隨時補充能量，享受片刻的休憩。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>生態觀賞區</strong><span style="font-weight: 400;">：綠意盎然的植栽營造出清新自然的氛圍，讓你在忙碌的工作之餘也能放鬆身心。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>淋浴間</strong><span style="font-weight: 400;">：T3CO 提供乾淨舒適的淋浴空間，讓你隨時保持清爽，繼續迎接下一個工作挑戰。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>置物櫃、儲藏室</strong><span style="font-weight: 400;">：T3CO 提供充足的儲物空間，讓你輕鬆收納個人物品，無需擔心辦公室雜亂。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h3><strong>（二）硬體設備</strong></h3>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>電子升降桌、人體工學椅</strong><span style="font-weight: 400;">：工作桌位配備電子升降桌和人體工學椅，讓你可以根據需求調整工作姿勢，確保長時間工作也能保持舒適與健康。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>微波爐、製冰機</strong><span style="font-weight: 400;">：T3CO 提供微波爐、烤箱、製冰機等設備，無論你想吃熱食還是喝冰飲都能滿足，讓你隨時充飽電，保持最佳工作狀態。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>高速網路</strong><span style="font-weight: 400;">：配備高速穩定的網路連線，讓你隨時隨地都能快速傳輸檔案、進行視訊會議，無需擔心延遲或斷線問題。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>影印、傳真</strong><span style="font-weight: 400;">：提供方便的影印、傳真服務，滿足你辦公室所需的各種文書處理需求。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h3><strong>（三）附加服務</strong></h3>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>免費咖啡、飲料</strong><span style="font-weight: 400;">：茶水間為你準備了各式各樣的免費咖啡、茶飲，讓你隨時補充能量，保持工作活力。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>商務秘書</strong><span style="font-weight: 400;">：專業的商務秘書服務將協助你處理日常行政事務，讓你專注於重要的業務工作。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>不定期舉辦 Happy Hour、講座、研討會等活動</strong><span style="font-weight: 400;">：T3CO 不只是一間共享空間，更是一個充滿活力的社群。我們</span><span style="font-weight: 400;">不</span><span style="font-weight: 400;">定期舉辦 Happy Hour、講座、研討會等活動，讓你能結識更多志同道合的朋友，拓展人脈。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <div style="border: 1px;
+      border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: column; align-items: center; padding: 24px; margin-top: 24px; margin-bottom: 24px;">
+        <p style="margin: 0px; font-size: 24px; font-weight: bold; line-height: 1.5;">立即預約參觀，親身體驗 T3CO 提供的多樣化的辦公空間與服務！</p>
+        <div style="margin-top: 32px;">
+          <a href="https://t3ex-t3co.com/zh-TW/join" style="border: none; border-radius: 4px; background-color: #F5AB01; color: white; padding-top: 12px; padding-bottom: 12px; padding-left: 30px; padding-right: 30px; font-size: 20px; width: fit-content; text-decoration: none;">預約參觀</a>
+        </div>
+      </div>
+
+      <h2><strong>三、想嘗試</strong><strong>共用空間</strong><strong>？先了解</strong><strong>共享空間優缺點</strong><strong>再決定！</strong></h2>
+      <p><span style="font-weight: 400;">看完這麼多共享空間的優質服務，你是否也心動了呢？不過在決定踏入共享空間之前，深入了解它的優缺點，才能做出最適合自己的選擇，以下就讓我們一起來看看吧！</span></p>
+      <h3><strong>（一）</strong><strong>共享空間優點</strong></h3>
+      <img src="https://picsum.photos/id/684/600/400" alt="共享空間優點 租期彈性 降低成本 多元設施 社群交流 有專業團隊負責管理和維 空間設計多樣化">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>租期彈性</strong><span style="font-weight: 400;">：共享空間提供短租、長租等多元選擇，讓你可以根據需求靈活安排租用時間，無需被長期租約束縛。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>降低成本</strong><span style="font-weight: 400;">：共享空間通常已經裝潢得十分完善，你只需帶著電腦就能開始工作，大幅降低創業初期的高額裝修成本。印表機、會議室、高速網路等資源也都可共享，減少設備採購的支出。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>多元設施</strong><span style="font-weight: 400;">：共享空間配備了多樣化設施，從會議室到休閒區一應俱全，一次滿足工作、休憩等多種需求。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>社群交流</strong><span style="font-weight: 400;">： 在共享空間裡，你可以結識來自不同領域的人才，拓展人脈，甚至找到潛在的合作夥伴。與不同的人交流，也可以幫助你碰撞出新的想法，激發你的創意。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>有專業團隊負責管理和維護</strong><span style="font-weight: 400;">：共享空間有專業的管理團隊負責空間的日常運作和維護，確保設備完善、環境舒適，讓你能把精力專注於工作本身。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>空間設計多樣化</strong><span style="font-weight: 400;">：無論你需要的是現代感十足的辦公桌，還是舒適放鬆的休息空間，共享空間的設計風格多元，都能為你的不同需求量身打造。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h3><strong>（二）</strong><strong>共享空間缺點</strong></h3>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>噪音問題、其他活動干擾</strong><span style="font-weight: 400;">：由於共享空間內會有來自不同企業或團隊的人一起使用，偶爾可能會遇到噪音或其他活動的干擾，影響專注度。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>空間大小固定</strong><span style="font-weight: 400;">：共享空間的空間配置通常是固定的，因此當你的團隊成員增加或需要更多空間時，共享空間的固定大小可能無法滿足你的需求，此時便可能需要尋找更大的空間或分開辦公。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>設備需要共享</strong><span style="font-weight: 400;">：在尖峰時段，可能需要排隊等待使用印表機、會議室等設備。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>隱私問題</strong><span style="font-weight: 400;">：共享辦公室強調開放與交流，但若工作內容涉及機密或個人隱私，則需要額外考量如何確保資訊安全。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h2><strong>四、</strong><strong>共享空間費用</strong><strong>多少？</strong><strong>共享空間租金</strong><strong>怎麼算？</strong></h2>
+      <p><span style="font-weight: 400;">相較於傳統辦公室的固定租約和高額裝修費用，共享空間提供更靈活的出租選擇。共享空間的租金費用會根據你所需的空間大小、租期長短以及所選的方案而有所調整。 不論是新創公司、小型企業，或是自由工作者，都能在共享空間找到符合預算的方案。</span></p>
+      <p>&nbsp;</p>
+      <p><span style="font-weight: 400;">以下也為大家整理出 T3CO 各式方案的費用，讓你可以根據自己的需求和預算，選擇最適合的方案！</span></p>
+      <p>&nbsp;</p>
+      <table>
+      <tbody>
+      <tr>
+      <td>
+      <p><span style="font-weight: 400;">方案</span></p>
+      </td>
+      <td>
+      <p><span style="font-weight: 400;">費用</span></p>
+      </td>
+      <td>
+      <p><span style="font-weight: 400;">服務內容</span></p>
+      </td>
+      <td>
+      <p><span style="font-weight: 400;">適合對象</span></p>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p><span style="font-weight: 400;">流動辦公桌</span></p>
+      </td>
+      <td>
+      <p><span style="font-weight: 400;">NT$6,500／每人每月</span></p>
+      </td>
+      <td>
+      <ul>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">共享座位</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">24 小時全天候進出</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">免費咖啡茶水</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">配備完善的會議室和高速網路</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">會員專屬活動</span></li>
+      </ul>
+      <br /><br /></td>
+      <td>
+      <ul>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">自由職業者</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">遠端工作者</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">數位游牧工作者</span></li>
+      </ul>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p><span style="font-weight: 400;">固定辦公桌</span></p>
+      </td>
+      <td>
+      <p><span style="font-weight: 400;">NT$10,000／每人每月</span></p>
+      </td>
+      <td>
+      <ul>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">指定座位</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">24 小時全天候進出</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">人體工學電腦椅 &amp; 電子升降桌</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">免費咖啡茶水</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">配備完善的會議室和高速</span><span style="font-weight: 400;">網路</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">會員專屬活動</span></li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">獨立創業者</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">創意專業人士</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">遠端團隊</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">中小型團隊</span></li>
+      </ul>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p><span style="font-weight: 400;">隔間辦公室</span></p>
+      </td>
+      <td>
+      <p><span style="font-weight: 400;">NT$13,000／每人每月</span></p>
+      </td>
+      <td>
+      <ul>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">安全又安靜的獨立空間</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">24 小時全天候進出</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">人體工學電腦椅 &amp; 電子升降桌</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">免費咖啡、飲料和小吃</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">配備完善的會議室和高速網路</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">會員專屬活動</span></li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">創業企業家</span></li>
+      <li style="font-weight: 400;"><span style="font-weight: 400;">中大型團隊</span></li>
+      </ul>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <p>&nbsp;</p>
+      <p><span style="font-weight: 400;">除了基本的月租方案外，T3CO 還精心設計了日租、短租等彈性選擇，滿足不同客戶的多元需求。無論你只是臨時需要辦公空間進行一場重要會議，還是為特定專案尋找短期合作場地，甚至是追求彈性工作模式的自由工作者，T3CO 都能根據你的需求，提供專屬的客製化方案，讓你能自由調整辦公時間與空間，靈活安排你的工作日程，輕鬆應對各種工作情況。</span></p>
+      <p>&nbsp;</p>
+      <p><span style="font-weight: 400;">然而，由於每個人的需求都不盡相同，具體的價格與方案內容會根據空間大小、租期長短、設備需求等進行個別調整。因此建議你直接聯繫 T3CO，由專業團隊為你量身打造最符合需求的方案，並提供詳細的報價服務，確保你能享受到最高品質的靈活辦公體驗！</span></p>
+      <p>&nbsp;</p>
+      <div style="border: 1px;
+      border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: column; align-items: center; padding: 24px; margin-top: 24px; margin-bottom: 24px;">
+        <p style="margin: 0px; font-size: 24px; font-weight: bold; line-height: 1.5;">立即預約參觀，搶先體驗 T3CO 提供的全方位辦公解決方案！</p>
+        <div style="margin-top: 32px;">
+          <a href="https://t3ex-t3co.com/zh-TW/join" style="border: none; border-radius: 4px; background-color: #F5AB01; color: white; padding-top: 12px; padding-bottom: 12px; padding-left: 30px; padding-right: 30px; font-size: 20px; width: fit-content; text-decoration: none;">預約參觀</a>
+        </div>
+      </div>
+      <h2><strong>五、聰明選、快速租！</strong><strong>共享空間選擇</strong><strong>指南與服務流程一次看</strong></h2>
+      <h3><strong>（一）如何挑選共享空間？8 重點讓你找到你的完美工作、活動場域！</strong></h3>
+      <p><span style="font-weight: 400;">除了費用之外，挑選共享空間時還需要考量多個因素，才能確保所選空間能夠真正滿足需求。接下來，我們將介紹挑選共享空間時需要注意的幾個要點，幫助你找到最合適的空間。</span></p>
+      <img src="https://picsum.photos/id/684/600/400" alt="共享空間選擇要點 空間配置 環境氛圍">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>空間配置</strong><span style="font-weight: 400;">：首先要考慮共享空間的配置、大小是否符合你的需求。例如是否有靈活的座位安排？是否提供會議室或休息區等？根據你的團隊規模和工作性質，選擇合適的空間配置。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>環境氛圍</strong><span style="font-weight: 400;">：辦公室的裝潢風格、採光、綠化程度也會影響工作的心情。選擇一個舒適、明亮、符合你個人風格的空間，不僅能提升效率，也能讓你在這裡工作時感到舒適、愉悅。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>提供設備</strong><span style="font-weight: 400;">：除了基本的桌椅，良好的網路連線也是必須的。此外，印表機、影印機、會議室等硬體設備是否充足、齊全也是考量的重點。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>地理位置</strong><span style="font-weight: 400;">：交通便利性也是共享空間很重要的考量點之一。像是周邊是否有大眾運輸工具、停車場以及餐廳、咖啡廳等生活機能，這些都會影響你的工作便利性。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>租約選擇</strong><span style="font-weight: 400;">：了解共享空間的租期選擇，例如是否提供短期的日租、長期的年租，避免需要綁約過久的問題。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>隱私、安全保護措施</strong><span style="font-weight: 400;">：在共享空間工作，隱私和安全是不可忽視的重點。可以詢問該空間是否有完善的門禁系統、監視設備以及資料安全的保障措施，才能保護你的個人隱私和商業機密。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>費用透明</strong><span style="font-weight: 400;">：除了租金外，也要確認其他費用，例如水電費、清潔費、網路費等是否包含在內，避免產生隱藏費用。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>其他附加服務</strong><span style="font-weight: 400;">：有些共享空間還會提供郵件收發、借址登記、活動舉辦支援等各項服務，讓你可以根據自己的需求選擇，節省時間和精力。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h3><strong>（二）共享空間怎麼租？T3CO 韻驊服務流程簡介</strong></h3>
+      <p><span style="font-weight: 400;">看完了共享空間的挑選指南，是不是讓你躍躍欲試了呢？別擔心，租賃共享空間並不像想像中複雜！T3CO 韻驊提供你一站式的租賃服務，從空間選定到合約簽訂，我們將全程協助，讓你在最短的時間內找到理想的辦公環境。</span></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>電話、網站預約</strong><span style="font-weight: 400;">：透過電話或 T3CO 的官方網站輕鬆預約，並選擇你希望參觀的時間。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>參觀帶看</strong><span style="font-weight: 400;">：T3CO 的專業人員將帶你親自參觀辦公空間，介紹各項設施、服務，並根據你的需求，協助你選擇最適合的辦公方案。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>業務提供報價</strong><span style="font-weight: 400;">：在參觀後，T3CO 的業務團隊會根據你的需求提供詳細的報價，確保你了解所有可選擇的方案和費用。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>討論、簽訂合約</strong><span style="font-weight: 400;">：T3CO 業務團隊將與你討論合約細節，確認服務內容及租期，並在雙方確認無誤後簽訂合約，開始你的共享辦公之旅。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>正式使用</strong><span style="font-weight: 400;">：完成所有流程後，即可正式開始使用 T3CO 的共享空間，享受靈活、高效的工作體驗！</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h2><strong>六、</strong><strong>共享空間出租</strong><strong>推薦：</strong><strong>共享空間租借</strong><strong>首選 </strong><strong>T3CO</strong> <strong>韻驊</strong></h2>
+      <p><span style="font-weight: 400;">共享經濟的崛起，讓共享空間成為辦公、活動模式的新潮流。共享空間不僅提供舒適的環境，更是一個促進交流、激發創意的平台。透過共享資源、拓展人脈，共享空間能有效提升工作效率，並帶來無限的可能性。</span></p>
+      <p>&nbsp;</p>
+      <p><span style="font-weight: 400;">而 T3CO 韻驊共享辦公室，更在這股潮流中，以專業的服務與多元的空間選擇，致力為你打造最理想的工作場域。 不論是個人工作者、新創團隊或中小企業，都能在 T3CO 找到最適合你的共享方案！</span></p>
+      <p>&nbsp;</p>
+      <p><span style="font-weight: 400;">為什麼選擇 T3CO 韻驊共享辦公室？</span></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>完善的廚房、餐飲區</strong><span style="font-weight: 400;">：想在工作之餘享受美食嗎？ </span><span style="font-weight: 400;">T3CO 提供微波爐、烤箱等設備，讓你隨時都能夠享用熱騰騰的美味餐點。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>設有淋浴間、儲藏室</strong><span style="font-weight: 400;">：工作再忙，也能隨時保持清爽！T3CO 提供完善的淋浴設施，讓你在繁忙的工作後能快速恢復活力</span><span style="font-weight: 400;">；也提供置物櫃等儲藏空間，讓你無須為個人物品保管問題煩惱。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>配備電動升降桌、人體工學椅</strong><span style="font-weight: 400;">： T3CO 配備電動升降桌與人體工學椅，讓你即使處於長時間的工作也能保持舒適的姿勢。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>全天候開放</strong><span style="font-weight: 400;">：不論你是夜貓子或</span><span style="font-weight: 400;">晨型人</span><span style="font-weight: 400;">，T3CO 都能滿足你的需求，讓你在最適合自己的時間裡，自由掌控你的工作節奏。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li style="font-weight: 400;"><strong>彈性、客製化會員方案</strong><span style="font-weight: 400;">：不拘泥於制式方案，T3CO 讓你擁有最大的彈性。 T3CO 提供多樣化的會員方案，不論你是新創團隊、中大型企業還是遠端工作者，都能為你量身打造，滿足你與團隊的獨特需求。</span></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>不定期</strong><strong>舉辦活動和工作坊</strong><span style="font-weight: 400;">：不只是辦公空間，更是你的學習場域！ T3CO </span><span style="font-weight: 400;">不</span><span style="font-weight: 400;">定期舉辦多元化的活動和工作坊，讓你能拓展人脈、學習新知，並與其他專業人士交流。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>國際社群</strong><span style="font-weight: 400;">：T3CO 匯集來自世界各地的專業人士，讓你能與不同文化背景的人交流，拓展國際視野。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>地處黃金地段</strong><span style="font-weight: 400;">：T3CO 坐擁信義區市政府黃金地段，交通四通八達，是你拓展事業的理想選擇。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li><strong><strong>兼顧共享與獨立</strong><span style="font-weight: 400;">：T3CO 提供客製化輕隔間辦公桌位，讓你在共享空間中也能擁有高度的專注與隱私，不受打擾，專心投入工作。</span></strong></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <ul>
+      <li style="font-weight: 400;"><strong>借址登記服務</strong><span style="font-weight: 400;">：租賃 T3CO 共享辦公室 1 年，即可享有專業的借址登記服務，讓你輕鬆完成營業登記，將資源投入到更重要的事務上。</span></li>
+      </ul>
+      <p>&nbsp;</p>
+      <div style="border: 1px;
+      border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: column; align-items: center; padding: 24px; margin-top: 24px; margin-bottom: 24px;">
+        <p style="margin: 0px; font-size: 24px; font-weight: bold; line-height: 1.5;">立即預約參觀，體驗最舒適的辦公環境！</p>
+        <div style="margin-top: 32px;">
+          <a href="https://t3ex-t3co.com/zh-TW/join" style="border: none; border-radius: 4px; background-color: #F5AB01; color: white; padding-top: 12px; padding-bottom: 12px; padding-left: 30px; padding-right: 30px; font-size: 20px; width: fit-content; text-decoration: none;">預約參觀</a>
+        </div>
+      </div>
+
+      </textarea
+                                  >
+                                </div>
+                                <div class="pt-5">
+                                  <div
+                                    id="convertButton"
+                                    class="btn cursor-pointer rounded-md border border-secondary/30 bg-secondary/5 hover:bg-secondary/10 px-2 py-1 text-secondary w-[200px] text-center"
+                                  >
+                                    Inspect Html
+                                  </div>
+                                </div>
+
+                                <!-- output HTML -->
+                                <div class="pt-5">
+                                  <div class="font-semibold text-sm text-secondary">
+                                    Output HTML
+                                  </div>
+
+                                  <div
+                                    id="outputContent"
+                                    class="w-full h-[200px] overflow-y-auto rounded-lg p-2 text-secondary bg-secondary/10"
+                                  ></div>
+                                </div>
+
+                                <!-- search for text -->
+                                <div class="flex pt-5">
+                                  <p
+                                    class="font-semibold text-sm text-secondary z-20"
+                                  >
+                                    Search for text
+                                  </p>
+                                  <div class="info group relative inline-block">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 24 24"
+                                      fill="currentColor"
+                                      class="size-5 text-secondary/20 hover:text-secondary/80"
+                                    >
+                                      <path
+                                        fill-rule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                        clip-rule="evenodd"
+                                      />
+                                    </svg>
+                                    <p
+                                      class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                                    >
+                                      1. Search for text in the ouput HTML.
+                                      <br />
+                                      2. Each word can only apply one link, repeated
+                                      application will replace the previous link.
+                                      <br />
+                                      3. Make a new search to apply more.
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="mt-2 flex space-x-2">
+                                  <input
+                                    type="text"
+                                    id="searchInput"
+                                    class="w-[250px] border p-2 rounded-md"
+                                    placeholder="Please enter text"
                                   />
-                                </svg>
-                                <p
-                                  class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
-                                >
-                                  Please input the HTML content
-                                </p>
-                              </div>
-                            </div>
-                            <textarea
-                              id="transformContent"
-                              type="text"
-                              rows="10"
-                              class="w-full rounded-lg p-2 text-secondary"
-                            >
-<img src="https://picsum.photos/id/684/600/400" alt="共享空間租借指南：共享空間優缺點、租金方案與挑選重點一次看！"> 
-<h2><strong>一、</strong><strong>共享空間</strong><strong>是什麼？彈性辦公、社群交流的新選擇</strong></h2>
-<p><span style="font-weight: 400;">共享空間顧名思義就是將原本單一使用的空間，透過共享的方式，讓更多人共同利用。這種概念近年來在全球興起，不僅能更有效利用資源，更能促進人與人之間的互動與交流。而且這種空間模式靈活多變，可以根據不同需求提供各式場地與設施，適合不同形式的工作或活動。</span></p>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;">而共享空間主要可以區分為以下 2 大類：</span></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>共享辦公室</strong><span style="font-weight: 400;">：這類空間專為工作而設計，提供彈性租賃的辦公桌位、會議室等設施，讓你可以隨時隨地展開工作。不論你是自由工作者、新創團隊，還是中大型企業的團隊，都能在這裡找到適合自己的工作模式。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>共享活動空間</strong><span style="font-weight: 400;">：不只是辦公，共享空間也能用來舉辦各類活動！無論是產品發表會、工作坊還是社群聚會，這類空間都能根據活動需求提供不同配置，讓舉辦活動變得更加輕鬆、便利。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<h2><strong>二、告別傳統出租空間！多元</strong><strong>共享空間服務</strong><strong>帶給你全新的體驗</strong></h2>
-<p><span style="font-weight: 400;">簡單了解共享空間的概念後，接下來就讓我們以 T3CO 為例，一起探索共享空間的無限可能，看看它能為你帶來什麼樣的驚喜！</span></p>
-<h3><strong>（一）多元空間</strong></h3>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>電話亭、直播空間、</strong><strong>共享會議室</strong><span style="font-weight: 400;">：這些專屬的工作空間提供安靜的環境，讓你能夠隨時進行通話、直播或團隊會議，以提升效率與專注力。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>接待區</strong><span style="font-weight: 400;">：友善親切的接待區讓客戶和訪客在進入空間時感受到熱情的歡迎，提升專業形象。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>開放式茶水區</strong><span style="font-weight: 400;">：提供多樣化的飲品和輕食，讓你隨時補充能量，享受片刻的休憩。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>生態觀賞區</strong><span style="font-weight: 400;">：綠意盎然的植栽營造出清新自然的氛圍，讓你在忙碌的工作之餘也能放鬆身心。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>淋浴間</strong><span style="font-weight: 400;">：T3CO 提供乾淨舒適的淋浴空間，讓你隨時保持清爽，繼續迎接下一個工作挑戰。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>置物櫃、儲藏室</strong><span style="font-weight: 400;">：T3CO 提供充足的儲物空間，讓你輕鬆收納個人物品，無需擔心辦公室雜亂。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<h3><strong>（二）硬體設備</strong></h3>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>電子升降桌、人體工學椅</strong><span style="font-weight: 400;">：工作桌位配備電子升降桌和人體工學椅，讓你可以根據需求調整工作姿勢，確保長時間工作也能保持舒適與健康。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>微波爐、製冰機</strong><span style="font-weight: 400;">：T3CO 提供微波爐、烤箱、製冰機等設備，無論你想吃熱食還是喝冰飲都能滿足，讓你隨時充飽電，保持最佳工作狀態。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>高速網路</strong><span style="font-weight: 400;">：配備高速穩定的網路連線，讓你隨時隨地都能快速傳輸檔案、進行視訊會議，無需擔心延遲或斷線問題。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>影印、傳真</strong><span style="font-weight: 400;">：提供方便的影印、傳真服務，滿足你辦公室所需的各種文書處理需求。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<h3><strong>（三）附加服務</strong></h3>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>免費咖啡、飲料</strong><span style="font-weight: 400;">：茶水間為你準備了各式各樣的免費咖啡、茶飲，讓你隨時補充能量，保持工作活力。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>商務秘書</strong><span style="font-weight: 400;">：專業的商務秘書服務將協助你處理日常行政事務，讓你專注於重要的業務工作。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>不定期舉辦 Happy Hour、講座、研討會等活動</strong><span style="font-weight: 400;">：T3CO 不只是一間共享空間，更是一個充滿活力的社群。我們</span><span style="font-weight: 400;">不</span><span style="font-weight: 400;">定期舉辦 Happy Hour、講座、研討會等活動，讓你能結識更多志同道合的朋友，拓展人脈。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<div style="border: 1px;
-border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: column; align-items: center; padding: 24px; margin-top: 24px; margin-bottom: 24px;">
-  <p style="margin: 0px; font-size: 24px; font-weight: bold; line-height: 1.5;">立即預約參觀，親身體驗 T3CO 提供的多樣化的辦公空間與服務！</p>
-  <div style="margin-top: 32px;">
-    <a href="https://t3ex-t3co.com/zh-TW/join" style="border: none; border-radius: 4px; background-color: #F5AB01; color: white; padding-top: 12px; padding-bottom: 12px; padding-left: 30px; padding-right: 30px; font-size: 20px; width: fit-content; text-decoration: none;">預約參觀</a>
-  </div>
-</div>
+                                  <div
+                                    id="searchButton"
+                                    class="btn pt-1.5 cursor-pointer bg-secondary/50 hover:bg-secondary/55 px-2 text-white rounded-md"
+                                  >
+                                    Search for text
+                                  </div>
+                                  <div
+                                    id="prevButton"
+                                    class="btn pt-1.5 cursor-pointer border bg-secondary/5 hover:bg-secondary/10 px-2 text-secondary rounded-md"
+                                    disabled
+                                  >
+                                    <span> < </span>
+                                  </div>
 
-<h2><strong>三、想嘗試</strong><strong>共用空間</strong><strong>？先了解</strong><strong>共享空間優缺點</strong><strong>再決定！</strong></h2>
-<p><span style="font-weight: 400;">看完這麼多共享空間的優質服務，你是否也心動了呢？不過在決定踏入共享空間之前，深入了解它的優缺點，才能做出最適合自己的選擇，以下就讓我們一起來看看吧！</span></p>
-<h3><strong>（一）</strong><strong>共享空間優點</strong></h3>
-<img src="https://picsum.photos/id/684/600/400" alt="共享空間優點 租期彈性 降低成本 多元設施 社群交流 有專業團隊負責管理和維 空間設計多樣化"> 
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>租期彈性</strong><span style="font-weight: 400;">：共享空間提供短租、長租等多元選擇，讓你可以根據需求靈活安排租用時間，無需被長期租約束縛。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>降低成本</strong><span style="font-weight: 400;">：共享空間通常已經裝潢得十分完善，你只需帶著電腦就能開始工作，大幅降低創業初期的高額裝修成本。印表機、會議室、高速網路等資源也都可共享，減少設備採購的支出。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>多元設施</strong><span style="font-weight: 400;">：共享空間配備了多樣化設施，從會議室到休閒區一應俱全，一次滿足工作、休憩等多種需求。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>社群交流</strong><span style="font-weight: 400;">： 在共享空間裡，你可以結識來自不同領域的人才，拓展人脈，甚至找到潛在的合作夥伴。與不同的人交流，也可以幫助你碰撞出新的想法，激發你的創意。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>有專業團隊負責管理和維護</strong><span style="font-weight: 400;">：共享空間有專業的管理團隊負責空間的日常運作和維護，確保設備完善、環境舒適，讓你能把精力專注於工作本身。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>空間設計多樣化</strong><span style="font-weight: 400;">：無論你需要的是現代感十足的辦公桌，還是舒適放鬆的休息空間，共享空間的設計風格多元，都能為你的不同需求量身打造。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<h3><strong>（二）</strong><strong>共享空間缺點</strong></h3>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>噪音問題、其他活動干擾</strong><span style="font-weight: 400;">：由於共享空間內會有來自不同企業或團隊的人一起使用，偶爾可能會遇到噪音或其他活動的干擾，影響專注度。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>空間大小固定</strong><span style="font-weight: 400;">：共享空間的空間配置通常是固定的，因此當你的團隊成員增加或需要更多空間時，共享空間的固定大小可能無法滿足你的需求，此時便可能需要尋找更大的空間或分開辦公。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>設備需要共享</strong><span style="font-weight: 400;">：在尖峰時段，可能需要排隊等待使用印表機、會議室等設備。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>隱私問題</strong><span style="font-weight: 400;">：共享辦公室強調開放與交流，但若工作內容涉及機密或個人隱私，則需要額外考量如何確保資訊安全。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<h2><strong>四、</strong><strong>共享空間費用</strong><strong>多少？</strong><strong>共享空間租金</strong><strong>怎麼算？</strong></h2>
-<p><span style="font-weight: 400;">相較於傳統辦公室的固定租約和高額裝修費用，共享空間提供更靈活的出租選擇。共享空間的租金費用會根據你所需的空間大小、租期長短以及所選的方案而有所調整。 不論是新創公司、小型企業，或是自由工作者，都能在共享空間找到符合預算的方案。</span></p>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;">以下也為大家整理出 T3CO 各式方案的費用，讓你可以根據自己的需求和預算，選擇最適合的方案！</span></p>
-<p>&nbsp;</p>
-<table>
-<tbody>
-<tr>
-<td>
-<p><span style="font-weight: 400;">方案</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">費用</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">服務內容</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">適合對象</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">流動辦公桌</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">NT$6,500／每人每月</span></p>
-</td>
-<td>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">共享座位</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">24 小時全天候進出</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">免費咖啡茶水</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">配備完善的會議室和高速網路</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">會員專屬活動</span></li>
-</ul>
-<br /><br /></td>
-<td>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">自由職業者</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">遠端工作者</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">數位游牧工作者</span></li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">固定辦公桌</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">NT$10,000／每人每月</span></p>
-</td>
-<td>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">指定座位</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">24 小時全天候進出</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">人體工學電腦椅 &amp; 電子升降桌</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">免費咖啡茶水</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">配備完善的會議室和高速</span><span style="font-weight: 400;">網路</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">會員專屬活動</span></li>
-</ul>
-</td>
-<td>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">獨立創業者</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">創意專業人士</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">遠端團隊</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">中小型團隊</span></li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">隔間辦公室</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">NT$13,000／每人每月</span></p>
-</td>
-<td>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">安全又安靜的獨立空間</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">24 小時全天候進出</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">人體工學電腦椅 &amp; 電子升降桌</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">免費咖啡、飲料和小吃</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">配備完善的會議室和高速網路</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">會員專屬活動</span></li>
-</ul>
-</td>
-<td>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">創業企業家</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">中大型團隊</span></li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;">除了基本的月租方案外，T3CO 還精心設計了日租、短租等彈性選擇，滿足不同客戶的多元需求。無論你只是臨時需要辦公空間進行一場重要會議，還是為特定專案尋找短期合作場地，甚至是追求彈性工作模式的自由工作者，T3CO 都能根據你的需求，提供專屬的客製化方案，讓你能自由調整辦公時間與空間，靈活安排你的工作日程，輕鬆應對各種工作情況。</span></p>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;">然而，由於每個人的需求都不盡相同，具體的價格與方案內容會根據空間大小、租期長短、設備需求等進行個別調整。因此建議你直接聯繫 T3CO，由專業團隊為你量身打造最符合需求的方案，並提供詳細的報價服務，確保你能享受到最高品質的靈活辦公體驗！</span></p>
-<p>&nbsp;</p>
-<div style="border: 1px;
-border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: column; align-items: center; padding: 24px; margin-top: 24px; margin-bottom: 24px;">
-  <p style="margin: 0px; font-size: 24px; font-weight: bold; line-height: 1.5;">立即預約參觀，搶先體驗 T3CO 提供的全方位辦公解決方案！</p>
-  <div style="margin-top: 32px;">
-    <a href="https://t3ex-t3co.com/zh-TW/join" style="border: none; border-radius: 4px; background-color: #F5AB01; color: white; padding-top: 12px; padding-bottom: 12px; padding-left: 30px; padding-right: 30px; font-size: 20px; width: fit-content; text-decoration: none;">預約參觀</a>
-  </div>
-</div>
-<h2><strong>五、聰明選、快速租！</strong><strong>共享空間選擇</strong><strong>指南與服務流程一次看</strong></h2>
-<h3><strong>（一）如何挑選共享空間？8 重點讓你找到你的完美工作、活動場域！</strong></h3>
-<p><span style="font-weight: 400;">除了費用之外，挑選共享空間時還需要考量多個因素，才能確保所選空間能夠真正滿足需求。接下來，我們將介紹挑選共享空間時需要注意的幾個要點，幫助你找到最合適的空間。</span></p>
-<img src="https://picsum.photos/id/684/600/400" alt="共享空間選擇要點 空間配置 環境氛圍"> 
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>空間配置</strong><span style="font-weight: 400;">：首先要考慮共享空間的配置、大小是否符合你的需求。例如是否有靈活的座位安排？是否提供會議室或休息區等？根據你的團隊規模和工作性質，選擇合適的空間配置。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>環境氛圍</strong><span style="font-weight: 400;">：辦公室的裝潢風格、採光、綠化程度也會影響工作的心情。選擇一個舒適、明亮、符合你個人風格的空間，不僅能提升效率，也能讓你在這裡工作時感到舒適、愉悅。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>提供設備</strong><span style="font-weight: 400;">：除了基本的桌椅，良好的網路連線也是必須的。此外，印表機、影印機、會議室等硬體設備是否充足、齊全也是考量的重點。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>地理位置</strong><span style="font-weight: 400;">：交通便利性也是共享空間很重要的考量點之一。像是周邊是否有大眾運輸工具、停車場以及餐廳、咖啡廳等生活機能，這些都會影響你的工作便利性。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>租約選擇</strong><span style="font-weight: 400;">：了解共享空間的租期選擇，例如是否提供短期的日租、長期的年租，避免需要綁約過久的問題。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>隱私、安全保護措施</strong><span style="font-weight: 400;">：在共享空間工作，隱私和安全是不可忽視的重點。可以詢問該空間是否有完善的門禁系統、監視設備以及資料安全的保障措施，才能保護你的個人隱私和商業機密。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>費用透明</strong><span style="font-weight: 400;">：除了租金外，也要確認其他費用，例如水電費、清潔費、網路費等是否包含在內，避免產生隱藏費用。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>其他附加服務</strong><span style="font-weight: 400;">：有些共享空間還會提供郵件收發、借址登記、活動舉辦支援等各項服務，讓你可以根據自己的需求選擇，節省時間和精力。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<h3><strong>（二）共享空間怎麼租？T3CO 韻驊服務流程簡介</strong></h3>
-<p><span style="font-weight: 400;">看完了共享空間的挑選指南，是不是讓你躍躍欲試了呢？別擔心，租賃共享空間並不像想像中複雜！T3CO 韻驊提供你一站式的租賃服務，從空間選定到合約簽訂，我們將全程協助，讓你在最短的時間內找到理想的辦公環境。</span></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>電話、網站預約</strong><span style="font-weight: 400;">：透過電話或 T3CO 的官方網站輕鬆預約，並選擇你希望參觀的時間。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>參觀帶看</strong><span style="font-weight: 400;">：T3CO 的專業人員將帶你親自參觀辦公空間，介紹各項設施、服務，並根據你的需求，協助你選擇最適合的辦公方案。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>業務提供報價</strong><span style="font-weight: 400;">：在參觀後，T3CO 的業務團隊會根據你的需求提供詳細的報價，確保你了解所有可選擇的方案和費用。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>討論、簽訂合約</strong><span style="font-weight: 400;">：T3CO 業務團隊將與你討論合約細節，確認服務內容及租期，並在雙方確認無誤後簽訂合約，開始你的共享辦公之旅。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>正式使用</strong><span style="font-weight: 400;">：完成所有流程後，即可正式開始使用 T3CO 的共享空間，享受靈活、高效的工作體驗！</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<h2><strong>六、</strong><strong>共享空間出租</strong><strong>推薦：</strong><strong>共享空間租借</strong><strong>首選 </strong><strong>T3CO</strong> <strong>韻驊</strong></h2>
-<p><span style="font-weight: 400;">共享經濟的崛起，讓共享空間成為辦公、活動模式的新潮流。共享空間不僅提供舒適的環境，更是一個促進交流、激發創意的平台。透過共享資源、拓展人脈，共享空間能有效提升工作效率，並帶來無限的可能性。</span></p>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;">而 T3CO 韻驊共享辦公室，更在這股潮流中，以專業的服務與多元的空間選擇，致力為你打造最理想的工作場域。 不論是個人工作者、新創團隊或中小企業，都能在 T3CO 找到最適合你的共享方案！</span></p>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;">為什麼選擇 T3CO 韻驊共享辦公室？</span></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>完善的廚房、餐飲區</strong><span style="font-weight: 400;">：想在工作之餘享受美食嗎？ </span><span style="font-weight: 400;">T3CO 提供微波爐、烤箱等設備，讓你隨時都能夠享用熱騰騰的美味餐點。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>設有淋浴間、儲藏室</strong><span style="font-weight: 400;">：工作再忙，也能隨時保持清爽！T3CO 提供完善的淋浴設施，讓你在繁忙的工作後能快速恢復活力</span><span style="font-weight: 400;">；也提供置物櫃等儲藏空間，讓你無須為個人物品保管問題煩惱。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>配備電動升降桌、人體工學椅</strong><span style="font-weight: 400;">： T3CO 配備電動升降桌與人體工學椅，讓你即使處於長時間的工作也能保持舒適的姿勢。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>全天候開放</strong><span style="font-weight: 400;">：不論你是夜貓子或</span><span style="font-weight: 400;">晨型人</span><span style="font-weight: 400;">，T3CO 都能滿足你的需求，讓你在最適合自己的時間裡，自由掌控你的工作節奏。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li style="font-weight: 400;"><strong>彈性、客製化會員方案</strong><span style="font-weight: 400;">：不拘泥於制式方案，T3CO 讓你擁有最大的彈性。 T3CO 提供多樣化的會員方案，不論你是新創團隊、中大型企業還是遠端工作者，都能為你量身打造，滿足你與團隊的獨特需求。</span></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>不定期</strong><strong>舉辦活動和工作坊</strong><span style="font-weight: 400;">：不只是辦公空間，更是你的學習場域！ T3CO </span><span style="font-weight: 400;">不</span><span style="font-weight: 400;">定期舉辦多元化的活動和工作坊，讓你能拓展人脈、學習新知，並與其他專業人士交流。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>國際社群</strong><span style="font-weight: 400;">：T3CO 匯集來自世界各地的專業人士，讓你能與不同文化背景的人交流，拓展國際視野。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>地處黃金地段</strong><span style="font-weight: 400;">：T3CO 坐擁信義區市政府黃金地段，交通四通八達，是你拓展事業的理想選擇。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li><strong><strong>兼顧共享與獨立</strong><span style="font-weight: 400;">：T3CO 提供客製化輕隔間辦公桌位，讓你在共享空間中也能擁有高度的專注與隱私，不受打擾，專心投入工作。</span></strong></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<ul>
-<li style="font-weight: 400;"><strong>借址登記服務</strong><span style="font-weight: 400;">：租賃 T3CO 共享辦公室 1 年，即可享有專業的借址登記服務，讓你輕鬆完成營業登記，將資源投入到更重要的事務上。</span></li>
-</ul>
-<p>&nbsp;</p>
-<div style="border: 1px;
-border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: column; align-items: center; padding: 24px; margin-top: 24px; margin-bottom: 24px;">
-  <p style="margin: 0px; font-size: 24px; font-weight: bold; line-height: 1.5;">立即預約參觀，體驗最舒適的辦公環境！</p>
-  <div style="margin-top: 32px;">
-    <a href="https://t3ex-t3co.com/zh-TW/join" style="border: none; border-radius: 4px; background-color: #F5AB01; color: white; padding-top: 12px; padding-bottom: 12px; padding-left: 30px; padding-right: 30px; font-size: 20px; width: fit-content; text-decoration: none;">預約參觀</a>
-  </div>
-</div>
-
-</textarea
-                            >
-                          </div>
-                          <div class="pt-5">
-                            <div
-                              id="convertButton"
-                              class="btn cursor-pointer rounded-md border border-secondary/30 bg-secondary/5 hover:bg-secondary/10 px-2 py-1 text-secondary w-[200px] text-center"
-                            >
-                              Inspect Html
-                            </div>
-                          </div>
-
-                          <!-- output HTML -->
-                          <div class="pt-5">
-                            <div class="font-semibold text-sm text-secondary">
-                              Output HTML
-                            </div>
-
-                            <div
-                              id="outputContent"
-                              class="w-full h-[200px] overflow-y-auto rounded-lg p-2 text-secondary bg-secondary/10"
-                            ></div>
-                          </div>
-
-                          <!-- search for text -->
-                          <div class="flex pt-5">
-                            <p
-                              class="font-semibold text-sm text-secondary z-20"
-                            >
-                              Search for text
-                            </p>
-                            <div class="info group relative inline-block">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                class="size-5 text-secondary/20 hover:text-secondary/80"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                                  clip-rule="evenodd"
+                                  <div
+                                    id="nextButton"
+                                    class="btn pt-1.5 cursor-pointer border bg-secondary/5 hover:bg-secondary/10 px-2 text-secondary rounded-md"
+                                    disabled
+                                  >
+                                    >
+                                  </div>
+                                </div>
+                                <input
+                                  type="text"
+                                  class="mt-2 flex-wrap w-full border p-2 rounded-md"
+                                  id="urlInput"
+                                  placeholder="Please enter the link"
                                 />
-                              </svg>
-                              <p
-                                class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
-                              >
-                                1. Search for text in the ouput HTML.
-                                <br />
-                                2. Each word can only apply one link, repeated
-                                application will replace the previous link.
-                                <br />
-                                3. Make a new search to apply more.
-                              </p>
-                            </div>
-                          </div>
-                          <div class="mt-2 flex space-x-2">
-                            <input
-                              type="text"
-                              id="searchInput"
-                              class="w-[250px] border p-2 rounded-md"
-                              placeholder="Please enter text"
-                            />
-                            <div
-                              id="searchButton"
-                              class="btn pt-1.5 cursor-pointer bg-secondary/50 hover:bg-secondary/55 px-2 text-white rounded-md"
-                            >
-                              Search for text
-                            </div>
-                            <div
-                              id="prevButton"
-                              class="btn pt-1.5 cursor-pointer border bg-secondary/5 hover:bg-secondary/10 px-2 text-secondary rounded-md"
-                              disabled
-                            >
-                              <span> < </span>
-                            </div>
-
-                            <div
-                              id="nextButton"
-                              class="btn pt-1.5 cursor-pointer border bg-secondary/5 hover:bg-secondary/10 px-2 text-secondary rounded-md"
-                              disabled
-                            >
-                              >
-                            </div>
-                          </div>
-                          <input
-                            type="text"
-                            class="mt-2 flex-wrap w-full border p-2 rounded-md"
-                            id="urlInput"
-                            placeholder="Please enter the link"
-                          />
-                          <div
-                            class="btn mt-2 cursor-pointer rounded-md border border-secondary/30 bg-secondary/5 hover:bg-secondary/10 px-2 py-1 text-secondary w-[250px] text-center"
-                            id="applyLinkButton"
-                          >
-                            Apply Links to Output HTML
-                          </div>
-                          
-                          <!-- inspect the image -->
-                          <div>
-                            <div class="flex">
-                              <p
-                                class="pt-5 font-semibold text-sm text-secondary z-20"
-                              >
-                                Inspect images
-                              </p>
-                              
-                              <div
-                                class="info group relative inline-block pt-5"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="currentColor"
-                                  class="size-5 text-secondary/20 hover:text-secondary/80"
+                                <div
+                                  class="btn mt-2 cursor-pointer rounded-md border border-secondary/30 bg-secondary/5 hover:bg-secondary/10 px-2 py-1 text-secondary w-[250px] text-center"
+                                  id="applyLinkButton"
                                 >
-                                  <path
-                                    fill-rule="evenodd"
-                                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                                    clip-rule="evenodd"
-                                  />
-                                </svg>
-                                <p
-                                  class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                                  Apply Links to Output HTML
+                                </div>
+                                <div
+                                  id="LinkApplied"
+                                  class="btn hidden cursor-not-allowed mt-2 rounded-md border border-secondary/30 bg-secondary/5 bg-secondary/10 px-2 py-1 w-[250px] text-center text-secondary/40"
                                 >
-                                  Search for image links and apply them to HTML
-                                </p>
-                              </div>
-                            </div>
-                          </div>
+                                  Link applied
+                                </div>
 
-                          <div
-                            id="imgInspectContainer"
-                            class="imgInspect"
-                          >
 
-                          
-                          </div>
-                        </div>`;
+                                <!-- inspect the image -->
+                                <div>
+                                  <div class="flex">
+                                    <p
+                                      class="pt-5 font-semibold text-sm text-secondary z-20"
+                                    >
+                                      Inspect images
+                                    </p>
+
+                                    <div
+                                      class="info group relative inline-block pt-5"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        class="size-5 text-secondary/20 hover:text-secondary/80"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                          clip-rule="evenodd"
+                                        />
+                                      </svg>
+                                      <p
+                                        class="hidden group-hover:block absolute text-secondary/80 text-sm pl-5 p-3 bg-white rounded-md shadow-lg w-max opacity-90"
+                                      >
+                                        Search for image links and apply them to HTML
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div
+                                  id="imgInspectContainer"
+                                  class="imgInspect"
+                                >
+
+
+                                </div>
+                              </div>`;
 
       htmlEditMode.addEventListener("click", () => {
         if (currentMode === "sectionEditMode") {
@@ -1039,8 +1046,8 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
 
                 // 返回修改後的 <div> 包裹 <img> 結構
                 return `<div class='imgBox mx-auto max-w-[1024px] max-h-[500px] py-5 pb-12 overflow-hidden'>
-              <img class='w-full h-full object-contain' src='${src}' alt='${alt}'>
-            </div>`;
+                    <img class='w-full h-full object-contain' src='${src}' alt='${alt}'>
+                  </div>`;
               }
             );
 
@@ -1070,23 +1077,23 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
 
             // 構建目錄 HTML 結構
             let tocContent = `
-          <div class='index border border-secondary/50 p-5'>
-            <p class='text-2xl font-semibold pb-3'>目錄</p>
-            <ul class='space-y-2'>
-        `;
+                <div class='index border border-secondary/50 p-5'>
+                  <p class='text-2xl font-semibold pb-3'>目錄</p>
+                  <ul class='space-y-2'>
+              `;
 
             tocItems.forEach((item) => {
               tocContent += `
-            <li class='hover:text-primary'>
-              <a href='#${item.id}' class='hover:text-primary'>${item.text}</a>
-            </li>
-          `;
+                  <li class='hover:text-primary'>
+                    <a href='#${item.id}' class='hover:text-primary'>${item.text}</a>
+                  </li>
+                `;
             });
 
             tocContent += `
-            </ul>
-          </div>
-        `;
+                  </ul>
+                </div>
+              `;
 
             // 清空搜尋結果區域
             searchInput.value = "";
@@ -1116,21 +1123,21 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
 
                 // 動態插入結構
                 const imgInspectHTML = `
-              <div class='flex flex-col pt-5'>
-                <p class='text-sm text-nowrap text-secondary'>
-                  <span>${index + 1}-</span><span>「${alt}」</span>
-                </p>
-                <input type='text' class='border p-1 text-sm' placeholder='${alt}' />
-                <input
-                  type='file'
-                  class='imageUpload w-fit border-none bg-transparent shadow-none p-2'
-                  data-index='${index}'
-                />
-                <div class='imgbox'>
-                  <img class='thumbnail object-cover overflow-hidden max-h-[100px] max-w-[150px]' src='${src}' alt='${alt}' />
-                </div>
-              </div>
-            `;
+                    <div class='flex flex-col pt-5'>
+                      <p class='text-sm text-nowrap text-secondary'>
+                        <span>${index + 1}-</span><span>「${alt}」</span>
+                      </p>
+                      <input type='text' class='border p-1 text-sm' placeholder='${alt}' />
+                      <input
+                        type='file'
+                        class='imageUpload w-fit border-none bg-transparent shadow-none p-2'
+                        data-index='${index}'
+                      />
+                      <div class='imgbox'>
+                        <img class='thumbnail object-cover overflow-hidden max-h-[100px] max-w-[150px]' src='${src}' alt='${alt}' />
+                      </div>
+                    </div>
+                  `;
                 imgInspectContainer.insertAdjacentHTML(
                   "beforeend",
                   imgInspectHTML
@@ -1182,12 +1189,15 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
           const searchButton = document.getElementById("searchButton");
           const prevButton = document.getElementById("prevButton");
           const nextButton = document.getElementById("nextButton");
+          const applyLinkButton = document.getElementById("applyLinkButton");
+          const LinkApplied = document.getElementById("LinkApplied");
 
           let matches = [];
           let currentIndex = -1;
 
           searchButton.addEventListener("click", (event) => {
             event.preventDefault(); // 防止頁面刷新
+
             const query = searchInput.value.trim();
             if (query === "") {
               alert("Please enter a search term");
@@ -1196,19 +1206,9 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
 
             clearHighlights(); // 清除之前的高亮
 
-            // 恢復 "Apply Links to Output HTML" 按鈕的狀態
-            applyLinkButton.textContent = "Apply Links to Output HTML";
-            applyLinkButton.classList.remove(
-              "bg-gray-200",
-              "text-gray-400",
-              "cursor-not-allowed"
-            );
-            applyLinkButton.classList.add(
-              "bg-secondary/5",
-              "hover:bg-secondary/10",
-              "text-secondary"
-            );
             applyLinkButton.style.pointerEvents = "auto"; // 恢復點擊
+            applyLinkButton.classList.remove("hidden");
+            LinkApplied.classList.add("hidden");
 
             // 搜尋所有符合結果並高亮（跳過 <img> 的 alt 內容）
             const regex = new RegExp(
@@ -1229,6 +1229,7 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
 
             // 獲取所有高亮的結果
             matches = Array.from(outputContent.querySelectorAll(".match"));
+            console.log(matches);
 
             if (matches.length > 0) {
               currentIndex = 0;
@@ -1254,6 +1255,7 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
 
           applyLinkButton.addEventListener("click", (event) => {
             event.preventDefault();
+
             const url = urlInput.value.trim();
             if (!url) {
               alert("invalid link");
@@ -1295,23 +1297,27 @@ border-style: solid none; border-color: #F5AB01; display: flex; flex-direction: 
               outputContent.scrollTop = scrollPosition;
 
               // 改變按鈕樣式並禁用按鈕
-              applyLinkButton.textContent = "Link Applied";
-              applyLinkButton.classList.add(
-                "bg-gray-200",
-                "text-gray-400",
-                "cursor-not-allowed"
-              );
-              applyLinkButton.classList.remove(
-                "bg-secondary/5",
-                "hover:bg-secondary/10",
-                "text-secondary"
-              );
+              // applyLinkButton.textContent = "Link Applied";
+              // applyLinkButton.classList.add(
+              //   "bg-gray-200",
+              //   "text-gray-400",
+              //   "cursor-not-allowed"
+              // );
+              // applyLinkButton.classList.remove(
+              //   "bg-secondary/5",
+              //   "hover:bg-secondary/10",
+              //   "text-secondary"
+              // );
               applyLinkButton.style.pointerEvents = "none"; // 禁用點擊
+              applyLinkButton.classList.add("hidden");
             }
 
             outputContent.classList.remove("highlight", "current");
             outputContent.style.height = "200px";
             outputContent.style.overflowY = "auto";
+
+            LinkApplied.classList.remove("hidden");
+
             // console.log(outputContent);
           });
 
