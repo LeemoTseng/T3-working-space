@@ -1220,14 +1220,14 @@
 
             const query = searchInput.value.trim();
             if (!query) {
-              alert("Please enter a search term");
               searchResultCounter.textContent = "";
+              alert("Please enter a search term");
               return;
             }
 
             clearHighlights(); // 清除之前的高亮
 
-            console.log("Searching for:", query);
+            // console.log("Searching for:", query);
 
             applyLinkButton.style.pointerEvents = "auto"; // 恢復點擊
             applyLinkButton.classList.remove("hidden");
@@ -1254,15 +1254,16 @@
 
             // 獲取所有高亮的結果
             matches = Array.from(outputContent.querySelectorAll(".match"));
-            console.log(matches);
+            // console.log(matches);
 
             if (matches.length > 0) {
               currentIndex = 0;
               updateCurrentMatch();
-              searchResultCounter.textContent = `Now ${
-                currentIndex + 1
-              } / Total${matches.length}`;
+              searchResultCounter.textContent = `${currentIndex + 1} / ${
+                matches.length
+              }`;
             } else {
+              searchResultCounter.textContent = "";
               alert("No matches found");
             }
           });
@@ -1273,7 +1274,7 @@
             if (matches.length === 0) return;
             currentIndex = (currentIndex - 1 + matches.length) % matches.length;
             updateCurrentMatch();
-            searchResultCounter.textContent = `Now ${currentIndex + 1} / Total${
+            searchResultCounter.textContent = `${currentIndex + 1} / ${
               matches.length
             }`;
           });
@@ -1284,7 +1285,7 @@
             if (matches.length === 0) return;
             currentIndex = (currentIndex + 1) % matches.length;
             updateCurrentMatch();
-            searchResultCounter.textContent = `Now ${currentIndex + 1} / Total${
+            searchResultCounter.textContent = `${currentIndex + 1} / ${
               matches.length
             }`;
           });
