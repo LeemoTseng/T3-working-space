@@ -1101,6 +1101,7 @@
 
             // 更新 outputContent 的 innerHTML 而不是 value
             outputContent.innerHTML = tocContent + content;
+            console.log("outputContent", outputContent);
           });
 
           // 檢查並更新圖片標籤
@@ -1347,7 +1348,7 @@
             prevButton.classList.add("hidden");
             nextButton.classList.add("hidden");
 
-            // console.log(outputContent);
+            // console.log("outputContent", outputContent);
           });
 
           function clearHighlights() {
